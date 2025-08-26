@@ -1,15 +1,17 @@
 @extends('layout.master')
 @section('content')
 
-    <div class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
+    <div x-data="{ open: false, image: '' }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
         {{-- بطاقة العملة الرئيسية --}}
         <div class="max-w-3xl w-full bg-gradient-to-r from-blue-50 to-white rounded-3xl shadow-2xl p-8 transform -translate-y-4 hover:scale-105 transition-transform duration-300">
             {{-- صورة العملة --}}
             @if($coin->image)
-                <img src="{{ asset('public/storage/' . $coin->image) }}"
-                     alt="{{ $coin->title }}"
-                     class="w-full h-80 md:h-96 object-cover rounded-3xl mb-6 shadow-xl hover:scale-105 transition-transform duration-300">
+                <button @click="open = true; image = '{{ asset('public/storage/' . $coin->image) }}'" class="w-full">
+                    <img src="{{ asset('public/storage/' . $coin->image) }}"
+                         alt="{{ $coin->title }}"
+                         class="w-full h-80 md:h-96 object-cover rounded-3xl mb-6 shadow-xl hover:scale-105 transition-transform duration-300">
+                </button>
             @endif
 
             {{-- العنوان --}}
@@ -24,14 +26,6 @@
 
             {{-- الدولة --}}
             <p class="text-sm md:text-base text-gray-gray-600 mb-6 text-center font-medium tracking-wide">الدولة: {{ $coin->country }}</p>
-
-            {{-- زر الرجوع --}}
-            <div class="text-center">
-                <a href="{{ url()->previous() }}"
-                   class="inline-block bg-gray-700 text-white px-6 py-2 rounded-xl hover:bg-gray-800 transition font-medium shadow-lg hover:shadow-xl">
-                    ← رجوع
-                </a>
-            </div>
         </div>
 
         {{-- مسافة بين البطاقة الرئيسية والعملات المشابهة --}}
@@ -41,19 +35,19 @@
         @if($coin->relatedCoins->count() > 0)
             <div class="max-w-6xl w-full px-4 sm:px-6 lg:px-20">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-10 text-center">
-                    عملات أخرى من {{ $coin->country }}
+                    عملات من {{ $coin->country }}
                 </h2>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     @foreach($coin->relatedCoins as $related)
                         <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 overflow-hidden group">
-                            <a href="{{ route('coins.show', $related->id) }}">
+                            <button @click="open = true; image = '{{ asset('public/storage/' . $related->image) }}'">
                                 @if($related->image)
                                     <img src="{{ asset('public/storage/' . $related->image) }}"
                                          alt="{{ $related->title }}"
                                          class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300">
                                 @endif
-                            </a>
+                            </button>
                             <div class="p-5 text-right">
                                 <h3 class="text-lg md:text-xl font-semibold text-gray-900 truncate mb-1">
                                     {{ $related->title }}
@@ -69,6 +63,17 @@
                 </div>
             </div>
         @endif
+
+        {{-- نافذة تكبير الصور --}}
+        <div x-show="open"
+             x-transition.opacity
+             class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+             @click="open = false">
+            <div @click.stop class="relative">
+                <img :src="image" class="max-w-full max-h-screen rounded-lg shadow-lg">
+                <button @click="open = false" class="absolute top-2 right-2 text-white text-2xl font-bold">&times;</button>
+            </div>
+        </div>
 
     </div>
 
