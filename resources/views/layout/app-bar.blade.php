@@ -1,20 +1,18 @@
-<nav id="nav" class="fixed top-0 left-0 w-full px-4 sm:px-6 lg:px-10 py-3 bg-transparent text-white z-50 transition-colors duration-300">
-    <div class="flex justify-between items-center container mx-auto">
-        <!-- شعار الموقع -->
+<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300 z-50">
+    <div class="flex justify-between items-center container mx-auto relative">
         <a href="" class="flex items-center gap-3">
-            <img src="{{ asset('/resha.png') }}" alt="Logo" class="w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 object-contain">
-            <span id="logo-text" class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">Logo</span>
+            <img src="{{ asset('/resha.png') }}" alt="Logo" class="w-20 sm:w-24 lg:w-30">
+            <span id="logo-text" class="text-lg font-bold lg:text-3xl mt-1"></span>
         </a>
 
-        <!-- زر القائمة في الشاشات الصغيرة -->
+        <!-- زر القائمة للهواتف -->
         <div class="lg:hidden">
             <button id="menu-toggle" class="text-white focus:outline-none">
                 <span class="material-icons">menu</span>
             </button>
         </div>
 
-
-        <div>
+            <div>
                 <a href="{{route('homepage')}}" class="nav-link flex items-center">الرئيسية</a>
             </div>
 
