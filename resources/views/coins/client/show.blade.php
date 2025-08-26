@@ -10,7 +10,7 @@
                 <button @click="open = true; image = '{{ asset('public/storage/' . $coin->image) }}'" class="w-full">
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
-                         class="w-full h-auto max-h-[600px] object-contain rounded-3xl mb-6 shadow-xl transition-transform duration-500 hover:scale-105">
+                         class="w-full h-96 object-cover rounded-3xl mb-6 shadow-xl transition-transform duration-500 hover:scale-105">
                 </button>
             @endif
 
@@ -44,7 +44,7 @@
                                 @if($related->image)
                                     <img src="{{ asset('public/storage/' . $related->image) }}"
                                          alt="{{ $related->title }}"
-                                         class="w-full h-auto max-h-64 object-contain transition-transform duration-500 hover:scale-105 rounded-t-3xl">
+                                         class="w-full h-64 object-cover transition-transform duration-500 hover:scale-105 rounded-t-3xl">
                                 @endif
                             </button>
                             <div class="p-5 text-right">
@@ -55,7 +55,6 @@
                                     </p>
                                 @endif
                             </div>
-                            {{-- تأثير ظل عند المرور --}}
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-yellow-50 opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl"></div>
                         </div>
                     @endforeach
