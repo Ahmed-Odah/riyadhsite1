@@ -20,7 +20,10 @@
                         <h2 class="text-lg font-semibold text-gray-900 truncate mb-3">{{ $sumbook->title }}</h2>
 
                         <!-- زر الاستعراض -->
-                        <a href="#" class="bg-red-600 text-white px-4 py-2 rounded">تجربة</a>
+                        <a href="{{ route('sumbook.show', $sumbook->id) }}" target="_blank"
+                           class="inline-block text-center bg-amber-600 text-white px-4 py-2 rounded-xl shadow-md hover:bg-amber-700 transition duration-300">
+                            استعراض
+                        </a>
 
 
 
