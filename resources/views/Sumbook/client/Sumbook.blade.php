@@ -9,10 +9,11 @@
                 <div class="bg-white rounded-2xl border border-gray-200 shadow hover:shadow-md transition duration-300 overflow-hidden flex flex-col">
                     <!-- الرابط يأخذك إلى صفحة الملخص -->
                     <a href="{{ route('sumbook.show', $sumbook->id) }}" target="_blank" class="block w-full">
-                        <div class="w-full h-56 overflow-hidden"> <!-- تثبيت حجم موحد -->
+                        <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/4;">
+                            <!-- 👆 نسبة الطول للعرض ثابتة (مثل كتاب) -->
                             <img src="{{ asset('public/storage/' . $sumbook->image) }}"
                                  alt="{{ $sumbook->title }}"
-                                 class="w-full h-full object-cover hover:scale-105 transition duration-300 rounded-t-2xl" />
+                                 class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition duration-300 rounded-t-2xl" />
                         </div>
                     </a>
 
