@@ -6,7 +6,6 @@
             <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mt-20 mb-12">
                 عملات عالمية نادرة
             </h1>
-        </div>
 
 
 
