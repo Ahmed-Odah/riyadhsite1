@@ -63,36 +63,16 @@
             </div>
         @endif
 
-        <div x-data="{ open: false, image: '' }" class="min-h-screen flex flex-col items-center space-y-16">
-
-            {{-- صورة العملة الرئيسية --}}
-            @if($coin->image)
-                <button @click="image='{{ asset('public/storage/' . $coin->image) }}'; open=true">
-                    <img src="{{ asset('public/storage/' . $coin->image) }}"
-                         alt="{{ $coin->title }}"
-                         class="w-full max-w-3xl h-auto object-contain rounded-3xl shadow-xl mb-6 cursor-pointer">
-                </button>
-            @endif
-
-            {{-- نافذة تكبير الصورة --}}
-            <div x-show="open"
-                 x-transition:enter="transition ease-out duration-300"
-                 x-transition:enter-start="opacity-0 scale-90"
-                 x-transition:enter-end="opacity-100 scale-100"
-                 x-transition:leave="transition ease-in duration-200"
-                 x-transition:leave-start="opacity-100 scale-100"
-                 x-transition:leave-end="opacity-0 scale-90"
-                 class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
-                 style="display: none;"
-                 @click="open = false">
-                <div @click.stop class="relative max-w-5xl w-full">
-                    <img :src="image" class="w-full h-auto max-h-[90vh] object-contain rounded-xl shadow-2xl">
-                    <button @click="open = false" class="absolute top-3 right-3 text-white text-4xl font-extrabold">&times;</button>
-                </div>
+        {{-- نافذة تكبير الصور --}}
+        <div x-show="open"
+             x-transition.opacity
+             class="fixed inset-0 bg-black bg-opacity-20 flex items-center justify-center z-50 p-4"
+             @click="open = false">
+            <div @click.stop class="relative max-w-4xl w-full">
+                <img :src="image" class="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-lg mx-auto">
+                <button @click="open = false" class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
             </div>
-
         </div>
-
 
     </div>
 
