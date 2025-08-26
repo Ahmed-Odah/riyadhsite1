@@ -12,6 +12,6 @@ class OfficialClientAction
     public function handle()
     {
         $officials = official::query()->get();
-        return view('official.client.pool', compact('officials'));
+        return view('official.client.official', compact('officials'));
     }
 }
