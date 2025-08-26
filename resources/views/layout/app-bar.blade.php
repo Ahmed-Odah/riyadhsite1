@@ -1,36 +1,20 @@
-<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300">
-    <div class="flex justify-between items-center container mx-auto relative">
-        <a href="" class="flex flex-col items-start gap-0">
-            <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
-                <span id="logo-text" class="text-lg font-bold lg:text-3xl mt-1"></span>
-                <img src="{{ asset('/resha.png') }}" alt="Logo" class="w-30">
-            </div>
-
-
-
+<nav id="nav" class="fixed top-0 left-0 w-full px-4 sm:px-6 lg:px-10 py-3 bg-transparent text-white z-50 transition-colors duration-300">
+    <div class="flex justify-between items-center container mx-auto">
+        <!-- شعار الموقع -->
+        <a href="" class="flex items-center gap-3">
+            <img src="{{ asset('/resha.png') }}" alt="Logo" class="w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 object-contain">
+            <span id="logo-text" class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">Logo</span>
         </a>
 
-
-
-
-
-
-
+        <!-- زر القائمة في الشاشات الصغيرة -->
         <div class="lg:hidden">
             <button id="menu-toggle" class="text-white focus:outline-none">
                 <span class="material-icons">menu</span>
             </button>
         </div>
 
-        <div class="{{!request()->is('/') ? 'text-black' : 'text-white'}} hidden lg:flex flex-col md:flex-row items-center justify-center gap-8 md:static absolute w-full md:w-auto p-4 md:p-0 z-20 top-full left-0 md:top-auto md:left-auto"
-             :class="{'text-white': !scrolled, 'text-black': scrolled}">
-            <style>
-                .nav-link {
-                    @apply hover:no-underline transition-all duration-300 hover:text-gray-300 transform hover:scale-105;
-                }
-            </style>
 
-            <div>
+        <div>
                 <a href="{{route('homepage')}}" class="nav-link flex items-center">الرئيسية</a>
             </div>
 
