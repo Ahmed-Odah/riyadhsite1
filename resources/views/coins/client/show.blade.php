@@ -33,23 +33,26 @@
 
         {{-- العملات المشابهة --}}
         @if($coin->relatedCoins->count() > 0)
-            <div class="max-w-6xl w-full px-4 sm:px-6 lg:px-20">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div class="max-w-7xl w-full px-4 sm:px-6 lg:px-20">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+                    عملات من {{ $coin->country }}
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
                     @foreach($coin->relatedCoins as $related)
-                        <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 overflow-hidden group">
-                            <button @click="open = true; image = '{{ asset('public/storage/' . $related->image) }}'">
+                        <div class="bg-white rounded-4xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-3 transition duration-500 overflow-hidden group">
+                            <button @click="open = true; image = '{{ asset('public/storage/' . $related->image) }}'" class="block w-full">
                                 @if($related->image)
                                     <img src="{{ asset('public/storage/' . $related->image) }}"
                                          alt="{{ $related->title }}"
-                                         class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300">
+                                         class="w-full h-64 md:h-72 object-cover rounded-t-3xl group-hover:scale-105 transition-transform duration-500">
                                 @endif
                             </button>
-                            <div class="p-5 text-right">
-                                <h3 class="text-lg md:text-xl font-semibold text-gray-900 truncate mb-1">
+                            <div class="p-6 text-right">
+                                <h3 class="text-lg md:text-xl font-semibold text-gray-900 truncate mb-2">
                                     {{ $related->title }}
                                 </h3>
                                 @if(!empty($related->description))
-                                    <p class="text-sm md:text-base text-gray-600 line-clamp-2">
+                                    <p class="text-sm md:text-base text-gray-600 line-clamp-3">
                                         {{ $related->description }}
                                     </p>
                                 @endif
