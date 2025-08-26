@@ -126,15 +126,18 @@
                 @endif
 
                 {{-- نافذة تكبير الصور --}}
+                {{-- نافذة تكبير الصور --}}
                 <div x-show="open"
                      x-transition.opacity
                      class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
                      @click="open = false">
-                    <div @click.stop class="relative max-w-5xl w-full">
-                        <img :src="image" class="w-full h-auto max-h-[90vh] object-contain rounded-xl shadow-2xl mx-auto">
-                        <button @click="open = false" class="absolute top-3 right-3 text-white text-4xl font-extrabold">&times;</button>
+                    <div @click.stop class="relative w-full max-w-3xl"> {{-- تم تعديل max-w إلى 3xl --}}
+                        <img :src="image"
+                             class="w-full h-auto max-h-[70vh] object-contain rounded-xl shadow-2xl mx-auto"> {{-- تم تعديل max-h إلى 70vh --}}
+                        <button @click="open = false" class="absolute top-3 right-3 text-white text-3xl font-extrabold">&times;</button>
                     </div>
                 </div>
+
 
             </div>
 
