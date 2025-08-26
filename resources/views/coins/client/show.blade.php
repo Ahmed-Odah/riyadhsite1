@@ -4,34 +4,16 @@
     <div x-data="{ open: false, image: '' }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
         {{-- بطاقة العملة الرئيسية --}}
-        <div class="max-w-3xl w-full bg-gradient-to-br from-blue-50 via-white to-blue-100 rounded-3xl shadow-xl p-6 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+        <div class="max-w-4xl w-full bg-gradient-to-r from-blue-50 to-white rounded-3xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
             {{-- صورة العملة --}}
             @if($coin->image)
-                <button @click="open = true; image='{{ asset('public/storage/' . $coin->image) }}'" class="w-full rounded-2xl overflow-hidden">
+                <button @click="open = true; image='{{ asset('public/storage/' . $coin->image) }}'" class="w-full">
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
-                         class="w-full h-48 md:h-56 object-cover rounded-2xl mb-4 shadow-lg hover:scale-105 transition-transform duration-300">
+                         class="w-full h-56 md:h-64 object-cover rounded-2xl mb-4 shadow-md hover:scale-105 transition-transform duration-300">
                 </button>
             @endif
-
-            {{-- العنوان --}}
-            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2 text-center drop-shadow-sm">
-                {{ $coin->title }}
-            </h1>
-
-            {{-- الدولة --}}
-            <p class="text-sm md:text-base text-gray-600 mb-4 text-center font-medium tracking-wide">
-                الدولة: {{ $coin->country }}
-            </p>
-
-            {{-- الوصف --}}
-            @if($coin->description)
-                <p class="text-gray-700 text-sm md:text-base leading-relaxed text-justify">
-                    {{ $coin->description }}
-                </p>
-            @endif
         </div>
-
     </div>
 
 
