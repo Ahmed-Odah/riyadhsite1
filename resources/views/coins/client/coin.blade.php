@@ -3,9 +3,10 @@
     <div x-data="{ open: false, image: '', visible: 8 }" class="relative bg-gray-50 min-h-screen">
         <!-- العنوان -->
         <div class="py-16 px-4 sm:px-10 lg:px-20">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mt-2 mb-20">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mt-12 mb-12">
                 عملات عالمية نادرة
             </h1>
+
 
             <!-- شبكة الصور -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
