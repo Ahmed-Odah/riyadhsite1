@@ -57,15 +57,13 @@ class EditCoinAction
             if ($request->filled('new_related_title')) {
                 $relatedCoin = new RelatedCoin();
                 $relatedCoin->title = $request->input('new_related_title');
+                $relatedCoin->coin_id = $coin->id; // الربط بالعملة الحالية
 
                 if ($request->hasFile('new_related_image')) {
                     $relatedCoin->image = $request->file('new_related_image')->store('coins/related', 'public');
                 }
 
                 $relatedCoin->save();
-
-                // ربط العملة الجديدة بالعملة الأساسية
-                $coin->relatedCoins()->attach($relatedCoin->id);
             }
 
             return redirect()->route('dashboard')->with('success', 'تم تحديث العملة بنجاح');
