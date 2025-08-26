@@ -21,7 +21,7 @@
 
                         <!-- زر الاستعراض -->
                         <a href="{{ route('sumbook.show', $sumbook->id) }}" target="_blank"
-                           class="inline-block text-center bg-yellow-600 text-white px-4 py-2 r">
+                           class=" bg-yellow-600 ">
                             استعراض
                         </a>
 
