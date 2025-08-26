@@ -21,6 +21,7 @@ class EditCoinAction
             'related_id' => 'nullable|array',
             'related_title.*' => 'nullable|string|max:255',
             'related_image.*' => 'nullable|image',
+            'new_related_coin' => 'nullable|exists:coins,id', // إضافة التحقق للعملة الجديدة
         ]);
 
         try {
@@ -35,7 +36,7 @@ class EditCoinAction
 
             $coin->save();
 
-            // تحديث العملات المشابهة
+            // تحديث العملات المشابهة الحالية
             if ($request->has('related_id')) {
                 foreach ($request->related_id as $relatedId) {
                     $relatedCoin = RelatedCoin::find($relatedId);
@@ -48,6 +49,16 @@ class EditCoinAction
 
                         $relatedCoin->save();
                     }
+                }
+            }
+
+            // إضافة عملة مشابهة جديدة إذا تم اختيار واحدة
+            if ($request->filled('new_related_coin')) {
+                $newRelatedId = $request->input('new_related_coin');
+
+                // تحقق أنها ليست مضافة مسبقًا
+                if (!$coin->relatedCoins->contains($newRelatedId)) {
+                    $coin->relatedCoins()->attach($newRelatedId);
                 }
             }
 
