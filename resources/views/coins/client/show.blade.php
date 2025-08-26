@@ -63,13 +63,14 @@
         {{-- نافذة تكبير الصور --}}
         <div x-show="open"
              x-transition.opacity
-             class="fixed inset-0  bg-opacity-20 flex items-center justify-center z-50 p-4"
+             class="fixed inset-0 bg-black bg-opacity-20 flex items-center justify-center z-50 p-4"
              @click="open = false">
             <div @click.stop class="relative max-w-4xl w-full">
                 <img :src="image" class="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-lg mx-auto">
                 <button @click="open = false" class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
             </div>
         </div>
+
 
     </div>
 
