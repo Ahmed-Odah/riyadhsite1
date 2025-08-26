@@ -11,7 +11,7 @@
                     <a href="{{ route('sumbook.show', $sumbook->id) }}" target="_blank" class="block w-full">
                         <img src="{{ asset('public/storage/' . $sumbook->image) }}"
                              alt="{{ $sumbook->title }}"
-                             class="w-full h-64 object-cover hover:scale-105 transition duration-300" />
+                             class="w-full h-52 md:h-48 object-cover hover:scale-105 transition duration-300 rounded-t-2xl" />
                     </a>
 
                     <div class="p-4 text-right">
