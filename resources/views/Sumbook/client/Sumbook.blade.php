@@ -6,15 +6,17 @@
         <!-- شبكة الصور -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-11">
             @foreach($sumbooks as $sumbook)
-                <div class="bg-white rounded-2xl border border-gray-200 shadow hover:shadow-md transition duration-300 overflow-hidden">
+                <div class="bg-white rounded-2xl border border-gray-200 shadow hover:shadow-md transition duration-300 overflow-hidden flex flex-col">
                     <!-- الرابط يأخذك إلى صفحة الملخص -->
                     <a href="{{ route('sumbook.show', $sumbook->id) }}" target="_blank" class="block w-full">
-                        <img src="{{ asset('public/storage/' . $sumbook->image) }}"
-                             alt="{{ $sumbook->title }}"
-                             class="w-full h-52 md:h-48 object-cover hover:scale-105 transition duration-300 rounded-t-2xl" />
+                        <div class="w-full h-56 overflow-hidden"> <!-- تثبيت حجم موحد -->
+                            <img src="{{ asset('public/storage/' . $sumbook->image) }}"
+                                 alt="{{ $sumbook->title }}"
+                                 class="w-full h-full object-cover hover:scale-105 transition duration-300 rounded-t-2xl" />
+                        </div>
                     </a>
 
-                    <div class="p-4 text-right">
+                    <div class="p-4 text-right flex-grow">
                         <h2 class="text-lg font-semibold text-gray-900 truncate">{{ $sumbook->title }}</h2>
                     </div>
                 </div>
