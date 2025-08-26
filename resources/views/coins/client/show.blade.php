@@ -4,17 +4,16 @@
     <div x-data="{ open: false, image: '' }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
         {{-- بطاقة العملة الرئيسية --}}
-        <div class="max-w-4xl w-full bg-gradient-to-r from-blue-50 to-white rounded-3xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+        <div class="max-w-4xl w-full bg-gradient-to-r from-blue-50 to-white rounded-3xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
             {{-- صورة العملة --}}
             @if($coin->image)
                 <button @click="open = true; image='{{ asset('public/storage/' . $coin->image) }}'" class="w-full">
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
-                         class="w-full h-56 md:h-64 object-cover rounded-2xl mb-4 shadow-md hover:scale-105 transition-transform duration-300">
+                         class="w-full h-72 md:h-80 object-cover rounded-2xl mb-4 shadow-lg hover:scale-105 transition-transform duration-300">
                 </button>
             @endif
         </div>
-    </div>
 
 
         {{-- العنوان --}}
