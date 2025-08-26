@@ -6,7 +6,7 @@
         {{-- بطاقة العملة الرئيسية --}}
         <div class="max-w-3xl w-full bg-gradient-to-r from-yellow-100 via-white to-yellow-50 rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-transform duration-500">
             @if($coin->image)
-                <button @click="open = true; image='{{ asset('public/storage/' . $coin->image) }}'" class="w-full">
+                <button @click="image='{{ asset('public/storage/' . $coin->image) }}'; open=true" class="w-full">
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
                          class="w-full h-auto max-h-[600px] object-contain rounded-3xl mb-6 shadow-xl transition-transform duration-500 hover:scale-105">
@@ -35,7 +35,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     @foreach($coin->relatedCoins as $related)
                         <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition duration-500 overflow-hidden group relative">
-                            <button @click="open = true; image='{{ asset('public/storage/' . $related->image) }}'" class="w-full">
+                            <button @click="image='{{ asset('public/storage/' . $related->image) }}'; open=true" class="w-full">
                                 @if($related->image)
                                     <img src="{{ asset('public/storage/' . $related->image) }}"
                                          alt="{{ $related->title }}"
@@ -53,14 +53,21 @@
         @endif
 
         {{-- نافذة تكبير الصور --}}
-        <template x-if="open">
-            <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" @click="open = false">
-                <div class="relative max-w-5xl w-full p-4" @click.stop>
-                    <img :src="image" class="w-full h-auto max-h-[90vh] object-contain rounded-xl shadow-2xl">
-                    <button @click="open = false" class="absolute top-3 right-3 text-white text-4xl font-extrabold drop-shadow-lg">&times;</button>
-                </div>
+        <div x-show="open"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-90"
+             x-transition:enter-end="opacity-100 scale-100"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 scale-100"
+             x-transition:leave-end="opacity-0 scale-90"
+             class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-2"
+             style="display: none;"
+             @click="open = false">
+            <div @click.stop class="relative max-w-5xl w-full">
+                <img :src="image" class="w-full h-auto max-h-[90vh] object-contain rounded-xl shadow-2xl">
+                <button @click="open = false" class="absolute top-3 right-3 text-white text-4xl font-extrabold drop-shadow-lg">&times;</button>
             </div>
-        </template>
+        </div>
 
     </div>
 
