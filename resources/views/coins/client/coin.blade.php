@@ -27,7 +27,7 @@
 
                         <div class="p-5 text-right">
                             <a href="{{ route('coins.show', $coin->id) }}"
-                               class="inline-block w-full text-center sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold px-5 py-3 rounded-2xl shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-600 transition-all duration-300">
+                               class="inline-block w-full text-center sm:w-auto bg-blue from-blue-600 to-blue-500 text-white font-semibold px-5 py-3 rounded-2xl shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-600 transition-all duration-300">
                                 عرض التفاصيل
                             </a>
                         </div>
