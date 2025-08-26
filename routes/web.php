@@ -311,6 +311,17 @@ Route::prefix('auth')->group(function () {
 
 
 
+    Route::get('/house/index', \App\Actions\Houses\Admin\HouseAdminIndex::class)->name('house-index');
+    Route::post('/house/create', \App\Actions\Houses\Admin\CreateAction::class)->name('house-create');
+    Route::get('/house/create/view', \App\Actions\Houses\Admin\HouseCreateViewIndex::class)->name('house-create-view');
+    Route::get('/house/edit/view/{house}', \App\Actions\Houses\Admin\HouseEditView::class)->name('house-edit-view');
+    Route::post('/house/update/{house}', \App\Actions\Houses\Admin\EditHouseAction::class)->name('house-update');
+    Route::post('/house/delete/{house}', \App\Actions\Houses\Admin\DeleteHouseAction::class)->name('house-delete');
+
+
+
+
+
 
 
 
