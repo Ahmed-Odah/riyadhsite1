@@ -1,4 +1,4 @@
-<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300">
+<nav id="nav" class="fixed top-0 left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300">
     <div class="flex justify-between items-center container mx-auto relative">
         <a href="" class="flex flex-col items-start gap-0">
             <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
