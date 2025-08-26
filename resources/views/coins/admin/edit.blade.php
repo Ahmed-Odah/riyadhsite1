@@ -42,36 +42,7 @@
                 <input dir="rtl" type="file" id="image" name="image" accept="image/*" class="w-full border rounded px-3 py-2">
             </div>
 
-            {{-- العملات المشابهة --}}
+            {{-- العملات المشابهة الموجودة --}}
             @if($coin->relatedCoins->count() > 0)
                 <div class="mb-6">
-                    <label class="block mb-2 font-medium">العملات المشابهة</label>
-                    @foreach($coin->relatedCoins as $related)
-                        <div class="mb-4 border p-3 rounded">
-                            <input type="hidden" name="related_id[]" value="{{ $related->id }}">
-
-                            <label class="block mb-1">عنوان العملة</label>
-                            <input type="text" name="related_title[{{ $related->id }}]" value="{{ $related->title }}"
-                                   class="w-full mb-2 border rounded px-2 py-1">
-
-                            @if($related->image)
-                                <label class="block mb-1">الصورة الحالية</label>
-                                <img src="{{ asset('public/storage/' . $related->image) }}" class="h-24 rounded mb-2">
-                            @endif
-
-                            <label class="block mb-1">رفع صورة جديدة (اختياري)</label>
-                            <input type="file" name="related_image[{{ $related->id }}]" accept="image/*" class="w-full">
-                        </div>
-                    @endforeach
-                </div>
-            @endif
-
-            {{-- زر الحفظ --}}
-            <div class="text-right">
-                <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition w-full">
-                    تحديث العملة
-                </button>
-            </div>
-        </form>
-    </div>
-@endsection
+                    <label class="block mb-2 font-medium">العملات المشابه
