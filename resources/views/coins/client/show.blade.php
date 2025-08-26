@@ -10,7 +10,7 @@
                 <button @click="open = true; image='{{ asset('public/storage/' . $coin->image) }}'" class="w-full">
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
-                         class="w-full h-56 md:h-64 object-cover rounded-2xl mb-4 shadow-md hover:scale-105 transition-transform duration-300">
+                         class="w-full h-5 md:h-6 object-cover rounded-2xl mb-4 shadow-md hover:scale-105 transition-transform duration-300">
                 </button>
             @endif
         </div>
