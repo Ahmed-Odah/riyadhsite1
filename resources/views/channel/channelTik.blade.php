@@ -8,7 +8,7 @@
             <div class="absolute bottom-0 right-0 w-64 h-64 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
 
             <!-- شعار القناة (مصغر) -->
-            <img src="resha.png" alt="قناة تيك توك" class="mx-auto w-24 h-24 rounded-full shadow-lg mb-6 border-4 border-white">
+            <img src="public/RiyadhAlmoiqayd.jpeg" alt="قناة تيك توك" class="mx-auto w-24 h-24 rounded-full shadow-lg mb-6 border-4 border-white">
 
             <!-- عنوان القناة -->
             <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 ">
