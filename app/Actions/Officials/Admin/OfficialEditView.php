@@ -11,7 +11,7 @@ class OfficialEditView
 
     public function handle($id)
     {
-        $pfficial = official::findOrFail($id);
-        return view('official.admin.edit', compact('pfficial'));
+        $official = official::findOrFail($id);
+        return view('official.admin.edit', compact('official'));
     }
 }
