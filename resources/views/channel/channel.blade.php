@@ -4,7 +4,7 @@
         <div class="max-w-4xl w-full bg-white rounded-3xl shadow-2xl p-10 text-center transform hover:scale-105 transition duration-500">
 
             <!-- شعار القناة -->
-            <img src="resha.png" alt="قناة يوتيوب"
+            <img src="RiyadhAlmoiqayd.jpeg" alt="قناة يوتيوب"
                  class="mx-auto w-20 h-20 md:w-24 md:h-24 rounded-full shadow-lg mb-6">
 
             <!-- عنوان القناة -->
