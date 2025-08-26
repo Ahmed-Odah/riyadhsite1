@@ -21,7 +21,8 @@ class EditCoinAction
             'related_id' => 'nullable|array',
             'related_title.*' => 'nullable|string|max:255',
             'related_image.*' => 'nullable|image',
-            'new_related_coin' => 'nullable|exists:coins,id', // إضافة التحقق للعملة الجديدة
+            'new_related_title' => 'nullable|string|max:255',
+            'new_related_image' => 'nullable|image',
         ]);
 
         try {
@@ -52,14 +53,19 @@ class EditCoinAction
                 }
             }
 
-            // إضافة عملة مشابهة جديدة إذا تم اختيار واحدة
-            if ($request->filled('new_related_coin')) {
-                $newRelatedId = $request->input('new_related_coin');
+            // إضافة عملة مشابهة جديدة بالكامل
+            if ($request->filled('new_related_title')) {
+                $relatedCoin = new RelatedCoin();
+                $relatedCoin->title = $request->input('new_related_title');
 
-                // تحقق أنها ليست مضافة مسبقًا
-                if (!$coin->relatedCoins->contains($newRelatedId)) {
-                    $coin->relatedCoins()->attach($newRelatedId);
+                if ($request->hasFile('new_related_image')) {
+                    $relatedCoin->image = $request->file('new_related_image')->store('coins/related', 'public');
                 }
+
+                $relatedCoin->save();
+
+                // ربط العملة الجديدة بالعملة الأساسية
+                $coin->relatedCoins()->attach($relatedCoin->id);
             }
 
             return redirect()->route('dashboard')->with('success', 'تم تحديث العملة بنجاح');
