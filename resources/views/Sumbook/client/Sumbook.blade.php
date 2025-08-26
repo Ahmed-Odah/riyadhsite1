@@ -21,10 +21,9 @@
 
                         <!-- زر الاستعراض -->
                         <a href="{{ route('sumbook.show', $sumbook->id) }}" target="_blank"
-                           class="bg-red-600 text-white px-4 py-2 rounded">
+                           class=" text-center bg-yellow-600 text-white px-4 py-2 rounded-xl shadow-md hover:bg-yellow-700 transition duration-300">
                             استعراض
                         </a>
-
 
 
 
