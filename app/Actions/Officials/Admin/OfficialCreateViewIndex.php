@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Actions\Pools\Admin;
+namespace App\Actions\Officials\Admin;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class PoolCreateViewIndex
+class OfficialCreateViewIndex
 {
     use AsAction;
 
     public function handle()
     {
-        return view('pool.admin.create');
+        return view('official.admin.create');
     }
 }

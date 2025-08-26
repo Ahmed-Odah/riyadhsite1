@@ -60,6 +60,8 @@ Route::get('/laundryroom', \App\Actions\Laundryroom\Client\LaundruroomClientActi
 Route::get('/livingroom', \App\Actions\Livingroom\Client\LivingroomClientAction::class)->name('livingroom');
 
 Route::get('/warehouse', \App\Actions\Warehouses\Client\WarehouseClientAction::class)->name('warehouse');
+Route::get('/official', \App\Actions\Officials\Client\OfficialClientAction::class)->name('official');
+
 
 
 Route::get('/externalsession', \App\Actions\Externalsessions\Client\ExternalsessionClientAction::class)->name('externalsession');
@@ -199,6 +201,24 @@ Route::prefix('auth')->group(function () {
     Route::get('/pool/edit/view/{pool}', \App\Actions\Pools\Admin\PoolEditView::class)->name('pool-edit-view');
 
 
+    Route::get('/official/index', \App\Actions\Officials\Admin\OfficialAdminIndex::class)->name('official-index');
+    Route::post('/official/create', \App\Actions\Officials\Admin\CreateAction::class)->name('official-create');
+    Route::get('/official/create/view', \App\Actions\Officials\Admin\OfficialCreateViewIndex::class)->name('official-create-view');
+    Route::post('/official/delete/{official}', \App\Actions\Officials\Admin\DeleteOfficialAction::class)->name('official-delete');
+    Route::post('/official/update/{official}', \App\Actions\Officials\Admin\EditOfficialAction::class)->name('official-update');
+    Route::get('/official/edit/view/{official}', \App\Actions\Officials\Admin\OfficialEditView::class)->name('official-edit-view');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     Route::get('/kitchen/index', \App\Actions\Kitchens\Admin\KitchenAdminIndex::class)->name('kitchen-index');
@@ -291,6 +311,9 @@ Route::prefix('auth')->group(function () {
     Route::get('/chamber/edit/view/{chamber}', \App\Actions\Chambers\Admin\ChamberEditView::class)->name('chamber-edit-view');
     Route::post('/chamber/update/{chamber}', \App\Actions\Chambers\Admin\EditChamberAction::class)->name('chamber-update');
     Route::post('/chamber/delete/{chamber}', \App\Actions\Chambers\Admin\DeleteChamberAction::class)->name('chamber-delete');
+
+
+
 
 
 
