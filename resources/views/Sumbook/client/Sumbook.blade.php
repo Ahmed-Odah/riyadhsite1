@@ -7,18 +7,23 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-11">
             @foreach($sumbooks as $sumbook)
                 <div class="bg-white rounded-2xl border border-gray-200 shadow hover:shadow-md transition duration-300 overflow-hidden flex flex-col">
-                    <!-- الرابط يأخذك إلى صفحة الملخص -->
-                    <a href="{{ route('sumbook.show', $sumbook->id) }}" target="_blank" class="block w-full">
-                        <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/4;">
-                            <!-- 👆 نسبة الطول للعرض ثابتة (مثل كتاب) -->
-                            <img src="{{ asset('public/storage/' . $sumbook->image) }}"
-                                 alt="{{ $sumbook->title }}"
-                                 class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition duration-300 rounded-t-2xl" />
-                        </div>
-                    </a>
 
-                    <div class="p-4 text-right flex-grow">
-                        <h2 class="text-lg font-semibold text-gray-900 truncate">{{ $sumbook->title }}</h2>
+                    <!-- صورة الكتاب -->
+                    <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/4;">
+                        <img src="{{ asset('public/storage/' . $sumbook->image) }}"
+                             alt="{{ $sumbook->title }}"
+                             class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition duration-300 rounded-t-2xl" />
+                    </div>
+
+                    <!-- النص + الزر -->
+                    <div class="p-4 text-right flex flex-col justify-between flex-grow">
+                        <h2 class="text-lg font-semibold text-gray-900 truncate mb-3">{{ $sumbook->title }}</h2>
+
+                        <!-- زر الاستعراض -->
+                        <a href="{{ route('sumbook.show', $sumbook->id) }}" target="_blank"
+                           class="inline-block text-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-xl shadow-md hover:from-blue-600 hover:to-indigo-700 transition duration-300">
+                            استعراض
+                        </a>
                     </div>
                 </div>
             @endforeach
