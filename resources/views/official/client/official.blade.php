@@ -12,7 +12,7 @@
                         <button @click="open = true; image = @js(asset('public/storage/' . $official->image))" class="block w-full">
                             <img src="{{ asset('public/storage/' . $official->image) }}"
                                  alt="{{ $official->title }}"
-                                 class="w-full h-64 object-cover hover:scale-105 transition duration-300" />
+                                 class="w-full h-full object-cover hover:scale-105 transition duration-300" />
                         </button>
 
                         <div class="p-4 text-right">
