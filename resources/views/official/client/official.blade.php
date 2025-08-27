@@ -29,9 +29,10 @@
              x-transition.opacity
              class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
              @click="open = false">
-            <div @click.stop class="relative">
-                <!-- الصورة مصغرة ومضبوطة بالعرض -->
-                <img :src="image" class="max-w-4xl w-full max-h-[80vh] object-contain rounded-lg shadow-lg">
+            <div @click.stop class="relative flex items-center justify-center">
+                <!-- الصورة وسط ومصغرة -->
+                <img :src="image"
+                     class="max-w-3xl w-full max-h-[80vh] object-contain rounded-lg shadow-lg mx-auto">
 
                 <!-- زر الإغلاق -->
                 <button @click="open = false"
