@@ -18,7 +18,6 @@
             </div>
 
             <script>
-                // اختفاء الإشعار بعد 4 ثواني
                 setTimeout(() => {
                     const alert = document.getElementById('successAlert');
                     if(alert) alert.remove();
@@ -27,49 +26,77 @@
         @endif
 
         {{-- زر إضافة صورة جديدة --}}
-        <div class="bg-green-200 w-56 flex justify-center items-center mb-4 rounded-xl hover:scale-100 duration-200 ease-in-out">
-            <a href="{{ route('coin-create-view') }}">
-                <h1 class="text-lg font-bold p-3">اضافة صورة جديدة</h1>
+        <div class="mb-6">
+            <a href="{{ route('coin-create-view') }}"
+               class="inline-flex items-center bg-green-200 w-56 justify-center text-green-900 font-bold rounded-xl hover:scale-100 duration-200 ease-in-out px-4 py-3 shadow">
+                إضافة صورة جديدة
             </a>
         </div>
 
         {{-- جدول العملات --}}
-        <div class="overflow-x-auto">
-            <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow rounded-t-xl">
-                <thead class="bg-gray-100 text-gray-700 rounded-t-xl">
+        <div class="overflow-x-auto rounded-lg shadow border border-gray-300">
+            <table class="min-w-full bg-white table-fixed border-collapse border border-gray-300">
+                <thead class="bg-gray-100 text-gray-700 border-b border-gray-300">
                 <tr>
-                    <th class="px-4 py-2 text-right border-b">العمليات</th>
-                    <th class="px-4 py-2 text-right border-b">الانشاء</th>
-                    <th class="px-4 py-2 text-right border-b">الصورة</th>
-                    <th class="px-4 py-2 text-right border-b">الوصف</th>
-                    <th class="px-4 py-2 text-right border-b">العنوان</th>
-                    <th class="px-4 py-2 text-right border-b">الدولة</th> {{-- العمود الجديد --}}
+                    <th class="w-36 px-4 py-3 text-right text-sm font-semibold border-l border-gray-300">العمليات</th>
+                    <th class="w-32 px-4 py-3 text-right text-sm font-semibold border-l border-gray-300">تاريخ الإنشاء</th>
+                    <th class="w-24 px-4 py-3 text-center text-sm font-semibold border-l border-gray-300">الصورة</th>
+                    <th class="w-2/5 px-4 py-3 text-right text-sm font-semibold border-l border-gray-300">الوصف</th>
+                    <th class="w-1/4 px-4 py-3 text-right text-sm font-semibold border-l border-gray-300">العنوان</th>
+                    <th class="w-32 px-4 py-3 text-right text-sm font-semibold border-l border-gray-300">الدولة</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="divide-y divide-gray-200 text-gray-800 text-sm">
                 @foreach($coins as $coin)
-                    <tr class="text-gray-800 text-right">
-                        <td class="px-4 py-2 border-b">
-                            <form action="{{ route('coin-delete', $coin->id) }}" method="POST" onsubmit="return confirm('هل أنت متأكد من الحذف؟');">
-                                @csrf
-                                <button type="submit" class="text-red-500 hover:underline">حذف</button>
-                            </form>
-                            <form action="{{ route('coin-edit-view', $coin->id) }}">
-                                @csrf
-                                <button type="submit" class="text-blue-500 hover:underline">تعديل</button>
-                            </form>
+                    <tr class="hover:bg-gray-50 transition">
+                        <!-- العمليات -->
+                        <td class="px-4 py-3 text-right border border-gray-300 align-middle">
+                            <div class="flex gap-2 justify-end">
+                                <form action="{{ route('coin-delete', $coin->id) }}" method="POST" onsubmit="return confirm('هل أنت متأكد من الحذف؟');">
+                                    @csrf
+                                    <button type="submit"
+                                            class="px-3 py-1.5 bg-red-500 text-white rounded-md hover:bg-red-600 transition text-sm font-medium">
+                                        حذف
+                                    </button>
+                                </form>
+                                <form action="{{ route('coin-edit-view', $coin->id) }}" method="GET">
+                                    <button type="submit"
+                                            class="px-3 py-1.5 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition text-sm font-medium">
+                                        تعديل
+                                    </button>
+                                </form>
+                            </div>
                         </td>
-                        <td class="px-4 py-2 border-b">{{ $coin->created_at->format('Y-m-d') }}</td>
-                        <td class="px-4 py-2 border-b">
+
+                        <!-- تاريخ الإنشاء -->
+                        <td class="px-4 py-3 text-right border border-gray-300 align-middle">
+                            {{ $coin->created_at->format('Y-m-d') }}
+                        </td>
+
+                        <!-- الصورة -->
+                        <td class="px-4 py-3 text-center border border-gray-300 align-middle">
                             @if($coin->image)
-                                <img src="{{ asset('public/storage/' . $coin->image) }}" class="h-16 w-16 object-cover rounded" alt="غلاف">
+                                <img src="{{ asset('public/storage/' . $coin->image) }}"
+                                     class="h-16 w-16 object-cover rounded-lg border border-gray-200 mx-auto" alt="غلاف">
                             @else
-                                لا يوجد
+                                <span class="text-gray-400 italic text-sm">لا يوجد</span>
                             @endif
                         </td>
-                        <td class="px-4 py-2 border-b">{{ Str::limit($coin->description, 50) }}</td>
-                        <td class="px-4 py-2 border-b">{{ $coin->title }}</td>
-                        <td class="px-4 py-2 border-b">{{ $coin->country }}</td> {{-- عرض الدولة --}}
+
+                        <!-- الوصف -->
+                        <td class="px-4 py-3 text-right border border-gray-300 align-middle whitespace-normal break-words">
+                            {{ Str::limit($coin->description, 80) }}
+                        </td>
+
+                        <!-- العنوان -->
+                        <td class="px-4 py-3 font-semibold text-gray-900 text-right border border-gray-300 align-middle">
+                            {{ $coin->title }}
+                        </td>
+
+                        <!-- الدولة -->
+                        <td class="px-4 py-3 text-right border border-gray-300 align-middle">
+                            {{ $coin->country }}
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
