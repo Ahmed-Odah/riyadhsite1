@@ -22,16 +22,9 @@
                     <p class="text-gray-600 text-sm mb-6 line-clamp-5">
                         {{ $book->description }}
                     </p>
+                    <!-- زر عرض الكتاب تمت إزالته -->
                 </div>
             </div>
         @endforeach
-    </div>
-
-    <!-- زر عرض كل الكتب -->
-    <div class="flex justify-center mt-20">
-        <a href="{{ route('books.index') }}"
-           class="bg-indigo-900 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-colors duration-300">
-            عرض جميع الكتب
-        </a>
     </div>
 </div>
