@@ -25,26 +25,23 @@
         </div>
 
         <!-- نافذة التكبير -->
-        <!-- نافذة التكبير -->
         <div x-show="open"
              x-transition.opacity
-             style="background-color: rgba(0, 0, 0, 0.8);"
+             style="background-color: rgba(0, 0, 0, 0.5);"
              class="fixed inset-0 flex items-center justify-center z-50 p-4"
              @click="open = false">
-
-            <div @click.stop class="relative flex items-center justify-center w-full h-full max-h-screen">
-                <!-- الصورة وسط ومقاسة بشكل كامل -->
+            <div @click.stop class="relative flex items-center justify-center">
+                <!-- الصورة وسط ومصغرة -->
                 <img :src="image"
-                     class="max-w-full max-h-full object-contain rounded-lg shadow-lg mx-auto">
+                     class="max-w-3xl w-full max-h-[80vh] object-contain rounded-lg shadow-lg mx-auto">
 
                 <!-- زر الإغلاق -->
                 <button @click="open = false"
-                        class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300">
+                        class="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300">
                     &times;
                 </button>
             </div>
         </div>
-
 
     </div>
 @endsection
