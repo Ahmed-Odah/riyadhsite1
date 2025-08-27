@@ -1,4 +1,4 @@
-<div class="bg-gradient-to-br from-gray-100 via-gray-50 to-white min-h-screen py-24 px-6 sm:px-12 lg:px-24">
+<div class="bg-gradient-to-br from-gray-50 via-white to-gray-100 min-h-screen py-24 px-8 sm:px-16 lg:px-32">
     <h1 class="text-4xl sm:text-5xl font-extrabold mb-12 text-center text-gray-900 tracking-tight">
         شهاداتي ودوراتي
     </h1>
@@ -14,8 +14,7 @@
                         alt="صورة الشهادة"
                         class="w-full aspect-[4/3] object-cover object-center transition duration-700 transform group-hover:scale-110"
                     />
-                    <!-- Overlay effect on hover -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-t-3xl"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-t-3xl"></div>
                 </div>
 
                 <!-- Text content -->
@@ -37,10 +36,10 @@
 </div>
 
 <!-- Modal for enlarged image -->
-<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
-    <div class="relative max-w-4xl w-full">
-        <span class="absolute top-3 right-3 text-white text-4xl cursor-pointer z-50 hover:text-gray-300" onclick="closeModal()">&times;</span>
-        <img id="modalImage" class="w-full h-auto rounded-2xl shadow-2xl object-contain mx-auto" src="" alt="شهادة">
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50 p-6">
+    <div class="relative max-w-6xl w-full">
+        <span class="absolute top-4 right-4 text-white text-4xl cursor-pointer z-50 hover:text-gray-300" onclick="closeModal()">&times;</span>
+        <img id="modalImage" class="w-full h-auto rounded-2xl shadow-2xl object-contain mx-auto max-h-[90vh] max-w-[90vw]" src="" alt="شهادة">
     </div>
 </div>
 
