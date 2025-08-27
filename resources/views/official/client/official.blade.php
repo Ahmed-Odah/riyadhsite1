@@ -27,7 +27,7 @@
         <!-- نافذة التكبير -->
         <div x-show="open"
              x-transition.opacity
-             style="background-color: rgba(0, 0, 0, 0.3);"
+             style="background-color: rgba(0, 0, 0, 0.5);"
              class="fixed inset-0 flex items-center justify-center z-50 p-4"
              @click="open = false">
             <div @click.stop class="relative flex items-center justify-center">
