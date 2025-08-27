@@ -27,11 +27,17 @@
         <!-- نافذة التكبير -->
         <div x-show="open"
              x-transition.opacity
-             class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+             class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
              @click="open = false">
             <div @click.stop class="relative">
-                <img :src="image" class="max-w-full max-h-screen rounded-lg shadow-lg">
-                <button @click="open = false" class="absolute top-2 right-2 text-white text-2xl font-bold">&times;</button>
+                <!-- الصورة مصغرة ومضبوطة بالعرض -->
+                <img :src="image" class="max-w-4xl w-full max-h-[80vh] object-contain rounded-lg shadow-lg">
+
+                <!-- زر الإغلاق -->
+                <button @click="open = false"
+                        class="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300">
+                    &times;
+                </button>
             </div>
         </div>
     </div>
