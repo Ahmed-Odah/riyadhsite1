@@ -27,8 +27,8 @@
         @endforeach
     </div>
 
-    <!-- زر عرض كل الكتب مع مسافة أكبر من الكتب -->
-    <div class="flex justify-center mt-32">
+    <!-- زر عرض كل الكتب -->
+    <div class="flex justify-center mt-18">
         <a href="{{ route('books.index') }}"
            class="bg-indigo-900 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-colors duration-300">
             عرض جميع الكتب
