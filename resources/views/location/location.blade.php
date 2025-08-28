@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="bg-gray-50 min-h-screen py-16 px-6 lg:px-20">
-        <h1 class="text-4xl font-extrabold text-center text-gray-800 mt-8 mb-12">
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mt-8 mb-16">
             🗺️ خريطة الموقع
         </h1>
 
