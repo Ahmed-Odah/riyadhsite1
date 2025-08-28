@@ -70,7 +70,7 @@
 
             <ul class="mt-6 space-y-4">
                 <li>
-                    <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>  خريطة الموقع </a>
+                    <a href='location' class='hover:text-gray-800 text-gray-600 text-sm'>  خريطة الموقع </a>
                 </li>
 
             </ul>
