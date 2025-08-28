@@ -65,16 +65,16 @@
             </ul>
         </div>
 
-        <div class="max-lg:min-w-[180px] bg-gradient-to-br from-blue-50 to-blue-100 p-5 rounded-2xl shadow-md">
-            <h4 class="text-blue-700 font-bold text-lg flex items-center gap-2">
-                🗺️ خريطة الموقع
-            </h4>
+        <div class="max-lg:min-w-[140px]">
+            <h4 class="text-gray-800 font-semibold text-base relative max-sm:cursor-pointer">اكتشف</h4>
 
-            <div class="mt-6 space-y-3">
-                <!-- ضع هنا الروابط أو المحتوى اللي تريده -->
-            </div>
+            <ul class="mt-6 space-y-4">
+                <li>
+                    <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>  خريطة الموقع </a>
+                </li>
+
+            </ul>
         </div>
-
 
         <div class="max-lg:min-w-[140px]">
             <h4 class="text-gray-800 font-semibold text-base relative max-sm:cursor-pointer">محتوى الموقع </h4>
