@@ -70,20 +70,9 @@
 
             <ul class="mt-6 space-y-4">
                 <li>
-                    <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>  كتبي </a>
+                    <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>  خريطة الموقع </a>
                 </li>
-                <li>
-                    <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'> صوري </a>
-                </li>
-                <li>
-                    <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>لوحاتي  </a>
-                </li>
-                <li>
-                    <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>  الأعمال التخصصية</a>
-                </li>
-                <li>
-                    <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'> مدونتي </a>
-                </li>
+
             </ul>
         </div>
 
