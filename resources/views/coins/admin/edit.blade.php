@@ -12,29 +12,29 @@
             <div class="space-y-2">
                 <label for="title" class="block font-medium text-gray-700">عنوان العملة</label>
                 <input dir="rtl" value="{{ $coin->title }}" type="text" id="title" name="title"
-                       class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition shadow-sm hover:shadow-md">
+                       class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition shadow-sm hover:shadow-md text-lg">
             </div>
 
             {{-- وصف العملة --}}
             <div class="space-y-2">
                 <label for="description" class="block font-medium text-gray-700">وصف العملة</label>
                 <textarea dir="rtl" id="description" name="description" rows="4"
-                          class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition shadow-sm hover:shadow-md">{{ $coin->description }}</textarea>
+                          class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition shadow-sm hover:shadow-md text-lg">{{ $coin->description }}</textarea>
             </div>
 
             {{-- الدولة --}}
             <div class="space-y-2">
                 <label for="country" class="block font-medium text-gray-700">الدولة</label>
                 <input dir="rtl" value="{{ $coin->country }}" type="text" id="country" name="country"
-                       class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition shadow-sm hover:shadow-md">
+                       class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition shadow-sm hover:shadow-md text-lg">
             </div>
 
             {{-- الصور الأساسية --}}
             <div class="space-y-4">
                 @if($coin->image)
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('public/storage/' . $coin->image) }}" class="h-20 w-20 rounded-xl shadow object-cover">
-                        <span class="text-gray-600 font-medium">الصورة الحالية للوجه</span>
+                        <img src="{{ asset('public/storage/' . $coin->image) }}" class="h-32 w-32 rounded-xl shadow object-cover">
+                        <span class="text-gray-600 font-medium text-lg">الصورة الحالية للوجه</span>
                     </div>
                 @endif
                 <input type="file" name="image" accept="image/*,application/pdf"
@@ -42,8 +42,8 @@
 
                 @if($coin->back_image)
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('public/storage/' . $coin->back_image) }}" class="h-20 w-20 rounded-xl shadow object-cover">
-                        <span class="text-gray-600 font-medium">الصورة الحالية للظهر</span>
+                        <img src="{{ asset('public/storage/' . $coin->back_image) }}" class="h-32 w-32 rounded-xl shadow object-cover">
+                        <span class="text-gray-600 font-medium text-lg">الصورة الحالية للظهر</span>
                     </div>
                 @endif
                 <input type="file" name="back_image" accept="image/*,application/pdf"
@@ -55,7 +55,7 @@
                 <div class="space-y-6">
                     <h3 class="font-semibold text-lg text-gray-800 border-b pb-2">العملات المشابهة الحالية</h3>
                     @foreach($coin->relatedCoins as $related)
-                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4 border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-6 border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
 
                             <input type="hidden" name="related_id[]" value="{{ $related->id }}">
 
@@ -63,27 +63,27 @@
                             <div class="flex-1 w-full">
                                 <label class="block mb-1 font-medium text-gray-700">عنوان العملة</label>
                                 <input type="text" name="related_title[{{ $related->id }}]" value="{{ $related->title }}"
-                                       class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition shadow-sm hover:shadow-md" placeholder="عنوان العملة">
+                                       class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition shadow-sm hover:shadow-md text-lg" placeholder="عنوان العملة">
                             </div>
 
                             {{-- صورة الوجه --}}
                             <div class="flex flex-col items-center gap-2">
                                 @if($related->image)
-                                    <img src="{{ asset('public/storage/' . $related->image) }}" class="h-16 w-16 rounded-xl shadow object-cover">
+                                    <img src="{{ asset('public/storage/' . $related->image) }}" class="h-24 w-24 rounded-xl shadow object-cover">
                                     <span class="text-gray-600 text-sm">الوجه الحالي</span>
                                 @endif
                                 <input type="file" name="related_image[{{ $related->id }}]" accept="image/*,application/pdf"
-                                       class="w-full border border-gray-300 rounded-xl px-2 py-1 cursor-pointer hover:border-blue-400 hover:shadow-md transition hover:scale-105">
+                                       class="w-full border border-gray-300 rounded-xl px-3 py-2 cursor-pointer hover:border-blue-400 hover:shadow-md transition hover:scale-105">
                             </div>
 
                             {{-- صورة الظهر --}}
                             <div class="flex flex-col items-center gap-2">
                                 @if(isset($related->back_image))
-                                    <img src="{{ asset('public/storage/' . $related->back_image) }}" class="h-16 w-16 rounded-xl shadow object-cover">
+                                    <img src="{{ asset('public/storage/' . $related->back_image) }}" class="h-24 w-24 rounded-xl shadow object-cover">
                                     <span class="text-gray-600 text-sm">الظهر الحالي</span>
                                 @endif
                                 <input type="file" name="related_back_image[{{ $related->id }}]" accept="image/*,application/pdf"
-                                       class="w-full border border-gray-300 rounded-xl px-2 py-1 cursor-pointer hover:border-blue-400 hover:shadow-md transition hover:scale-105">
+                                       class="w-full border border-gray-300 rounded-xl px-3 py-2 cursor-pointer hover:border-blue-400 hover:shadow-md transition hover:scale-105">
                             </div>
                         </div>
                     @endforeach
@@ -94,7 +94,7 @@
             <div class="border border-gray-200 rounded-2xl p-6 shadow-sm space-y-4 hover:shadow-md transition mt-6">
                 <h3 class="font-semibold text-lg text-gray-800 border-b pb-2">إضافة عملة مشابهة جديدة</h3>
                 <input type="text" name="new_related_title" placeholder="عنوان العملة"
-                       class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition shadow-sm hover:shadow-md">
+                       class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition shadow-sm hover:shadow-md text-lg">
 
                 <input type="file" name="new_related_image" accept="image/*,application/pdf"
                        class="w-full border border-gray-300 rounded-xl px-3 py-2 cursor-pointer hover:border-blue-400 hover:shadow-md transition hover:scale-105">
@@ -105,7 +105,7 @@
 
             {{-- زر الحفظ --}}
             <div>
-                <button type="submit" class="w-full bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition font-semibold shadow-md hover:shadow-lg">
+                <button type="submit" class="w-full bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition font-semibold shadow-md hover:shadow-lg text-lg">
                     تحديث العملة
                 </button>
             </div>
