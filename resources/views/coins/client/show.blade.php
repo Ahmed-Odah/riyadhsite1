@@ -1,11 +1,11 @@
 @extends('layout.master')
 @section('content')
 
-    <div x-data="{ showBack: false, modalOpen: false, modalBack: false }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
+    <div x-data="{ smallBack: false, modalOpen: false, modalBack: false }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
         {{-- البطاقة الصغيرة --}}
-        <div class="max-w-4xl w-full perspective relative cursor-pointer">
-            <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': showBack}">
+        <div class="max-w-4xl w-full perspective relative">
+            <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': smallBack}">
 
                 {{-- الوجه --}}
                 @if($coin->image)
@@ -23,8 +23,10 @@
 
                 {{-- أزرار التحكم --}}
                 <div class="absolute top-2 right-2 flex space-x-2">
-                    <button @click.stop="showBack = !showBack" class="px-3 py-1 bg-white rounded shadow">قلب</button>
-                    <button @click.stop="modalOpen = true" class="px-3 py-1 bg-blue-600 text-white rounded shadow">تكبير</button>
+                    <!-- زر قلب البطاقة الصغيرة -->
+                    <button @click="smallBack = !smallBack" class="px-3 py-1 bg-white rounded shadow z-10">قلب</button>
+                    <!-- زر فتح النافذة -->
+                    <button @click="modalOpen = true" class="px-3 py-1 bg-blue-600 text-white rounded shadow z-10">تكبير</button>
                 </div>
             </div>
         </div>
