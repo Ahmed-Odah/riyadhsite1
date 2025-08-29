@@ -9,7 +9,7 @@
             {{-- صورة الوجه --}}
             @if($coin->image)
                 <button @click="open = true; image='{{ asset('storage/' . $coin->image) }}'" class="w-full mb-4">
-                    <img src="{{ asset('storage/' . $coin->image) }}"
+                    <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
                          class="w-full h-96 object-cover rounded-3xl shadow-xl hover:scale-105 transition-transform duration-300">
                 </button>
@@ -18,7 +18,7 @@
             {{-- صورة الظهر --}}
             @if($coin->back_image)
                 <button @click="open = true; image='{{ asset('storage/' . $coin->back_image) }}'" class="w-full mb-4">
-                    <img src="{{ asset('storage/' . $coin->back_image) }}"
+                    <img src="{{ asset('public/storage/' . $coin->back_image) }}"
                          alt="{{ $coin->title }} - Back"
                          class="w-full h-96 object-cover rounded-3xl shadow-xl hover:scale-105 transition-transform duration-300">
                 </button>
