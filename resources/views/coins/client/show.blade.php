@@ -7,25 +7,23 @@
         <div class="max-w-4xl w-full perspective">
             <div
                 @click="showBack = !showBack; open = true"
-                class="relative w-full h-96 cursor-pointer transform transition-transform duration-500"
+                class="flip-card-inner"
                 :class="{'rotate-y-180': showBack}"
             >
                 {{-- الوجه --}}
                 @if($coin->image)
-                    <img src="{{ asset('public/storage/' . $coin->image) }}"
-                         alt="{{ $coin->title }}"
-                         class="absolute w-full h-full object-cover rounded-3xl backface-hidden shadow-xl">
+                    <img src="{{ asset('public/storage/' . $coin->image) }}" class="flip-card-front shadow-xl">
                 @endif
 
                 {{-- الظهر --}}
                 @if($coin->back_image)
-                    <img src="{{ asset('public/storage/' . $coin->back_image) }}"
-                         alt="{{ $coin->title }} - Back"
-                         class="absolute w-full h-full object-cover rounded-3xl backface-hidden rotate-y-180 shadow-xl">
+                    <img src="{{ asset('public/storage/' . $coin->back_image) }}" class="flip-card-back shadow-xl">
                 @endif
             </div>
+        </div>
 
-            {{-- العنوان --}}
+
+        {{-- العنوان --}}
             <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-6 mb-4 text-center">{{ $coin->title }}</h1>
 
             {{-- الوصف --}}
