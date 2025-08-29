@@ -2,12 +2,11 @@
 @section('content')
 
     <div x-data="{ showBack: false, modalOpen: false, modalBack: false }"
-         class="bg-gray-50 min-h-screen py-48 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
-        {{-- بدلنا py-36 إلى py-48 عشان المحتوى ينزل لتحت أكثر --}}
+         class="bg-gray-50 min-h-screen py-36 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
+        {{-- لاحظ: بدلنا py-24 إلى py-36 عشان ينزل المحتوى لتحت أكثر --}}
 
         {{-- البطاقة الصغيرة --}}
-        <div class="max-w-4xl w-full perspective cursor-pointer mt-20" @click="modalOpen = true">
-            {{-- بدلنا mt-10 إلى mt-20 --}}
+        <div class="max-w-4xl w-full perspective cursor-pointer mt-10" @click="modalOpen = true">
             <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': showBack}" @click.stop="showBack = !showBack">
 
                 {{-- الوجه --}}
@@ -27,8 +26,8 @@
         </div>
 
         {{-- العنوان والوصف والدولة --}}
-        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-16 mb-4 text-center">{{ $coin->title }}</h1>
-        {{-- بدلنا mt-12 إلى mt-16 عشان ينزل العنوان أكثر --}}
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-12 mb-4 text-center">{{ $coin->title }}</h1>
+        {{-- لاحظ زودنا mt-12 عشان ينزل العنوان تحت البطاقة بمسافة أكبر --}}
 
         @if($coin->description)
             <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-6 text-justify">{{ $coin->description }}</p>
@@ -41,8 +40,7 @@
 
         {{-- العملات المشابهة --}}
         @if($coin->relatedCoins->count() > 0)
-            <div class="max-w-6xl w-full px-4 sm:px-6 lg:px-20 mt-16">
-                {{-- بدلنا mt-10 إلى mt-16 --}}
+            <div class="max-w-6xl w-full px-4 sm:px-6 lg:px-20 mt-10">
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     @foreach($coin->relatedCoins as $related)
                         <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 overflow-hidden group">
@@ -59,9 +57,9 @@
         @endif
 
         {{-- نافذة تكبير الصور --}}
-        <div x-show="modalOpen" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
-            <div @click.away="modalOpen = false" @click.stop class="relative w-full max-w-3xl perspective cursor-pointer mt-28" @click="modalBack = !modalBack">
-                {{-- بدلنا mt-20 إلى mt-28 --}}
+        <div x-show="modalOpen" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4" @click="modalOpen = false">
+            <div @click.stop class="relative w-full max-w-3xl perspective cursor-pointer mt-20" @click="modalBack = !modalBack">
+                {{-- أضفنا mt-20 عشان المودال نفسه ينزل تحت شوي --}}
                 <div class="flip-card-inner relative w-full h-[70vh] transition-transform duration-500" :class="{'rotate-y-180': modalBack}">
                     <img src="{{ asset('public/storage/' . $coin->image) }}" class="flip-card-front absolute w-full h-full object-contain backface-hidden rounded-xl shadow-2xl">
                     <img src="{{ asset('public/storage/' . $coin->back_image) }}" class="flip-card-back absolute w-full h-full object-contain backface-hidden rotate-y-180 rounded-xl shadow-2xl">
