@@ -12,14 +12,14 @@
             >
                 {{-- الوجه --}}
                 @if($coin->image)
-                    <img src="{{ asset('storage/' . $coin->image) }}"
+                    <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
                          class="absolute w-full h-full object-cover rounded-3xl backface-hidden shadow-xl">
                 @endif
 
                 {{-- الظهر --}}
                 @if($coin->back_image)
-                    <img src="{{ asset('storage/' . $coin->back_image) }}"
+                    <img src="{{ asset('public/storage/' . $coin->back_image) }}"
                          alt="{{ $coin->title }} - Back"
                          class="absolute w-full h-full object-cover rounded-3xl backface-hidden rotate-y-180 shadow-xl">
                 @endif
@@ -51,7 +51,7 @@
                     @foreach($coin->relatedCoins as $related)
                         <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 overflow-hidden group">
                             @if($related->image)
-                                <img src="{{ asset('storage/' . $related->image) }}"
+                                <img src="{{ asset('public/storage/' . $related->image) }}"
                                      alt="{{ $related->title }}"
                                      class="w-full h-64 object-cover">
                             @endif
@@ -72,7 +72,7 @@
              class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
              @click="open = false">
             <div @click.stop class="relative w-full max-w-3xl">
-                <img :src="showBack ? '{{ asset('storage/' . $coin->back_image) }}' : '{{ asset('storage/' . $coin->image) }}'"
+                <img :src="showBack ? '{{ asset('public/storage/' . $coin->back_image) }}' : '{{ asset('storage/' . $coin->image) }}'"
                      class="w-full h-auto max-h-[70vh] object-contain rounded-xl shadow-2xl mx-auto">
                 <button @click="open = false" class="absolute top-3 right-3 text-white text-3xl font-extrabold">&times;</button>
             </div>
