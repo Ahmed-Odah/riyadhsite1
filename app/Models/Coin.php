@@ -9,6 +9,7 @@ class Coin extends Model
         'title',
         'description',
         'image',
+        'back_image', // أضف هذا العمود
         'country',
     ];
 
