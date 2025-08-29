@@ -10,19 +10,19 @@
             selectedCoin = {
                 id: {{ $coin->id }},
                 title: '{{ $coin->title }}',
-                image: '{{ $coin->image ? asset('storage/' . $coin->image) : '' }}',
+                image: '{{ $coin->image ? asset('public/storage/' . $coin->image) : '' }}',
                 back_image: '{{ $coin->back_image ? asset('storage/' . $coin->back_image) : '' }}'
             };
             modalBack = false;
          ">
             <div class="flip-card-inner relative w-full h-96 transition-transform duration-500">
                 @if($coin->image)
-                    <img src="{{ asset('storage/' . $coin->image) }}"
+                    <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
                          class="flip-card-front absolute w-full h-full object-cover rounded-3xl backface-hidden shadow-xl">
                 @endif
                 @if($coin->back_image)
-                    <img src="{{ asset('storage/' . $coin->back_image) }}"
+                    <img src="{{ asset('public/storage/' . $coin->back_image) }}"
                          alt="{{ $coin->title }} - Back"
                          class="flip-card-back absolute w-full h-full object-cover rounded-3xl backface-hidden rotate-y-180 shadow-xl">
                 @endif
@@ -48,19 +48,19 @@
                             selectedCoin = {
                                 id: {{ $related->id }},
                                 title: '{{ $related->title }}',
-                                image: '{{ $related->image ? asset('storage/' . $related->image) : '' }}',
-                                back_image: '{{ $related->back_image ? asset('storage/' . $related->back_image) : '' }}'
+                                image: '{{ $related->image ? asset('public/storage/' . $related->image) : '' }}',
+                                back_image: '{{ $related->back_image ? asset('public/storage/' . $related->back_image) : '' }}'
                             };
                             modalBack = false;
                          ">
                             <div class="flip-card-inner relative w-full h-64 transition-transform duration-500">
                                 @if($related->image)
-                                    <img src="{{ asset('storage/' . $related->image) }}"
+                                    <img src="{{ asset('public/storage/' . $related->image) }}"
                                          alt="{{ $related->title }}"
                                          class="flip-card-front absolute w-full h-full object-cover rounded-2xl backface-hidden shadow-lg">
                                 @endif
                                 @if(isset($related->back_image))
-                                    <img src="{{ asset('storage/' . $related->back_image) }}"
+                                    <img src="{{ asset('public/storage/' . $related->back_image) }}"
                                          alt="{{ $related->title }} - Back"
                                          class="flip-card-back absolute w-full h-full object-cover rounded-2xl backface-hidden rotate-y-180 shadow-lg">
                                 @endif
