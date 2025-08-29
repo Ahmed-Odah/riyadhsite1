@@ -18,6 +18,7 @@ class EditCoinAction
             'description' => 'nullable|string',
             'country' => 'required|string|max:255',
             'image' => 'nullable|image',
+            'back_image' => 'nullable|image', // <-- تم الإضافة هنا
             'related_id' => 'nullable|array',
             'related_title.*' => 'nullable|string|max:255',
             'related_image.*' => 'nullable|image',
@@ -31,8 +32,14 @@ class EditCoinAction
             $coin->description = $request->description;
             $coin->country = $request->country;
 
+            // رفع صورة الوجه الجديدة إذا وجدت
             if ($request->hasFile('image')) {
                 $coin->image = $request->file('image')->store('coins', 'public');
+            }
+
+            // رفع صورة الظهر الجديدة إذا وجدت
+            if ($request->hasFile('back_image')) {
+                $coin->back_image = $request->file('back_image')->store('coins', 'public');
             }
 
             $coin->save();
