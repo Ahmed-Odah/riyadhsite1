@@ -65,10 +65,10 @@
             <div @click.stop class="relative w-full max-w-3xl perspective cursor-pointer" x-data="{ modalBack: false }" :key="selectedCoin?.id" @click="modalBack = !modalBack">
                 <div class="flip-card-inner relative w-full h-[70vh] transition-transform duration-500" :class="{'rotate-y-180': modalBack}">
                     <template x-if="selectedCoin?.image">
-                        <img :src="'/storage/' + selectedCoin.image" class="flip-card-front absolute w-full h-full object-contain backface-hidden rounded-xl shadow-2xl">
+                        <img :src="'public//storage/' + selectedCoin.image" class="flip-card-front absolute w-full h-full object-contain backface-hidden rounded-xl shadow-2xl">
                     </template>
                     <template x-if="selectedCoin?.back_image">
-                        <img :src="'/storage/' + selectedCoin.back_image" class="flip-card-back absolute w-full h-full object-contain backface-hidden rotate-y-180 rounded-xl shadow-2xl">
+                        <img :src="'public//storage/' + selectedCoin.back_image" class="flip-card-back absolute w-full h-full object-contain backface-hidden rotate-y-180 rounded-xl shadow-2xl">
                     </template>
                 </div>
                 <button @click="modalOpen = false" class="absolute top-3 right-3 text-white text-3xl font-extrabold">&times;</button>
