@@ -4,7 +4,7 @@
     <div x-data="{ smallBack: false, modalOpen: false, modalBack: false }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
         {{-- البطاقة الصغيرة --}}
-        <div class="max-w-4xl w-full perspective relative">
+        <div class="max-w-4xl w-full perspective relative cursor-pointer">
             <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': smallBack}">
 
                 {{-- الوجه --}}
@@ -23,9 +23,7 @@
 
                 {{-- أزرار التحكم --}}
                 <div class="absolute top-2 right-2 flex space-x-2 z-10">
-                    <!-- زر قلب البطاقة الصغيرة -->
                     <button @click.stop="smallBack = !smallBack" class="px-3 py-1 bg-white rounded shadow">قلب</button>
-                    <!-- زر فتح النافذة -->
                     <button @click.stop="modalOpen = true; modalBack = false" class="px-3 py-1 bg-blue-600 text-white rounded shadow">تكبير</button>
                 </div>
             </div>
@@ -74,13 +72,13 @@
 
     </div>
 
-    {{-- CSS --}}
     <style>
         .perspective {
             perspective: 1000px;
         }
         .flip-card-inner {
             transform-style: preserve-3d;
+            transition: transform 0.5s;
         }
         .flip-card-front, .flip-card-back {
             backface-visibility: hidden;
