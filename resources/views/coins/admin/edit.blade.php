@@ -33,7 +33,7 @@
             <div class="space-y-4">
                 @if($coin->image)
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('public/storage/' . $coin->image) }}" class="h-32 w-32 rounded-xl shadow object-cover">
+                        <img src="{{ asset('public/storage/' . $coin->image) }}" class="h-24 w-24 rounded-xl shadow object-cover">
                         <span class="text-gray-600 font-medium text-lg">الصورة الحالية للوجه</span>
                     </div>
                 @endif
@@ -42,7 +42,7 @@
 
                 @if($coin->back_image)
                     <div class="flex items-center gap-4">
-                        <img src="{{ asset('public/storage/' . $coin->back_image) }}" class="h-32 w-32 rounded-xl shadow object-cover">
+                        <img src="{{ asset('public/storage/' . $coin->back_image) }}" class="h-24 w-24 rounded-xl shadow object-cover">
                         <span class="text-gray-600 font-medium text-lg">الصورة الحالية للظهر</span>
                     </div>
                 @endif
