@@ -14,7 +14,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span class="font-semibold">تم حفظ الصورة بنجاح!</span>
+                <span class="font-semibold">تم حفظ العملة بنجاح!</span>
             </div>
         @endif
 
@@ -52,8 +52,9 @@
                        placeholder="مثال: السعودية" required>
             </div>
 
-            <div class="mb-6">
-                <label for="image" class="block mb-1 font-medium">صورة العملة</label>
+            {{-- صورة الوجه --}}
+            <div class="mb-4">
+                <label for="image" class="block mb-1 font-medium">صورة وجه العملة</label>
                 <input dir="rtl"
                        type="file"
                        id="image"
@@ -63,6 +64,16 @@
                        required>
             </div>
 
+            {{-- صورة الظهر --}}
+            <div class="mb-6">
+                <label for="back_image" class="block mb-1 font-medium">صورة ظهر العملة</label>
+                <input dir="rtl"
+                       type="file"
+                       id="back_image"
+                       name="back_image"
+                       accept="image/*"
+                       class="w-full border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-blue-400 hover:shadow-md transition">
+            </div>
 
             {{-- العملات المشابهة --}}
             <h3 class="text-lg font-semibold mb-4">العملات المشابهة (اختياري)</h3>

@@ -17,7 +17,8 @@ class CreateAction
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'nullable|image',
+            'image' => 'nullable|image',        // صورة الوجه
+            'back_image' => 'nullable|image',   // صورة الظهر
             'country' => 'required|string|max:255',
             'related_title' => 'nullable|array',
             'related_title.*' => 'nullable|string|max:255',
@@ -26,9 +27,14 @@ class CreateAction
         ]);
 
         try {
-            // صورة العملة الأساسية
+            // صورة الوجه
             $imagePath = $request->file('image')
                 ? $request->file('image')->store('coins', 'public')
+                : null;
+
+            // صورة الظهر
+            $backImagePath = $request->file('back_image')
+                ? $request->file('back_image')->store('coins', 'public')
                 : null;
 
             // إنشاء العملة
@@ -36,6 +42,7 @@ class CreateAction
                 'title' => $validated['title'],
                 'description' => $validated['description'] ?? null,
                 'image' => $imagePath,
+                'back_image' => $backImagePath,
                 'country' => $validated['country'],
             ]);
 
@@ -55,13 +62,12 @@ class CreateAction
                 }
             }
 
-
         } catch (\Exception $e) {
-            // فقط تسجيل الخطأ، دون إعادة المستخدم أو عرض رسالة خطأ
+            // تسجيل الخطأ فقط
             Log::error('خطأ في إضافة العملة: ' . $e->getMessage());
         }
 
-        // إعادة التوجيه دائمًا إلى صفحة index مع رسالة نجاح
+        // إعادة التوجيه مع رسالة نجاح
         return redirect()->route('coin-index')
             ->with('success', 'تم إضافة العملة بنجاح');
     }
