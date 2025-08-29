@@ -16,13 +16,11 @@
             modalBack = false;
          ">
             <div class="flip-card-inner relative w-full h-96 transition-transform duration-500">
-                {{-- الوجه --}}
                 @if($coin->image)
                     <img src="{{ asset('storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
                          class="flip-card-front absolute w-full h-full object-cover rounded-3xl backface-hidden shadow-xl">
                 @endif
-                {{-- الظهر --}}
                 @if($coin->back_image)
                     <img src="{{ asset('storage/' . $coin->back_image) }}"
                          alt="{{ $coin->title }} - Back"
@@ -33,13 +31,10 @@
 
         {{-- العنوان والوصف والدولة --}}
         <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-6 mb-4 text-center">{{ $coin->title }}</h1>
-
         @if($coin->description)
             <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-6 text-justify">{{ $coin->description }}</p>
         @endif
-
         <p class="text-sm md:text-base text-gray-600 mb-6 text-center font-medium tracking-wide">الدولة: {{ $coin->country }}</p>
-
         <div class="w-full max-w-6xl border-t border-gray-200"></div>
 
         {{-- العملات المشابهة --}}
@@ -81,7 +76,7 @@
 
         {{-- نافذة تكبير الصور --}}
         <div x-show="modalOpen" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4" @click="modalOpen = false">
-            <div @click.stop class="relative w-full max-w-3xl perspective cursor-pointer" x-data="{ modalBack: false }" @click="modalBack = !modalBack">
+            <div @click.stop class="relative w-full max-w-3xl perspective cursor-pointer">
                 <div class="flip-card-inner relative w-full h-[70vh] transition-transform duration-500" :class="{'rotate-y-180': modalBack}">
                     <template x-if="selectedCoin?.image">
                         <img :src="selectedCoin.image" class="flip-card-front absolute w-full h-full object-contain backface-hidden rounded-xl shadow-2xl">
@@ -90,13 +85,13 @@
                         <img :src="selectedCoin.back_image" class="flip-card-back absolute w-full h-full object-contain backface-hidden rotate-y-180 rounded-xl shadow-2xl">
                     </template>
                 </div>
+                <button @click="modalBack = !modalBack" class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg">تقليب العملة</button>
                 <button @click="modalOpen = false" class="absolute top-3 right-3 text-white text-3xl font-extrabold">&times;</button>
             </div>
         </div>
 
     </div>
 
-    {{-- CSS --}}
     <style>
         .perspective { perspective: 1000px; }
         .flip-card-inner { transform-style: preserve-3d; }
