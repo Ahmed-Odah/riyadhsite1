@@ -2,7 +2,7 @@
 @section('content')
 
     <div x-data="{ showBack: false, modalOpen: false, modalBack: false, selectedCoin: null }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
-asssssssss
+
         {{-- البطاقة الرئيسية --}}
         <div class="max-w-4xl w-full perspective cursor-pointer" @click="modalOpen = true; selectedCoin = @js($coin)">
             <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': showBack}" @click.stop="showBack = !showBack">
