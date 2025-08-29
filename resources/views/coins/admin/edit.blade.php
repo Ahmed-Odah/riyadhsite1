@@ -36,10 +36,22 @@
                     <img src="{{ asset('public/storage/' . $coin->image) }}" class="h-24 rounded">
                 </div>
             @endif
-
-            <div class="mb-6">
-                <label for="image" class="block mb-1 font-medium">رفع صورة جديدة (اختياري)</label>
+            <div class="mb-4">
+                <label for="image" class="block mb-1 font-medium">رفع صورة وجه جديدة (اختياري)</label>
                 <input dir="rtl" type="file" id="image" name="image" accept="image/*"
+                       class="w-full border rounded px-3 py-2">
+            </div>
+
+            {{-- صورة الظهر --}}
+            @if($coin->back_image)
+                <div class="mb-2">
+                    <label class="block mb-1 font-medium">صورة الظهر الحالية:</label>
+                    <img src="{{ asset('public/storage/' . $coin->back_image) }}" class="h-24 rounded">
+                </div>
+            @endif
+            <div class="mb-4">
+                <label for="back_image" class="block mb-1 font-medium">رفع صورة ظهر جديدة (اختياري)</label>
+                <input dir="rtl" type="file" id="back_image" name="back_image" accept="image/*"
                        class="w-full border rounded px-3 py-2">
             </div>
 
