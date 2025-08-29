@@ -1,19 +1,17 @@
 @extends('layout.master')
 @section('content')
 
-    <div x-data="{ showBack: false, modalOpen: false, modalBack: false, selectedCoin: null }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
+    <div x-data="{ modalOpen: false, modalBack: false, selectedCoin: null }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
         {{-- البطاقة الرئيسية --}}
         <div class="max-w-4xl w-full perspective cursor-pointer" @click="modalOpen = true; selectedCoin = @js($coin)">
-            <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': showBack}" @click.stop="showBack = !showBack">
-
+            <div class="flip-card-inner relative w-full h-96 transition-transform duration-500">
                 {{-- الوجه --}}
                 @if($coin->image)
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
                          class="flip-card-front absolute w-full h-full object-cover rounded-3xl backface-hidden shadow-xl">
                 @endif
-
                 {{-- الظهر --}}
                 @if($coin->back_image)
                     <img src="{{ asset('public/storage/' . $coin->back_image) }}"
@@ -41,7 +39,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     @foreach($coin->relatedCoins as $related)
                         <div class="perspective cursor-pointer" @click="modalOpen = true; selectedCoin = @js($related)">
-                            <div class="flip-card-inner relative w-full h-64 transition-transform duration-500" x-data="{ showBack: false }" :class="{'rotate-y-180': showBack}" @click.stop="showBack = !showBack">
+                            <div class="flip-card-inner relative w-full h-64 transition-transform duration-500">
                                 @if($related->image)
                                     <img src="{{ asset('public/storage/' . $related->image) }}"
                                          alt="{{ $related->title }}"
