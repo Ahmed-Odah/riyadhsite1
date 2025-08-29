@@ -1,26 +1,31 @@
-{{-- البطاقة الصغيرة --}}
-<div class="max-w-sm w-full perspective cursor-pointer" @click="modalOpen = true">
-    <div class="flip-card-inner relative w-full h-56 transition-transform duration-500"
-         :class="{'rotate-y-180': showBack}"
-         @click.stop="showBack = !showBack">
+@extends('layout.master')
+@section('content')
 
-        {{-- الوجه --}}
-        @if($coin->image)
-            <img src="{{ asset('public/storage/' . $coin->image) }}"
-                 alt="{{ $coin->title }}"
-                 class="flip-card-front absolute w-full h-full object-cover rounded-xl backface-hidden shadow-lg">
-        @endif
+    <div x-data="{ showBack: false, modalOpen: false, modalBack: false }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
-        {{-- الظهر --}}
-        @if($coin->back_image)
-            <img src="{{ asset('public/storage/' . $coin->back_image) }}"
-                 alt="{{ $coin->title }} - Back"
-                 class="flip-card-back absolute w-full h-full object-cover rounded-xl backface-hidden rotate-y-180 shadow-lg">
-        @endif
-    </div>
-</div>
+        {{-- البطاقة الصغيرة --}}
+        <div class="max-w-sm w-full perspective cursor-pointer" @click="modalOpen = true">
+            <div class="flip-card-inner relative w-full h-56 transition-transform duration-500"
+                 :class="{'rotate-y-180': showBack}"
+                 @click.stop="showBack = !showBack">
 
-{{-- العنوان والوصف والدولة --}}
+                {{-- الوجه --}}
+                @if($coin->image)
+                    <img src="{{ asset('public/storage/' . $coin->image) }}"
+                         alt="{{ $coin->title }}"
+                         class="flip-card-front absolute w-full h-full object-cover rounded-xl backface-hidden shadow-lg">
+                @endif
+
+                {{-- الظهر --}}
+                @if($coin->back_image)
+                    <img src="{{ asset('public/storage/' . $coin->back_image) }}"
+                         alt="{{ $coin->title }} - Back"
+                         class="flip-card-back absolute w-full h-full object-cover rounded-xl backface-hidden rotate-y-180 shadow-lg">
+                @endif
+            </div>
+        </div>
+
+        {{-- العنوان والوصف والدولة --}}
         <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-6 mb-4 text-center">{{ $coin->title }}</h1>
 
         @if($coin->description)
