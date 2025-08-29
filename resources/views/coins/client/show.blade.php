@@ -22,11 +22,11 @@
                 @endif
 
                 {{-- أزرار التحكم --}}
-                <div class="absolute top-2 right-2 flex space-x-2">
+                <div class="absolute top-2 right-2 flex space-x-2 z-10">
                     <!-- زر قلب البطاقة الصغيرة -->
-                    <button @click="smallBack = !smallBack" class="px-3 py-1 bg-white rounded shadow z-10">قلب</button>
+                    <button @click.stop="smallBack = !smallBack" class="px-3 py-1 bg-white rounded shadow">قلب</button>
                     <!-- زر فتح النافذة -->
-                    <button @click="modalOpen = true" class="px-3 py-1 bg-blue-600 text-white rounded shadow z-10">تكبير</button>
+                    <button @click.stop="modalOpen = true; modalBack = false" class="px-3 py-1 bg-blue-600 text-white rounded shadow">تكبير</button>
                 </div>
             </div>
         </div>
