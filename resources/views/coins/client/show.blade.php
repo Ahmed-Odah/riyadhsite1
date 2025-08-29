@@ -4,10 +4,15 @@
     <div x-data="{ showBack: false, modalOpen: false, modalBack: false }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
         {{-- البطاقة الصغيرة --}}
-        <div class="max-w-4xl w-full perspective cursor-pointer" @click="modalOpen = true">
-            <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': showBack}" @click.stop="showBack = !showBack">
+        <div class="max-w-2xl w-full perspective cursor-pointer" @click="modalOpen = true">
+            <div class="flip-card-inner relative w-full h-72 transition-transform duration-500"
+                 :class="{'rotate-y-180': showBack}"
+                 @click.stop="showBack = !showBack">
+            </div>
+        </div>
 
-                {{-- الوجه --}}
+
+        {{-- الوجه --}}
                 @if($coin->image)
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
