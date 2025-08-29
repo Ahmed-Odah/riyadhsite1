@@ -20,7 +20,6 @@
                     <img src="{{ asset('public/storage/' . $coin->back_image) }}" class="flip-card-back shadow-xl">
                 @endif
             </div>
-        </div>
 
 
         {{-- العنوان --}}
