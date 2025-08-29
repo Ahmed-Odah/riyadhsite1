@@ -13,7 +13,7 @@ class CreateAction
 
     public function handle(Request $request)
     {
-        // تحقق من البيانات قبل محاولة الحفظ
+        // تحقق من البيانات قبل الحفظ
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
@@ -32,9 +32,9 @@ class CreateAction
                 ? $request->file('image')->store('coins', 'public')
                 : null;
 
-            // صورة الظهر
+            // صورة الظهر في مجلد فرعي coins/back
             $backImagePath = $request->file('back_image')
-                ? $request->file('back_image')->store('coins', 'public')
+                ? $request->file('back_image')->store('coins/back', 'public')
                 : null;
 
             // إنشاء العملة
@@ -63,11 +63,9 @@ class CreateAction
             }
 
         } catch (\Exception $e) {
-            // تسجيل الخطأ فقط
             Log::error('خطأ في إضافة العملة: ' . $e->getMessage());
         }
 
-        // إعادة التوجيه مع رسالة نجاح
         return redirect()->route('coin-index')
             ->with('success', 'تم إضافة العملة بنجاح');
     }
