@@ -68,12 +68,18 @@
                                    class="w-full mb-2 border rounded px-2 py-1">
 
                             @if($related->image)
-                                <label class="block mb-1">الصورة الحالية</label>
+                                <label class="block mb-1">صورة الوجه الحالية</label>
                                 <img src="{{ asset('public/storage/' . $related->image) }}" class="h-24 rounded mb-2">
                             @endif
+                            <label class="block mb-1">رفع صورة وجه جديدة (اختياري)</label>
+                            <input type="file" name="related_image[{{ $related->id }}]" accept="image/*" class="w-full mb-2">
 
-                            <label class="block mb-1">رفع صورة جديدة (اختياري)</label>
-                            <input type="file" name="related_image[{{ $related->id }}]" accept="image/*" class="w-full">
+                            @if(isset($related->back_image))
+                                <label class="block mb-1">صورة الظهر الحالية</label>
+                                <img src="{{ asset('public/storage/' . $related->back_image) }}" class="h-24 rounded mb-2">
+                            @endif
+                            <label class="block mb-1">رفع صورة ظهر جديدة (اختياري)</label>
+                            <input type="file" name="related_back_image[{{ $related->id }}]" accept="image/*" class="w-full">
                         </div>
                     @endforeach
                 </div>
@@ -90,8 +96,14 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="new_related_image" class="block mb-1 font-medium">صورة العملة</label>
+                    <label for="new_related_image" class="block mb-1 font-medium">صورة الوجه</label>
                     <input type="file" id="new_related_image" name="new_related_image" accept="image/*"
+                           class="w-full border border-gray-300 rounded px-3 py-2">
+                </div>
+
+                <div class="mb-4">
+                    <label for="new_related_back_image" class="block mb-1 font-medium">صورة الظهر</label>
+                    <input type="file" id="new_related_back_image" name="new_related_back_image" accept="image/*"
                            class="w-full border border-gray-300 rounded px-3 py-2">
                 </div>
             </div>
