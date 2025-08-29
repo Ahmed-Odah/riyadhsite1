@@ -1,12 +1,14 @@
 @extends('layout.master')
 @section('content')
 
+    <!-- تحميل Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <div x-data="{ smallBack: false, modalOpen: false, modalBack: false }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
         {{-- البطاقة الصغيرة --}}
         <div class="max-w-4xl w-full perspective relative cursor-pointer">
             <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': smallBack}">
-
                 {{-- الوجه --}}
                 @if($coin->image)
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
@@ -92,6 +94,7 @@
         .rotate-y-180 {
             transform: rotateY(180deg);
         }
+        [x-cloak] { display: none !important; }
     </style>
 
 @endsection
