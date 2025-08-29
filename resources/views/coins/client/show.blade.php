@@ -4,8 +4,8 @@
     <div x-data="{ showBack: false, modalOpen: false, modalBack: false }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
         {{-- البطاقة الصغيرة --}}
-        <div class="max-w-4xl w-full perspective cursor-pointer" @click="modalOpen = true">
-            <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': showBack}" @click.stop="showBack = !showBack">
+        <div class="max-w-4xl w-full perspective relative cursor-pointer">
+            <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': showBack}">
 
                 {{-- الوجه --}}
                 @if($coin->image)
@@ -20,6 +20,12 @@
                          alt="{{ $coin->title }} - Back"
                          class="flip-card-back absolute w-full h-full object-cover rounded-3xl backface-hidden rotate-y-180 shadow-xl">
                 @endif
+
+                {{-- أزرار للتحكم --}}
+                <div class="absolute top-2 right-2 flex space-x-2">
+                    <button @click.stop="showBack = !showBack" class="px-3 py-1 bg-white rounded shadow">قلب</button>
+                    <button @click.stop="modalOpen = true" class="px-3 py-1 bg-blue-600 text-white rounded shadow">تكبير</button>
+                </div>
             </div>
         </div>
 
