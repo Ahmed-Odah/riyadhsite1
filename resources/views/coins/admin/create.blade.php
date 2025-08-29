@@ -5,12 +5,7 @@
 
         {{-- إشعار النجاح --}}
         @if(session('success'))
-            <div
-                id="successAlert"
-                class="fixed top-5 right-5 max-w-sm w-full bg-green-600 text-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-3 animate-slide-in"
-                style="animation-fill-mode: forwards;"
-                dir="rtl"
-            >
+            <div id="successAlert" class="fixed top-5 right-5 max-w-sm w-full bg-green-600 text-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-3 animate-slide-in" style="animation-fill-mode: forwards;" dir="rtl">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -55,23 +50,14 @@
             {{-- صورة الوجه --}}
             <div class="mb-4">
                 <label for="image" class="block mb-1 font-medium">صورة وجه العملة</label>
-                <input dir="rtl"
-                       type="file"
-                       id="image"
-                       name="image"
-                       accept="image/*"
-                       class="w-full border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-blue-400 hover:shadow-md transition"
-                       required>
+                <input dir="rtl" type="file" id="image" name="image" accept="image/*"
+                       class="w-full border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-blue-400 hover:shadow-md transition" required>
             </div>
 
             {{-- صورة الظهر --}}
             <div class="mb-6">
                 <label for="back_image" class="block mb-1 font-medium">صورة ظهر العملة</label>
-                <input dir="rtl"
-                       type="file"
-                       id="back_image"
-                       name="back_image"
-                       accept="image/*"
+                <input dir="rtl" type="file" id="back_image" name="back_image" accept="image/*"
                        class="w-full border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-blue-400 hover:shadow-md transition">
             </div>
 
@@ -79,22 +65,20 @@
             <h3 class="text-lg font-semibold mb-4">العملات المشابهة (اختياري)</h3>
             <div id="related-coins-wrapper" class="space-y-4">
                 <div class="related-coin bg-gray-50 border rounded-xl p-4 shadow-sm relative">
-                    <button type="button" class="remove-related absolute top-2 left-2 text-red-500 hover:text-red-700 hidden">
-                        ✖
-                    </button>
+                    <button type="button" class="remove-related absolute top-2 left-2 text-red-500 hover:text-red-700 hidden">✖</button>
                     <div class="flex flex-col gap-3">
                         <div>
                             <label class="block text-sm font-medium">عنوان العملة المشابهة</label>
-                            <input type="text" name="related_title[]"
-                                   class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                   placeholder="مثال: ريال قطري">
+                            <input type="text" name="related_title[]" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="مثال: ريال قطري">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium">صورة العملة المشابهة</label>
-                            <input type="file" name="related_image[]" accept="image/*"
-                                   class="w-full border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-blue-400 hover:shadow-md transition">
+                            <label class="block text-sm font-medium">صورة الوجه للعملة المشابهة</label>
+                            <input type="file" name="related_image[]" accept="image/*" class="w-full border border-gray-300 rounded px-3 py-2">
                         </div>
-
+                        <div>
+                            <label class="block text-sm font-medium">صورة الظهر للعملة المشابهة</label>
+                            <input type="file" name="related_back_image[]" accept="image/*" class="w-full border border-gray-300 rounded px-3 py-2">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,23 +104,22 @@
             const newField = document.createElement('div');
             newField.classList.add('related-coin', 'bg-gray-50', 'border', 'rounded-xl', 'p-4', 'shadow-sm', 'relative', 'mt-4');
             newField.innerHTML = `
-                <button type="button" class="remove-related absolute top-2 left-2 text-red-500 hover:text-red-700">
-                    ✖
-                </button>
-                <div class="flex flex-col gap-3">
-                    <div>
-                        <label class="block text-sm font-medium">عنوان العملة المشابهة</label>
-                        <input type="text" name="related_title[]"
-                               class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                               placeholder="مثال: دينار بحريني">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium">صورة العملة المشابهة</label>
-                        <input type="file" name="related_image[]" accept="image/*"
-                               class="w-full border border-gray-300 rounded px-3 py-2">
-                    </div>
-                </div>
-            `;
+        <button type="button" class="remove-related absolute top-2 left-2 text-red-500 hover:text-red-700">✖</button>
+        <div class="flex flex-col gap-3">
+            <div>
+                <label class="block text-sm font-medium">عنوان العملة المشابهة</label>
+                <input type="text" name="related_title[]" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="مثال: دينار بحريني">
+            </div>
+            <div>
+                <label class="block text-sm font-medium">صورة الوجه للعملة المشابهة</label>
+                <input type="file" name="related_image[]" accept="image/*" class="w-full border border-gray-300 rounded px-3 py-2">
+            </div>
+            <div>
+                <label class="block text-sm font-medium">صورة الظهر للعملة المشابهة</label>
+                <input type="file" name="related_back_image[]" accept="image/*" class="w-full border border-gray-300 rounded px-3 py-2">
+            </div>
+        </div>
+    `;
             wrapper.appendChild(newField);
 
             // تفعيل زر الحذف
@@ -145,7 +128,7 @@
             });
         });
 
-        // تفعيل زر الحذف لأول حقل عند الحاجة
+        // تفعيل زر الحذف للحقل الأول عند الحاجة
         document.querySelectorAll('.remove-related').forEach(btn => {
             btn.addEventListener('click', function () {
                 btn.parentElement.remove();

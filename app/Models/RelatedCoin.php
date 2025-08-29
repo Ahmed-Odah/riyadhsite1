@@ -10,7 +10,8 @@ class RelatedCoin extends Model
         'coin_id',
         'title',
         'description',
-        'image',
+        'image',       // الوجه
+        'back_image',  // ✅ أضفنا الظهر
     ];
 
     public function coin()

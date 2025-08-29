@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Actions\Coins\Admin;
 
 use App\Models\Coin;
@@ -13,17 +14,24 @@ class EditCoinAction
 
     public function handle(Request $request, Coin $coin)
     {
+        // التحقق من البيانات
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'country' => 'required|string|max:255',
             'image' => 'nullable|image',
-            'back_image' => 'nullable|image', // <-- تم الإضافة هنا
+            'back_image' => 'nullable|image',
+
+            // العملات المشابهة الحالية
             'related_id' => 'nullable|array',
             'related_title.*' => 'nullable|string|max:255',
             'related_image.*' => 'nullable|image',
+            'related_back_image.*' => 'nullable|image',
+
+            // عملة مشابهة جديدة
             'new_related_title' => 'nullable|string|max:255',
             'new_related_image' => 'nullable|image',
+            'new_related_back_image' => 'nullable|image',
         ]);
 
         try {
@@ -32,14 +40,12 @@ class EditCoinAction
             $coin->description = $request->description;
             $coin->country = $request->country;
 
-            // رفع صورة الوجه الجديدة إذا وجدت
             if ($request->hasFile('image')) {
                 $coin->image = $request->file('image')->store('coins', 'public');
             }
 
-            // رفع صورة الظهر الجديدة إذا وجدت
             if ($request->hasFile('back_image')) {
-                $coin->back_image = $request->file('back_image')->store('coins', 'public');
+                $coin->back_image = $request->file('back_image')->store('coins/back', 'public');
             }
 
             $coin->save();
@@ -55,6 +61,10 @@ class EditCoinAction
                             $relatedCoin->image = $request->file("related_image.$relatedId")->store('coins/related', 'public');
                         }
 
+                        if ($request->hasFile("related_back_image.$relatedId")) {
+                            $relatedCoin->back_image = $request->file("related_back_image.$relatedId")->store('coins/related/back', 'public');
+                        }
+
                         $relatedCoin->save();
                     }
                 }
@@ -64,10 +74,14 @@ class EditCoinAction
             if ($request->filled('new_related_title')) {
                 $relatedCoin = new RelatedCoin();
                 $relatedCoin->title = $request->input('new_related_title');
-                $relatedCoin->coin_id = $coin->id; // الربط بالعملة الحالية
+                $relatedCoin->coin_id = $coin->id;
 
                 if ($request->hasFile('new_related_image')) {
                     $relatedCoin->image = $request->file('new_related_image')->store('coins/related', 'public');
+                }
+
+                if ($request->hasFile('new_related_back_image')) {
+                    $relatedCoin->back_image = $request->file('new_related_back_image')->store('coins/related/back', 'public');
                 }
 
                 $relatedCoin->save();
