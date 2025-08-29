@@ -1,24 +1,26 @@
 @extends('layout.master')
 @section('content')
 
-    <div x-data="{ showBack: false }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
+    <div x-data="{ showBack: false, modalOpen: false }" class="bg-gray-50 min-h-screen py-24 px-4 sm:px-6 lg:px-20 flex flex-col items-center space-y-16">
 
         {{-- بطاقة العملة الرئيسية --}}
-        <div class="max-w-4xl w-full perspective cursor-pointer" @click="showBack = !showBack">
+        <div class="max-w-4xl w-full perspective cursor-pointer" @click="modalOpen = true">
             <div class="flip-card-inner relative w-full h-96 transition-transform duration-500" :class="{'rotate-y-180': showBack}">
 
                 {{-- الوجه --}}
                 @if($coin->image)
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
-                         class="flip-card-front absolute w-full h-full object-cover rounded-3xl backface-hidden shadow-xl">
+                         class="flip-card-front absolute w-full h-full object-cover rounded-3xl backface-hidden shadow-xl"
+                         @click.stop="showBack = !showBack">
                 @endif
 
                 {{-- الظهر --}}
                 @if($coin->back_image)
                     <img src="{{ asset('public/storage/' . $coin->back_image) }}"
                          alt="{{ $coin->title }} - Back"
-                         class="flip-card-back absolute w-full h-full object-cover rounded-3xl backface-hidden rotate-y-180 shadow-xl">
+                         class="flip-card-back absolute w-full h-full object-cover rounded-3xl backface-hidden rotate-y-180 shadow-xl"
+                         @click.stop="showBack = !showBack">
                 @endif
             </div>
         </div>
@@ -62,6 +64,21 @@
                 </div>
             </div>
         @endif
+
+        {{-- نافذة تكبير الصور --}}
+        <div x-show="modalOpen" x-transition.opacity
+             class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
+             @click="modalOpen = false">
+            <div @click.stop class="relative w-full max-w-3xl perspective cursor-pointer" @click="showBack = !showBack">
+                <div class="flip-card-inner relative w-full h-[70vh] transition-transform duration-500" :class="{'rotate-y-180': showBack}">
+                    <img src="{{ asset('public/storage/' . $coin->image) }}"
+                         class="flip-card-front absolute w-full h-full object-contain backface-hidden rounded-xl shadow-2xl">
+                    <img src="{{ asset('public/storage/' . $coin->back_image) }}"
+                         class="flip-card-back absolute w-full h-full object-contain backface-hidden rotate-y-180 rounded-xl shadow-2xl">
+                </div>
+                <button @click="modalOpen = false" class="absolute top-3 right-3 text-white text-3xl font-extrabold">&times;</button>
+            </div>
+        </div>
 
     </div>
 
