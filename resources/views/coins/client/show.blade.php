@@ -51,7 +51,7 @@
                         <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 overflow-hidden group">
                             @if($related->image)
                                 <button @click="open = true; image='{{ asset('storage/' . $related->image) }}'">
-                                    <img src="{{ asset('storage/' . $related->image) }}"
+                                    <img src="{{ asset('public/storage/' . $related->image) }}"
                                          alt="{{ $related->title }}"
                                          class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
                                 </button>
