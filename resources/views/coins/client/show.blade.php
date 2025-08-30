@@ -36,7 +36,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     @foreach($coin->relatedCoins as $related)
                         <div class="cursor-pointer"
-                             @click="modalOpen = true; selectedImage = '{{ asset('storage/' . $related->image) }}'">
+                             @click="modalOpen = true; selectedImage = '{{ asset('public/storage/' . $related->image) }}'">
                             <div class="relative w-full h-64 transition-transform duration-500">
                                 @if($related->image)
                                     <img src="{{ asset('public/storage/' . $related->image) }}"
