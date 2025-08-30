@@ -21,7 +21,7 @@
             style="height: 1000px;">
 
             <iframe
-                src="{{ asset('/pdfjs/web/viewer.html') }}?file={{ urlencode(asset('public/storage/books' . $book->file)) }}#toolbar=0&download=false&print=false"
+                src="{{ asset('/pdfjs/web/viewer.html') }}?file={{ urlencode(asset('books.pdf' . $book->file)) }}#toolbar=0&download=false&print=false"
                 width="100%"
                 height="100%"
                 class="w-full h-full border-0"
