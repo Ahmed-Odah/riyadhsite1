@@ -63,7 +63,7 @@
             {{-- الصورة --}}
             <div @click.stop x-data="{ modalBack: false }"
                  class="relative flex items-center justify-center"
-                 style="max-width: 90vw; max-height: 90vh;">
+                 style="max-width: 70vw; max-height: 70vh;"> {{-- تم تصغير الحجم من 90 إلى 70 --}}
 
                 <div class="relative transition-transform duration-500 flex items-center justify-center"
                      :class="{'rotate-y-180': modalBack}"
@@ -88,6 +88,7 @@
                         class="absolute top-3 right-3 text-white text-4xl font-extrabold hover:text-gray-300">&times;</button>
             </div>
         </div>
+
 
     </div>
 
