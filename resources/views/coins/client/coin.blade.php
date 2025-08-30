@@ -2,7 +2,7 @@
 @section('content')
     <div x-data="{ open: false, image: '', visible: 8 }" class="relative bg-gray-50 min-h-screen">
         <!-- العنوان -->
-        <div class="py-12 px-4 sm:px-10 lg:px-20">
+        <div class="py-12 px-4 sm:px-8 lg:px-16">
             <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mt-16 mb-10">
                 عملات عالمية نادرة
             </h1>
@@ -17,7 +17,7 @@
                         <button @click="open = true; image = @js(asset('storage/' . $coin->image))" class="block w-full">
                             <img src="{{ asset('public/storage/' . $coin->image) }}"
                                  alt="{{ $coin->title }}"
-                                 class="w-full h-48 sm:h-56 md:h-48 lg:h-56 object-cover transform group-hover:scale-105 transition duration-500" />
+                                 class="w-full h-44 sm:h-52 md:h-44 lg:h-52 object-cover transform group-hover:scale-105 transition duration-500" />
                         </button>
 
                         <div class="p-4 text-right">
