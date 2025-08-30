@@ -7,7 +7,7 @@
         {{-- البطاقة الرئيسية --}}
         <div class="max-w-4xl w-full cursor-pointer"
              @click="modalOpen = true; selectedCoin = @js($coin)">
-            <div class="relative w-full h-96 transition-transform duration-500">
+            <div class="relative w-full h-96 transition-transform duration-500 mt-6"> {{-- أضفنا mt-6 --}}
                 @if($coin->image)
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
@@ -15,6 +15,7 @@
                 @endif
             </div>
         </div>
+
 
         {{-- العنوان والوصف والدولة --}}
         <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-6 mb-4 text-center">{{ $coin->title }}</h1>
