@@ -21,12 +21,13 @@
             style="height: 1000px;">
 
             <iframe
-                src="{{ asset('public/pdfjs/web/viewer.html') }}?id={{ urlencode(asset('books.pdf' . $book->id)) }}#toolbar=0&download=false&print=false"
+                src="{{ asset('public/pdfjs/web/viewer.html') }}?file={{ urlencode(asset('storage/app/public/pdfs' . $book->file)) }}#toolbar=0&download=false&print=false"
                 width="100%"
                 height="100%"
                 class="w-full h-full border-0"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
             </iframe>
+
 
         </div>
     </div>
