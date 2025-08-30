@@ -3,7 +3,7 @@
         <a href="" class="flex flex-col items-start gap-0">
             <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
                 <span id="logo-text" class="text-lg font-bold lg:text-3xl mt-1"></span>
-                <img src="{{ asset('/resha.png') }}" alt="Logo" class="w-30">
+                <img src="{{ asset('/Resha__1_-removebg-preview.png') }}" alt="Logo" class="w-30">
             </div>
 
 
