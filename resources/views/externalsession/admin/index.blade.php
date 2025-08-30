@@ -28,7 +28,7 @@
                         <!-- العمليات -->
                         <td class="px-4 py-3 text-right border border-gray-300 align-middle">
                             <div class="flex gap-2 justify-end">
-                                <form action="{{ route('externalsession-delete', $session->id) }}" method="POST" onsubmit="return confirm('هل أنت متأكد من الحذف؟');">
+                                <form action="{{ route('externalsession-delete', $externalsessions->id) }}" method="POST" onsubmit="return confirm('هل أنت متأكد من الحذف؟');">
                                     @csrf
                                     <button type="submit"
                                             class="px-3 py-1.5 bg-red-500 text-white rounded-md hover:bg-red-600 transition text-sm font-medium">
