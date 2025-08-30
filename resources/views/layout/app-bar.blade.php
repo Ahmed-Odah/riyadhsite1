@@ -1,5 +1,5 @@
 <nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300">
-    <div class="flex justify-between items-center container mx-auto relative">
+    <div class="container mx-auto max-w-screen-2xl flex justify-between items-center relative">
         <a href="" class="flex flex-col items-start gap-0">
             <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
                 <span id="logo-text" class="text-lg font-bold lg:text-3xl mt-1"></span>
