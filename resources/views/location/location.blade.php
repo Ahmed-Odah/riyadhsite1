@@ -52,6 +52,71 @@
                 <a href="{{ url('/') }}" class="block mt-4 text-sm font-medium text-blue-600 hover:underline">اذهب الآن →</a>
             </div>
 
+            <div class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-xl text-2xl"></div>
+                    <h2 class="text-lg font-semibold text-gray-800">صوو الديكورات</h2>
+                </div>
+                <p class="text-gray-600 text-sm">العودة للواجهة الرئيسية.</p>
+                <a href="{{ url('/') }}" class="block mt-4 text-sm font-medium text-blue-600 hover:underline">اذهب الآن →</a>
+            </div>
+
+
+            <div class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-xl text-2xl"></div>
+                    <h2 class="text-lg font-semibold text-gray-800">معرض اللوحات</h2>
+                </div>
+                <p class="text-gray-600 text-sm">العودة للواجهة الرئيسية.</p>
+                <a href="{{ url('/') }}" class="block mt-4 text-sm font-medium text-blue-600 hover:underline">اذهب الآن →</a>
+            </div>
+
+
+            <div class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-xl text-2xl"></div>
+                    <h2 class="text-lg font-semibold text-gray-800">الشهادات والدورات</h2>
+                </div>
+                <p class="text-gray-600 text-sm">العودة للواجهة الرئيسية.</p>
+                <a href="{{ url('/') }}" class="block mt-4 text-sm font-medium text-blue-600 hover:underline">اذهب الآن →</a>
+            </div>
+
+            <div class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-xl text-2xl"></div>
+                    <h2 class="text-lg font-semibold text-gray-800">المدونة</h2>
+                </div>
+                <p class="text-gray-600 text-sm">العودة للواجهة الرئيسية.</p>
+                <a href="{{ url('/') }}" class="block mt-4 text-sm font-medium text-blue-600 hover:underline">اذهب الآن →</a>
+            </div>
+
+
+            <div class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-xl text-2xl"></div>
+                    <h2 class="text-lg font-semibold text-gray-800">عملات عالمية</h2>
+                </div>
+                <p class="text-gray-600 text-sm">العودة للواجهة الرئيسية.</p>
+                <a href="{{ url('/') }}" class="block mt-4 text-sm font-medium text-blue-600 hover:underline">اذهب الآن →</a>
+            </div>
+
+            <div class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-xl text-2xl"></div>
+                    <h2 class="text-lg font-semibold text-gray-800">ملخصات الكتب </h2>
+                </div>
+                <p class="text-gray-600 text-sm">العودة للواجهة الرئيسية.</p>
+                <a href="{{ url('/') }}" class="block mt-4 text-sm font-medium text-blue-600 hover:underline">اذهب الآن →</a>
+            </div>
+
+            <div class="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-xl text-2xl"></div>
+                    <h2 class="text-lg font-semibold text-gray-800">قنواتي</h2>
+                </div>
+                <p class="text-gray-600 text-sm">العودة للواجهة الرئيسية.</p>
+                <a href="{{ url('/') }}" class="block mt-4 text-sm font-medium text-blue-600 hover:underline">اذهب الآن →</a>
+            </div>
 
 
 
