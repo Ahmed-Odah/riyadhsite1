@@ -9,9 +9,9 @@ class DeleteExternalsessionAction
 {
     use AsAction;
 
-    public function handle(Externalsessions $externalsessions)
+    public function handle(Externalsessions $externalsession)
     {
-        $externalsessions->delete();
+        $externalsession->delete();
         return back();
     }
 }
