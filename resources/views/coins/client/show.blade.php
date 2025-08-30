@@ -6,7 +6,7 @@
 
         {{-- البطاقة الرئيسية --}}
         <div class="max-w-4xl w-full perspective cursor-pointer"
-             @click="modalOpen = true; selectedImage = '{{ asset('storage/' . $coin->image) }}'">
+             @click="modalOpen = true; selectedImage = '{{ asset('public/storage/' . $coin->image) }}'">
             <div class="relative w-full h-96 transition-transform duration-500">
                 @if($coin->image)
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
