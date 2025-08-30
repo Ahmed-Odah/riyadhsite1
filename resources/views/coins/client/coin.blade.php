@@ -19,7 +19,8 @@
                         <button @click="open = true; image = @js(asset('storage/' . $coin->image))" class="block w-full">
                             <img src="{{ asset('public/storage/' . $coin->image) }}"
                                  alt="{{ $coin->title }}"
-                                 class="w-full h-64 sm:h-72 md:h-64 lg:h-72 object-cover transform group-hover:scale-105 transition duration-500" />
+                                 class="w-full h-52 sm:h-60 md:h-52 lg:h-60 object-cover transform group-hover:scale-105 transition duration-500" />
+
                         </button>
 
                         <div class="p-5 text-right">
