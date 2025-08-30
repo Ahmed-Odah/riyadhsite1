@@ -55,16 +55,19 @@
 
         {{-- مودال عرض الصورة مع قلبها --}}
         <div x-show="modalOpen" x-transition.opacity
-             class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
-             @click="modalOpen = false">
+             class="fixed inset-0 z-50 flex items-center justify-center">
 
+            {{-- خلفية سوداء --}}
+            <div class="absolute inset-0 bg-black bg-opacity-90" @click="modalOpen = false"></div>
+
+            {{-- الصورة --}}
             <div @click.stop x-data="{ modalBack: false }"
-                 class="relative flex items-center justify-center w-full h-full">
+                 class="relative flex items-center justify-center"
+                 style="max-width: 90vw; max-height: 90vh;">
 
                 <div class="relative transition-transform duration-500 flex items-center justify-center"
                      :class="{'rotate-y-180': modalBack}"
-                     @click="modalBack = !modalBack"
-                     style="max-width: 90vw; max-height: 90vh;">
+                     @click="modalBack = !modalBack">
 
                     {{-- الوجه --}}
                     <template x-if="!modalBack">
