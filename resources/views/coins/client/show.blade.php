@@ -73,27 +73,28 @@
         @endif
 
         {{-- نافذة تكبير الصور لجميع العملات --}}
+        {{-- نافذة تكبير الصور لجميع العملات --}}
         <div x-show="modalOpen" x-transition.opacity
-             class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+             class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
              @click="modalOpen = false">
 
             <div @click.stop
-                 class="relative w-full max-w-5xl perspective cursor-pointer"
+                 class="relative w-full max-w-[90vw] max-h-[90vh] perspective cursor-pointer flex items-center justify-center"
                  x-data="{ modalBack: false }"
                  :key="selectedCoin?.id">
 
-                <div class="flip-card-inner relative w-full h-[80vh] transition-transform duration-500"
+                <div class="flip-card-inner relative w-full h-full transition-transform duration-500 flex items-center justify-center"
                      :class="{'rotate-y-180': modalBack}"
                      @click="modalBack = !modalBack">
 
                     <template x-if="selectedCoin?.image">
                         <img :src="'/storage/' + selectedCoin.image"
-                             class="flip-card-front absolute w-full h-full object-cover backface-hidden rounded-2xl shadow-2xl">
+                             class="flip-card-front max-h-[90vh] max-w-[90vw] object-contain backface-hidden rounded-2xl shadow-2xl">
                     </template>
 
                     <template x-if="selectedCoin?.back_image">
                         <img :src="'/storage/' + selectedCoin.back_image"
-                             class="flip-card-back absolute w-full h-full object-cover backface-hidden rotate-y-180 rounded-2xl shadow-2xl">
+                             class="flip-card-back max-h-[90vh] max-w-[90vw] object-contain backface-hidden rotate-y-180 rounded-2xl shadow-2xl">
                     </template>
                 </div>
 
@@ -102,6 +103,7 @@
                         class="absolute top-3 right-3 text-white text-4xl font-extrabold hover:text-gray-300">&times;</button>
             </div>
         </div>
+
 
     </div>
 
