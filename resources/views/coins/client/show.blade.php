@@ -66,13 +66,13 @@
 
                     {{-- الوجه --}}
                     <template x-if="!modalBack">
-                        <img :src="'public/storage/' + selectedCoin?.image"
+                        <img :src="'/public/storage/' + selectedCoin?.image"
                              class="absolute max-h-[90vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl">
                     </template>
 
                     {{-- الظهر --}}
                     <template x-if="modalBack">
-                        <img :src="'public/storage/' + selectedCoin?.back_image ?? selectedCoin?.image"
+                        <img :src="'/public/storage/' + selectedCoin?.back_image ?? selectedCoin?.image"
                              class="absolute max-h-[90vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl">
                     </template>
 
