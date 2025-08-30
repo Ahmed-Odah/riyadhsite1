@@ -58,22 +58,24 @@
              class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
              @click="modalOpen = false">
 
-            <div @click.stop x-data="{ modalBack: false }" class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center">
+            <div @click.stop x-data="{ modalBack: false }"
+                 class="relative flex items-center justify-center w-full h-full">
 
-                <div class="relative w-full h-full transition-transform duration-500"
+                <div class="relative transition-transform duration-500 flex items-center justify-center"
                      :class="{'rotate-y-180': modalBack}"
-                     @click="modalBack = !modalBack">
+                     @click="modalBack = !modalBack"
+                     style="max-width: 90vw; max-height: 90vh;">
 
                     {{-- الوجه --}}
                     <template x-if="!modalBack">
                         <img :src="'/public/storage/' + selectedCoin?.image"
-                             class="absolute max-h-[90vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl">
+                             class="object-contain max-w-full max-h-full rounded-2xl shadow-2xl">
                     </template>
 
                     {{-- الظهر --}}
                     <template x-if="modalBack">
                         <img :src="'/public/storage/' + selectedCoin?.back_image ?? selectedCoin?.image"
-                             class="absolute max-h-[90vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl">
+                             class="object-contain max-w-full max-h-full rounded-2xl shadow-2xl">
                     </template>
 
                 </div>
