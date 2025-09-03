@@ -32,10 +32,11 @@
         @endforeach
 
     </div>
-    <h1 class="text-3xl font-bold mb-6 text-center mt-20 text-gray-800">شهاداتي ودوراتي</h1>
 
 
 </div>
+<h1 class="text-3xl font-bold mb-6 text-center mt-20 text-gray-800">شهاداتي ودوراتي</h1>
+
 
 <!-- Modal for enlarged image -->
 <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
