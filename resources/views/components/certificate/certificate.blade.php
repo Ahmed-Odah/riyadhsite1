@@ -30,7 +30,7 @@
 
         @endforeach
     </div>
-
+f
 </div>
 
 <!-- Modal for enlarged image -->
