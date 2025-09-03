@@ -27,10 +27,6 @@
                     </a>
                 </div>
             </div>
-
-
-            <div class="bg-gradient-to-br from-gray-50 via-white to-gray-100 min-h-screen py-20 px-6 sm:px-12 lg:px-24">
-                <h1 class="text-3xl font-bold mb-6 text-center mt-20 text-gray-800">شهاداتي ودوراتي</h1>
         @endforeach
     </div>
 
@@ -51,5 +47,3 @@
         document.getElementById('imageModal').classList.add('hidden');
     }
 </script>
-
-
