@@ -365,8 +365,6 @@ Route::prefix('auth')->group(function () {
 
 
 
-
-
     Route::get('/sumbook/index', \App\Actions\SumBooks\Admin\SumBookAdminIndex::class)->name('sumbook-index');
     Route::post('/sumbook/create', \App\Actions\SumBooks\Admin\CreateAction::class)->name('sumbook-create');
     Route::get('/sumbook/create/view', \App\Actions\SumBooks\Admin\SumBookCreateViewIndex::class)->name('sumbook-create-view');

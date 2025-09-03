@@ -283,6 +283,12 @@
             </svg>
         </a>
 
+
+
+
+
+        
+
         {{-- الإعدادات --}}
         <a href="#"
            class="flex flex-row-reverse items-center justify-between px-3 py-2 rounded-lg hover:bg-indigo-600 transition
