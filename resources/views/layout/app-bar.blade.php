@@ -29,7 +29,7 @@
             </style>
 
             <div>
-                <a href="{{route('login')}}" class="flex items-center gap-1 nav-link">
+                <a href="{{route('client')}}" class="flex items-center gap-1 nav-link">
                     <span class="material-icons text-base">person</span>
                     <span>تسجيل</span>
                 </a>
