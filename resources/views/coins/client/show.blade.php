@@ -7,7 +7,7 @@
         {{-- البطاقة الرئيسية --}}
         <div class="max-w-4xl w-full cursor-pointer"
              @click="modalOpen = true; selectedCoin = @js($coin)">
-            <div class="relative w-full h-96 transition-transform duration-500 mt-6"> {{-- أضفنا mt-6 --}}
+            <div class="relative w-full h-96 transition-transform duration-500 mt-6">
                 @if($coin->image)
                     <img src="{{ asset('public/storage/' . $coin->image) }}"
                          alt="{{ $coin->title }}"
@@ -15,7 +15,6 @@
                 @endif
             </div>
         </div>
-
 
         {{-- العنوان والوصف والدولة --}}
         <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-6 mb-4 text-center">{{ $coin->title }}</h1>
@@ -64,24 +63,24 @@
             {{-- الصورة --}}
             <div @click.stop x-data="{ modalBack: false }"
                  class="relative flex items-center justify-center"
-                 style="max-width: 70vw; max-height: 70vh;"> {{-- تم تصغير الحجم من 90 إلى 70 --}}
+                 style="max-width: 70vw; max-height: 70vh; perspective: 1000px;"> {{-- أضفنا perspective --}}
 
                 <div class="relative transition-transform duration-500 flex items-center justify-center"
                      :class="{'rotate-y-180': modalBack}"
-                     @click="modalBack = !modalBack">
+                     @click="modalBack = !modalBack"
+                     style="transform-style: preserve-3d;"> {{-- مهم preserve-3d --}}
 
                     {{-- الوجه --}}
-                    <template x-if="!modalBack">
+                    <div class="absolute inset-0 flex items-center justify-center backface-hidden">
                         <img :src="'/public/storage/' + selectedCoin?.image"
                              class="object-contain max-w-full max-h-full rounded-2xl shadow-2xl">
-                    </template>
+                    </div>
 
                     {{-- الظهر --}}
-                    <template x-if="modalBack">
-                        <img :src="'/public/storage/' + selectedCoin?.back_image ?? selectedCoin?.image"
+                    <div class="absolute inset-0 flex items-center justify-center backface-hidden rotate-y-180">
+                        <img :src="'/public/storage/' + (selectedCoin?.back_image ?? selectedCoin?.image)"
                              class="object-contain max-w-full max-h-full rounded-2xl shadow-2xl">
-                    </template>
-
+                    </div>
                 </div>
 
                 {{-- زر إغلاق --}}
@@ -89,13 +88,18 @@
                         class="absolute top-3 right-3 text-white text-4xl font-extrabold hover:text-gray-300">&times;</button>
             </div>
         </div>
-
-
     </div>
 
     {{-- CSS --}}
     <style>
-        .rotate-y-180 { transform: rotateY(180deg); transition: transform 0.5s; }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+            transition: transform 0.5s;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden; /* لدعم سفاري */
+        }
     </style>
 
 @endsection
