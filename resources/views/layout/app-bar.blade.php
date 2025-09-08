@@ -165,7 +165,12 @@
                 </div>
             </div>
 
-
+            <div>
+                <a href="{{route('client')}}" class="flex items-center gap-1 nav-link">
+                    <span class="material-icons text-base">person</span>
+                    <span>تسجيل</span>
+                </a>
+            </div>
             <div>
                 @if(\Illuminate\Support\Facades\Auth::check())
                     <form action="{{route('logout')}}" method="POST">
@@ -268,12 +273,7 @@
     </div>
 
 
-    <div>
-        <a href="{{route('client')}}" class="flex items-center gap-1 nav-link">
-            <span class="material-icons text-base">person</span>
-            <span>تسجيل</span>
-        </a>
-    </div>
+
 
     <div>
         @if(\Illuminate\Support\Facades\Auth::check())
