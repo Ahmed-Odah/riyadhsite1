@@ -29,136 +29,116 @@
             </style>
 
             <div>
-                <a href="{{route('homepage')}}" class="nav-link flex items-center">الرئيسية</a>
+                <a href="{{route('homepage')}}" class="nav-link flex items-center text-sm sm:text-base md:text-lg lg:text-xl">الرئيسية</a>
             </div>
 
             <div>
-                <a href="{{route('client')}}" class="nav-link flex items-center">الرئيسية</a>
+                <a href="{{route('client')}}" class="nav-link flex items-center text-sm sm:text-base md:text-lg lg:text-xl">العملاء</a>
             </div>
 
-
-
-
-
+            <!-- عني -->
             <div class="relative group">
-                <a href="#" class="nav-link flex items-center">
+                <a href="#" class="nav-link flex items-center gap-1 text-sm sm:text-base md:text-lg lg:text-xl">
                     <span>عني</span>
-                    <span class="material-icons transform group-hover:rotate-180 transition-transform">
-            expand_more
-        </span>
+                    <span class="material-icons transform group-hover:rotate-180 transition-transform">expand_more</span>
                 </a>
-
-                <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg
-                opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100
-                group-hover:visible transition-all duration-200 z-10">
+                <div class="absolute left-0 mt-2 w-56 bg-white text-black rounded-lg shadow-lg
+            opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100
+            group-hover:visible transition-all duration-200 z-10">
                     <a href="/whous" class="block px-4 py-2 hover:bg-gray-100">من آنا</a>
                     <a href="{{route('certificate')}}" class="block px-4 py-2 hover:bg-gray-100">الشهادات والدورات</a>
-
                     <a href="{{route('official')}}" class="block px-4 py-2 hover:bg-gray-100">صور رسميه لي</a>
-
                 </div>
             </div>
 
-
-
-
-
-
+            <!-- الكتب -->
             <div class="relative group">
-                <a href="{{route('books.index')}}" class="nav-link flex items-center">
+                <a href="{{route('books.index')}}" class="nav-link flex items-center text-sm sm:text-base md:text-lg lg:text-xl">
                     <span>{{ __('site.books') }}</span>
                 </a>
             </div>
 
-
+            <!-- ملخصات كتب -->
             <div class="relative group">
-                <a href="{{ route('sumbook') }}" class="nav-link flex items-center">
-                    <span class="text-sm sm:text-base md:text-lg lg:text-xl">ملخصات كتب</span>
+                <a href="{{route('sumbook')}}" class="nav-link flex items-center text-sm sm:text-base md:text-lg lg:text-xl">
+                    <span>ملخصات كتب</span>
                 </a>
             </div>
 
-
-
+            <!-- تصويري -->
             <div class="relative group">
-                <a href="#" class="nav-link flex items-center">
+                <a href="#" class="nav-link flex items-center gap-1 text-sm sm:text-base md:text-lg lg:text-xl">
                     <span>تصويري</span>
-                    <span class="material-icons transform group-hover:rotate-180 transition-transform">
-            expand_more
-        </span>
+                    <span class="material-icons transform group-hover:rotate-180 transition-transform">expand_more</span>
                 </a>
-
-                <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg
-                opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100
-                group-hover:visible transition-all duration-200 z-10">
-                    <a href="{{route('ClientBlackAndWhite')}}" class="block px-4 py-2 hover:bg-gray-100 ">صور آبيض وآسود</a>
-                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 ">صور ملونه</a>
-                </div>
-            </div>
-
-
-            <div class="relative group">
-                <a href="{{ route('decor') }}" class="nav-link flex items-center space-x-1">
-                    <span class="text-sm sm:text-base md:text-lg lg:text-xl">صور الديكورات</span>
-                    <span class="material-icons text-sm sm:text-base md:text-lg lg:text-xl transform group-hover:rotate-180 transition-transform">
-            expand_more
-        </span>
-                </a>
-
                 <div class="absolute left-0 mt-2 w-56 bg-white text-black rounded-lg shadow-lg
-                opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100
-                group-hover:visible transition-all duration-200 z-10">
-
-                    <a href="{{route('kitchen')}}" class="block px-4 py-2 hover:bg-gray-100 ">مطابخ</a>
-                    <a href="{{route('pool')}}" class="block px-4 py-2 hover:bg-gray-100 ">مسابح</a>
-                    <a href="{{route('office')}}" class="block px-4 py-2 hover:bg-gray-100 ">مكتب منزلي</a>
-                    <a href="{{route('bathroom')}}" class="block px-4 py-2 hover:bg-gray-100 ">حمامات</a>
-                    <a href="{{route('diningroom')}}" class="block px-4 py-2 hover:bg-gray-100 ">غرف طعام</a>
-                    <a href="{{route('laundryroom')}}" class="block px-4 py-2 hover:bg-gray-100 ">غرف غسيل</a>
-                    <a href="{{route('livingroom')}}" class="block px-4 py-2 hover:bg-gray-100 ">غرف جلوس</a>
-                    <a href="{{route('warehouse')}}" class="block px-4 py-2 hover:bg-gray-100 ">خزائن</a>
-                    <a href="{{route('externalsession')}}" class="block px-4 py-2 hover:bg-gray-100 ">جلسات خارجية</a>
-                    <a href="{{route('landscape')}}" class="block px-4 py-2 hover:bg-gray-100 ">لاند سكيب</a>
-                    <a href="{{route('bedroom')}}" class="block px-4 py-2 hover:bg-gray-100 ">غرف نوم أولاد وبنات</a>
-                    <a href="{{route('drawer')}}" class="block px-4 py-2 hover:bg-gray-100 ">تصميم درج</a>
-                    <a href="{{route('chamber')}}" class="block px-4 py-2 hover:bg-gray-100 ">غرف نوم</a>
-                    <a href="{{route('gym')}}" class="block px-4 py-2 hover:bg-gray-100 ">جيم منزلي</a>
-                    <a href="{{route('terrace')}}" class="block px-4 py-2 hover:bg-gray-100 ">برندة</a>
-                    <a href="{{route('house')}}" class="block px-4 py-2 hover:bg-gray-100 ">منازل ريفية</a>
+            opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100
+            group-hover:visible transition-all duration-200 z-10">
+                    <a href="{{route('ClientBlackAndWhite')}}" class="block px-4 py-2 hover:bg-gray-100">صور آبيض وآسود</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">صور ملونه</a>
                 </div>
             </div>
 
-
+            <!-- الديكورات -->
             <div class="relative group">
-                <a href="{{route('paintings')}}" class="nav-link flex items-center">
+                <a href="{{route('decor')}}" class="nav-link flex items-center gap-1 text-sm sm:text-base md:text-lg lg:text-xl">
+                    <span>صور الديكورات</span>
+                    <span class="material-icons transform group-hover:rotate-180 transition-transform">expand_more</span>
+                </a>
+                <div class="absolute left-0 mt-2 w-64 bg-white text-black rounded-lg shadow-lg
+            opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100
+            group-hover:visible transition-all duration-200 z-10">
+                    <a href="{{route('kitchen')}}" class="block px-4 py-2 hover:bg-gray-100">مطابخ</a>
+                    <a href="{{route('pool')}}" class="block px-4 py-2 hover:bg-gray-100">مسابح</a>
+                    <a href="{{route('office')}}" class="block px-4 py-2 hover:bg-gray-100">مكتب منزلي</a>
+                    <a href="{{route('bathroom')}}" class="block px-4 py-2 hover:bg-gray-100">حمامات</a>
+                    <a href="{{route('diningroom')}}" class="block px-4 py-2 hover:bg-gray-100">غرف طعام</a>
+                    <a href="{{route('laundryroom')}}" class="block px-4 py-2 hover:bg-gray-100">غرف غسيل</a>
+                    <a href="{{route('livingroom')}}" class="block px-4 py-2 hover:bg-gray-100">غرف جلوس</a>
+                    <a href="{{route('warehouse')}}" class="block px-4 py-2 hover:bg-gray-100">خزائن</a>
+                    <a href="{{route('externalsession')}}" class="block px-4 py-2 hover:bg-gray-100">جلسات خارجية</a>
+                    <a href="{{route('landscape')}}" class="block px-4 py-2 hover:bg-gray-100">لاند سكيب</a>
+                    <a href="{{route('bedroom')}}" class="block px-4 py-2 hover:bg-gray-100">غرف نوم أولاد وبنات</a>
+                    <a href="{{route('drawer')}}" class="block px-4 py-2 hover:bg-gray-100">تصميم درج</a>
+                    <a href="{{route('chamber')}}" class="block px-4 py-2 hover:bg-gray-100">غرف نوم</a>
+                    <a href="{{route('gym')}}" class="block px-4 py-2 hover:bg-gray-100">جيم منزلي</a>
+                    <a href="{{route('terrace')}}" class="block px-4 py-2 hover:bg-gray-100">برندة</a>
+                    <a href="{{route('house')}}" class="block px-4 py-2 hover:bg-gray-100">منازل ريفية</a>
+                </div>
+            </div>
+
+            <!-- معرض اللوحات -->
+            <div class="relative group">
+                <a href="{{route('paintings')}}" class="nav-link flex items-center text-sm sm:text-base md:text-lg lg:text-xl">
                     <span>معرض اللوحات</span>
                 </a>
             </div>
 
-
-
-
+            <!-- العملات -->
             <div class="relative group">
-                <a href="{{route('coin')}}" class="nav-link flex items-center">
-                    <span>عملات عالمية </span>
-                </a>
-            </div>
-            <div class="relative group">
-                <a href="{{route('blog')}}" class="nav-link flex items-center">
-                    <span> المدونة</span>
+                <a href="{{route('coin')}}" class="nav-link flex items-center text-sm sm:text-base md:text-lg lg:text-xl">
+                    <span>عملات عالمية</span>
                 </a>
             </div>
 
-
+            <!-- المدونة -->
             <div class="relative group">
-                <a href="#" class="nav-link flex items-center">
+                <a href="{{route('blog')}}" class="nav-link flex items-center text-sm sm:text-base md:text-lg lg:text-xl">
+                    <span>المدونة</span>
+                </a>
+            </div>
+
+            <!-- قنواتي -->
+            <div class="relative group">
+                <a href="#" class="nav-link flex items-center gap-1 text-sm sm:text-base md:text-lg lg:text-xl">
                     <span>قنواتي</span>
                     <span class="material-icons transform group-hover:rotate-180 transition-transform">expand_more</span>
                 </a>
                 <div class="absolute left-0 mt-2 w-56 bg-white text-black rounded-lg shadow-lg
-                opacity-0 invisible group-hover:opacity-100 group-hover:visible
-                transition-all duration-300 ease-in-out z-10">
-                    <a href="{{route('channel')}}" class="block px-4 py-2 hover:bg-gray-100 ">قناة اليوتيوب</a>
-                    <a href="{{route('channeltik')}}" class="block px-4 py-2 hover:bg-gray-100 ">قناة التيك توك</a>
+            opacity-0 invisible group-hover:opacity-100 group-hover:visible
+            transition-all duration-300 ease-in-out z-10">
+                    <a href="{{route('channel')}}" class="block px-4 py-2 hover:bg-gray-100">قناة اليوتيوب</a>
+                    <a href="{{route('channeltik')}}" class="block px-4 py-2 hover:bg-gray-100">قناة التيك توك</a>
                 </div>
             </div>
 
