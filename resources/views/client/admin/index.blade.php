@@ -51,8 +51,8 @@
 
                         <!-- الصورة -->
                         <td class="px-4 py-3 text-center border border-gray-300 align-middle">
-                            @if($gym->image)
-                                <img src="{{ asset('public/storage/' . $gym->image) }}"
+                            @if($client->image)
+                                <img src="{{ asset('public/storage/' . $client->image) }}"
                                      class="h-16 w-16 object-cover rounded-lg border border-gray-200 mx-auto" alt="غلاف">
                             @else
                                 <span class="text-gray-400 italic text-sm">لا يوجد</span>
@@ -61,12 +61,12 @@
 
                         <!-- الوصف -->
                         <td class="px-4 py-3 text-right border border-gray-300 align-middle whitespace-normal break-words">
-                            {{ Str::limit($gym->description, 80) }}
+                            {{ Str::limit($client->description, 80) }}
                         </td>
 
                         <!-- العنوان -->
                         <td class="px-4 py-3 font-semibold text-gray-900 text-right border border-gray-300 align-middle">
-                            {{ $gym->title }}
+                            {{ $client->title }}
                         </td>
                     </tr>
                 @endforeach
