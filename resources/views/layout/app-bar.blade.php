@@ -61,11 +61,7 @@
             </div>
 
 
-            <div class="relative group">
-                <a href="{{route('certificate')}}" class="nav-link flex items-center">
-                    <span>الشهادات والدورات</span>
-                </a>
-            </div>
+
 
 
 
