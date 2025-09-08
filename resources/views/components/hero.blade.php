@@ -80,11 +80,10 @@
 <div id="loading-screen">
     <img id="loading-logo" src="logo.png" alt="Loading...">
 </div>
-
 <!-- المحتوى الرئيسي -->
 <div class="min-h-screen flex items-center justify-center bg-gradient-to-tr from-gray-50 to-green-50 relative overflow-hidden">
     <!-- الحاوية -->
-    <div class="container mx-auto flex flex-col md:flex-row items-center px-6 py-16">
+    <div class="container mx-auto flex flex-col md:flex-row-reverse items-center px-6 py-16">
 
         <!-- الكرت على اليسار -->
         <div class="relative w-full md:w-1/2 flex justify-center mb-12 md:mb-0">
@@ -104,7 +103,7 @@
             </p>
 
             <!-- الأزرار -->
-            <div class="flex gap-4 justify-start">
+            <div class="flex gap-4 justify-start md:justify-end">
                 <a href="#join" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition">
                     انضم إلى النادي
                 </a>
@@ -115,6 +114,7 @@
         </div>
     </div>
 </div>
+
 
 
     <!-- زر واتساب -->
