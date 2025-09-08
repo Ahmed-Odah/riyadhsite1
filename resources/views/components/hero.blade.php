@@ -82,15 +82,9 @@
 </div>
 <!-- المحتوى الرئيسي -->
 <div class="min-h-screen flex items-center justify-center bg-gradient-to-tr from-gray-50 to-green-50 relative overflow-hidden">
-    <!-- الحاوية -->
-    <div class="container mx-auto flex flex-col md:flex-row-reverse items-center px-6 py-16">
 
-        <!-- الكرت على اليسار -->
-        <div class="relative w-full md:w-1/2 flex justify-center mb-12 md:mb-0">
-            <div class="bg-teal-600 rounded-2xl shadow-xl w-80 h-64 flex items-center justify-center text-white font-bold text-lg">
-                كرت / صورة
-            </div>
-        </div>
+
+
 
         <!-- النصوص على اليمين -->
         <div class="w-full md:w-1/2 text-right">
