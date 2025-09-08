@@ -53,33 +53,35 @@
             </div>
         @endif
 
-        {{-- مودال عرض الصورة مع قلبها --}}
+        {{-- مودال عرض الصورة مع قلبها (بدون انعكاس/عكس النص) --}}
         <div x-show="modalOpen" x-transition.opacity
              class="fixed inset-0 z-50 flex items-center justify-center">
 
             {{-- خلفية سوداء --}}
             <div class="absolute inset-0 bg-black bg-opacity-90" @click="modalOpen = false"></div>
 
-            {{-- الصورة --}}
+            {{-- الحاوية --}}
             <div @click.stop x-data="{ modalBack: false }"
-                 class="relative flex items-center justify-center"
-                 style="max-width: 70vw; max-height: 70vh; perspective: 1000px;"> {{-- أضفنا perspective --}}
+                 class="relative"
+                 style="width:min(70vw,1000px); height:min(70vh,1000px); perspective:1000px;"> {{-- مهم: أبعاد ثابتة + منظور --}}
 
-                <div class="relative transition-transform duration-500 flex items-center justify-center"
-                     :class="{'rotate-y-180': modalBack}"
-                     @click="modalBack = !modalBack"
-                     style="transform-style: preserve-3d;"> {{-- مهم preserve-3d --}}
+                {{-- العنصر الداخلي القابل للدوران --}}
+                <div class="flip-inner"
+                     :class="{ 'is-rotated': modalBack }"
+                     @click="modalBack = !modalBack">
 
                     {{-- الوجه --}}
-                    <div class="absolute inset-0 flex items-center justify-center backface-hidden">
-                        <img :src="'/public/storage/' + selectedCoin?.image"
-                             class="object-contain max-w-full max-h-full rounded-2xl shadow-2xl">
+                    <div class="flip-face flip-front">
+                        <img :src="'/public/storage/' + (selectedCoin?.image ?? '')"
+                             alt=""
+                             class="object-contain w-full h-full rounded-2xl shadow-2xl">
                     </div>
 
                     {{-- الظهر --}}
-                    <div class="absolute inset-0 flex items-center justify-center backface-hidden rotate-y-180">
-                        <img :src="'/public/storage/' + (selectedCoin?.back_image ?? selectedCoin?.image)"
-                             class="object-contain max-w-full max-h-full rounded-2xl shadow-2xl">
+                    <div class="flip-face flip-back">
+                        <img :src="'/public/storage/' + (selectedCoin?.back_image ?? selectedCoin?.image ?? '')"
+                             alt=""
+                             class="object-contain w-full h-full rounded-2xl shadow-2xl">
                     </div>
                 </div>
 
@@ -88,17 +90,37 @@
                         class="absolute top-3 right-3 text-white text-4xl font-extrabold hover:text-gray-300">&times;</button>
             </div>
         </div>
+
     </div>
 
     {{-- CSS --}}
     <style>
-        .rotate-y-180 {
-            transform: rotateY(180deg);
-            transition: transform 0.5s;
+        /* قلب ناعم */
+        .flip-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;           /* مهم */
+            transition: transform 0.5s ease;        /* سلاسة الحركة */
+            will-change: transform;
         }
-        .backface-hidden {
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden; /* لدعم سفاري */
+        .flip-inner.is-rotated {
+            transform: rotateY(180deg);             /* نقلب الحاوية فقط */
+        }
+        .flip-face {
+            position: absolute;
+            inset: 0;                                /* ملء الحاوية */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backface-visibility: hidden;            /* لا تظهر الجهة الخلفية مقلوبة */
+            -webkit-backface-visibility: hidden;    /* دعم سفاري */
+        }
+        .flip-front {
+            transform: rotateY(0deg);
+        }
+        .flip-back {
+            transform: rotateY(180deg);             /* نحضّر الظهر عكسي ليطلع صحيح بعد قلب الحاوية */
         }
     </style>
 
