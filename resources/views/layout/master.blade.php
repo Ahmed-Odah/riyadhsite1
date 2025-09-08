@@ -6,7 +6,7 @@
 
     <link rel="icon" href="{{ asset('resha.png') }}" type="image/png">
 
-    <title>Resha </title>
+    <title>رياض المقيد </title>
 
      <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
