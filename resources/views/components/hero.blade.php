@@ -76,24 +76,30 @@
     });
 </script>
 
-<!-- شاشة التحميل -->
-<div id="loading-screen">
-    <img id="loading-logo" src="logo.png" alt="Loading...">
-</div>
+
 <!-- المحتوى الرئيسي -->
 <div class="min-h-screen flex items-center justify-center bg-gradient-to-tr from-gray-50 to-green-50 relative overflow-hidden">
 
 
 
-
-    <div class="w-full md:w-1/2 text-right mr-32">
+    <div class="w-full md:w-1/2 mx-auto text-center">
         <h1 class="text-3xl md:text-5xl font-bold text-teal-700 mb-4">
-            نادي الeeeرؤية 2030
+            نادي الرؤية 2030
         </h1>
-        <p class="text-gray-600 text-lg mb-6 max-w-md ml-auto">
+        <p class="text-gray-600 text-lg mb-6 max-w-2xl mx-auto">
             بطموحنا نحقق رؤيتنا. ندعم ونحفز طلاب وطالبات جامعة الملك سعود لتكوين مجتمع ريادي
             متوافق مع أهداف رؤية المملكة 2030.
         </p>
+
+        <!-- الأزرار -->
+        <div class="flex gap-4 justify-center">
+            <a href="#join" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition">
+                انضم إلى النادي
+            </a>
+            <a href="#projects" class="bg-white text-teal-600 border border-teal-600 hover:bg-gray-100 font-semibold px-6 py-3 rounded-xl shadow-md transition">
+                استكشف مشاريعنا
+            </a>
+        </div>
     </div>
 
 
