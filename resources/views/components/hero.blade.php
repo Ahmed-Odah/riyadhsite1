@@ -1,4 +1,48 @@
+<style>
 
+
+
+    /* زر الرجوع للأعلى */
+    #scrollTopBtn {
+        transition: opacity 0.4s ease;
+    }
+
+    /* الخلفية */
+    .bg-gradient {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .animated-gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(-45deg, #000000, #845ec2, #000000, #009efd);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+        z-index: -1;
+    }
+
+    @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 1.2s ease-out forwards;
+        animation-delay: 0.5s;
+    }
+</style>
 
 <body>
 <!-- رسالة Scroll Alert أسفل يمين -->
