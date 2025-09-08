@@ -170,16 +170,7 @@
             </div>
 
 
-            <div class="flex items-center gap-3">
-                <a href="{{ url('lang/ar') }}" class="flex items-center gap-1 nav-link">
-                    <span class="material-icons text-base">language</span>
-                    <span>عربي</span>
-                </a>
-                <a href="{{ url('lang/en') }}" class="flex items-center gap-1 nav-link">
-                    <span class="material-icons text-base">language</span>
-                    <span>English</span>
-                </a>
-            </div>
+
             <div>
                 @if(\Illuminate\Support\Facades\Auth::check())
                     <form action="{{route('logout')}}" method="POST">
