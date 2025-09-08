@@ -82,40 +82,20 @@
 </div>
 
 <!-- المحتوى الرئيسي -->
-<div class="min-h-screen flex items-center justify-center bg-gradient-to-tr from-gray-50 to-green-50 relative overflow-hidden">
+<div class="bg-gradient text-white min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- الخلفية المتحركة -->
+    <div class="absolute inset-0 bg-no-repeat bg-cover brightness-37 z-0" style="background-image: url('book1.jpg');"></div>
 
-    <!-- الحاوية -->
-    <div class="container mx-auto flex flex-col md:flex-row items-center px-6 py-16">
-
-        <!-- الكرت على اليسار -->
-        <div class="relative w-full md:w-1/2 flex justify-center mb-12 md:mb-0">
-            <div class="bg-teal-600 rounded-2xl shadow-xl w-80 h-64 flex items-center justify-center text-white font-bold text-lg">
-                نادي الرؤية 2030
-            </div>
-        </div>
-
-        <!-- النصوص والأزرار على اليمين -->
-        <div class="w-full md:w-1/2 text-center md:text-right">
-            <h1 class="text-3xl md:text-5xl font-bold text-teal-700 mb-4">
-                نادي الرؤية 2030
-            </h1>
-            <p class="text-gray-600 text-lg mb-6">
-                بطموحنا نحقق رؤيتنا. ندعم ونحفز طلاب وطالبات جامعة الملك سعود لتكوين مجتمع ريادي
-                متوافق مع أهداف رؤية المملكة 2030.
-            </p>
-
-            <!-- الأزرار -->
-            <div class="flex gap-4 justify-center md:justify-start">
-                <a href="#join" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition">
-                    انضم إلى النادي
-                </a>
-                <a href="#projects" class="bg-white text-teal-600 border border-teal-600 hover:bg-gray-100 font-semibold px-6 py-3 rounded-xl shadow-md transition">
-                    استكشف مشاريعنا
-                </a>
-            </div>
+    <!-- النصوص -->
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <div class="max-w-2xl mx-auto">
+            <section class="py-24 px-4">
+                <h1 class="text-2xl md:text-3xl font-semibold text-white text-center leading-snug opacity-0 translate-y-5 animate-fade-in-up shadow-md">
+                     خليط من الحرف والضوء، من الفكرة واللحظة. أهلاً بك في عالمي.
+                </h1>
+            </section>
         </div>
     </div>
-</div>
 
     <!-- زر واتساب -->
     <a href="https://wa.me/966504408726">
