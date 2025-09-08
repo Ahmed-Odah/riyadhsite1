@@ -71,7 +71,62 @@
             </div>
 
 
+            <div class="relative group">
+                <a href="{{route('sumbook')}}" class="nav-link flex items-center">
+                    <span>ملخصات كتب </span>
+                </a>
+            </div>
 
+
+
+
+            <div class="relative group">
+                <a href="#" class="nav-link flex items-center">
+                    <span>تصويري</span>
+                    <span class="material-icons transform group-hover:rotate-180 transition-transform">
+            expand_more
+        </span>
+                </a>
+
+                <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg
+                opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100
+                group-hover:visible transition-all duration-200 z-10">
+                    <a href="{{route('ClientBlackAndWhite')}}" class="block px-4 py-2 hover:bg-gray-100 ">صور آبيض وآسود</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 ">صور ملونه</a>
+                </div>
+            </div>
+
+
+            <div class="relative group">
+                <a href="{{route('decor')}}" class="nav-link flex items-center">
+                    <span>صور الديكورات</span>
+                    <span class="material-icons transform group-hover:rotate-180 transition-transform">
+            expand_more
+        </span>
+                </a>
+
+                <div class="absolute left-0 mt-2 w-56 bg-white text-black rounded-lg shadow-lg
+                opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100
+                group-hover:visible transition-all duration-200 z-10">
+
+                    <a href="{{route('kitchen')}}" class="block px-4 py-2 hover:bg-gray-100 ">مطابخ</a>
+                    <a href="{{route('pool')}}" class="block px-4 py-2 hover:bg-gray-100 ">مسابح</a>
+                    <a href="{{route('office')}}" class="block px-4 py-2 hover:bg-gray-100 ">مكتب منزلي</a>
+                    <a href="{{route('bathroom')}}" class="block px-4 py-2 hover:bg-gray-100 ">حمامات</a>
+                    <a href="{{route('diningroom')}}" class="block px-4 py-2 hover:bg-gray-100 ">غرف طعام</a>
+                    <a href="{{route('laundryroom')}}" class="block px-4 py-2 hover:bg-gray-100 ">غرف غسيل</a>
+                    <a href="{{route('livingroom')}}" class="block px-4 py-2 hover:bg-gray-100 ">غرف جلوس</a>
+                    <a href="{{route('warehouse')}}" class="block px-4 py-2 hover:bg-gray-100 ">خزائن</a>
+                    <a href="{{route('externalsession')}}" class="block px-4 py-2 hover:bg-gray-100 ">جلسات خارجية</a>
+                    <a href="{{route('landscape')}}" class="block px-4 py-2 hover:bg-gray-100 ">لاند سكيب</a>
+                    <a href="{{route('bedroom')}}" class="block px-4 py-2 hover:bg-gray-100 ">غرف نوم أولاد وبنات</a>
+                    <a href="{{route('drawer')}}" class="block px-4 py-2 hover:bg-gray-100 ">تصميم درج</a>
+                    <a href="{{route('chamber')}}" class="block px-4 py-2 hover:bg-gray-100 ">غرف نوم</a>
+                    <a href="{{route('gym')}}" class="block px-4 py-2 hover:bg-gray-100 ">جيم منزلي</a>
+                    <a href="{{route('terrace')}}" class="block px-4 py-2 hover:bg-gray-100 ">برندة</a>
+                    <a href="{{route('house')}}" class="block px-4 py-2 hover:bg-gray-100 ">منازل ريفية</a>
+                </div>
+            </div>
 
 
             <div class="relative group">
