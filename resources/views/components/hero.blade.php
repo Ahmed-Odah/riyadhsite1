@@ -88,7 +88,7 @@
 
     <div class="w-full md:w-1/2 text-right mr-32">
         <h1 class="text-3xl md:text-5xl font-bold text-teal-700 mb-4">
-            نادي الرؤية 2030
+            نادي الeeeرؤية 2030
         </h1>
         <p class="text-gray-600 text-lg mb-6 max-w-md ml-auto">
             بطموحنا نحقق رؤيتنا. ندعم ونحفز طلاب وطالبات جامعة الملك سعود لتكوين مجتمع ريادي
