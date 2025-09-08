@@ -45,40 +45,32 @@
 </style>
 
 <body>
-<!-- الخلفية المظلمة والرسالة الكبيرة -->
-<div id="overlay-alert"
-     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 transition-opacity duration-500">
-    <div class="bg-white rounded-2xl p-12 max-w-lg text-center shadow-2xl animate-fade-in">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">مرحبًا بك!</h2>
-        <p class="text-lg text-gray-700">سجّل الآن لتصلك آخر التحديثات والعروض الحصرية.</p>
-    </div>
+<!-- الرسالة -->
+<div id="scroll-alert"
+     class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-8 py-6 rounded-xl shadow-xl opacity-0 transition-opacity duration-500 z-50 max-w-2xl text-center">
+    <h2 class="text-2xl font-bold mb-2">مرحبًا بك!</h2>
+    <p class="text-lg">سجّل الآن لتصلك آخر التحديثات والعروض الحصرية.</p>
 </div>
 
 <script>
-    // إظهار الرسالة مع التلاشي
-    window.addEventListener('load', () => {
-        const overlay = document.getElementById('overlay-alert');
-        overlay.classList.remove('opacity-0');
-        overlay.classList.add('opacity-100');
+    const scrollAlert = document.getElementById('scroll-alert');
+    let alertShown = false;
 
-        // إخفاء الرسالة بعد 5 ثواني
-        setTimeout(() => {
-            overlay.classList.remove('opacity-100');
-            overlay.classList.add('opacity-0');
-        }, 5000);
+    window.addEventListener('scroll', () => {
+        // إظهار الرسالة عند التمرير أكثر من 150px
+        if (!alertShown && window.scrollY > 150) {
+            alertShown = true;
+            scrollAlert.classList.remove('opacity-0');
+            scrollAlert.classList.add('opacity-100');
+
+            // إخفاء الرسالة بعد 5 ثواني
+            setTimeout(() => {
+                scrollAlert.classList.remove('opacity-100');
+                scrollAlert.classList.add('opacity-0');
+            }, 5000);
+        }
     });
 </script>
-
-<style>
-    @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.9); }
-        to { opacity: 1; transform: scale(1); }
-    }
-
-    .animate-fade-in {
-        animation: fadeIn 0.5s ease-out forwards;
-    }
-</style>
 
 <!-- شاشة التحميل -->
 <div id="loading-screen">
