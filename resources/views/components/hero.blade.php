@@ -87,7 +87,7 @@
 
 
     <!-- النصوص على اليمين -->
-    <div class="w-full md:w-1/2 text-right pr-12">
+    <div class="w-full md:w-1/2 text-right pl-12">
         <h1 class="text-3xl md:text-5xl font-bold text-teal-700 mb-4">
             نادي الرؤية 2030
         </h1>
@@ -96,8 +96,6 @@
             متوافق مع أهداف رؤية المملكة 2030.
         </p>
     </div>
-
-
 
 
 
