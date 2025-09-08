@@ -139,17 +139,17 @@
 
 
 
-            <div class="relative group">
-                <a href="{{route('blog')}}" class="nav-link flex items-center">
-                    <span> المدونة</span>
-                </a>
-            </div>
+
             <div class="relative group">
                 <a href="{{route('coin')}}" class="nav-link flex items-center">
                     <span>عملات عالمية </span>
                 </a>
             </div>
-
+            <div class="relative group">
+                <a href="{{route('blog')}}" class="nav-link flex items-center">
+                    <span> المدونة</span>
+                </a>
+            </div>
 
 
             <div class="relative group">
