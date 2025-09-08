@@ -123,8 +123,10 @@
         ↑
     </button>
 </div>
+<script src="https://cdn.tailwindcss.com"></script>
 
 <script>
+
     // إخفاء/إظهار زر الرجوع لأعلى الصفحة
     const scrollTopBtn = document.getElementById("scrollTopBtn");
 
