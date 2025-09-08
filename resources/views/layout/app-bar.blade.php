@@ -29,6 +29,13 @@
             </style>
 
             <div>
+                <a href="{{route('login')}}" class="flex items-center gap-1 nav-link">
+                    <span class="material-icons text-base">person</span>
+                    <span>تسجيل</span>
+                </a>
+            </div>
+
+            <div>
                 <a href="{{route('homepage')}}" class="nav-link flex items-center">الرئيسية</a>
             </div>
 
