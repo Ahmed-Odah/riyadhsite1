@@ -45,6 +45,30 @@
 </style>
 
 <body>
+<!-- رسالة Alert -->
+<div id="alert-box"
+     class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-3 opacity-0 transition-opacity duration-500 z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 18h.01M12 12h.01M12 6h.01M12 4h.01" />
+    </svg>
+    <span>سجّل الآن لتصلك آخر التحديثات والعروض الحصرية!</span>
+</div>
+
+<script>
+    // إظهار الرسالة مع التلاشي
+    window.addEventListener('load', () => {
+        const alertBox = document.getElementById('alert-box');
+        alertBox.classList.remove('opacity-0');
+        alertBox.classList.add('opacity-100');
+
+        // إخفاء الرسالة بعد 5 ثواني
+        setTimeout(() => {
+            alertBox.classList.remove('opacity-100');
+            alertBox.classList.add('opacity-0');
+        }, 5000);
+    });
+</script>
+
 <!-- شاشة التحميل -->
 <div id="loading-screen">
     <img id="loading-logo" src="logo.png" alt="Loading...">
