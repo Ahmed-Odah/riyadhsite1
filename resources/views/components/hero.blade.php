@@ -87,30 +87,16 @@
 
 
     <!-- النصوص على اليمين -->
-    <div class="w-full md:w-1/2 flex justify-end">
-        <div class="text-right pr-12">
-            <h1 class="text-3xl md:text-5xl font-bold text-teal-700 mb-4">
-                نادي الرؤية 2030
-            </h1>
-            <p class="text-gray-600 text-lg mb-6 max-w-md">
-                بطموحنا نحقق رؤيتنا. ندعم ونحفز طلاب وطالبات جامعة الملك سعود لتكوين مجتمع ريادي
-                متوافق مع أهداف رؤية المملكة 2030.
-            </p>
+    <div class="w-full md:w-1/2 text-right pr-12">
+        <h1 class="text-3xl md:text-5xl font-bold text-teal-700 mb-4">
+            نادي الرؤية 2030
+        </h1>
+        <p class="text-gray-600 text-lg mb-6 max-w-md ml-auto">
+            بطموحنا نحقق رؤيتنا. ندعم ونحفز طلاب وطالبات جامعة الملك سعود لتكوين مجتمع ريادي
+            متوافق مع أهداف رؤية المملكة 2030.
+        </p>
 
             <!-- الأزرار -->
-            <div class="flex gap-4 justify-end">
-                <a href="#join" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition">
-                    انضم إلى النادي
-                </a>
-                <a href="#projects" class="bg-white text-teal-600 border border-teal-600 hover:bg-gray-100 font-semibold px-6 py-3 rounded-xl shadow-md transition">
-                    استكشف مشاريعنا
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- الأزرار -->
             <div class="flex gap-4 justify-start md:justify-end">
                 <a href="#join" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition">
                     انضم إلى النادي
