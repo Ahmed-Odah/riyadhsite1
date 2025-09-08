@@ -72,11 +72,10 @@
 
 
             <div class="relative group">
-                <a href="{{route('sumbook')}}" class="nav-link flex items-center">
-                    <span>ملخصات كتب </span>
+                <a href="{{ route('sumbook') }}" class="nav-link flex items-center">
+                    <span class="text-sm sm:text-base md:text-lg lg:text-xl">ملخصات كتب</span>
                 </a>
             </div>
-
 
 
 
