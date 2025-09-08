@@ -45,29 +45,40 @@
 </style>
 
 <body>
-<!-- رسالة Alert -->
-<div id="alert-box"
-     class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-3 opacity-0 transition-opacity duration-500 z-50">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 18h.01M12 12h.01M12 6h.01M12 4h.01" />
-    </svg>
-    <span>سجّل الآن لتصلك آخر التحديثات والعروض الحصرية!</span>
+<!-- الخلفية المظلمة والرسالة الكبيرة -->
+<div id="overlay-alert"
+     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 transition-opacity duration-500">
+    <div class="bg-white rounded-2xl p-12 max-w-lg text-center shadow-2xl animate-fade-in">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">مرحبًا بك!</h2>
+        <p class="text-lg text-gray-700">سجّل الآن لتصلك آخر التحديثات والعروض الحصرية.</p>
+    </div>
 </div>
 
 <script>
     // إظهار الرسالة مع التلاشي
     window.addEventListener('load', () => {
-        const alertBox = document.getElementById('alert-box');
-        alertBox.classList.remove('opacity-0');
-        alertBox.classList.add('opacity-100');
+        const overlay = document.getElementById('overlay-alert');
+        overlay.classList.remove('opacity-0');
+        overlay.classList.add('opacity-100');
 
         // إخفاء الرسالة بعد 5 ثواني
         setTimeout(() => {
-            alertBox.classList.remove('opacity-100');
-            alertBox.classList.add('opacity-0');
+            overlay.classList.remove('opacity-100');
+            overlay.classList.add('opacity-0');
         }, 5000);
     });
 </script>
+
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+</style>
 
 <!-- شاشة التحميل -->
 <div id="loading-screen">
