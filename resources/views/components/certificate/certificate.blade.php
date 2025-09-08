@@ -34,6 +34,7 @@
     </div>
 
 
+
 </div>
 <h1 class="text-3xl font-bold mb-6 text-center mt-20 text-gray-800">الإنجازات</h1>
 

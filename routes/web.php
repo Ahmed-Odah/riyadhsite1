@@ -27,6 +27,11 @@ Route::middleware('web')->group(function () {
 
 
 // Route::get('/signup', \App\Actions\Auth\RegisterViewAction::class)->name('signup');
+
+Route::get('/client', \App\Actions\Client\Admin\ClientViewAction::class)->name('client');
+
+Route::post('/client-post', \App\Actions\Client\Admin\ClientPostAction::class)->name('client.post');
+
 Route::get('/signin', \App\Actions\Auth\LogInViewAction::class)->name('signin');
 Route::post('/signup-post', \App\Actions\Auth\RegisterPostAction::class)->name('signup.post');
 Route::post('/signin-post', \App\Actions\Auth\LoginPostAction::class)->name('signin.post');
@@ -347,6 +352,8 @@ Route::prefix('auth')->group(function () {
     Route::post('/house/delete/{house}', \App\Actions\Houses\Admin\DeleteHouseAction::class)->name('house-delete');
 
 
+
+    Route::get('/client/index', \App\Actions\Client\Admin\ClientAdminIndex::class)->name('client-index');
 
 
 

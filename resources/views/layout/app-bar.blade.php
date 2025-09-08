@@ -34,6 +34,10 @@
                 <a href="{{route('homepage')}}" class="nav-link flex items-center">الرئيسية</a>
             </div>
 
+            <div>
+                <a href="{{route('client')}}" class="nav-link flex items-center">الرئيسية</a>
+            </div>
+
 
 
 
@@ -51,11 +55,17 @@
                 group-hover:visible transition-all duration-200 z-10">
                     <a href="/whous" class="block px-4 py-2 hover:bg-gray-100">من آنا</a>
                     <a href="{{route('official')}}" class="block px-4 py-2 hover:bg-gray-100">صور رسميه لي</a>
+                    <a href="{{route('certificate')}}" class="block px-4 py-2 hover:bg-gray-100">الشهادات والدورات</a>
+
                 </div>
             </div>
 
 
-
+            <div class="relative group">
+                <a href="{{route('certificate')}}" class="nav-link flex items-center">
+                    <span>الشهادات والدورات</span>
+                </a>
+            </div>
 
 
 
@@ -126,11 +136,7 @@
                 </a>
             </div>
 
-            <div class="relative group">
-                <a href="{{route('certificate')}}" class="nav-link flex items-center">
-                    <span>الشهادات والدورات</span>
-                </a>
-            </div>
+
 
             <div class="relative group">
                 <a href="{{route('blog')}}" class="nav-link flex items-center">
