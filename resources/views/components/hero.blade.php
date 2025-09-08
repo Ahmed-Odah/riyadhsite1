@@ -45,9 +45,9 @@
 </style>
 
 <body>
-<!-- رسالة Scroll Alert أسفل اليمين -->
+<!-- رسالة Scroll Alert أسفل يمين -->
 <div id="scroll-alert"
-     class="fixed bottom-10 right-5 bg-blue-600 text-white px-6 py-4 rounded-xl shadow-xl opacity-0 transition-opacity duration-500 max-w-sm z-50">
+     class="fixed bottom-5 right-5 bg-blue-600 text-white px-6 py-4 rounded-xl shadow-xl opacity-0 transition-opacity duration-500 max-w-sm z-50">
     <h2 class="text-xl font-bold mb-1">مرحبًا بك!</h2>
     <p class="text-sm">سجّل الآن لتصلك آخر التحديثات والعروض الحصرية.</p>
 </div>
