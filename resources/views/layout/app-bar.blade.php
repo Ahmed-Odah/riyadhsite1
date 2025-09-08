@@ -97,9 +97,9 @@
 
 
             <div class="relative group">
-                <a href="{{route('decor')}}" class="nav-link flex items-center">
-                    <span>صور الديكورات</span>
-                    <span class="material-icons transform group-hover:rotate-180 transition-transform">
+                <a href="{{ route('decor') }}" class="nav-link flex items-center space-x-1">
+                    <span class="text-sm sm:text-base md:text-lg lg:text-xl">صور الديكورات</span>
+                    <span class="material-icons text-sm sm:text-base md:text-lg lg:text-xl transform group-hover:rotate-180 transition-transform">
             expand_more
         </span>
                 </a>
