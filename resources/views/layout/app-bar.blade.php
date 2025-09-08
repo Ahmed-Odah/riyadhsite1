@@ -28,12 +28,7 @@
                 }
             </style>
 
-            <div>
-                <a href="{{route('client')}}" class="flex items-center gap-1 nav-link">
-                    <span class="material-icons text-base">person</span>
-                    <span>تسجيل</span>
-                </a>
-            </div>
+
 
             <div>
                 <a href="{{route('homepage')}}" class="nav-link flex items-center">الرئيسية</a>
@@ -269,6 +264,14 @@
     <div class="relative group">
         <a href="{{route('blog')}}" class="nav-link flex items-center">
             <span>قنواتي  </span>
+        </a>
+    </div>
+
+
+    <div>
+        <a href="{{route('client')}}" class="flex items-center gap-1 nav-link">
+            <span class="material-icons text-base">person</span>
+            <span>تسجيل</span>
         </a>
     </div>
 
