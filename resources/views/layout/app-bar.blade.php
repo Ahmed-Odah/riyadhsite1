@@ -164,10 +164,11 @@
             </div>
 
             <div>
-                <a href="{{route('client')}}" class="flex items-center gap-1 nav-link">
-                    <span class="material-icons text-base">person</span>
+                <a href="{{route('client')}}" class="flex items-center nav-link">
+                    <span class="material-icons text-sm sm:text-base md:text-lg lg:text-xl">person</span>
                 </a>
             </div>
+
 
 
 
