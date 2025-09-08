@@ -45,30 +45,34 @@
 </style>
 
 <body>
-<!-- الرسالة -->
+<!-- رسالة Scroll Alert أسفل اليمين -->
 <div id="scroll-alert"
-     class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-8 py-6 rounded-xl shadow-xl opacity-0 transition-opacity duration-500 z-50 max-w-2xl text-center">
-    <h2 class="text-2xl font-bold mb-2">مرحبًا بك!</h2>
-    <p class="text-lg">سجّل الآن لتصلك آخر التحديثات والعروض الحصرية.</p>
+     class="fixed bottom-10 right-5 bg-blue-600 text-white px-6 py-4 rounded-xl shadow-xl opacity-0 transition-opacity duration-500 max-w-sm z-50">
+    <h2 class="text-xl font-bold mb-1">مرحبًا بك!</h2>
+    <p class="text-sm">سجّل الآن لتصلك آخر التحديثات والعروض الحصرية.</p>
 </div>
 
 <script>
-    const scrollAlert = document.getElementById('scroll-alert');
-    let alertShown = false;
+    document.addEventListener("DOMContentLoaded", function() {
+        const scrollAlert = document.getElementById('scroll-alert');
+        let alertShown = false;
 
-    window.addEventListener('scroll', () => {
-        // إظهار الرسالة عند التمرير أكثر من 150px
-        if (!alertShown && window.scrollY > 150) {
-            alertShown = true;
-            scrollAlert.classList.remove('opacity-0');
-            scrollAlert.classList.add('opacity-100');
+        window.addEventListener('scroll', () => {
+            // ظهور الرسالة عند التمرير أكثر من 150px
+            if (!alertShown && window.scrollY > 150) {
+                alertShown = true;
 
-            // إخفاء الرسالة بعد 5 ثواني
-            setTimeout(() => {
-                scrollAlert.classList.remove('opacity-100');
-                scrollAlert.classList.add('opacity-0');
-            }, 5000);
-        }
+                // إظهار الرسالة
+                scrollAlert.classList.remove('opacity-0');
+                scrollAlert.classList.add('opacity-100');
+
+                // إخفاء الرسالة بعد 5 ثواني
+                setTimeout(() => {
+                    scrollAlert.classList.remove('opacity-100');
+                    scrollAlert.classList.add('opacity-0');
+                }, 5000);
+            }
+        });
     });
 </script>
 
