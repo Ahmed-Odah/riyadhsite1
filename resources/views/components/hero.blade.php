@@ -97,18 +97,7 @@
         </p>
     </div>
 
-            <!-- الأزرار -->
-            <div class="flex gap-4 justify-start md:justify-end">
-                <a href="#join" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition">
-                    انضم إلى النادي
-                </a>
-                <a href="#projects" class="bg-white text-teal-600 border border-teal-600 hover:bg-gray-100 font-semibold px-6 py-3 rounded-xl shadow-md transition">
-                    استكشف مشاريعنا
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 
 
