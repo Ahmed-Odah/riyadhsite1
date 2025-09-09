@@ -117,7 +117,7 @@
 
     <!-- الصورة (تحت النص في الجوال، يسار في الشاشات الكبيرة) -->
     <div class="w-full lg:w-1/2 flex justify-center mt-8 lg:mt-0">
-        <img src="book11.jpg" alt="صورة جانبية"
+        <img src="/public/book11.jpg" alt="صورة جانبية"
              class="max-w-xs sm:max-w-sm md:max-w-md rounded-3xl shadow-2xl border-4 border-white/20
                 transform transition duration-500 hover:scale-105 hover:rotate-1 hover:shadow-cyan-500/50">
     </div>
