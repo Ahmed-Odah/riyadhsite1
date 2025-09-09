@@ -127,7 +127,7 @@
 
     <!-- الصورة (يسار) -->
     <div class="hidden lg:flex w-full lg:w-1/2 justify-center">
-        <img src="book11.jpg" alt="صورة جانبية"
+        <img src="/public/book11.jpg" alt="صورة جانبية"
              class="max-w-md rounded-3xl shadow-2xl border-4 border-white/20
                 transform transition duration-500 hover:scale-105 hover:rotate-1 hover:shadow-cyan-500/50">
     </div>
