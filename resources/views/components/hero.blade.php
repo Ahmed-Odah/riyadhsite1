@@ -116,11 +116,23 @@
     </div>
 
 
-    <!-- الصورة (تحت النص في الجوال، يسار في الشاشات الكبيرة) -->
-    <div class="w-full lg:w-1/2 flex justify-center mt-6 lg:mt-0">
-        <img src="/public/book11.jpg" alt="صورة جانبية"
-             class="w-128 sm:w-100 md:max-w-md rounded-3xl shadow-2xl border-4 border-white/20
-                transform transition duration-500 hover:scale-105 hover:rotate-1 hover:shadow-cyan-500/50">
+    <!-- قسم الصور -->
+    <div class="w-full lg:w-1/2 flex flex-col items-center gap-4 mt-6 lg:mt-0">
+        <!-- الصورة الرئيسية -->
+        <img src="/public/book11.jpg" alt="صورة رئيسية"
+             class="w-72 sm:w-80 md:w-96 rounded-3xl shadow-2xl border-4 border-white/20
+                transform transition duration-500 hover:scale-105 hover:shadow-cyan-500/50">
+
+        <!-- صورتين تحتها جنب بعض -->
+        <div class="flex gap-4">
+            <img src="/public/book22.jpg" alt="صورة جانبية 1"
+                 class="w-32 sm:w-36 md:w-40 rounded-2xl shadow-xl border-2 border-white/20
+                    transform transition duration-500 hover:scale-105 hover:shadow-pink-400/50">
+
+            <img src="/public/book33.jpg" alt="صورة جانبية 2"
+                 class="w-32 sm:w-36 md:w-40 rounded-2xl shadow-xl border-2 border-white/20
+                    transform transition duration-500 hover:scale-105 hover:shadow-blue-400/50">
+        </div>
     </div>
 
 
