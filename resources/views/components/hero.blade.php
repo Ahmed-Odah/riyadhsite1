@@ -80,10 +80,10 @@
 <!-- المحتوى الرئيسي -->
 <div class="min-h-screen flex flex-col lg:flex-row items-center justify-between
             bg-gradient-to-tr from-gray-50 via-green-50 to-gray-100
-            relative overflow-hidden px-6 lg:px-20 py-20">
+            relative overflow-hidden px-6 lg:px-20 pt-32 pb-20">
 
     <!-- النصوص -->
-    <div class="w-full lg:w-1/2 text-right">
+    <div class="w-full lg:w-1/2 text-right mt-12 lg:mt-0">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cyan-700 mb-4">
             موقع رياض <span class="text-cyan-900">الرسمي</span>
         </h1>
@@ -114,6 +114,7 @@
             </a>
         </div>
     </div>
+
 
     <!-- الصورة (تحت النص في الجوال، يسار في الشاشات الكبيرة) -->
     <div class="w-full lg:w-1/2 flex justify-center mt-8 lg:mt-0">
