@@ -77,43 +77,52 @@
 </script>
 
 
-<!-- النصوص -->
-<div class="w-full lg:w-1/2 text-right px-6 lg:mr-20 lg:ml-auto">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cyan-700 mb-2">
-        موقع رياض <span class="text-cyan-900">الرسمي</span>
-    </h1>
+<!-- المحتوى الرئيسي -->
+<div class="min-h-screen flex flex-col lg:flex-row items-center justify-between
+            bg-gradient-to-tr from-gray-50 via-green-50 to-gray-100
+            relative overflow-hidden px-6 lg:px-20 py-20">
 
-    <p class="text-gray-900 text-lg mb-3 max-w-2xl ml-auto">
-        خليط من الحرف والضوء، من الفكرة واللحظة. أهلاً بك في عالمي.
-    </p>
+    <!-- النصوص -->
+    <div class="w-full lg:w-1/2 text-right">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cyan-700 mb-4">
+            موقع رياض <span class="text-cyan-900">الرسمي</span>
+        </h1>
 
-    <!-- الأزرار -->
-    <div class="flex flex-col sm:flex-row gap-3 mt-4">
-        <a href="#join"
-           class="bg-cyan-600 hover:bg-cyan-500 text-white font-semibold px-4 py-2
-                  rounded-lg shadow-md transition transform hover:scale-105 text-xs sm:text-sm flex items-center gap-2 w-fit">
-            سجّل معنا
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor" class="w-3 h-3 sm:w-4 sm:h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-        </a>
+        <p class="text-gray-900 text-lg mb-6 max-w-2xl ml-auto">
+            خليط من الحرف والضوء، من الفكرة واللحظة. أهلاً بك في عالمي.
+        </p>
 
-        <a href="#projects"
-           class="bg-white text-teal-600 hover:bg-yellow-500 hover:text-white font-semibold px-4 py-2
-                  rounded-lg shadow-md transition transform hover:scale-105 text-xs sm:text-sm w-fit">
-            شاهد إنجازاتي
-        </a>
+        <!-- الأزرار -->
+        <div class="flex flex-col sm:flex-row gap-3 mt-6">
+            <a href="#join"
+               class="bg-cyan-600 hover:bg-cyan-500 text-white font-semibold
+              px-4 py-2 rounded-lg shadow-md transition transform hover:scale-105
+              text-xs sm:text-sm flex items-center gap-2 w-fit">
+                سجّل معنا
+                <!-- أيقونة سهم -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor" class="w-3 h-3 sm:w-4 sm:h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+
+            <a href="#projects"
+               class="bg-white text-teal-600 hover:bg-yellow-500 hover:text-white font-semibold
+              px-4 py-2 rounded-lg shadow-md transition transform hover:scale-105
+              text-xs sm:text-sm w-fit">
+                شاهد إنجازاتي
+            </a>
+        </div>
     </div>
-</div>
 
-<!-- الصورة -->
-<div class="w-full lg:w-1/2 flex justify-center mt-2 lg:mt-0 lg:order-2 order-2">
-    <img src="/book11.jpg" alt="صورة جانبية"
-         class="max-w-xs sm:max-w-sm md:max-w-md rounded-3xl shadow-2xl
-                border-4 border-white/20 transform transition duration-500
-                hover:scale-105 hover:rotate-1 hover:shadow-cyan-500/50">
-</div>
+    <!-- الصورة (تحت النص في الجوال، يسار في الشاشات الكبيرة) -->
+    <div class="w-full lg:w-1/2 flex justify-center mt-8 lg:mt-0">
+        <img src="book11.jpg" alt="صورة جانبية"
+             class="max-w-xs sm:max-w-sm md:max-w-md rounded-3xl shadow-2xl border-4 border-white/20
+                transform transition duration-500 hover:scale-105 hover:rotate-1 hover:shadow-cyan-500/50">
+    </div>
+
+
 
 
 
