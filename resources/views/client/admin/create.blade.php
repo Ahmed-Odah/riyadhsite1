@@ -49,7 +49,7 @@
 
         <h2 class="text-2xl font-bold mb-6">➕ إضافة عميل جديد</h2>
 
-        <form action="{{ route('client-create-view') }}" method="POST">
+        <form action="{{ route('client-store') }}" method="POST">
             @csrf
 
             {{-- الاسم --}}

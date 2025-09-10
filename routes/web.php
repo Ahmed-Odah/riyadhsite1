@@ -360,11 +360,18 @@ Route::prefix('auth')->group(function () {
 
 
 
+// عرض جدول العملاء
     Route::get('/client/index', \App\Actions\Client\Admin\ClientAdminIndex::class)->name('client-index');
+
+// حفظ العميل الجديد (POST)
     Route::post('/client/create', \App\Actions\Client\Admin\CreateAction::class)->name('client-store');
+
+// عرض صفحة إنشاء عميل جديد (GET)
     Route::get('/client/create/view', \App\Actions\Client\Admin\ClientCreateViewIndex::class)->name('client-create-view');
 
+// حذف عميل
     Route::post('/client/delete/{client}', \App\Actions\Client\Admin\DeleteClientAction::class)->name('client-delete');
+
 
 
 
