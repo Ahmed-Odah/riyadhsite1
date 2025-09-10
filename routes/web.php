@@ -375,7 +375,7 @@ Route::prefix('auth')->group(function () {
     Route::post('/client/update/{client}', \App\Actions\Client\Admin\EditClientAction::class)->name('client-update');
 
 
-    Route::get('/client/edit/view/{client}', \App\Actions\Houses\Admin\HouseEditView::class)->name('client-edit-view');
+    Route::get('/client/edit/view/{client}', \App\Actions\Client\Admin\ClientEditView::class)->name('client-edit-view');
 
 
 
