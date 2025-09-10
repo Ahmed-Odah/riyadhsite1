@@ -19,7 +19,6 @@ class ClientPostAction
             'email'    => $request->get('email'),
             'phone'    => $request->get('phone'),
             'address'  => $request->get('address'),
-            'password' => Hash::make($request->get('password')),
         ]);
 
         return back(); // أو redirect لصفحة قائمة العملاء
