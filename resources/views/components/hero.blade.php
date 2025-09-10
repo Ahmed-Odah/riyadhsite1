@@ -98,7 +98,7 @@
                class="bg-cyan-600 hover:bg-cyan-500 text-white font-semibold
               px-4 py-2 rounded-lg shadow-md transition transform hover:scale-105
               text-xs sm:text-sm flex items-center gap-2 w-fit">
-                سجّل معنا
+              من آنا
                 <!-- أيقونة سهم -->
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor" class="w-3 h-3 sm:w-4 sm:h-4">
