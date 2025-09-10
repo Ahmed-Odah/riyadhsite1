@@ -4,7 +4,7 @@
     <div class="p-6">
         <!-- زر إضافة عميل جديد -->
         <div class="mb-6">
-            <a href="{{ route('client-create') }}"
+            <a href="{{ route('client-store') }}"
                class="inline-flex items-center bg-green-200 w-56 justify-center text-green-900 font-bold rounded-xl hover:scale-100 duration-200 ease-in-out px-4 py-3 shadow">
                 إضافة عميل جديد
             </a>
