@@ -12,7 +12,7 @@ class ClientPostAction
 
     public function handle(Request $request)
     {
-        // إنشاء عميل جديد
+        // إنشاء عميل جديد مع كلمة المرور
         Client::create([
             'name'     => $request->get('name'),
             'email'    => $request->get('email'),
@@ -20,7 +20,6 @@ class ClientPostAction
             'address'  => $request->get('address'),
         ]);
 
-        // ✅ رجوع مع رسالة نجاح
-        return redirect()->back()->with('success', '✅ تم إرسال البيانات بنجاح!');
+        return back(); // أو redirect لصفحة قائمة العملاء
     }
 }
