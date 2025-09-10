@@ -46,10 +46,13 @@
 
 <body>
 <!-- رسالة Scroll Alert أسفل يمين -->
+<!-- رسالة Scroll Alert بالمنتصف -->
 <div id="scroll-alert"
-     class="fixed bottom-5 right-5 bg-blue-600 text-white px-6 py-4 rounded-xl shadow-xl opacity-0 transition-opacity duration-500 max-w-sm z-50">
-    <h2 class="text-xl font-bold mb-1">مرحبًا بك!</h2>
-    <p class="text-sm">سجّل الآن لتصلك آخر التحديثات والعروض الحصرية.</p>
+     class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+            bg-blue-600 text-white px-8 py-6 rounded-2xl shadow-2xl opacity-0
+            transition-opacity duration-500 z-50 text-center max-w-md w-11/12">
+    <h2 class="text-2xl font-bold mb-2">🎉 أهلاً بك!</h2>
+    <p class="text-base">سجّل الآن لتصلك آخر التحديثات والعروض الحصرية.</p>
 </div>
 
 <script>
@@ -58,7 +61,6 @@
         let alertShown = false;
 
         window.addEventListener('scroll', () => {
-            // ظهور الرسالة عند التمرير أكثر من 150px
             if (!alertShown && window.scrollY > 150) {
                 alertShown = true;
 
@@ -66,15 +68,16 @@
                 scrollAlert.classList.remove('opacity-0');
                 scrollAlert.classList.add('opacity-100');
 
-                // إخفاء الرسالة بعد 5 ثواني
+                // إخفاء الرسالة بعد 4 ثواني
                 setTimeout(() => {
                     scrollAlert.classList.remove('opacity-100');
                     scrollAlert.classList.add('opacity-0');
-                }, 5000);
+                }, 4000);
             }
         });
     });
 </script>
+
 
 
 <!-- المحتوى الرئيسي -->
