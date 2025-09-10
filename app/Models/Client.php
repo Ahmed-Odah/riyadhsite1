@@ -12,5 +12,6 @@ class Client extends Model
         'email',
         'phone',
         'address',
+        'password', // ✅ أضفنا كلمة المرور
     ];
 }
