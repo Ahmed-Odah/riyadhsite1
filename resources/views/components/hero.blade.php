@@ -94,7 +94,7 @@
 
         <!-- الأزرار -->
         <div class="flex flex-col sm:flex-row gap-3 mt-6">
-            <a href="#join"
+            <a href="{{route('client')}}"
                class="bg-cyan-600 hover:bg-cyan-500 text-white font-semibold
               px-4 py-2 rounded-lg shadow-md transition transform hover:scale-105
               text-xs sm:text-sm flex items-center gap-2 w-fit">
