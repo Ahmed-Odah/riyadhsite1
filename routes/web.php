@@ -344,6 +344,11 @@ Route::prefix('auth')->group(function () {
 
 
 
+
+
+
+
+
     Route::get('/house/index', \App\Actions\Houses\Admin\HouseAdminIndex::class)->name('house-index');
     Route::post('/house/create', \App\Actions\Houses\Admin\CreateAction::class)->name('house-create');
     Route::get('/house/create/view', \App\Actions\Houses\Admin\HouseCreateViewIndex::class)->name('house-create-view');
@@ -353,7 +358,10 @@ Route::prefix('auth')->group(function () {
 
 
 
+
+
     Route::get('/client/index', \App\Actions\Client\Admin\ClientAdminIndex::class)->name('client-index');
+    Route::post('/client/create', \App\Actions\Client\Admin\CreateAction::class)->name('client-create');
 
 
 
