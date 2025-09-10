@@ -167,7 +167,8 @@
 
             <!-- زر انضم إلينا -->
             <a href="{{ route('client') }}"
-               class="w-full sm:w-auto block text-center px-6 py-3 bg-cyan-600 text-white rounded-full font-semibold text-base hover:bg-cyan-700 transition">
+               class="inline-block text-center px-6 py-3 bg-cyan-600 text-white rounded-full font-semibold text-base hover:bg-cyan-700 transition"
+               style="min-width: 160px;">
                 انضم إلينا
             </a>
 
