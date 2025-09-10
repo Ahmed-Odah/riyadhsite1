@@ -4,7 +4,6 @@ namespace App\Actions\Client\Admin;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class ClientPostAction
