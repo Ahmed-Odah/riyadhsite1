@@ -80,20 +80,20 @@
 <!-- المحتوى الرئيسي -->
 <div class="min-h-screen flex flex-col lg:flex-row items-center justify-between
             bg-gradient-to-tr from-gray-50 via-green-50 to-gray-100
-            relative overflow-hidden px-6 lg:px-16 pt-32 pb-20">
+            relative overflow-hidden px-6 lg:px-20 pt-32 pb-20">
 
     <!-- النصوص -->
-    <div class="w-full lg:w-1/2 text-center lg:text-right mt-12 lg:mt-0 lg:pr-10">
+    <div class="w-full lg:w-1/2 text-right mt-12 lg:mt-0">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cyan-700 mb-4">
             موقع رياض <span class="text-cyan-900">الرسمي</span>
         </h1>
 
-        <p class="text-gray-900 text-lg mb-6 max-w-2xl mx-auto lg:ml-auto">
+        <p class="text-gray-900 text-lg mb-6 max-w-2xl ml-auto">
             خليط من الحرف والضوء، من الفكرة واللحظة. أهلاً بك في عالمي.
         </p>
 
         <!-- الأزرار -->
-        <div class="flex flex-col sm:flex-row gap-3 mt-6 justify-center lg:justify-end">
+        <div class="flex flex-col sm:flex-row gap-3 mt-6">
             <a href="#join"
                class="bg-cyan-600 hover:bg-cyan-500 text-white font-semibold
               px-4 py-2 rounded-lg shadow-md transition transform hover:scale-105
@@ -114,8 +114,6 @@
             </a>
         </div>
     </div>
-</div>
-
 
 
     <!-- قسم الصور -->
