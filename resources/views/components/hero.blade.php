@@ -83,7 +83,7 @@
             relative overflow-hidden px-6 lg:px-20 pt-32 pb-20">
 
     <!-- النصوص -->
-    <div class="w-full lg:w-1/2 text-right mt-12 lg:mt-0">
+    <div class="w-full lg:w-1/2 text-right mt-12 lg:mt-0 pr-12 lg:pr-20">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cyan-700 mb-4">
             موقع رياض <span class="text-cyan-900">الرسمي</span>
         </h1>
@@ -114,6 +114,8 @@
             </a>
         </div>
     </div>
+</div>
+
 
 
     <!-- قسم الصور -->
