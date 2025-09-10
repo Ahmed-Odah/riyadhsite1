@@ -32,16 +32,9 @@
             </div>
 
             {{-- العنوان --}}
-            <div class="mb-4">
+            <div class="mb-6">
                 <label for="address" class="block mb-1 font-medium">العنوان</label>
                 <input dir="rtl" value="{{ $client->address }}" type="text" id="address" name="address"
-                       class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
-            </div>
-
-            {{-- كلمة المرور (اختياري) --}}
-            <div class="mb-6">
-                <label for="password" class="block mb-1 font-medium">كلمة المرور الجديدة (اتركها فارغة إذا لا تريد تغييرها)</label>
-                <input dir="rtl" type="password" id="password" name="password"
                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
             </div>
 

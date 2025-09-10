@@ -76,23 +76,15 @@
             </div>
 
             {{-- العنوان --}}
-            <div class="mb-4">
+            <div class="mb-6">
                 <label for="address" class="block mb-1 font-medium">العنوان</label>
                 <input dir="rtl" type="text" id="address" name="address"
                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
             </div>
 
-            {{-- كلمة المرور --}}
-            <div class="mb-6">
-                <label for="password" class="block mb-1 font-medium">كلمة المرور</label>
-                <input dir="rtl" type="password" id="password" name="password"
-                       class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                       required>
-            </div>
-
             <div class="text-right">
                 <button type="submit"
-                        class="bg-green-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition w-full">
+                        class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition w-full">
                     💾 حفظ العميل
                 </button>
             </div>
