@@ -361,7 +361,7 @@ Route::prefix('auth')->group(function () {
 
 
     Route::get('/client/index', \App\Actions\Client\Admin\ClientAdminIndex::class)->name('client-index');
-    Route::post('/client/create', \App\Actions\Client\Admin\CreateAction::class)->name('client-create');
+    Route::post('/client/create', \App\Actions\Client\Admin\CreateAction::class)->name('client-store');
     Route::get('/client/create/view', \App\Actions\Client\Admin\ClientCreateViewIndex::class)->name('client-create-view');
 
     Route::post('/client/delete/{client}', \App\Actions\Client\Admin\DeleteClientAction::class)->name('client-delete');
