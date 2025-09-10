@@ -49,10 +49,15 @@
 <!-- رسالة Scroll Alert بالمنتصف -->
 <div id="scroll-alert"
      class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-            bg-blue-600 text-white px-8 py-6 rounded-2xl shadow-2xl opacity-0
-            transition-opacity duration-500 z-50 text-center max-w-md w-11/12">
-    <h2 class="text-2xl font-bold mb-2">🎉 أهلاً بك!</h2>
-    <p class="text-base">سجّل الآن لتصلك آخر التحديثات والعروض الحصرية.</p>
+            bg-white text-gray-800 px-10 py-8 rounded-3xl shadow-2xl opacity-0 scale-90
+            transition-all duration-500 z-50 text-center max-w-lg w-11/12 border border-gray-200">
+    <h2 class="text-3xl font-bold mb-3 text-cyan-700">🎉 أهلاً وسهلاً بك!</h2>
+    <p class="text-lg mb-6">سجّل معنا الآن لتصلك أحدث العروض والتحديثات الحصرية.</p>
+
+    <a href="{{ route('client') }}"
+       class="inline-block bg-cyan-600 hover:bg-cyan-700 text-white font-semibold px-6 py-3 rounded-full shadow-md transition">
+        🚀 انضم إلينا
+    </a>
 </div>
 
 <script>
@@ -64,15 +69,17 @@
             if (!alertShown && window.scrollY > 150) {
                 alertShown = true;
 
-                // إظهار الرسالة
-                scrollAlert.classList.remove('opacity-0');
-                scrollAlert.classList.add('opacity-100');
+                // إظهار الرسالة مع تكبير بسيط
+                scrollAlert.classList.remove('opacity-0', 'scale-90');
+                scrollAlert.classList.add('opacity-100', 'scale-100');
 
-                // إخفاء الرسالة بعد 4 ثواني
+                // إخفاء الرسالة بعد 6 ثواني إذا ما ضغط
                 setTimeout(() => {
-                    scrollAlert.classList.remove('opacity-100');
-                    scrollAlert.classList.add('opacity-0');
-                }, 4000);
+                    if (scrollAlert) {
+                        scrollAlert.classList.remove('opacity-100', 'scale-100');
+                        scrollAlert.classList.add('opacity-0', 'scale-90');
+                    }
+                }, 6000);
             }
         });
     });
