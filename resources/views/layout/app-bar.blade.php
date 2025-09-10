@@ -167,10 +167,6 @@
             <div class="flex items-center gap-3">
 
 
-                <!-- زر انضم إلينا -->
-                <a href="{{ route('client') }}" class="px-4 py-2 bg-cyan-600 text-white rounded-full font-semibold text-sm hover:bg-cyan-700 transition">
-                    انضم إلينا
-                </a>
 
 
                 <!-- زر English -->
