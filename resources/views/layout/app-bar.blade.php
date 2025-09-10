@@ -165,16 +165,15 @@
 
             <!-- أزرار أعلى اليمين -->
             <div class="flex items-center gap-3">
-
-
-
-
                 <!-- زر English -->
                 <a href="#" class="px-4 py-2 border border-cyan-600 text-cyan-600 rounded-full font-semibold text-sm hover:bg-cyan-600 hover:text-white transition">
                     English
                 </a>
 
-
+                <!-- زر انضم إلينا -->
+                <a href="{{ route('client') }}" class="px-4 py-2 bg-cyan-600 text-white rounded-full font-semibold text-sm hover:bg-cyan-700 transition">
+                    انضم إلينا
+                </a>
 
 
             </div>
