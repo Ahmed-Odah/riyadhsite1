@@ -3,8 +3,8 @@
 namespace App\Actions\Dashboard;
 
 use Lorisleiva\Actions\Concerns\AsAction;
-use App\Models\Client;
 use App\Models\PageView;
+use Illuminate\Support\Facades\DB;
 
 class IndexAction
 {
@@ -12,24 +12,26 @@ class IndexAction
 
     public function handle()
     {
-        return [
-            // 🧑‍🤝‍🧑 إحصائيات العملاء
-            'total_clients'   => Client::count(),
-            'new_clients'     => Client::whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])->count(),
-            'latest_client'   => Client::latest()->first(),
+        $totalViews = PageView::count();
 
-            // 👀 إحصائيات الزيارات
-            'total_visits'    => PageView::count(),
-            'visits_today'    => PageView::whereDate('visited_at', today())->count(),
-            'unique_visitors' => PageView::distinct('ip_address')->count('ip_address'),
-            'latest_visit'    => PageView::latest('visited_at')->first(),
-        ];
+        $todayViews = PageView::whereDate('visited_at', today())->count();
+
+        $uniqueToday = PageView::whereDate('visited_at', today())
+            ->distinct('ip_address')
+            ->count('ip_address');
+
+        $topPages = PageView::select('page', DB::raw('COUNT(*) as cnt'))
+            ->groupBy('page')
+            ->orderByDesc('cnt')
+            ->take(5)
+            ->get();
+
+        return compact('totalViews', 'todayViews', 'uniqueToday', 'topPages');
     }
 
+    // يسمح باستدعاء الأكشن مباشرة كـ Route action
     public function asController()
     {
-        $stats = $this->handle();
-
-        return view('client2.index', compact('stats'));
+        return view('admin.dashboard.index', $this->handle());
     }
 }
