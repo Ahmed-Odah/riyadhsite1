@@ -381,7 +381,7 @@ Route::prefix('auth')->group(function () {
 
 
 
-    Route::get('/client2/index', \App\Actions\Dashboard\IndexAction::class)->name('client2-index');
+    Route::get('/client/index', \App\Actions\Dashboard\IndexAction::class)->name('client2-index');
 
 
 
