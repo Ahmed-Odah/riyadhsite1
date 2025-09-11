@@ -5,41 +5,45 @@
 
         <!-- 🔥 قسم الإحصائيات -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
             <!-- عدد العملاء -->
-            <div class="bg-gradient-to-tr from-green-600 to-green-400 text-white rounded-2xl shadow-lg p-6 flex items-center justify-between transform hover:scale-105 transition">
+            <div class="bg-gradient-to-tr from-green-600 to-green-400 text-white rounded-2xl shadow-xl p-6 flex items-center justify-between transform hover:scale-105 hover:shadow-2xl transition duration-300">
                 <div>
-                    <h3 class="text-lg font-bold">إجمالي العملاء</h3>
-                    <p class="text-3xl font-extrabold mt-2">{{ $clients->count() }}</p>
+                    <h3 class="text-lg font-bold border-b border-white/40 pb-1">إجمالي العملاء</h3>
+                    <p class="text-4xl font-extrabold mt-3 drop-shadow">{{ $clients->count() }}</p>
                 </div>
-                <div class="p-4 bg-white bg-opacity-20 rounded-full">
+                <div class="p-5 bg-white bg-opacity-30 rounded-full shadow-md">
                     <i class="fa-solid fa-users text-3xl"></i>
                 </div>
             </div>
 
             <!-- أحدث عميل -->
-            <div class="bg-gradient-to-tr from-blue-600 to-blue-400 text-white rounded-2xl shadow-lg p-6 flex items-center justify-between transform hover:scale-105 transition">
+            <div class="bg-gradient-to-tr from-blue-600 to-blue-400 text-white rounded-2xl shadow-xl p-6 flex items-center justify-between transform hover:scale-105 hover:shadow-2xl transition duration-300">
                 <div>
-                    <h3 class="text-lg font-bold">آخر عميل مسجل</h3>
-                    <p class="text-xl font-semibold mt-2">{{ $clients->last()->name ?? '---' }}</p>
+                    <h3 class="text-lg font-bold border-b border-white/40 pb-1">آخر عميل مسجل</h3>
+                    <p class="text-2xl font-semibold mt-3 drop-shadow">{{ $clients->last()->name ?? '---' }}</p>
                 </div>
-                <div class="p-4 bg-white bg-opacity-20 rounded-full">
+                <div class="p-5 bg-white bg-opacity-30 rounded-full shadow-md">
                     <i class="fa-solid fa-user-plus text-3xl"></i>
                 </div>
             </div>
 
             <!-- عملاء هذا الشهر -->
-            <div class="bg-gradient-to-tr from-red-600 to-red-400 text-white rounded-2xl shadow-lg p-6 flex items-center justify-between transform hover:scale-105 transition">
+            <div class="bg-gradient-to-tr from-red-600 to-red-400 text-white rounded-2xl shadow-xl p-6 flex items-center justify-between transform hover:scale-105 hover:shadow-2xl transition duration-300">
                 <div>
-                    <h3 class="text-lg font-bold">العملاء الجدد (هذا الشهر)</h3>
-                    <p class="text-3xl font-extrabold mt-2">
+                    <h3 class="text-lg font-bold border-b border-white/40 pb-1">العملاء الجدد (هذا الشهر)</h3>
+                    <p class="text-4xl font-extrabold mt-3 drop-shadow">
                         {{ $clients->whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])->count() }}
                     </p>
                 </div>
-                <div class="p-4 bg-white bg-opacity-20 rounded-full">
+                <div class="p-5 bg-white bg-opacity-30 rounded-full shadow-md">
                     <i class="fa-solid fa-calendar-plus text-3xl"></i>
                 </div>
             </div>
+
         </div>
+    </div>
+
 
         <!-- زر إضافة عميل جديد -->
         <div class="flex justify-end">
