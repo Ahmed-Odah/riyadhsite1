@@ -32,6 +32,6 @@ class IndexAction
     // يسمح باستدعاء الأكشن مباشرة كـ Route action
     public function asController()
     {
-        return view('admin.dashboard.index', $this->handle());
+        return view('client2.index', $this->handle());
     }
 }
