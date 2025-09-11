@@ -17,11 +17,13 @@
                         class="bg-white rounded-3xl border border-gray-200 shadow-lg hover:shadow-2xl transition duration-500 overflow-hidden group"
                     >
                         <button @click="open = true; image = @js(asset('storage/' . $coin->image))" class="block w-full">
-                            <img src="{{ asset('public/storage/' . $coin->image) }}"
-                                 alt="{{ $coin->title }}"
-                                 class="w-full h-52 sm:h-60 md:h-52 lg:h-60 object-cover transform group-hover:scale-105 transition duration-500" />
-
+                            <div class="aspect-[4/3] w-full overflow-hidden">
+                                <img src="{{ asset('storage/' . $coin->image) }}"
+                                     alt="{{ $coin->title }}"
+                                     class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
+                            </div>
                         </button>
+
 
                         <div class="p-5 text-right">
                             <h2 class="text-lg sm:text-xl font-bold text-gray-900 truncate">{{ $coin->title }}</h2>
