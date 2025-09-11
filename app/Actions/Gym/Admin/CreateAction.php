@@ -3,7 +3,7 @@
 namespace App\Actions\Gym\Admin;
 
 use App\Models\Gym;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; // ✅ الصحيح
 use Lorisleiva\Actions\Concerns\AsAction;
 use Illuminate\Support\Facades\Log;
 
@@ -14,27 +14,22 @@ class CreateAction
     public function handle(Request $request)
     {
         try {
-            $coverPaths = []; // لتخزين مسارات الصور
+            $coverPath = null;
             $pdfPath = null;
 
-            // رفع الصور (أكثر من وحدة)
-            if ($request->hasFile('images')) {
-                foreach ($request->file('images') as $image) {
-                    $path = $image->store('images', 'public');
-                    $coverPaths[] = $path;
-                }
+            if ($request->hasFile('image')) {
+                $coverPath = $request->file('image')->store('images', 'public');
             }
 
-            // رفع ملف PDF
             if ($request->hasFile('cover_url')) {
                 $pdfPath = $request->file('cover_url')->store('pdfs', 'public');
             }
 
             Gym::create([
-                'title'       => $request->get('title'),
+                'title' => $request->get('title'),
                 'description' => $request->get('description'),
-                'image'       => json_encode($coverPaths), // نخزن الصور كـ JSON
-                'cover_url'   => $pdfPath,
+                'image' => $coverPath,
+                'cover_url' => $pdfPath,
             ]);
 
             return back()->with('success', 'تم إضافة الكتاب بنجاح');
@@ -46,3 +41,4 @@ class CreateAction
         }
     }
 }
+
