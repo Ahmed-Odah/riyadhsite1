@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Dashboard;
+namespace App\Actions\dashboard;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 use App\Models\PageView;
