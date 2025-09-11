@@ -9,7 +9,7 @@
             <!-- عدد العملاء -->
             <div class="bg-gradient-to-tr from-green-700 to-green-500 text-white rounded-2xl shadow-xl p-6 flex items-center justify-between transform hover:scale-105 hover:shadow-2xl transition duration-300 contrast-125 saturate-150">
                 <div>
-                    <h3 class="text-lg font-bold border-b border-white/40 pb-1">إجمالي العملاء</h3>
+                    <h3 class="text-lg font-bold border-b border-black/40 pb-1">إجمالي العملاء</h3>
                     <p class="text-4xl font-extrabold mt-3 drop-shadow">{{ $clients->count() }}</p>
                 </div>
                 <div class="p-5 bg-green-900 bg-opacity-30 rounded-full shadow-md">
