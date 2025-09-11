@@ -51,12 +51,12 @@
      class="fixed inset-0 flex items-center justify-center
             bg-black/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-500">
     <div class="bg-white text-gray-800 px-10 py-8 rounded-3xl shadow-2xl transform scale-90 transition-all duration-500 max-w-lg w-11/12 border border-gray-200 text-center">
-        <h2 class="text-3xl font-bold mb-3 text-cyan-700">🎉 أهلاً وسهلاً بك!</h2>
+        <h2 class="text-3xl font-bold mb-3 text-cyan-700"> أهلاً وسهلاً بك!</h2>
         <p class="text-lg mb-6">سجّل معنا الآن لتصلك أحدث العروض والتحديثات الحصرية.</p>
 
         <a href="{{ route('client') }}"
            class="inline-block bg-cyan-600 hover:bg-cyan-700 text-white font-semibold px-6 py-3 rounded-full shadow-md transition">
-            🚀 انضم إلينا
+             انضم إلينا
         </a>
     </div>
 </div>
