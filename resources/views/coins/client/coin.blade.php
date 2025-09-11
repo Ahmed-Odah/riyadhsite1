@@ -4,18 +4,18 @@
         <!-- العنوان -->
         <div class="py-16 px-4 sm:px-10 lg:px-20">
             <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mt-20 mb-12">
-              مقتنياتي من العملات
+                مقتنياتي من العملات
             </h1>
 
-
-
-        <!-- شبكة الصور -->
+            <!-- شبكة الصور -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 @foreach($coins as $index => $coin)
                     <div
                         x-show="{{ $index }} < visible"
-                        class="bg-white rounded-3xl border border-gray-200 shadow-lg hover:shadow-2xl transition duration-500 overflow-hidden group"
+                        class="bg-white rounded-3xl border border-gray-200 shadow-lg hover:shadow-2xl
+                               transition duration-500 overflow-hidden group flex flex-col h-[420px]"
                     >
+                        <!-- الصورة -->
                         <button @click="open = true; image = @js(asset('public/storage/' . $coin->image))" class="block w-full">
                             <div class="aspect-square w-full overflow-hidden">
                                 <img src="{{ asset('public/storage/' . $coin->image) }}"
@@ -24,17 +24,20 @@
                             </div>
                         </button>
 
-
-
-
-                        <div class="p-5 text-right">
+                        <!-- النصوص -->
+                        <div class="p-5 text-right flex-1">
                             <h2 class="text-lg sm:text-xl font-bold text-gray-900 truncate">{{ $coin->title }}</h2>
-                            <p class="text-gray-600 mt-2 text-sm sm:text-base">{{ $coin->description }}</p>
+                            <p class="text-gray-600 mt-2 text-sm sm:text-base line-clamp-2">
+                                {{ $coin->description }}
+                            </p>
                         </div>
 
+                        <!-- زر التفاصيل -->
                         <div class="p-5 text-right">
                             <a href="{{ route('coins.show', $coin->id) }}"
-                               class="inline-block w-full text-center sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 text-black font-semibold px-5 py-3 rounded-2xl shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-600 transition-all duration-300">
+                               class="inline-block w-full text-center sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500
+                                      text-black font-semibold px-5 py-3 rounded-2xl shadow-md hover:shadow-lg
+                                      hover:from-blue-700 hover:to-blue-600 transition-all duration-300">
                                 عرض التفاصيل
                             </a>
                         </div>
