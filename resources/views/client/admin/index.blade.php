@@ -36,9 +36,10 @@
                         {{ $clients->whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])->count() }}
                     </p>
                 </div>
-                <div class="p-5 bg-purple bg-opacity-30 rounded-full shadow-md">
-                    <i class="fa-solid fa-calendar-plus text-3xl"></i>
+                <div class="p-5 bg-purple-600 rounded-full shadow-md">
+                    <i class="fa-solid fa-calendar-plus text-3xl text-white"></i>
                 </div>
+
             </div>
 
 
