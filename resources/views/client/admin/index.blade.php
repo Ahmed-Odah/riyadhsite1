@@ -29,7 +29,7 @@
             </div>
 
             <!-- عملاء هذا الشهر -->
-            <div class="bg-gradient-to-tr from-purple-800 to-purple-500 text-black rounded-2xl shadow-xl p-6 flex items-center justify-between transform hover:scale-105 hover:shadow-2xl transition duration-300 contrast-125 saturate-150">
+            <div class="bg-gradient-to-tr from-purple-800 to-purple-500 text-black rounded-2xl shadow-xl p-6 flex items-center justify-between transform hover:scale-105 hover:shadow-2xl transition duration-300 contrast-125 saturate-150 text-right">
                 <div>
                     <h3 class="text-lg font-bold border-b border-white/40 pb-1">العملاء الجدد (هذا الشهر)</h3>
                     <p class="text-4xl font-extrabold mt-3 drop-shadow">
