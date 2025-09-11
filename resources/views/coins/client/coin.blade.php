@@ -16,7 +16,7 @@
                         x-show="{{ $index }} < visible"
                         class="bg-white rounded-3xl border border-gray-200 shadow-lg hover:shadow-2xl transition duration-500 overflow-hidden group"
                     >
-                        <button @click="open = true; image = @js(asset('storage/' . $coin->image))" class="block w-full">
+                        <button @click="open = true; image = @js(asset('public/storage/' . $coin->image))" class="block w-full">
                             <div class="aspect-square w-full overflow-hidden">
                                 <img src="{{ asset('public/storage/' . $coin->image) }}"
                                      alt="{{ $coin->title }}"
