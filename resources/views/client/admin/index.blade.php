@@ -18,7 +18,7 @@
             </div>
 
             <!-- أحدث عميل -->
-            <div class="bg-gradient-to-tr from-blue-700 to-blue-500 text-white rounded-2xl shadow-xl p-6 flex items-center justify-between transform hover:scale-105 hover:shadow-2xl transition duration-300 contrast-125 saturate-150">
+            <div class="bg-gradient-to-tr from-blue-700 to-blue-500 text-white rounded-2xl text-center shadow-xl p-6 flex items-center justify-between transform hover:scale-105 hover:shadow-2xl transition duration-300 contrast-125 saturate-150">
                 <div>
                     <h3 class="text-lg font-bold border-b border-white/40 pb-1">آخر عميل مسجل</h3>
                     <p class="text-2xl font-semibold mt-3 drop-shadow">{{ $clients->last()->name ?? '---' }}</p>
@@ -29,9 +29,9 @@
             </div>
 
             <!-- عملاء هذا الشهر -->
-            <div class="bg-gradient-to-tr from-purple-800 to-purple-500 text-black text-right rounded-2xl shadow-xl p-6 flex items-center justify-between transform hover:scale-105 hover:shadow-2xl transition duration-300 contrast-125 saturate-150 text-center">
+            <div class="bg-gradient-to-tr from-purple-800 to-purple-500 text-black rounded-2xl shadow-xl p-6 flex items-center justify-between transform hover:scale-105 hover:shadow-2xl transition duration-300 contrast-125 saturate-150 text-center">
                 <div>
-                    <h3 class="text-lg font-bold border-b border-white/40 pb-1 text-right">العملاء الجدد (هذا الشهر)</h3>
+                    <h3 class="text-lg font-bold border-b border-white/40 pb-1">العملاء الجدد (هذا الشهر)</h3>
                     <p class="text-4xl font-extrabold mt-3 drop-shadow">
                         {{ $clients->whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])->count() }}
                     </p>
