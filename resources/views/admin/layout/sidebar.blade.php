@@ -294,6 +294,16 @@
         </a>
 
 
+        <a href="{{ route('client2-index') }}"
+           class="flex flex-row-reverse items-center justify-between px-3 py-2 rounded-lg hover:bg-indigo-600 transition
+           {{ request()->routeIs('colorphoto') ? 'bg-indigo-800 shadow-lg' : '' }}">
+            <span class="text-right"> إحصائيات العملاء </span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m9-1.13a4 4 0 10-8 0 4 4 0 008 0z" />
+            </svg>
+        </a>
+
+
 
 
 

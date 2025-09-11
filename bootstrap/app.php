@@ -11,8 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        \App\Http\Middleware\SetLocale::class;
-
+        // ✅ نخلي Middleware يشتغل فقط على صفحات الويب
+        $middleware->group('web', [
+            \App\Http\Middleware\LogPageView::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
