@@ -202,125 +202,110 @@
 
 <div id="menu"
      class="fixed top-0 left-0 w-full h-1/2 p-4 bg-black text-white shadow-lg z-30 hidden flex-col gap-9 items-start justify-start pt-10 lg:hidden overflow-y-auto">
-    <div>
-        <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
-    </div>
+    <!-- المنيو -->
+    <div id="menu"
+         class="fixed top-0 left-0 w-full h-screen p-6 bg-black text-white shadow-lg z-30 hidden flex-col items-center justify-start pt-10 lg:hidden overflow-y-auto">
 
-    <div class="relative group">
-        <a href="/whous" class="nav-link flex items-center space-x-1">
-            <span>من آنا</span>
-        </a>
-    </div>
+        <!-- اللوقو فوق -->
+        <div class="mb-6 flex flex-col items-center">
+            <div class="bg-white p-3 rounded-md shadow-md">
+                <img src="{{ asset('/public/resha1q1.png') }}" alt="Logo" class="h-14 object-contain">
+            </div>
+            <span id="logo-text" class="mt-3 text-lg font-bold text-white">نادي الرؤية 2030</span>
+        </div>
 
-    <div class="relative group">
-        <a href="{{route('books.index')}}" class="nav-link flex items-center">
-            <span>{{ __('site.books') }}</span>
-        </a>
-    </div>
+        <!-- الروابط -->
+        <div class="flex flex-col gap-5 w-full text-center">
 
-    <div class="relative group">
-        <a href="#" class="nav-link flex items-center">
-            <span>تصويري </span>
-            <span class="material-icons transform group-hover:rotate-180 transition-transform">expand_more</span>
-        </a>
-        <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-            <a href="{{route('ClientBlackAndWhite')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">صور آبيض وآسود</a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">صور ملونه</a>
+            <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
+
+            <a href="/whous" class="nav-link">من أنا</a>
+
+            <a href="{{route('books.index')}}" class="nav-link">{{ __('site.books') }}</a>
+
+            <!-- تصويري -->
+            <div class="relative group">
+                <a href="#" class="nav-link flex items-center justify-center gap-1">
+                    <span>تصويري</span>
+                    <span class="material-icons transform group-hover:rotate-180 transition-transform">expand_more</span>
+                </a>
+                <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                    <a href="{{route('ClientBlackAndWhite')}}" class="block px-4 py-2 hover:bg-gray-100">صور أبيض وأسود</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">صور ملونة</a>
+                </div>
+            </div>
+
+            <!-- صور الديكورات -->
+            <div class="relative group">
+                <a href="{{route('decor')}}" class="nav-link flex items-center justify-center gap-1">
+                    <span>صور الديكورات</span>
+                    <span class="material-icons transform group-hover:rotate-180 transition-transform">expand_more</span>
+                </a>
+                <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-56 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                    <a href="{{route('kitchen')}}" class="block px-4 py-2 hover:bg-gray-100">مطابخ</a>
+                    <a href="{{route('pool')}}" class="block px-4 py-2 hover:bg-gray-100">مسابح</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">مكتب منزلي</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">حمامات</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">غرف طعام</a>
+                    <a href="{{route('laundryroom')}}" class="block px-4 py-2 hover:bg-gray-100">غرف غسيل</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">غرف جلوس</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">خزائن</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">جلسات خارجية</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">لاند سكيب</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">غرف نوم أولاد وبنات</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">تصميم درج</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">غرف نوم</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">جيم منزلي</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">برندة</a>
+                    <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">منازل ريفية</a>
+                </div>
+            </div>
+
+            <a href="{{route('paintings')}}" class="nav-link">معرض اللوحات</a>
+            <a href="{{route('certificate')}}" class="nav-link">الشهادات والدورات</a>
+            <a href="{{route('blog')}}" class="nav-link">المدونة</a>
+            <a href="{{route('blog')}}" class="nav-link">العملات العالمية</a>
+            <a href="{{route('blog')}}" class="nav-link">قنواتي</a>
+
+            <!-- زر انضم إلينا -->
+            <a href="{{ route('client') }}"
+               class="inline-block text-center px-5 py-3 bg-cyan-600 text-white rounded-full font-semibold text-base hover:bg-cyan-700 transition mt-4">
+                انضم إلينا
+            </a>
+        </div>
+
+        <!-- تسجيل الخروج -->
+        <div class="mt-6">
+            @if(\Illuminate\Support\Facades\Auth::check())
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button type="submit" class="nav-link">LogOut</button>
+                </form>
+            @endif
         </div>
     </div>
 
-    <div class="relative group">
-        <a href="{{route('decor')}}" class="nav-link flex items-center">
-            <span> صور الديكورات </span>
-            <span class="material-icons transform group-hover:rotate-180 transition-transform">expand_more</span>
-        </a>
-        <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-            <a href="{{route('kitchen')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">مطابخ  </a>
-            <a href="{{route('pool')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">مسابح </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">مكتب منزلي </a>
+    <!-- سكربت التحكم -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
 
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">حمامات </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف طعام </a>
-            <a href="{{route('laundryroom')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف غسيل </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف جلوس </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">خزائن </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">جلسات خارجية </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">لاند سكيب </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف نوم آولاد وبنات </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">تصميم درج </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف نوم </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">جيم منزلي </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">برندة </a>
-            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">منازل ريفية </a>
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY || window.pageYOffset;
+            if (scrollPosition > 50) {
+                document.getElementById('nav').classList.add('navbar-scrolled');
+            } else {
+                document.getElementById('nav').classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
 
 
-
-        </div>
-    </div>
-
-    <div class="relative group">
-        <a href="{{route('paintings')}}" class="nav-link flex items-center">
-            <span>معرض اللوحات</span>
-        </a>
-    </div>
-
-    <div class="relative group">
-        <a href="{{route('certificate')}}" class="nav-link flex items-center">
-            <span>الشهادات والدورات</span>
-        </a>
-    </div>
-
-    <div class="relative group">
-        <a href="{{route('blog')}}" class="nav-link flex items-center">
-            <span> المدونة</span>
-        </a>
-    </div>
-    <div class="relative group">
-        <a href="{{route('blog')}}" class="nav-link flex items-center">
-            <span>العملات العالمية </span>
-        </a>
-    </div>
-
-    <div class="relative group">
-        <a href="{{route('blog')}}" class="nav-link flex items-center">
-            <span>قنواتي  </span>
-        </a>
-    </div>
-
-
-
-
-    <div>
-        @if(\Illuminate\Support\Facades\Auth::check())
-            <form action="{{route('logout')}}" method="POST">
-                @csrf
-                <button type="submit" class="nav-link">LogOut</button>
-            </form>
-        @endif
-    </div>
-</div>
-
-</div>
-<script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    const logoText = document.getElementById('logo-text');
-
-    menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-    });
-
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY || window.pageYOffset;
-        if (scrollPosition > 50) {
-            document.getElementById('nav').classList.add('navbar-scrolled');
-        } else {
-            document.getElementById('nav').classList.remove('navbar-scrolled');
-        }
-    });
-</script>
-
-<style>
+    <style>
     nav {
         z-index: 500;
         padding: 1rem;
