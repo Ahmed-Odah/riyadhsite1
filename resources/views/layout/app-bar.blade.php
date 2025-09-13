@@ -145,61 +145,99 @@
 
 <!-- منيو الموبايل -->
 <!-- منيو الموبايل -->
+<!-- منيو الموبايل -->
 <div id="menu"
-     class="fixed top-0 left-0 w-full h-screen p-4 bg-black text-white shadow-lg z-30 hidden
-            flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-hidden">
+     class="fixed top-0 left-0 w-full h-screen bg-black text-white shadow-lg z-30 hidden
+            flex-col items-start justify-start pt-20 px-6 lg:hidden overflow-y-auto">
 
-    <!-- الروابط (نزلتها لتحت بـ mt-16) -->
-    <div class="flex flex-col gap-6 mt-16 w-full">
+    <!-- الروابط -->
+    <div class="flex flex-col gap-6 w-full text-lg font-bold">
 
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
 
-        <a href="/whous" class="nav-link">من آنا</a>
-
-        <a href="{{route('books.index')}}" class="nav-link">{{ __('site.books') }}</a>
-
-        <div class="relative group">
-            <a href="#" class="nav-link flex items-center">تصويري
-                <span class="material-icons ml-1 transform group-hover:rotate-180 transition-transform">expand_more</span>
-            </a>
-            <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                <a href="{{route('ClientBlackAndWhite')}}" class="block px-4 py-2 hover:bg-gray-100">صور آبيض وآسود</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">صور ملونه</a>
+        <!-- قائمة فرعية -->
+        <div class="w-full">
+            <button class="w-full flex justify-between items-center nav-link focus:outline-none"
+                    onclick="toggleSubmenu('about-submenu')">
+                <span>عني</span>
+                <span class="material-icons">expand_more</span>
+            </button>
+            <div id="about-submenu" class="hidden flex-col mt-2 pl-4 text-base font-normal">
+                <a href="/whous" class="block py-1">من آنا</a>
+                <a href="{{route('certificate')}}" class="block py-1">الشهادات والدورات</a>
+                <a href="{{route('official')}}" class="block py-1">صور رسمية لي</a>
             </div>
         </div>
 
-        <div class="relative group">
-            <a href="{{route('decor')}}" class="nav-link flex items-center">صور الديكورات
-                <span class="material-icons ml-1 transform group-hover:rotate-180 transition-transform">expand_more</span>
-            </a>
-            <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                <a href="{{route('kitchen')}}" class="block px-4 py-2 hover:bg-gray-100">مطابخ</a>
-                <a href="{{route('pool')}}" class="block px-4 py-2 hover:bg-gray-100">مسابح</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">مكتب منزلي</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">حمامات</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">غرف طعام</a>
-                <a href="{{route('laundryroom')}}" class="block px-4 py-2 hover:bg-gray-100">غرف غسيل</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">غرف جلوس</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">خزائن</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">جلسات خارجية</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">لاند سكيب</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">غرف نوم آولاد وبنات</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">تصميم درج</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">غرف نوم</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">جيم منزلي</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">برندة</a>
-                <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100">منازل ريفية</a>
+        <a href="{{route('books.index')}}" class="nav-link">{{ __('site.books') }}</a>
+        <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
+
+        <!-- قائمة فرعية -->
+        <div class="w-full">
+            <button class="w-full flex justify-between items-center nav-link focus:outline-none"
+                    onclick="toggleSubmenu('photos-submenu')">
+                <span>تصويري</span>
+                <span class="material-icons">expand_more</span>
+            </button>
+            <div id="photos-submenu" class="hidden flex-col mt-2 pl-4 text-base font-normal">
+                <a href="{{route('ClientBlackAndWhite')}}" class="block py-1">صور آبيض وآسود</a>
+                <a href="{{route('colorphotos')}}" class="block py-1">صور ملونه</a>
+            </div>
+        </div>
+
+        <!-- قائمة فرعية -->
+        <div class="w-full">
+            <button class="w-full flex justify-between items-center nav-link focus:outline-none"
+                    onclick="toggleSubmenu('decor-submenu')">
+                <span>صور الديكورات</span>
+                <span class="material-icons">expand_more</span>
+            </button>
+            <div id="decor-submenu" class="hidden flex-col mt-2 pl-4 text-base font-normal">
+                <a href="{{route('kitchen')}}" class="block py-1">مطابخ</a>
+                <a href="{{route('pool')}}" class="block py-1">مسابح</a>
+                <a href="{{route('office')}}" class="block py-1">مكتب منزلي</a>
+                <a href="{{route('bathroom')}}" class="block py-1">حمامات</a>
+                <a href="{{route('diningroom')}}" class="block py-1">غرف طعام</a>
+                <a href="{{route('laundryroom')}}" class="block py-1">غرف غسيل</a>
+                <a href="{{route('livingroom')}}" class="block py-1">غرف جلوس</a>
+                <a href="{{route('warehouse')}}" class="block py-1">خزائن</a>
+                <a href="{{route('externalsession')}}" class="block py-1">جلسات خارجية</a>
+                <a href="{{route('landscape')}}" class="block py-1">لاند سكيب</a>
+                <a href="{{route('bedroom')}}" class="block py-1">غرف نوم أولاد وبنات</a>
+                <a href="{{route('drawer')}}" class="block py-1">تصميم درج</a>
+                <a href="{{route('chamber')}}" class="block py-1">غرف نوم</a>
+                <a href="{{route('gym')}}" class="block py-1">جيم منزلي</a>
+                <a href="{{route('terrace')}}" class="block py-1">برندة</a>
+                <a href="{{route('house')}}" class="block py-1">منازل ريفية</a>
             </div>
         </div>
 
         <a href="{{route('paintings')}}" class="nav-link">معرض اللوحات</a>
-        <a href="{{route('certificate')}}" class="nav-link">الشهادات والدورات</a>
+        <a href="{{route('coin')}}" class="nav-link">عملات عالمية</a>
         <a href="{{route('blog')}}" class="nav-link">المدونة</a>
-        <a href="{{route('blog')}}" class="nav-link">العملات العالمية</a>
-        <a href="{{route('blog')}}" class="nav-link">قنواتي</a>
+
+        <!-- قائمة فرعية -->
+        <div class="w-full">
+            <button class="w-full flex justify-between items-center nav-link focus:outline-none"
+                    onclick="toggleSubmenu('channels-submenu')">
+                <span>قنواتي</span>
+                <span class="material-icons">expand_more</span>
+            </button>
+            <div id="channels-submenu" class="hidden flex-col mt-2 pl-4 text-base font-normal">
+                <a href="{{route('channel')}}" class="block py-1">قناة اليوتيوب</a>
+                <a href="{{route('channeltik')}}" class="block py-1">قناة التيك توك</a>
+            </div>
+        </div>
+
+        <!-- زر انضم إلينا -->
+        <a href="{{ route('client') }}"
+           class="inline-block text-center px-4 py-2 bg-cyan-600 text-white rounded-full font-semibold text-sm hover:bg-cyan-700 transition mt-4"
+           style="min-width: 120px;">
+            انضم إلينا
+        </a>
 
         @if(\Illuminate\Support\Facades\Auth::check())
-            <form action="{{route('logout')}}" method="POST">
+            <form action="{{route('logout')}}" method="POST" class="mt-4">
                 @csrf
                 <button type="submit" class="nav-link">LogOut</button>
             </form>
@@ -208,12 +246,10 @@
 </div>
 
 <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-    });
+    function toggleSubmenu(id) {
+        const submenu = document.getElementById(id);
+        submenu.classList.toggle("hidden");
+    }
 
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY || window.pageYOffset;
