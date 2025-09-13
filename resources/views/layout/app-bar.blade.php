@@ -198,9 +198,7 @@
 
 
 <div id="menu"
-     class="fixed top-0 left-0 h-full w-64 p-6 bg-black text-white shadow-lg z-30
-            hidden flex-col gap-6 items-start justify-start pt-16 lg:hidden overflow-y-auto
-            transition-transform duration-300 transform -translate-x-full">
+     class="fixed top-0 left-0 w-full h-1/2 p-4 bg-black text-black shadow-lg z-30 hidden flex-col gap-9 items-start justify-start pt-10 lg:hidden overflow-y-auto">
     <div>
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
     </div>
