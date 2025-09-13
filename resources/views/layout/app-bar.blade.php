@@ -203,10 +203,9 @@
 <div id="menu"
      class="fixed top-0 left-0 w-full h-1/2 p-4 bg-black text-white shadow-lg z-30 hidden flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-auto text-right mt-20">
 
-    <div class="mt-10">
+    <div>
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
     </div>
-
 
     <div class="relative group">
         <a href="/whous" class="nav-link flex items-center space-x-1">
