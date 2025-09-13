@@ -194,9 +194,13 @@
     </div>
 </nav>
 
-<div id="menu"
-     class="fixed top-0 left-0 h-full w-64 p-6 bg-black text-white shadow-lg z-30 hidden flex-col gap-6 items-start justify-start pt-16 lg:hidden overflow-y-auto transition-transform transform -translate-x-full">
 
+
+
+<div id="menu"
+     class="fixed top-0 left-0 h-full w-64 p-6 bg-black text-white shadow-lg z-30
+            hidden flex-col gap-6 items-start justify-start pt-16 lg:hidden overflow-y-auto
+            transition-transform duration-300 transform -translate-x-full">
     <div>
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
     </div>
@@ -218,7 +222,7 @@
             <span>تصويري </span>
             <span class="material-icons transform group-hover:rotate-180 transition-transform">expand_more</span>
         </a>
-        <div class="ml-4 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
+        <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
             <a href="{{route('ClientBlackAndWhite')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">صور آبيض وآسود</a>
             <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">صور ملونه</a>
         </div>
@@ -229,10 +233,27 @@
             <span> صور الديكورات </span>
             <span class="material-icons transform group-hover:rotate-180 transition-transform">expand_more</span>
         </a>
-        <div class="ml-4 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-            <a href="{{route('kitchen')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">مطابخ</a>
-            <a href="{{route('pool')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">مسابح</a>
-            <a href="{{route('laundryroom')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف غسيل</a>
+        <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            <a href="{{route('kitchen')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">مطابخ  </a>
+            <a href="{{route('pool')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">مسابح </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">مكتب منزلي </a>
+
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">حمامات </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف طعام </a>
+            <a href="{{route('laundryroom')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف غسيل </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف جلوس </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">خزائن </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">جلسات خارجية </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">لاند سكيب </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف نوم آولاد وبنات </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">تصميم درج </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">غرف نوم </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">جيم منزلي </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">برندة </a>
+            <a href="{{route('colorphotos')}}" class="block px-4 py-2 hover:bg-gray-100 nav-link">منازل ريفية </a>
+
+
+
         </div>
     </div>
 
@@ -250,21 +271,23 @@
 
     <div class="relative group">
         <a href="{{route('blog')}}" class="nav-link flex items-center">
-            <span>المدونة</span>
+            <span> المدونة</span>
+        </a>
+    </div>
+    <div class="relative group">
+        <a href="{{route('blog')}}" class="nav-link flex items-center">
+            <span>العملات العالمية </span>
         </a>
     </div>
 
     <div class="relative group">
-        <a href="{{route('coin')}}" class="nav-link flex items-center">
-            <span>العملات العالمية</span>
+        <a href="{{route('blog')}}" class="nav-link flex items-center">
+            <span>قنواتي  </span>
         </a>
     </div>
 
-    <div class="relative group">
-        <a href="{{route('channel')}}" class="nav-link flex items-center">
-            <span>قنواتي</span>
-        </a>
-    </div>
+
+
 
     <div>
         @if(\Illuminate\Support\Facades\Auth::check())
@@ -276,14 +299,15 @@
     </div>
 </div>
 
+</div>
 <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
+    const logoText = document.getElementById('logo-text');
 
     menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('-translate-x-full'); // يخليه يظهر من اليسار
+        menu.classList.toggle('hidden');
     });
-
 
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY || window.pageYOffset;
