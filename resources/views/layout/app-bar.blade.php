@@ -3,19 +3,13 @@
 
 
     <div class="flex justify-between items-center container mx-auto relative">
-        <a href="/" class="flex flex-col items-start gap-0">
-            <div class="flex items-center gap-3">
-                <!-- اللوقو داخل مستطيل أبيض -->
-                <div class="bg-white px-3 py-2 rounded-md shadow-md flex items-center justify-center">
-                    <img src="{{ asset('/public/resha1q1.png') }}" alt="Logo" class="h-10 object-contain">
-                </div>
-
-                <!-- النص بجانب اللوقو -->
-                <span id="logo-text" class="text-lg font-bold lg:text-2xl text-white">نادي الرؤية 2030</span>
+        <a href="" class="flex flex-col items-start gap-0">
+            <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
+                <span id="logo-text" class="text-lg font-bold lg:text-3xl mt-1"></span>
+                <img src="{{ asset('/public/resha1q1.png') }}" alt="Logo" class="w-30">
             </div>
-        </a>
-    </div>
 
+        </a>
 
         <!-- زر المنيو (صار يسار) -->
         <div class="lg:hidden absolute left-4 top-1/2 transform -translate-y-1/2">
