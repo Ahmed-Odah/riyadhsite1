@@ -1,15 +1,20 @@
 <nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300">
 
     <div class="flex justify-between items-center container mx-auto relative">
-        <a href="/" class="flex flex-col items-start gap-0">
-            <div class="flex items-center gap-3 sm:gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
-                <span id="logo-text" class="text-sm sm:text-lg lg:text-3xl font-bold mt-1"></span>
-                <img src="{{ asset('/public/resha1q1.png') }}"
-                     alt="Logo"
-                     class="h-8 sm:h-12 md:h-14 lg:h-16 object-contain">
+        <a href="" class="flex flex-col items-start gap-0">
+            <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
+                <span id="logo-text" class="text-lg font-bold lg:text-3xl mt-1"></span>
+                <img src="{{ asset('/public/resha1q1.png') }}" alt="Logo" class="w-30">
             </div>
         </a>
 
+        <!-- للجوال -->
+        <a href="/" class="flex lg:hidden flex-col items-start gap-0">
+            <div class="flex items-center gap-2 -ml-1">
+                <span id="logo-text" class="text-sm font-bold mt-1"></span>
+                <img src="{{ asset('/public/resha1q1.png') }}" alt="Logo" class="h-8">
+            </div>
+        </a>
 
         <!-- زر المنيو (صار يسار) -->
         <div class="lg:hidden absolute left-4 top-1/2 transform -translate-y-1/2">
