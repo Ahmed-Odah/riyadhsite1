@@ -159,8 +159,9 @@
 <!-- منيو الموبايل -->
 <!-- منيو الموبايل -->
 <div id="menu"
-     class="fixed top-0 left-0 w-full h-screen p-4 bg-black text-white shadow-lg z-30 hidden
-            flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-hidden">
+     class="fixed top-0 right-0 w-1/2 h-screen p-4 bg-black text-white shadow-lg z-30 hidden
+            flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-auto rounded-l-2xl">
+
 
     <!-- الروابط (نزلتها لتحت بـ mt-16) -->
     <div class="flex flex-col gap-6 mt-16 w-full">
