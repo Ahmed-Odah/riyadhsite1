@@ -84,11 +84,7 @@
                           required></textarea>
             </div>
 
-            <div class="mb-6">
-                <label for="image" class="block mb-1 font-medium">صورة الغلاف</label>
-                <input dir="rtl" type="file" id="image" name="image" accept="image/*"
-                       class="w-full border border-gray-300 rounded px-3 py-2" required>
-            </div>
+
 
             <div class="text-right">
                 <button type="submit"
