@@ -2,13 +2,14 @@
 
     <div class="flex justify-between items-center container mx-auto relative">
         <a href="/" class="flex flex-col items-start gap-0">
-            <div class="flex items-center gap-3 sm:gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
+            <div class="flex items-center gap-3 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
                 <span id="logo-text" class="text-base sm:text-lg lg:text-3xl font-bold mt-1"></span>
                 <img src="{{ asset('/public/resha1q1.png') }}"
                      alt="Logo"
-                     class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain">
+                     class="h-10 md:h-16 object-contain">
             </div>
         </a>
+
 
 
         <!-- زر المنيو (صار يسار) -->
