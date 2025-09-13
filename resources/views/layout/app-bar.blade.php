@@ -228,15 +228,7 @@
     @endif
 </div>
 </div>
-<script>
-    document.querySelectorAll('#mobile-menu .group > button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const submenu = btn.nextElementSibling;
-            submenu.classList.toggle('hidden');
-            btn.querySelector('.material-icons').classList.toggle('rotate-180');
-        });
-    });
-</script>
+
 <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
