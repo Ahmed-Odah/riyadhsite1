@@ -150,14 +150,14 @@
             flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-hidden">
 
     <!-- اللوقو فوق يمين -->
-    <div class="w-full flex justify-end">
+    <div class="w-full flex justify-end pr-4">
         <img src="{{ asset('/public/resha1q1.png') }}"
              alt="Logo"
-             class="h-12 object-contain"> <!-- صغرته -->
+             class="h-16 object-contain"> <!-- مقاس متوسط -->
     </div>
 
     <!-- الروابط -->
-    <div class="flex flex-col gap-6 mt-10 w-full">
+    <div class="flex flex-col gap-6 mt-12 w-full">
 
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
 
