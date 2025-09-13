@@ -163,6 +163,7 @@
             flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-hidden">
 
     <!-- الروابط (نزلتها لتحت بـ mt-16) -->
+    <div class="flex flex-col gap-6 mt-16 w-full">
 
     <div>
         <a href="{{route('homepage')}}" class="nav-link flex items-center">الرئيسية</a>
