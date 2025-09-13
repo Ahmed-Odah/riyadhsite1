@@ -1,4 +1,4 @@
-<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-black transition-colors duration-300">
+<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300">
     <div class="flex justify-between items-center container mx-auto relative">
         <a href="" class="flex flex-col items-start gap-0">
             <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
@@ -326,13 +326,19 @@
         color: white;
     }
 
-    /* اللون الأبيض مع التمرير يشتغل فقط من الشاشات الكبيرة */
+    /* افتراضياً الأيقونة سوداء */
+    #menu-toggle,
+    #menu-toggle .material-icons {
+        color: black !important;
+    }
+
+    /* عند التمرير (navbar-scrolled) تتحول إلى أبيض */
     @media (min-width: 1024px) {
-        nav.navbar-scrolled {
-            background-color: white !important;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            color: black !important;
+        nav.navbar-scrolled #menu-toggle,
+        nav.navbar-scrolled #menu-toggle .material-icons {
+            color: white !important;
         }
+    }
 
         .nav-link {
             @apply transition-all duration-300 ease-in-out font-extrabold; /* نص أكثر سمكًا */
