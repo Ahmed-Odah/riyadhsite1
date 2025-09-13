@@ -8,14 +8,6 @@
             </div>
         </a>
 
-        <!-- للجوال -->
-        <a href="/" class="flex lg:hidden flex-col items-start gap-0">
-            <div class="flex items-center gap-2 -ml-1">
-                <span id="logo-text" class="text-sm font-bold mt-1"></span>
-                <img src="{{ asset('/public/resha1q1.png') }}" alt="Logo" class="h-8">
-            </div>
-        </a>
-
         <!-- زر المنيو (صار يسار) -->
         <div class="lg:hidden absolute left-4 top-1/2 transform -translate-y-1/2">
             <button id="menu-toggle" class="text-white focus:outline-none">
