@@ -149,8 +149,15 @@
      class="fixed top-0 left-0 w-full h-screen p-4 bg-black text-white shadow-lg z-30 hidden
             flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-hidden">
 
-    <!-- الروابط (نزلتها لتحت بـ mt-16) -->
-    <div class="flex flex-col gap-6 mt-16 w-full">
+    <!-- اللوقو فوق يمين -->
+    <div class="w-full flex justify-end">
+        <img src="{{ asset('/public/resha1q1.png') }}"
+             alt="Logo"
+             class="h-12 object-contain"> <!-- صغرته -->
+    </div>
+
+    <!-- الروابط -->
+    <div class="flex flex-col gap-6 mt-10 w-full">
 
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
 
