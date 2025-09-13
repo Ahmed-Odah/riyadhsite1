@@ -144,11 +144,13 @@
 </nav>
 
 <!-- منيو الموبايل -->
+<!-- منيو الموبايل -->
 <div id="menu"
-     class="fixed top-0 left-0 w-full h-1/2 p-4 bg-black text-white shadow-lg z-30 hidden flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-auto">
+     class="fixed top-0 left-0 w-full h-screen p-4 bg-black text-white shadow-lg z-30 hidden
+            flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-hidden">
 
-    <!-- أضفت mt-8 هنا عشان تنزل الروابط تحت اللوقو -->
-    <div class="flex flex-col gap-6 mt-8 w-full">
+    <!-- الروابط (نزلتها لتحت بـ mt-16) -->
+    <div class="flex flex-col gap-6 mt-16 w-full">
 
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
 
