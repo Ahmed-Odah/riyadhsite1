@@ -198,7 +198,7 @@
 
 
 <div id="menu"
-     class="fixed top-0 left-0 w-full h-1/2 p-4 bg-black text-black shadow-lg z-30 hidden flex-col gap-9 items-start justify-start pt-10 lg:hidden overflow-y-auto">
+     class="fixed top-0 left-0 w-full h-1/2 p-4 bg-black text-white shadow-lg z-30 hidden flex-col gap-9 items-start justify-start pt-10 lg:hidden overflow-y-auto">
     <div>
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
     </div>
@@ -323,13 +323,13 @@
         padding: 1rem;
         transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
         background-color: transparent;
-        color: white;
+        color: black;
     }
 
     /* اللون الأبيض مع التمرير يشتغل فقط من الشاشات الكبيرة */
     @media (min-width: 1024px) {
         nav.navbar-scrolled {
-            background-color: white !important;
+            background-color: black !important;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             color: black !important;
         }
