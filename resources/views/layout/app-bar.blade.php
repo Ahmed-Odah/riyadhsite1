@@ -1,6 +1,5 @@
-<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-black text-white transition-colors duration-300">
-
-<div class="flex justify-between items-center container mx-auto relative">
+<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300">
+    <div class="flex justify-between items-center container mx-auto relative">
         <a href="" class="flex flex-col items-start gap-0">
             <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
                 <span id="logo-text" class="text-lg font-bold lg:text-3xl mt-1"></span>
@@ -330,13 +329,12 @@
     /* اللون الأبيض مع التمرير يشتغل فقط من الشاشات الكبيرة */
     @media (min-width: 1024px) {
         nav.navbar-scrolled {
-            background-color: black !important; /* يظل أسود */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            color: white !important;
+            background-color: black !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: black !important;
         }
 
-
-    .nav-link {
+        .nav-link {
             @apply transition-all duration-300 ease-in-out font-extrabold; /* نص أكثر سمكًا */
         }
 
