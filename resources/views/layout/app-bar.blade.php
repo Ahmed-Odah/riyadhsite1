@@ -1,12 +1,16 @@
 <nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300">
 
     <div class="flex justify-between items-center container mx-auto relative">
-        <a href="" class="flex flex-col items-start gap-0">
-            <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
-                <span id="logo-text" class="text-lg font-bold lg:text-3xl mt-1"></span>
-                <img src="{{ asset('/public/resha1q1.png') }}" alt="Logo" class="w-30">
+        <a href="/" class="flex flex-col items-start gap-0">
+            <div class="flex items-center gap-3 sm:gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
+                <span id="logo-text" class="text-base sm:text-lg lg:text-3xl font-bold mt-1"></span>
+                <img src="{{ asset('/public/resha1q1.png') }}"
+                     alt="Logo"
+                     class="h-10 sm:h-12 md:h-14 lg:h-16 object-contain">
             </div>
         </a>
+    </div>
+
 
         <!-- زر المنيو (صار يسار) -->
         <div class="lg:hidden absolute left-4 top-1/2 transform -translate-y-1/2">
@@ -149,15 +153,8 @@
      class="fixed top-0 left-0 w-full h-screen p-4 bg-black text-white shadow-lg z-30 hidden
             flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-hidden">
 
-    <!-- اللوقو فوق يمين -->
-    <div class="w-full flex justify-end pr-4">
-        <img src="{{ asset('/public/resha1q1.png') }}"
-             alt="Logo"
-             class="h-16 object-contain"> <!-- مقاس متوسط -->
-    </div>
-
-    <!-- الروابط -->
-    <div class="flex flex-col gap-6 mt-12 w-full">
+    <!-- الروابط (نزلتها لتحت بـ mt-16) -->
+    <div class="flex flex-col gap-6 mt-16 w-full">
 
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
 
