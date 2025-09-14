@@ -1,4 +1,4 @@
-<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300">
+<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
 
     <div class="flex justify-between items-center container mx-auto relative">
         <!-- اللوجو -->
@@ -200,6 +200,7 @@
         padding: 1rem;
         transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
         background-color: transparent;
+        color: white;
     }
 
     /* زر المنيو */
