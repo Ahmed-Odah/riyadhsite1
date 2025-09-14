@@ -1,4 +1,4 @@
-<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-black transition-colors duration-300">
+<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent text-white transition-colors duration-300">
 
     <div class="flex justify-between items-center container mx-auto relative">
         <!-- اللوجو -->
