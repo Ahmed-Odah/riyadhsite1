@@ -154,7 +154,7 @@
     <!-- قسم الصور -->
     <div class="w-full lg:w-1/2 flex flex-col items-center gap-4 mt-6 lg:mt-0">
         <!-- الصورة الرئيسية -->
-        <img src="/public/book11.jpg" alt="صورة رئيسية"
+        <img src="/public/books2001.jpg" alt="صورة رئيسية"
              class="w-72 sm:w-80 md:w-96 rounded-3xl shadow-2xl border-4 border-white/20
                 transform transition duration-500 hover:scale-105 hover:shadow-cyan-500/50">
 
