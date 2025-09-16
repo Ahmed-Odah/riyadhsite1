@@ -160,7 +160,7 @@
 
         <!-- صورتين تحتها جنب بعض -->
         <div class="flex gap-4">
-            <img src="/public/book11.jpg" alt="صورة جانبية 1"
+            <img src="/public/books2002.jpg" alt="صورة جانبية 1"
                  class="w-32 sm:w-36 md:w-40 rounded-2xl shadow-xl border-2 border-white/20
                     transform transition duration-500 hover:scale-105 hover:shadow-pink-400/50">
 
