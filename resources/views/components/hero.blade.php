@@ -150,23 +150,22 @@
     </div>
 
 
-
     <!-- قسم الصور -->
-    <div class="w-full lg:w-1/2 flex flex-col items-center gap-4 mt-6 lg:mt-0">
+    <div class="w-full lg:w-1/2 flex flex-col items-center gap-6 mt-12 lg:mt-0">
         <!-- الصورة الرئيسية -->
         <img src="/public/books2001.jpg" alt="صورة رئيسية"
-             class="w-72 sm:w-80 md:w-96 rounded-3xl shadow-2xl border-4 border-white/20
-                transform transition duration-500 hover:scale-105 hover:shadow-cyan-500/50">
+             class="w-64 sm:w-72 md:w-80 lg:w-96 rounded-3xl shadow-2xl border-4 border-white/20
+                transform transition duration-500 hover:scale-105 hover:shadow-cyan-500/40">
 
         <!-- صورتين تحتها جنب بعض -->
-        <div class="flex gap-4">
+        <div class="flex gap-6">
             <img src="/public/books2002.jpg" alt="صورة جانبية 1"
-                 class="w-32 sm:w-36 md:w-40 rounded-2xl shadow-xl border-2 border-white/20
-                    transform transition duration-500 hover:scale-105 hover:shadow-pink-400/50">
+                 class="w-36 sm:w-40 md:w-44 h-28 sm:h-32 md:h-36 object-cover rounded-xl shadow-lg border-2 border-white/20
+                    transform transition duration-500 hover:scale-105 hover:shadow-pink-400/40">
 
             <img src="/public/book11.jpg" alt="صورة جانبية 2"
-                 class="w-32 sm:w-36 md:w-40 rounded-2xl shadow-xl border-2 border-white/20
-                    transform transition duration-500 hover:scale-105 hover:shadow-blue-400/50">
+                 class="w-36 sm:w-40 md:w-44 h-28 sm:h-32 md:h-36 object-cover rounded-xl shadow-lg border-2 border-white/20
+                    transform transition duration-500 hover:scale-105 hover:shadow-blue-400/40">
         </div>
     </div>
 
