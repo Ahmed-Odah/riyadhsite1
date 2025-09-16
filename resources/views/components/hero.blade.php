@@ -47,15 +47,19 @@
 <body>
 <!-- رسالة Scroll Alert أسفل يمين -->
 <!-- رسالة Scroll Alert بالمنتصف -->
+<!-- Scroll Alert -->
 <div id="scroll-alert"
      class="fixed inset-0 flex items-center justify-center
             bg-black/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-500">
-    <div class="relative bg-white text-gray-800 px-10 py-8 rounded-3xl shadow-2xl transform scale-90 transition-all duration-500 max-w-lg w-11/12 border border-gray-200 text-center">
+    <div class="bg-white text-gray-800 px-10 py-8 rounded-3xl shadow-2xl transform scale-90 transition-all duration-500 max-w-lg w-11/12 border border-gray-200 text-center relative">
 
-        <!-- زر الإغلاق -->
-        <button id="close-alert" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+        <!-- زر الإغلاق (X) -->
+        <button id="close-alert"
+                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold">
+            &times;
+        </button>
 
-        <h2 class="text-3xl font-bold mb-3 text-cyan-700">أهلاً وسهلاً بك!</h2>
+        <h2 class="text-3xl font-bold mb-3 text-cyan-700"> أهلاً وسهلاً بك!</h2>
         <p class="text-lg mb-6">سجّل معنا الآن لتصلك أحدث العروض والتحديثات الحصرية.</p>
 
         <a href="{{ route('client') }}"
@@ -65,21 +69,18 @@
     </div>
 </div>
 
+<script>
+    const alertBox = document.getElementById("scroll-alert");
+    const closeBtn = document.getElementById("close-alert");
 
+    // عند الضغط على زر الإغلاق
+    closeBtn.addEventListener("click", () => {
+        alertBox.classList.add("opacity-0", "pointer-events-none");
+    });
+</script>
 
 
 <script>
-    const alertBox = document.getElementById('scroll-alert');
-    const closeBtn = document.getElementById('close-alert');
-
-    closeBtn.addEventListener('click', () => {
-        alertBox.classList.add('opacity-0', 'pointer-events-none');
-    });
-
-    // لو حابب تفتح الـ modal بعد فترة:
-    // setTimeout(() => {
-    //     alertBox.classList.remove('opacity-0', 'pointer-events-none');
-    // }, 1000);
     document.addEventListener("DOMContentLoaded", function() {
         const scrollAlert = document.getElementById('scroll-alert');
         const box = scrollAlert.querySelector('div');
