@@ -151,14 +151,15 @@
 
 
     <!-- قسم الصور -->
-    <div class="w-full lg:w-1/2 flex flex-col items-center gap-6 mt-12 lg:mt-0">
+    <div class="w-full lg:w-1/2 flex flex-col items-center gap-6 mt-20 lg:mt-10">
         <!-- الصورة الرئيسية -->
         <img src="/public/books2001.jpg" alt="صورة رئيسية"
              class="w-64 sm:w-72 md:w-80 lg:w-96 rounded-3xl shadow-2xl border-4 border-white/20
-                transform transition duration-500 hover:scale-105 hover:shadow-cyan-500/40">
+                transform transition duration-500 hover:scale-105 hover:shadow-cyan-500/40
+                mt-8"> <!-- نزلنا الصورة الرئيسية -->
 
         <!-- صورتين تحتها جنب بعض -->
-        <div class="flex gap-6">
+        <div class="flex gap-6 mt-4">
             <img src="/public/books2002.jpg" alt="صورة جانبية 1"
                  class="w-36 sm:w-40 md:w-44 h-28 sm:h-32 md:h-36 object-cover rounded-xl shadow-lg border-2 border-white/20
                     transform transition duration-500 hover:scale-105 hover:shadow-pink-400/40">
