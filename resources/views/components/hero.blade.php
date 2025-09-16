@@ -48,10 +48,12 @@
 <!-- رسالة Scroll Alert أسفل يمين -->
 <!-- رسالة Scroll Alert بالمنتصف -->
 <!-- Scroll Alert -->
+<!-- Scroll Alert -->
 <div id="scroll-alert"
      class="fixed inset-0 flex items-center justify-center
             bg-black/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-500">
-    <div class="bg-white text-gray-800 px-10 py-8 rounded-3xl shadow-2xl transform scale-90 transition-all duration-500 max-w-lg w-11/12 border border-gray-200 text-center relative">
+    <div id="scroll-box"
+         class="bg-white text-gray-800 px-10 py-8 rounded-3xl shadow-2xl transform scale-90 transition-all duration-500 max-w-lg w-11/12 border border-gray-200 text-center relative">
 
         <!-- زر الإغلاق (X) -->
         <button id="close-alert"
@@ -70,22 +72,13 @@
 </div>
 
 <script>
-    const alertBox = document.getElementById("scroll-alert");
-    const closeBtn = document.getElementById("close-alert");
-
-    // عند الضغط على زر الإغلاق
-    closeBtn.addEventListener("click", () => {
-        alertBox.classList.add("opacity-0", "pointer-events-none");
-    });
-</script>
-
-
-<script>
     document.addEventListener("DOMContentLoaded", function() {
         const scrollAlert = document.getElementById('scroll-alert');
-        const box = scrollAlert.querySelector('div');
+        const box = document.getElementById('scroll-box');
+        const closeBtn = document.getElementById("close-alert");
         let alertShown = false;
 
+        // عند التمرير
         window.addEventListener('scroll', () => {
             if (!alertShown && window.scrollY > 150) {
                 alertShown = true;
@@ -98,15 +91,23 @@
 
                 // إخفاء الرسالة بعد 6 ثواني
                 setTimeout(() => {
-                    scrollAlert.classList.remove('opacity-100');
-                    scrollAlert.classList.add('opacity-0', 'pointer-events-none');
-                    box.classList.remove('scale-100');
-                    box.classList.add('scale-90');
+                    closeAlert();
                 }, 6000);
             }
         });
+
+        // عند الضغط على زر الإغلاق
+        closeBtn.addEventListener("click", closeAlert);
+
+        function closeAlert() {
+            scrollAlert.classList.remove('opacity-100');
+            scrollAlert.classList.add('opacity-0', 'pointer-events-none');
+            box.classList.remove('scale-100');
+            box.classList.add('scale-90');
+        }
     });
 </script>
+
 
 
 
