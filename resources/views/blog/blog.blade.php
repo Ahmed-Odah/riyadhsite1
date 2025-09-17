@@ -14,7 +14,7 @@
                         @foreach($blogs as $blog)
                             <div class="group bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
                                 <div class="flex items-center mb-4">
-                                    <img src="{{ asset('storage/' . $blog->image) }}" alt="blog image" class="rounded-2xl w-full object-cover h-64">
+                                    <img src="{{ asset('public/storage/' . $blog->image) }}" alt="blog image" class="rounded-2xl w-full object-cover h-64">
                                 </div>
                                 <h3 class="text-xl text-gray-900 font-medium leading-8 mb-2 group-hover:text-indigo-900">
                                     {{ $blog->title }}
