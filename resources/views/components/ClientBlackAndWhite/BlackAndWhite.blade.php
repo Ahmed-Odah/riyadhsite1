@@ -10,7 +10,7 @@
                     x-show="{{ $index }} < visible"
                     class="bg-white rounded-2xl border border-gray-200 shadow hover:shadow-md transition duration-300 overflow-hidden">
 
-                    <button @click="open = true; image = @js(asset('/public/storage/' . $client->image))" class="block w-full">
+                    <button @click="open = true; image = @js(asset('public/storage/' . $client->image))" class="block w-full">
                         <img src="{{ asset('public/storage/' . $client->image) }}"
                              alt="{{ $client->Title }}"
                              class="w-full h-64 object-cover hover:scale-105 transition duration-300" />
