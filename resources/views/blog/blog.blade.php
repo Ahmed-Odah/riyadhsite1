@@ -1,19 +1,6 @@
 @extends('layout.master')
 @section('content')
 
-    <section class="py-24">
-        <h1 class="text-3xl font-bold mb-6 text-center mt-20 ">المدونة </h1>
-
-        <section class="py-24 relative">
-            <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
-                <div class="w-full md:px-16 px-10 md:pt-16 pt-10 pb-10  rounded-2xl flex-col justify-end items-center lg:gap-28 md:gap-16 gap-10 inline-flex">
-                    <div class="flex-col justify-end items-center lg:gap-16 gap-10 flex">
-                        <img src="https://pagedone.io/asset/uploads/1717500460.png" alt="pagedone logo image" class="object-cover">
-                        <div class="flex-col justify-center items-center gap-10 flex">
-                            <div class="flex-col justify-start items-center gap-2.5 flex">
-                                <h2 class="text-center text-emerald-400 md:text-6xl text-5xl font-bold font-manrope leading-normal">Coming Soon</h2>
-                                <p class="text-center text-gray-500 text-base font-normal leading-relaxed"></p>
-                            </div>
 
 
 
@@ -86,7 +73,7 @@
                 }
             }, 10);
         </script>
-    {{--
+
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <div class="flex justify-center flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between gap-8">
