@@ -47,7 +47,7 @@
             </style>
 
             <script>
-                // بعد 3 ثواني تبدأ الانيميشن للخروج ثم تختفي العنصر
+                // بعد 3 ثواني تبدأ الانيميشن للخروج ثم يختفي العنصر
                 setTimeout(() => {
                     const alert = document.getElementById('successAlert');
                     alert.classList.remove('animate-slide-in');
@@ -57,8 +57,7 @@
             </script>
         @endif
 
-
-        {{-- إشعار الخطأ --}}
+        {{-- ❌ إشعار الخطأ --}}
         @if(session('error'))
             <div class="mb-6 bg-red-100 border border-red-400 text-red-800 px-4 py-3 rounded text-center shadow">
                 {{ session('error') }}
@@ -70,6 +69,7 @@
         <form action="{{ route('gym-create') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
+            {{-- العنوان --}}
             <div class="mb-4">
                 <label for="title" class="block mb-1 font-medium">عنوان الصورة</label>
                 <input dir="rtl" type="text" id="title" name="title"
@@ -77,6 +77,7 @@
                        required>
             </div>
 
+            {{-- الوصف --}}
             <div class="mb-4">
                 <label for="description" class="block mb-1 font-medium">وصف الصورة</label>
                 <textarea dir="rtl" id="description" name="description" rows="4"
@@ -84,6 +85,7 @@
                           required></textarea>
             </div>
 
+            {{-- صورة الغلاف --}}
             <div class="mb-6">
                 <label for="image" class="block mb-1 font-medium">صورة الغلاف</label>
                 <input dir="rtl" type="file" id="image" name="image" accept="image/*"
