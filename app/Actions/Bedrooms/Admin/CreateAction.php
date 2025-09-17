@@ -2,7 +2,7 @@
 
 namespace App\Actions\Bedrooms\Admin;
 
-use App\Models\Bedroom;
+use App\Models\bedroom;
 use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Illuminate\Support\Facades\Log;
