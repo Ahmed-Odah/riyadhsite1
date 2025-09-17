@@ -48,7 +48,7 @@
 
 
             <!-- الصورة المكبرة -->
-            <img src="{{ asset('public/storage/' . $client->image) }}" alt="عرض الصورة" class="w-full max-h-[85vh] object-contain rounded-lg shadow-lg">
+            <img src="{{ asset('/public/storage/' . $client->image) }}" alt="عرض الصورة" class="w-full max-h-[85vh] object-contain rounded-lg shadow-lg">
         </div>
     </div>
 </div>
