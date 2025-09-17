@@ -85,14 +85,14 @@
                           required></textarea>
             </div>
 
-            {{-- الغلاف --}}
+            {{-- صورة الغلاف --}}
             <div class="mb-6">
                 <label for="cover_url" class="block mb-1 font-medium">صورة الغلاف (اختياري)</label>
                 <input dir="rtl" type="file" id="cover_url" name="cover_url" accept="image/*"
                        class="w-full border border-gray-300 rounded px-3 py-2">
             </div>
 
-            {{-- الصور --}}
+            {{-- الصور المتعددة --}}
             <div class="mb-6">
                 <label for="images" class="block mb-1 font-medium">اختر الصور</label>
                 <input dir="rtl" type="file" id="images" name="images[]" accept="image/*"
