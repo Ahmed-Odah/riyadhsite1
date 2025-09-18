@@ -113,7 +113,7 @@
 <div class="bg-gradient text-white min-h-screen flex items-center justify-center relative overflow-hidden">
     <!-- الخلفية المتحركة -->
     <div class="absolute inset-0 flex justify-center items-center z-0">
-        <img src="/public/book2005.png" class="max-w-full max-h-full object-contain brightness-90" alt="Book Image">
+        <img src="/public/book2005.png" class="max-w-64 max-h-full object-contain brightness-90" alt="Book Image">
     </div>
 
 
