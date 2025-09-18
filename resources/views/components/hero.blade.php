@@ -112,7 +112,9 @@
 
 <div class="bg-gradient text-white min-h-screen flex items-center justify-center relative overflow-hidden">
     <!-- الخلفية المتحركة -->
-    <div class="absolute inset-0 bg-no-repeat bg-cover brightness-37 z-0" style="background-image: url('/public/book2005.png');"></div>
+    <div class="absolute inset-0 z-0">
+        <img src="/public/book2005.png" class="w-full h-full object-contain brightness-90" alt="Book Image">
+    </div>
 
     <!-- النصوص -->
     <div class="container mx-auto px-6 text-center relative z-10">
