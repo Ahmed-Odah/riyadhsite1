@@ -17,7 +17,7 @@
         </div>
 
         <!-- روابط سطح المكتب -->
-        <div class="hidden lg:flex flex-col md:flex-row items-center justify-center gap-8 md:static absolute w-full md:w-auto p-4 md:p-0 z-20 top-full left-0 md:top-auto md:left-auto"
+        <div class=" text-white hidden lg:flex flex-col md:flex-row items-center justify-center gap-8 md:static absolute w-full md:w-auto p-4 md:p-0 z-20 top-full left-0 md:top-auto md:left-auto"
              :class="{'text-white': !scrolled, 'text-black': scrolled}">
             <style>
                 .nav-link {
