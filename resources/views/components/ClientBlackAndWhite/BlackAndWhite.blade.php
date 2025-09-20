@@ -10,7 +10,7 @@
                     x-show="{{ $index }} < visible"
                     class="bg-white rounded-2xl border border-gray-200 shadow hover:shadow-md transition duration-300 overflow-hidden">
 
-                    <!-- عند الضغط نخزن الصورة في المتغير image -->
+                    <!-- عند الضغط نخزن الصورة -->
                     <button @click="open = true; image = '{{ asset('public/storage/' . $client->image) }}'" class="block w-full">
                         <img src="{{ asset('public/storage/' . $client->image) }}"
                              alt="{{ $client->Title }}"
@@ -34,21 +34,19 @@
         </div>
     </div>
 
-    <!-- نافذة التكبير -->
+    <!-- نافذة التكبير (مطابق للأول) -->
     <div x-show="open"
          x-transition.opacity
-         class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
          @click="open = false">
 
-        <div @click.stop class="relative max-w-4xl w-full p-4">
-            <!-- زر الإغلاق -->
-            <button type="button" @click="open = false"
-                    class="absolute top-2 right-2 text-white bg-red-600 hover:bg-red-700 p-1 rounded-full text-lg">
-                &times;
-            </button>
-
+        <div @click.stop class="relative">
             <!-- الصورة المكبرة -->
-            <img :src="image" alt="عرض الصورة" class="w-full max-h-[85vh] object-contain rounded-lg shadow-lg">
+            <img :src="image" class="max-w-full max-h-screen rounded-lg shadow-lg">
+
+            <!-- زر الإغلاق -->
+            <button @click="open = false"
+                    class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
         </div>
     </div>
 </div>
