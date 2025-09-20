@@ -37,18 +37,18 @@
     <!-- نافذة التكبير -->
     <div x-show="open"
          x-transition.opacity
-         class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
          @click="open = false">
 
-        <div @click.stop class="relative max-w-4xl w-full p-4">
-            <!-- زر الإغلاق -->
-            <button type="button" @click="open = false"
-                    class="absolute top-2 right-2 text-white bg-red-600 hover:bg-red-700 p-1 rounded-full text-lg">
-                &times;
-            </button>
-
+        <div @click.stop class="relative w-[80vw] max-w-xl h-[60vh]">
             <!-- الصورة المكبرة -->
-            <img :src="image" alt="عرض الصورة" class="w-full max-h-[85vh] object-contain rounded-lg shadow-lg">
+            <img :src="image" alt="عرض الصورة"
+                 class="w-full h-full object-contain rounded-lg shadow-lg">
+
+            <!-- زر الإغلاق -->
+            <button @click="open = false"
+                    class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
         </div>
     </div>
+
 </div>
