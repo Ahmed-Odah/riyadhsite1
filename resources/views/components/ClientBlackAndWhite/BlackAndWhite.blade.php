@@ -44,7 +44,7 @@
             <!-- الصورة المكبرة -->
             <!-- الصورة المكبرة -->
             <img :src="image"
-                 class="w-[80vw] h-[80vh] object-contain rounded-lg shadow-lg">
+                 class="w-[80vw] h-[80vh] object-cover rounded-lg shadow-lg">
 
 
             <!-- زر الإغلاق -->
