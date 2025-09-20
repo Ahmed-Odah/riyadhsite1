@@ -42,8 +42,10 @@
 
         <div @click.stop class="relative">
             <!-- الصورة المكبرة -->
+            <!-- الصورة المكبرة -->
             <img :src="image"
-                 class="max-w-[90vw] max-h-[85vh] object-contain rounded-lg shadow-lg">
+                 class="w-[80vw] h-[80vh] object-contain rounded-lg shadow-lg">
+
 
             <!-- زر الإغلاق -->
             <button @click="open = false"
