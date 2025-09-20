@@ -113,23 +113,20 @@
 <div class="bg-gradient text-white min-h-screen w-full flex items-center justify-center relative overflow-hidden">
     <!-- الخلفية المتحركة -->
     <div class="absolute inset-0 z-0">
-        <img src="/public/book2005.png" class="w-full h-full object-cover brightness-90" alt="Book Image">
+        <img src="/public/storage/book2005.png" class="w-full h-full object-cover brightness-50" alt="Book Image">
     </div>
-</div>
-
-
 
     <!-- النصوص -->
     <div class="container mx-auto px-6 text-center relative z-10">
         <div class="max-w-2xl mx-auto">
             <section class="py-24 px-4">
-                <h1 class="text-2xl md:text-3xl font-semibold text-white text-center leading-snug opacity-0 translate-y-5 animate-fade-in-up shadow-md">
+                <h1 class="text-2xl md:text-3xl font-semibold text-white text-center leading-snug animate-fade-in-up">
                     خليط من الحرف والضوء، من الفكرة واللحظة. أهلاً بك في عالمي.
                 </h1>
             </section>
         </div>
     </div>
-
+</div>
 
 
 
