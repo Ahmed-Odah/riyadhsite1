@@ -123,10 +123,20 @@
                 <h1 class="text-2xl md:text-3xl font-semibold text-white text-center leading-snug animate-fade-in-up">
                     خليط من الحرف والضوء، من الفكرة واللحظة. أهلاً بك في عالمي.
                 </h1>
+
+                <!-- إضافة الموقع الرسمي -->
+                <p class="text-white text-lg mt-4 animate-fade-in-up">
+                    الموقع الرسمي: www.example.com
+                </p>
+
+                <!-- إضافة م.رياض المقيد -->
+                <p class="text-white text-md mt-2 animate-fade-in-up">
+                    م.رياض المقيد
+                </p>
             </section>
         </div>
     </div>
-</div>
+
 
 
 
