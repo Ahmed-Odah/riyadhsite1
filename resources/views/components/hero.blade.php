@@ -126,11 +126,13 @@
                     الموقع الرسمي لـ
                 </p>
 
+
                 <!-- اسم الشخص -->
-                <!-- اسم الشخص -->
-                <p class="text-lg md:text-xl font-medium text-center animate-fade-in-up" style="color:#FFC107;">
+                <p class="text-lg md:text-xl font-medium text-center animate-fade-in-up mb-12" style="color:#FFC107;">
                     م.رياض المقيد
                 </p>
+
+
 
                 <!-- العنوان الرئيسي -->
                 <h1 class="text-3xl md:text-4xl font-bold text-white text-center leading-snug animate-fade-in-up">
