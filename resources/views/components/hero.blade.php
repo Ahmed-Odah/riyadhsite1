@@ -120,21 +120,21 @@
     <div class="container mx-auto px-6 text-center relative z-10">
         <div class="max-w-2xl mx-auto">
             <section class="py-24 px-4">
+
                 <!-- الموقع الرسمي -->
                 <p class="text-xl md:text-2xl font-semibold text-white text-center animate-fade-in-up mb-2">
                     الموقع الرسمي لـ
                 </p>
 
                 <!-- اسم الشخص -->
-                <p class="text-lg md:text-xl font-medium text-yellow-600 text-center animate-fade-in-up">
+                <p class="text-lg md:text-xl font-medium text-yellow-600 text-center animate-fade-in-up mb-12">
                     م.رياض المقيد
                 </p>
 
                 <!-- العنوان الرئيسي -->
-                <h1 class="text-3xl md:text-4xl font-bold text-white text-center leading-snug animate-fade-in-up mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold text-white text-center leading-snug animate-fade-in-up">
                     خليط من الحرف والضوء، من الفكرة واللحظة. أهلاً بك في عالمي.
                 </h1>
-
 
             </section>
         </div>
