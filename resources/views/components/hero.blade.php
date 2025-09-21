@@ -127,7 +127,8 @@
                 </p>
 
                 <!-- اسم الشخص -->
-                <p class="text-lg md:text-xl font-medium text-yellow-600 text-center animate-fade-in-up mb-12">
+                <!-- اسم الشخص -->
+                <p class="text-lg md:text-xl font-medium text-center animate-fade-in-up" style="color:#FFC107;">
                     م.رياض المقيد
                 </p>
 
