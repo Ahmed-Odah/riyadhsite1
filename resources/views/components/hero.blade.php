@@ -117,6 +117,7 @@
     </div>
 
     <!-- النصوص -->
+    <<!-- النصوص -->
     <div class="container mx-auto px-6 text-center relative z-10">
         <div class="max-w-2xl mx-auto">
             <section class="py-24 px-4">
@@ -124,15 +125,14 @@
                     خليط من الحرف والضوء، من الفكرة واللحظة. أهلاً بك في عالمي.
                 </h1>
 
-                <!-- إضافة الموقع الرسمي -->
-                <p class="text-white text-lg mt-4 animate-fade-in-up">
+                <!-- نفس تنسيق العنوان للنصوص الجديدة -->
+                <h1 class="text-2xl md:text-3xl font-semibold text-white text-center leading-snug animate-fade-in-up mt-4">
                     الموقع الرسمي: www.example.com
-                </p>
+                </h1>
 
-                <!-- إضافة م.رياض المقيد -->
-                <p class="text-white text-md mt-2 animate-fade-in-up">
+                <h1 class="text-2xl md:text-3xl font-semibold text-white text-center leading-snug animate-fade-in-up mt-2">
                     م.رياض المقيد
-                </p>
+                </h1>
             </section>
         </div>
     </div>
