@@ -34,21 +34,16 @@
         </div>
     </div>
 
-    <!-- نافذة التكبير -->
+    <!-- نافذة التكبير (مثل المطبخ) -->
     <div x-show="open"
          x-transition.opacity
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
          @click="open = false">
-
-        <div @click.stop class="relative w-[80vw] max-w-xl h-[60vh]">
-            <!-- الصورة المكبرة -->
+        <div @click.stop class="relative">
             <img :src="image" alt="عرض الصورة"
-                 class="w-full h-full object-contain rounded-lg shadow-lg">
-
-            <!-- زر الإغلاق -->
+                 class="max-w-full max-h-screen rounded-lg shadow-lg">
             <button @click="open = false"
-                    class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
+                    class="absolute top-2 right-2 text-white text-2xl font-bold">&times;</button>
         </div>
     </div>
-
 </div>
