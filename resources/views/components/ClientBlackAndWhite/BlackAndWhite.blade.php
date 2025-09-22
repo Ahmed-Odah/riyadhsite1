@@ -43,7 +43,7 @@
         <div @click.stop class="relative w-[80vw] max-w-xl h-[80vw] max-h-xl flex items-center justify-center">
             <!-- الصورة داخل مربع -->
             <img :src="image" alt="عرض الصورة"
-                 class="w-full h-full object-cover rounded-lg shadow-lg">
+                 class="w-full  object-cover rounded-lg shadow-lg">
 
             <!-- زر الإغلاق -->
             <button @click="open = false"
