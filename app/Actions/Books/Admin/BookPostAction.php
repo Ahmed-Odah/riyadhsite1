@@ -14,33 +14,22 @@ class BookPostAction
     public function handle(Request $request)
     {
         try {
-            // ✅ التحقق من المدخلات
-            $request->validate([
-                'title'       => 'required|string|max:255',
-                'description' => 'required|string',
-                'is_pending'  => 'required|in:0,1',
-                'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-                'cover_url'   => 'nullable|mimes:pdf|max:10000',
-            ]);
-
             $coverPath = null;
-            $pdfPath   = null;
+            $pdfPath = null;
 
             if ($request->hasFile('image')) {
-                $coverPath = $request->file('image')->store('books/images', 'public');
+                $coverPath = $request->file('image')->store('images', 'public');
             }
 
             if ($request->hasFile('cover_url')) {
-                $pdfPath = $request->file('cover_url')->store('books/pdfs', 'public');
+                $pdfPath = $request->file('cover_url')->store('pdfs', 'public');
             }
 
-            // ✅ تخزين البيانات
             Book::create([
-                'title'       => $request->get('title'),
+                'title' => $request->get('title'),
                 'description' => $request->get('description'),
-                'is_pending'  => $request->boolean('is_pending'), // ✨ يحولها إلى true/false
-                'image'       => $coverPath,
-                'cover_url'   => $pdfPath,
+                'image' => $coverPath,
+                'cover_url' => $pdfPath,
             ]);
 
             return back()->with('success', 'تم إضافة الكتاب بنجاح');
