@@ -18,7 +18,7 @@ class BookPostAction
             $request->validate([
                 'title'       => 'required|string|max:255',
                 'description' => 'required|string',
-                'is_pending'  => 'nullable|boolean', // ✨ الحقل الجديد (Boolean)
+                'is_pending'  => 'required|in:0,1',
                 'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
                 'cover_url'   => 'nullable|mimes:pdf|max:10000',
             ]);
@@ -38,7 +38,7 @@ class BookPostAction
             Book::create([
                 'title'       => $request->get('title'),
                 'description' => $request->get('description'),
-                'is_pending'  => $request->boolean('is_pending'), // ✨ يحولها إلى true/false
+                'is_pending'  => (int) $request->get('is_pending', 0),
                 'image'       => $coverPath,
                 'cover_url'   => $pdfPath,
             ]);
