@@ -49,10 +49,13 @@
 
         <h2 class="text-2xl font-bold mb-6">إضافة كتاب جديد</h2>
 
-        <form action="{{ route('book-post') }}" method="PUT" enctype="multipart/form-data">
+        <form action="{{ route('book-post') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            <!-- الحقول -->
+        </form>
 
-            {{-- العنوان --}}
+
+        {{-- العنوان --}}
             <div class="mb-4">
                 <label for="title" class="block mb-1 font-medium">عنوان الكتاب</label>
                 <input dir="rtl" type="text" id="title" name="title"
