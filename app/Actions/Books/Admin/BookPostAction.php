@@ -38,7 +38,7 @@ class BookPostAction
             Book::create([
                 'title'       => $request->get('title'),
                 'description' => $request->get('description'),
-                'is_pending'  => (int) $request->get('is_pending', 0),
+                'is_pending'  => $request->boolean('is_pending'), // ✨ يحولها إلى true/false
                 'image'       => $coverPath,
                 'cover_url'   => $pdfPath,
             ]);

@@ -3,6 +3,7 @@
 @section('content')
     <div class="max-w-2xl mx-auto mt-10 bg-white p-6 rounded shadow text-right">
 
+        {{-- إشعار النجاح --}}
         {{-- ✅ إشعار النجاح --}}
         @if(session('success'))
             <div
@@ -19,18 +20,35 @@
 
             <style>
                 @keyframes slide-in {
-                    0% { opacity: 0; transform: translateX(100%); }
-                    100% { opacity: 1; transform: translateX(0); }
+                    0% {
+                        opacity: 0;
+                        transform: translateX(100%);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
                 }
                 @keyframes slide-out {
-                    0% { opacity: 1; transform: translateX(0); }
-                    100% { opacity: 0; transform: translateX(100%); }
+                    0% {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                    100% {
+                        opacity: 0;
+                        transform: translateX(100%);
+                    }
                 }
-                .animate-slide-in { animation: slide-in 0.5s ease forwards; }
-                .animate-slide-out { animation: slide-out 0.5s ease forwards; }
+                .animate-slide-in {
+                    animation: slide-in 0.5s ease forwards;
+                }
+                .animate-slide-out {
+                    animation: slide-out 0.5s ease forwards;
+                }
             </style>
 
             <script>
+                // بعد 3 ثواني تبدأ الانيميشن للخروج ثم تختفي العنصر
                 setTimeout(() => {
                     const alert = document.getElementById('successAlert');
                     alert.classList.remove('animate-slide-in');
@@ -39,6 +57,7 @@
                 }, 3000);
             </script>
         @endif
+
 
         {{-- إشعار الخطأ --}}
         @if(session('error'))
@@ -51,11 +70,7 @@
 
         <form action="{{ route('book-post') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <!-- الحقول -->
-        </form>
 
-
-        {{-- العنوان --}}
             <div class="mb-4">
                 <label for="title" class="block mb-1 font-medium">عنوان الكتاب</label>
                 <input dir="rtl" type="text" id="title" name="title"
@@ -63,7 +78,6 @@
                        required>
             </div>
 
-            {{-- الوصف --}}
             <div class="mb-4">
                 <label for="description" class="block mb-1 font-medium">وصف الكتاب</label>
                 <textarea dir="rtl" id="description" name="description" rows="4"
@@ -71,33 +85,21 @@
                           required></textarea>
             </div>
 
-            {{-- ملف PDF --}}
             <div class="mb-4">
-                <label for="cover_url" class="block mb-1 font-medium">ملف PDF</label>
+                <label for="pdf" class="block mb-1 font-medium">ملف PDF</label>
                 <input dir="rtl" type="file" id="cover_url" name="cover_url" accept="application/pdf"
                        class="w-full border border-gray-300 rounded px-3 py-2" required>
             </div>
 
-            {{-- صورة الغلاف --}}
-            <div class="mb-4">
+            <div class="mb-6">
                 <label for="image" class="block mb-1 font-medium">صورة الغلاف</label>
                 <input dir="rtl" type="file" id="image" name="image" accept="image/*"
                        class="w-full border border-gray-300 rounded px-3 py-2" required>
             </div>
 
-            {{-- حالة الكتاب (قيد الطبع أو متاح) --}}
-            <div class="mb-6">
-                <label for="is_pending" class="block mb-1 font-medium">حالة الكتاب</label>
-                <select name="is_pending" id="is_pending"
-                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                    <option value="0">متاح</option>
-                    <option value="1">قيد الطبع</option>
-                </select>
-            </div>
-
             <div class="text-right">
                 <button type="submit"
-                        class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition w-full">
+                        class="bg-green-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition w-full">
                     حفظ الكتاب
                 </button>
             </div>
