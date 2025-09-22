@@ -1,4 +1,11 @@
-<div x-data="{ open: false, image: '', visible: 8 }" class="relative">
+<div x-data="{
+        open: false,
+        image: '',
+        visible: 8,
+        currentIndex: 0,
+        images: @js($clients->pluck('image'))
+    }" class="relative">
+
     <!-- العنوان -->
     <div class="bg-gray-50 min-h-screen py-16 px-4 sm:px-10 lg:px-20">
         <h1 class="text-3xl font-extrabold text-center text-gray-800 mt-20">تصويري</h1>
@@ -9,8 +16,10 @@
                 <div x-show="{{ $index }} < visible"
                      class="bg-white rounded-2xl border border-gray-200 shadow hover:shadow-md transition duration-300 overflow-hidden">
 
-                    <!-- عند الضغط نخزن الصورة -->
-                    <button @click="open = true; image = '{{ asset('public/storage/' . $client->image) }}'" class="block w-full">
+                    <!-- عند الضغط نخزن الصورة مع رقمها -->
+                    <button
+                        @click="open = true; currentIndex = {{ $index }}; image = '{{ asset('public/storage/' . $client->image) }}'"
+                        class="block w-full">
                         <img src="{{ asset('public/storage/' . $client->image) }}"
                              alt="{{ $client->Title }}"
                              class="w-full h-64 object-cover hover:scale-105 transition duration-300" />
@@ -34,13 +43,29 @@
         </div>
     </div>
 
-    <!-- نافذة التكبير (نفس المطبخ) -->
+    <!-- نافذة التكبير مع الأسهم -->
     <div x-show="open"
          x-transition.opacity
          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
          @click="open = false">
-        <div @click.stop class="relative">
+
+        <div @click.stop class="relative flex items-center">
+            <!-- زر السابق -->
+            <button @click="if (currentIndex > 0) { currentIndex--; image = '{{ asset('public/storage/') }}/' + images[currentIndex]; }"
+                    class="absolute left-4 text-white text-4xl font-bold z-50">
+                &#10094;
+            </button>
+
+            <!-- الصورة -->
             <img :src="image" class="max-w-full max-h-screen rounded-lg shadow-lg">
+
+            <!-- زر التالي -->
+            <button @click="if (currentIndex < images.length - 1) { currentIndex++; image = '{{ asset('public/storage/') }}/' + images[currentIndex]; }"
+                    class="absolute right-4 text-white text-4xl font-bold z-50">
+                &#10095;
+            </button>
+
+            <!-- زر الإغلاق -->
             <button @click="open = false"
                     class="absolute top-2 right-2 text-white text-2xl font-bold">&times;</button>
         </div>
