@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('books', function (Blueprint $table) {
-            //
+            $table->string('image')->nullable()->after('cover_url');
+            $table->boolean('is_pending')->default(false)->after('image'); // الكتاب قيد الطبع أو لا
         });
     }
 
@@ -22,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('books', function (Blueprint $table) {
-            //
+            $table->dropColumn(['image', 'is_pending']);
         });
     }
 };
