@@ -1,10 +1,9 @@
 @extends('layout.master')
-
 @section('content')
     <div x-data="{ open: false, image: '', visible: 12 }" class="relative">
         <!-- العنوان -->
         <div class="bg-gray-50 min-h-screen py-16 px-4 sm:px-10 lg:px-20">
-            <h1 class="text-3xl font-extrabold text-center text-gray-800 mt-20">المطابخ</h1>
+            <h1 class="text-3xl font-extrabold text-center text-gray-800 mt-20">تصويري</h1>
 
             <!-- شبكة الصور -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-11">
