@@ -1,49 +1,48 @@
-<div x-data="{ open: false, image: '', visible: 8 }" class="relative">
-    <!-- العنوان -->
-    <div class="bg-gray-50 min-h-screen py-16 px-4 sm:px-10 lg:px-20">
-        <h1 class="text-3xl font-extrabold text-center text-gray-800 mt-20">تصويري</h1>
+@extends('layout.master')
 
-        <!-- شبكة الصور -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-11">
-            @foreach($clients as $index => $client)
-                <div
-                    x-show="{{ $index }} < visible"
-                    class="bg-white rounded-2xl border border-gray-200 shadow hover:shadow-md transition duration-300 overflow-hidden">
+@section('content')
+    <!-- الهيدر مع الخلفية -->
+    <div class="relative bg-gray-900">
+        <!-- صورة الخلفية -->
+        <div class="h-[60vh] w-full">
+            <img src="{{ asset('public/storage/header.jpg') }}"
+                 alt="الخلفية"
+                 class="w-full h-full object-cover opacity-80">
+        </div>
 
-                    <!-- عند الضغط نخزن الصورة في المتغير image -->
-                    <button @click="open = true; image = '{{ asset('public/storage/' . $client->image) }}'" class="block w-full">
-                        <img src="{{ asset('public/storage/' . $client->image) }}"
-                             alt="{{ $client->Title }}"
-                             class="w-full h-64 object-cover hover:scale-105 transition duration-300" />
-                    </button>
+        <!-- طبقة شفافة عشان يوضح النص -->
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
-                    <div class="p-4 text-right">
-                        <h2 class="text-lg font-semibold text-gray-900 truncate">{{ $client->Title }}</h2>
-                        <p class="text-sm text-gray-600 mt-1">{{ $client->description }}</p>
-                    </div>
+        <!-- المنيو واللوجو -->
+        <div class="absolute top-0 left-0 w-full">
+            <div class="flex items-center justify-between px-10 py-4 text-white">
+                <!-- اللوجو -->
+                <div class="text-2xl font-bold">
+                    RiyadhSite
                 </div>
-            @endforeach
+
+                <!-- القائمة -->
+                <ul class="flex space-x-6 rtl:space-x-reverse">
+                    <li><a href="#" class="hover:text-yellow-400">الرئيسية</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">عنّا</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">تصويري</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">معرض اللوحات</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">اتصل بنا</a></li>
+                </ul>
+            </div>
         </div>
 
-        <!-- زر عرض المزيد -->
-        <div class="text-center mt-8" x-show="visible < {{ count($clients) }}">
-            <button @click="visible += 8"
-                    class="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-900 transition">
-                عرض المزيد
-            </button>
+        <!-- النص داخل الهيدر -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">
+                مرحباً بكم في موقعنا
+            </h1>
         </div>
     </div>
 
-    <!-- نافذة التكبير (مثل المطبخ) -->
-    <div x-show="open"
-         x-transition.opacity
-         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
-         @click="open = false">
-        <div @click.stop class="relative">
-            <img :src="image" alt="عرض الصورة"
-                 class="max-w-full max-h-screen rounded-lg shadow-lg">
-            <button @click="open = false"
-                    class="absolute top-2 right-2 text-white text-2xl font-bold">&times;</button>
-        </div>
+    <!-- باقي الصفحة -->
+    <div class="container mx-auto py-20">
+        <h2 class="text-3xl font-bold text-center mb-10">المحتوى هنا</h2>
+        <p class="text-center text-gray-600">هذا مجرد مثال لباقي الصفحة...</p>
     </div>
-</div>
+@endsection
