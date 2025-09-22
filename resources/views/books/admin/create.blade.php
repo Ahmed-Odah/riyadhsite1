@@ -49,7 +49,7 @@
 
         <h2 class="text-2xl font-bold mb-6">إضافة كتاب جديد</h2>
 
-        <form action="{{ route('book-post') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('book-post') }}" method="PUT" enctype="multipart/form-data">
             @csrf
 
             {{-- العنوان --}}
