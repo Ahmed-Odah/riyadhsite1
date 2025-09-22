@@ -6,12 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    protected $fillable = [
-        'title',
-        'description',
-        'content',
-        'cover_url',
-        'image',
-        'is_pending', // ✅ إضافة العمود الجديد
-    ];
+    protected $fillable = ['title', 'description', 'content', 'cover_url', 'image'];
 }
