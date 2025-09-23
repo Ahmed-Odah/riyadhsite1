@@ -1,3 +1,5 @@
+@props(['books', 'pendingBooks'])
+
 <div class="bg-gray-50 min-h-screen py-20 px-6 sm:px-12 lg:px-24">
     <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-14 mt-20">مؤلفاتي</h1>
 
