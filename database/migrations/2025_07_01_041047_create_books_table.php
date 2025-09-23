@@ -13,6 +13,8 @@ return new class extends Migration {
             $table->text('description');
             $table->text('content');
             $table->string('cover_url');
+            $table->boolean('is_pending')->default(false); // ✨ عمود قيد الطبع
+
             $table->timestamps();
         });
     }

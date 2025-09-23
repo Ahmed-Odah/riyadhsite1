@@ -20,10 +20,20 @@
                           required>{{ $book->description }}</textarea>
             </div>
 
+            {{-- ✅ حالة الكتاب --}}
+            <div class="mb-4">
+                <label for="is_pending" class="block mb-1 font-medium">حالة الكتاب</label>
+                <select name="is_pending" id="is_pending"
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <option value="0" {{ $book->is_pending == 0 ? 'selected' : '' }}>متاح</option>
+                    <option value="1" {{ $book->is_pending == 1 ? 'selected' : '' }}>قيد الطبع</option>
+                </select>
+            </div>
+
             @if($book->cover_url)
                 <div class="mb-2">
                     <label class="block mb-1 font-medium">الملف الحالي:</label>
-                    <a href="{{ asset('public/storage/' . $book->cover_url) }}" target="_blank" class="text-blue-600 underline">عرض الملف</a>
+                    <a href="{{ asset('storage/' . $book->cover_url) }}" target="_blank" class="text-blue-600 underline">عرض الملف</a>
                 </div>
             @endif
 
@@ -36,7 +46,7 @@
             @if($book->image)
                 <div class="mb-2">
                     <label class="block mb-1 font-medium">الصورة الحالية:</label>
-                    <img src="{{ asset('public/storage/' . $book->image) }}" class="h-24 rounded">
+                    <img src="{{ asset('storage/' . $book->image) }}" class="h-24 rounded">
                 </div>
             @endif
 
