@@ -31,7 +31,7 @@
     {{-- الكتب تحت الطباعة --}}
         <h2 class="text-3xl font-bold text-center text-gray-800 mt-24 mb-10">📖 كتب تحت الطباعة</h2>
         <div class="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 lg:px-12 xl:px-20">
-            @foreach($books as $book)
+            @foreach($pendingBooks as $book)
                 <div class="bg-white rounded-xl border-2 border-dashed border-gray-400 shadow-sm flex flex-col opacity-75">
                     <div class="relative overflow-hidden rounded-t-xl">
                         <img
