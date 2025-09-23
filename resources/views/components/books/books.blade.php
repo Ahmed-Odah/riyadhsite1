@@ -31,30 +31,29 @@
     </div>
 
     {{-- الكتب تحت الطباعة --}}
-        <h2 class="text-3xl font-bold text-center text-gray-800 mt-24 mb-10">📖 كتب تحت الطباعة</h2>
-        <div class="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 lg:px-12 xl:px-20">
-            @foreach($pendingBooks as $book)
-                <div class="bg-white rounded-xl border-2 border-dashed border-gray-400 shadow-sm flex flex-col opacity-75">
-                    <div class="relative overflow-hidden rounded-t-xl">
-                        <img
-                            src="{{ $book->image ? asset('storage/' . $book->image) : asset('1.jpg') }}"
-                            alt="غلاف الكتاب"
-                            class="w-full h-80 object-cover object-center"
-                        />
-                        <div class="absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center text-white text-lg font-bold">
-                            تحت الطباعة
-                        </div>
-                    </div>
-                    <div class="p-5 flex flex-col flex-grow">
-                        <h2 class="text-lg font-semibold text-gray-800 mb-2 truncate" title="{{ $book->title }}">
-                            {{ $book->title }}
-                        </h2>
-                        <p class="text-gray-600 text-sm mb-6 line-clamp-4">
-                            {{ $book->description }}
-                        </p>
+    <h2 class="text-3xl font-bold text-center text-gray-800 mt-24 mb-10">📖 كتب تحت الطباعة</h2>
+    <div class="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 lg:px-12 xl:px-20">
+        @foreach($pendingBooks as $book)
+            <div class="bg-white rounded-xl border-2 border-dashed border-gray-400 shadow-sm flex flex-col opacity-75">
+                <div class="relative overflow-hidden rounded-t-xl">
+                    <img
+                        src="{{ $book->image ? asset('storage/' . $book->image) : asset('1.jpg') }}"
+                        alt="غلاف الكتاب"
+                        class="w-full h-80 object-cover object-center"
+                    />
+                    <div class="absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center text-white text-lg font-bold">
+                        تحت الطباعة
                     </div>
                 </div>
-            @endforeach
-        </div>
-    @endif
+                <div class="p-5 flex flex-col flex-grow">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2 truncate" title="{{ $book->title }}">
+                        {{ $book->title }}
+                    </h2>
+                    <p class="text-gray-600 text-sm mb-6 line-clamp-4">
+                        {{ $book->description }}
+                    </p>
+                </div>
+            </div>
+        @endforeach
+    </div>
 </div>
