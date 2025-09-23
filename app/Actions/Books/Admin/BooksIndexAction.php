@@ -11,7 +11,7 @@ class BooksIndexAction
 
     public function handle()
     {
-        $books = Book::where('is_pending', 0)->get();     // الكتب المنشورة
+        $books = Book::where('is_pending', 0)->get();     // المنشورة
         $pendingBooks = Book::where('is_pending', 1)->get(); // تحت الطباعة
 
         return view('books.admin.index', compact('books', 'pendingBooks'));
