@@ -22,7 +22,7 @@
     </div>
 
 
-    <x-books.books :books="$books" />
+    <x-books.books :books="$books" :pending-books="$pendingBooks" />
 
     <div>
         @include('components.certificate')
