@@ -67,7 +67,7 @@
                         <!-- الصورة -->
                         <td class="px-4 py-3 text-right align-middle">
                             @if($book->image)
-                                <img src="{{ asset('storage/' . $book->image) }}"
+                                <img src="{{ asset('public/storage/' . $book->image) }}"
                                      class="h-16 w-16 object-cover rounded-lg border border-gray-200" alt="غلاف">
                             @else
                                 <span class="text-gray-400 italic">لا يوجد</span>
