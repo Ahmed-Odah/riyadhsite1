@@ -29,7 +29,6 @@
     </div>
 
     {{-- الكتب تحت الطباعة --}}
-    @if($pendingBooks->count())
         <h2 class="text-3xl font-bold text-center text-gray-800 mt-24 mb-10">📖 كتب تحت الطباعة</h2>
         <div class="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 lg:px-12 xl:px-20">
             @foreach($pendingBooks as $book)
@@ -55,5 +54,4 @@
                 </div>
             @endforeach
         </div>
-    @endif
 </div>
