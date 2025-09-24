@@ -95,6 +95,13 @@
                 </select>
             </div>
 
+            <!-- القسم الإضافي (يظهر فقط لو اختار "قيد الطبع") -->
+            <div id="printSection" class="mb-4 hidden">
+                <label for="print_date" class="block mb-1 font-medium">تاريخ الطباعة</label>
+                <input type="date" id="print_date" name="print_date"
+                       class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
             <div class="mb-4">
                 <label for="cover_url" class="block mb-1 font-medium">ملف PDF</label>
                 <input dir="rtl" type="file" id="cover_url" name="cover_url" accept="application/pdf"
@@ -115,4 +122,18 @@
             </div>
         </form>
     </div>
+
+    <script>
+        // إظهار / إخفاء قسم الطباعة
+        const isPending = document.getElementById('is_pending');
+        const printSection = document.getElementById('printSection');
+
+        isPending.addEventListener('change', function () {
+            if (this.value === '1') {
+                printSection.classList.remove('hidden');
+            } else {
+                printSection.classList.add('hidden');
+            }
+        });
+    </script>
 @endsection

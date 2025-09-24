@@ -30,10 +30,18 @@
                 </select>
             </div>
 
+            {{-- ✅ قسم تاريخ الطباعة (يظهر فقط إذا كان قيد الطبع) --}}
+            <div id="printSection" class="mb-4 {{ $book->is_pending == 1 ? '' : 'hidden' }}">
+                <label for="print_date" class="block mb-1 font-medium">تاريخ الطباعة</label>
+                <input type="date" id="print_date" name="print_date"
+                       value="{{ $book->print_date ?? '' }}"
+                       class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
             @if($book->cover_url)
                 <div class="mb-2">
                     <label class="block mb-1 font-medium">الملف الحالي:</label>
-                    <a href="{{ asset('public/storage/' . $book->cover_url) }}" target="_blank" class="text-blue-600 underline">عرض الملف</a>
+                    <a href="{{ asset('storage/' . $book->cover_url) }}" target="_blank" class="text-blue-600 underline">عرض الملف</a>
                 </div>
             @endif
 
@@ -46,7 +54,7 @@
             @if($book->image)
                 <div class="mb-2">
                     <label class="block mb-1 font-medium">الصورة الحالية:</label>
-                    <img src="{{ asset('public/storage/' . $book->image) }}" class="h-24 rounded">
+                    <img src="{{ asset('storage/' . $book->image) }}" class="h-24 rounded">
                 </div>
             @endif
 
@@ -64,4 +72,17 @@
             </div>
         </form>
     </div>
+
+    <script>
+        const isPending = document.getElementById('is_pending');
+        const printSection = document.getElementById('printSection');
+
+        isPending.addEventListener('change', function () {
+            if (this.value === '1') {
+                printSection.classList.remove('hidden');
+            } else {
+                printSection.classList.add('hidden');
+            }
+        });
+    </script>
 @endsection
