@@ -55,7 +55,7 @@
                           style="background-color: #b8860b;">
     قيد الطبع
 </span>
-ط
+
                 </div>
             </div>
         @endforeach
