@@ -206,7 +206,7 @@
     /* زر المنيو */
     #menu-toggle,
     #menu-toggle .material-icons {
-        color: black !important;
+        color: white !important;
     }
 
     /* عند النزول */
