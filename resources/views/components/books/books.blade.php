@@ -51,9 +51,10 @@
                     <p class="text-gray-600 text-sm mb-6 line-clamp-5 text-center">
                         {{ $book->description }}
                     </p>
-                    <span class="mt-auto bg-indigo-900 text-white text-sm font-medium py-2 rounded-md text-center transition-colors duration-300">
-                        قيد الطبع
-                    </span>
+                    <span class="mt-auto bg-yellow-500 text-white text-sm font-medium py-2 rounded-md text-center transition-colors duration-300">
+    قيد الطبع
+</span>
+
                 </div>
             </div>
         @endforeach
