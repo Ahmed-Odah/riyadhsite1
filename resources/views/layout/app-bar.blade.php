@@ -1,6 +1,4 @@
-<nav id="nav"
-     class="fixed left-0 w-full px-5 py-3 transition-colors duration-300
-     @if(Request::is('/')) bg-transparent text-white @else bg-white text-black shadow @endif">
+<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
 
     <div class="flex justify-between items-center container mx-auto relative">
         <!-- اللوجو -->
@@ -13,13 +11,14 @@
 
         <!-- زر المنيو للجوال -->
         <div class="lg:hidden absolute left-4 top-1/2 transform -translate-y-1/2">
-            <button id="menu-toggle" class="focus:outline-none">
+            <button id="menu-toggle" class="text-white focus:outline-none">
                 <span class="material-icons">menu</span>
             </button>
         </div>
 
         <!-- روابط سطح المكتب -->
-        <div class="hidden lg:flex flex-col md:flex-row items-center justify-center gap-8 md:static absolute w-full md:w-auto p-4 md:p-0 z-20 top-full left-0 md:top-auto md:left-auto">
+        <div class=" text-black hidden lg:flex flex-col md:flex-row items-center justify-center gap-8 md:static absolute w-full md:w-auto p-4 md:p-0 z-20 top-full left-0 md:top-auto md:left-auto"
+             :class="{'text-black': !scrolled, 'text-black': scrolled}">
             <style>
                 .nav-link {
                     @apply hover:no-underline transition-all duration-300 hover:text-gray-300 transform hover:scale-105;
@@ -44,13 +43,13 @@
                 </div>
             </div>
 
-            <div>
+            <div class="relative group">
                 <a href="{{route('books.index')}}" class="nav-link flex items-center">
                     <span>{{ __('site.books') }}</span>
                 </a>
             </div>
 
-            <div>
+            <div class="relative group">
                 <a href="{{route('sumbook')}}" class="nav-link flex items-center">
                     <span>ملخصات كتب</span>
                 </a>
@@ -96,19 +95,19 @@
                 </div>
             </div>
 
-            <div>
+            <div class="relative group">
                 <a href="{{route('paintings')}}" class="nav-link flex items-center">
                     <span>معرض اللوحات</span>
                 </a>
             </div>
 
-            <div>
+            <div class="relative group">
                 <a href="{{route('coin')}}" class="nav-link flex items-center">
                     <span>عملات عالمية</span>
                 </a>
             </div>
 
-            <div>
+            <div class="relative group">
                 <a href="{{route('blog')}}" class="nav-link flex items-center">
                     <span>المدونة</span>
                 </a>
@@ -152,6 +151,7 @@
             flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-auto">
 
     <div class="flex flex-col gap-6 mt-16 w-full">
+        <!-- نفس روابط سطح المكتب (مكررة للجوال) -->
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
         <a href="/whous" class="nav-link">من آنا</a>
         <a href="{{route('books.index')}}" class="nav-link">{{ __('site.books') }}</a>
@@ -180,21 +180,16 @@
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
 
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    }
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
 
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY || window.pageYOffset;
-        const nav = document.getElementById('nav');
         if (scrollPosition > 50) {
-            nav.classList.add('navbar-scrolled');
+            document.getElementById('nav').classList.add('navbar-scrolled');
         } else {
-            if (window.location.pathname === "/") {
-                nav.classList.remove('navbar-scrolled');
-            }
+            document.getElementById('nav').classList.remove('navbar-scrolled');
         }
     });
 </script>
@@ -204,8 +199,17 @@
         z-index: 500;
         padding: 1rem;
         transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        background-color: transparent;
+        color: black;
     }
 
+    /* زر المنيو */
+    #menu-toggle,
+    #menu-toggle .material-icons {
+        color: black !important;
+    }
+
+    /* عند النزول */
     nav.navbar-scrolled {
         background-color: white !important;
         color: black !important;
