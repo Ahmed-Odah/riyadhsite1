@@ -52,10 +52,10 @@
                         {{ $book->description }}
                     </p>
                     <span class="mt-auto text-white text-sm font-medium py-2 rounded-md text-center transition-colors duration-300"
-                          style="background-color: gold;">
+                          style="background-color: #b8860b;">
     قيد الطبع
 </span>
-
+ط
                 </div>
             </div>
         @endforeach
