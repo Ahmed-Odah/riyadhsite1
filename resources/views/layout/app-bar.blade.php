@@ -200,13 +200,13 @@
         padding: 1rem;
         transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
         background-color: transparent;
-        color: white;
+        color: black;
     }
 
     /* زر المنيو */
     #menu-toggle,
     #menu-toggle .material-icons {
-        color: black !important;
+        color: white !important;
     }
 
     /* عند النزول */
