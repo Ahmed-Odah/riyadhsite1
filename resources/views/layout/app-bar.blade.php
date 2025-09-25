@@ -1,4 +1,4 @@
-<nav id="nav" class="text-black fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
+<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
 
     <div class="flex justify-between items-center container mx-auto relative">
         <!-- اللوجو -->
@@ -17,7 +17,7 @@
         </div>
 
         <!-- روابط سطح المكتب -->
-        <div class=" text-white hidden lg:flex flex-col md:flex-row items-center justify-center gap-8 md:static absolute w-full md:w-auto p-4 md:p-0 z-20 top-full left-0 md:top-auto md:left-auto"
+        <div class=" text-black hidden lg:flex flex-col md:flex-row items-center justify-center gap-8 md:static absolute w-full md:w-auto p-4 md:p-0 z-20 top-full left-0 md:top-auto md:left-auto"
              :class="{'text-white': !scrolled, 'text-white': scrolled}">
             <style>
                 .nav-link {
