@@ -1,6 +1,6 @@
-<nav id="nav" class="text-white  fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
+<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
 
-    <div class="text-white flex justify-between items-center container mx-auto relative">
+    <div class="flex justify-between items-center container mx-auto relative">
         <!-- اللوجو -->
         <a href="" class="flex flex-col items-start gap-0">
             <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
@@ -21,7 +21,7 @@
              :class="{'text-white': !scrolled, 'text-white': scrolled}">
             <style>
                 .nav-link {
-                    @apply hover:no-underline transition-all duration-300 hover:text-gray-300 transform hover:scale-105;
+                    @apply hover:no-underline transition-all duration-300 hover:text-white transform hover:scale-105;
                 }
             </style>
 
