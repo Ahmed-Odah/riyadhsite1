@@ -1,6 +1,6 @@
-<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
+<nav id="nav" class="text-white  fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
 
-    <div class="flex justify-between items-center container mx-auto relative">
+    <div class="text-white flex justify-between items-center container mx-auto relative">
         <!-- اللوجو -->
         <a href="" class="flex flex-col items-start gap-0">
             <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
@@ -200,7 +200,7 @@
         padding: 1rem;
         transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
         background-color: transparent;
-        color: white;
+        color: black;
     }
 
     /* زر المنيو */
@@ -221,7 +221,7 @@
     }
 
     .nav-link:hover {
-        color: white;
+        color: #1e3a8a;
         transform: scale(1.2);
         text-decoration: none;
     }
