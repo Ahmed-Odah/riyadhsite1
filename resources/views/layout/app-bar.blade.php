@@ -221,7 +221,7 @@
     }
 
     .nav-link:hover {
-        color: #1e3a8a;
+        color: white;
         transform: scale(1.2);
         text-decoration: none;
     }
