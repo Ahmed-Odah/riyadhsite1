@@ -3,7 +3,7 @@
     <div class="flex flex-wrap justify-between gap-10">
         <div class="max-w-md">
             <a href='javascript:void(0)'>
-                <img src="/public/resha1q1.png" alt="logo" class="w-27" />
+                <img src="/public/storage/resha1q1.png" alt="logo" class="w-27" />
             </a>
             <div class="mt-6">
                 <p class="text-gray-600 leading-relaxed text-sm lg:text-1.5xl"> أعوام من الكتابة والتصوير… والبحث عن الجمال
