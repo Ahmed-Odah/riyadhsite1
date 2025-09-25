@@ -1,5 +1,6 @@
-<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
-
+<nav id="nav"
+     class="fixed left-0 w-full px-5 py-3 transition-colors duration-300
+     {{ request()->routeIs('homepage') ? 'bg-transparent text-white' : 'bg-white text-black shadow-md' }}">
     <div class="flex justify-between items-center container mx-auto relative">
         <!-- اللوجو -->
         <a href="" class="flex flex-col items-start gap-0">
@@ -21,7 +22,7 @@
              :class="{'text-white': !scrolled, 'text-white': scrolled}">
             <style>
                 .nav-link {
-                    @apply hover:no-underline transition-all duration-300 hover:text-white transform hover:scale-105;
+                    @apply hover:no-underline transition-all duration-300 hover:text-gray-300 transform hover:scale-105;
                 }
             </style>
 
