@@ -1,6 +1,5 @@
-<nav id="nav"
-     class="fixed left-0 w-full px-5 py-3 transition-colors duration-300
-     {{ request()->routeIs('homepage') ? 'bg-transparent text-white' : 'bg-white text-black shadow-md' }}">
+<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
+
     <div class="flex justify-between items-center container mx-auto relative">
         <!-- اللوجو -->
         <a href="" class="flex flex-col items-start gap-0">
@@ -18,9 +17,9 @@
         </div>
 
         <!-- روابط سطح المكتب -->
-        <div class=" text-black hidden lg:flex flex-col md:flex-row items-center justify-center gap-8 md:static absolute w-full md:w-auto p-4 md:p-0 z-20 top-full left-0 md:top-auto md:left-auto"
-             :class="{'text-white': !scrolled, 'text-white': scrolled}">
-            <style>
+        <div class="text-white hidden lg:flex flex-col md:flex-row items-center justify-center gap-8 md:static absolute w-full md:w-auto p-4 md:p-0 z-20 top-full left-0 md:top-auto md:left-auto">
+
+        <style>
                 .nav-link {
                     @apply hover:no-underline transition-all duration-300 hover:text-gray-300 transform hover:scale-105;
                 }
