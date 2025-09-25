@@ -1,4 +1,4 @@
-<nav id="nav" class="fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
+<nav id="nav" class="text-black fixed left-0 w-full px-5 py-3 bg-transparent  transition-colors duration-300">
 
     <div class="flex justify-between items-center container mx-auto relative">
         <!-- اللوجو -->
@@ -221,6 +221,7 @@
     }
 
     .nav-link:hover {
+        color: #1e3a8a;
         transform: scale(1.2);
         text-decoration: none;
     }
