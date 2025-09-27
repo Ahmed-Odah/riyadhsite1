@@ -47,9 +47,10 @@
                             </div>
                         </td>
                         <td class="px-4 py-3 text-right align-middle font-semibold"
-                            style="color: {{ $book->is_pending ? '#c05621' : '#22543d' }};">
+                            style="color: {{ $book->is_pending ? '#c05621' : '#38a169' }};">
                             {{ $book->is_pending ? 'قيد الطبع' : 'متاح' }}
                         </td>
+
 
                         <!-- الحالة -->
 
