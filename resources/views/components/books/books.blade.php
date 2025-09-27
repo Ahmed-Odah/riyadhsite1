@@ -14,7 +14,7 @@
                     />
                 </div>
                 <div class="p-5 flex flex-col flex-grow">
-                    <h2 class="text-lg font-semibold text-gray-800 mb-2 truncate text-center" title="{{ $book->title }}">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2 truncate text-right" title="{{ $book->title }}">
                         {{ $book->title }}
                     </h2>
                     <p class="text-gray-600 text-sm mb-6 line-clamp-5 text-right">
