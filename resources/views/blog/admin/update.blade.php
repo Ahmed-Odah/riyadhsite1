@@ -20,6 +20,12 @@
                           required>{{ $blog->description }}</textarea>
             </div>
 
+            <div class="mb-4">
+                <label for="url" class="block mb-1 font-medium">رابط المدونة</label>
+                <input dir="rtl" value="{{ $blog->url }}" type="url" id="url" name="url"
+                       class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                       placeholder="https://example.com" required>
+            </div>
 
             @if($blog->image)
                 <div class="mb-2">
