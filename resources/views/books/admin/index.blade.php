@@ -49,7 +49,7 @@
 
                         <!-- الحالة -->
                         <td class="px-4 py-3 text-right align-middle font-semibold
-                            {{ $book->is_pending ? 'text-orange-800' : 'text-green-800' }}">
+                            {{ $book->is_pending ? 'bg-orange-800' : 'text-green-800' }}">
                             {{ $book->is_pending ? 'قيد الطبع' : 'متاح' }}
                         </td>
 
