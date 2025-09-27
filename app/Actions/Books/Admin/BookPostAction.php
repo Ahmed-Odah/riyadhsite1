@@ -20,7 +20,7 @@ class BookPostAction
                 'description' => 'required|string',
                 'is_pending'  => 'nullable|in:0,1', // ✨ التحقق من حالة الكتاب
                 'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-                'cover_url' => 'nullable|mimes:pdf,jpg,jpeg,png|max:10000',
+                'cover_url' => 'nullable|mimetypes:application/pdf|max:10000',
             ]);
 
             $coverPath = null;
