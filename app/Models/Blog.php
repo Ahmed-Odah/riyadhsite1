@@ -10,5 +10,6 @@ class Blog extends Model
         'title',
         'description',
         'image',
+        'url', // إضافة رابط المدونة ليتم الحفظ والتحديث
     ];
 }
