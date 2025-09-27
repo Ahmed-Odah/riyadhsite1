@@ -18,29 +18,39 @@ class BookPostAction
             $request->validate([
                 'title'       => 'required|string|max:255',
                 'description' => 'required|string',
-                'is_pending'  => 'nullable|in:0,1', // ✨ التحقق من حالة الكتاب
+                'is_pending'  => 'nullable|in:0,1',
                 'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-                'cover_url' => 'nullable|mimetypes:application/pdf|max:10000',
+                'cover_url'   => 'nullable|mimes:pdf|max:10000', // PDF فقط
             ]);
 
             $coverPath = null;
             $pdfPath   = null;
 
+            // ✅ رفع الصورة
             if ($request->hasFile('image')) {
-                $coverPath = $request->file('image')->store('images', 'public');
+                $coverPath = $request->file('image')->storeAs(
+                    'images',
+                    time() . '_' . $request->file('image')->getClientOriginalName(),
+                    'public'
+                );
             }
 
+            // ✅ رفع الـ PDF
             if ($request->hasFile('cover_url')) {
-                $pdfPath = $request->file('cover_url')->store('pdfs', 'public');
+                $pdfPath = $request->file('cover_url')->storeAs(
+                    'pdfs',
+                    time() . '_' . $request->file('cover_url')->getClientOriginalName(),
+                    'public'
+                );
             }
 
-            // ✅ تخزين البيانات
+            // ✅ تخزين البيانات في قاعدة البيانات
             Book::create([
                 'title'       => $request->get('title'),
                 'description' => $request->get('description'),
                 'image'       => $coverPath,
                 'cover_url'   => $pdfPath,
-                'is_pending'  => (int) $request->get('is_pending', 0), // ✨ تخزين حالة الكتاب
+                'is_pending'  => (int) $request->get('is_pending', 0),
             ]);
 
             return back()->with('success', 'تم إضافة الكتاب بنجاح');
