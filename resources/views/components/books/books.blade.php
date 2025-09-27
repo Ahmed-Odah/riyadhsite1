@@ -34,11 +34,11 @@
     <div class="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 lg:px-12 xl:px-20">
         @foreach($books->where('is_pending', 1) as $book)
             <div class="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-                <div class="relative overflow-hidden rounded-t-xl opacity-50">
+                <div class="relative overflow-hidden rounded-t-xl">
                     <img
                         src="{{ $book->image ? asset('public/storage/' . $book->image) : asset('1.jpg') }}"
                         alt="غلاف الكتاب"
-                        class="w-full h-120 object-cover object-center transition-transform duration-500 hover:scale-105 "
+                        class="w-full h-120 object-cover object-center transition-transform duration-500 hover:scale-105 hover:opacity-50"
                     />
 
                     <div class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-lg shadow-md">
