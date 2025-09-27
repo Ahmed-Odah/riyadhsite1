@@ -2,8 +2,7 @@
 @section('content')
 
     {{-- padding-top يساوي تقريباً 80px لو ارتفاع البار كبير --}}
-    <div class="min-h-screen flex flex-col justify-end">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32">
         <div class="flex justify-center flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between gap-8">
 
 
@@ -45,7 +44,7 @@
             </div>
 
         </div>
-    </div>
+
 
     <script>
         function copyBlogLink(url) {
