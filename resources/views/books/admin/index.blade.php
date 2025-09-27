@@ -46,12 +46,13 @@
                                 </form>
                             </div>
                         </td>
-
-                        <!-- الحالة -->
-                        <td class="px-4 py-3 text-right align-middle font-semibold
-                            {{ $book->is_pending ? 'bg-orange-800' : 'text-green-800' }}">
+                        <td class="px-4 py-3 text-right align-middle font-semibold"
+                            style="color: {{ $book->is_pending ? '#c05621' : '#22543d' }};">
                             {{ $book->is_pending ? 'قيد الطبع' : 'متاح' }}
                         </td>
+
+                        <!-- الحالة -->
+
 
                         <!-- تاريخ الإنشاء -->
                         <td class="px-4 py-3 text-gray-700 text-right align-middle">
