@@ -32,7 +32,7 @@
     {{-- 🖨 الكتب قيد الطبع --}}
     <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">الكتب قيد الطبع</h2>
     <div class="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 lg:px-12 xl:px-20">
-        @foreach($books->where('is_pending', 1) as $book)
+        @foreach($books->where('is_pending', 5) as $book)
             <div class="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
                 <div class="relative overflow-hidden rounded-t-xl">
                     <img
