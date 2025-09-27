@@ -11,17 +11,8 @@ class BooksIndexAction
 
     public function handle()
     {
-        // جلب الكتب المنشورة (is_pending = 0)
-        $publishedBooks = Book::where('is_pending', 0)
-            ->orderBy('created_at', 'desc')
-            ->get();
+        $books = Book::all();
 
-        // جلب الكتب قيد الطبع (is_pending = 1)
-        $pendingBooks = Book::where('is_pending', 1)
-            ->orderBy('created_at', 'desc')
-            ->get();
-
-        // تمرير البيانات للـBlade
-        return view('books.admin.index', compact('publishedBooks', 'pendingBooks'));
+        return view('books.admin.index', compact('books'));
     }
 }
