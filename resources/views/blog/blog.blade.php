@@ -1,7 +1,8 @@
 @extends('layout.master')
 @section('content')
 
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-16"> {{-- هنا أضفت mt-16 --}}
+    {{-- padding-top يساوي تقريباً 80px لو ارتفاع البار كبير --}}
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24">
         <div class="flex justify-center flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between gap-8">
 
             <div class="w-full">
