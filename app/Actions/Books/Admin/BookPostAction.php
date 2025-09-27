@@ -14,14 +14,6 @@ class BookPostAction
     public function handle(Request $request)
     {
         try {
-            // ✅ التحقق من المدخلات
-            $request->validate([
-                'title'       => 'required|string|max:255',
-                'description' => 'required|string',
-                'is_pending'  => 'nullable|in:0,1',
-                'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-                'cover_url'   => 'nullable|mimes:pdf|max:10000', // PDF فقط
-            ]);
 
             $coverPath = null;
             $pdfPath   = null;
