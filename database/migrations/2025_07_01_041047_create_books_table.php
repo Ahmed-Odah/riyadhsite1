@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->string('title');
             $table->text('description');
             $table->text('content');
-            $table->string('cover_url');
+            $table->text('cover_url')->nullable(); // 🔥 بدل string إلى text
             $table->boolean('is_pending')->default(false); // ✨ عمود قيد الطبع
 
             $table->timestamps();
