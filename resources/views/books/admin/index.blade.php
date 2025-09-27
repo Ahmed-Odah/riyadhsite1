@@ -12,7 +12,7 @@
 
         <!-- جدول الكتب -->
         <div class="overflow-x-auto rounded-xl shadow-lg border border-gray-200">
-            <table class="min-w-full bg-white table-fixed">
+            <table class="min-w-full table-fixed">
                 <thead class="bg-gray-100 text-gray-700">
                 <tr>
                     <th class="w-36 px-6 py-3 text-right">العمليات</th>
@@ -25,7 +25,8 @@
                 </thead>
                 <tbody class="divide-y divide-gray-200">
                 @foreach($books as $book)
-                    <tr class="hover:bg-gray-50 transition">
+                    <tr class="hover:bg-gray-50 transition
+                        {{ $book->is_pending ? 'bg-orange-100' : 'bg-green-100' }}">
                         <!-- العمليات -->
                         <td class="px-4 py-3 text-right align-middle">
                             <div class="flex gap-2 justify-end">
@@ -47,16 +48,9 @@
                         </td>
 
                         <!-- الحالة -->
-                        <td class="px-4 py-3 text-right align-middle">
-                            @if($book->is_pending)
-                                <span class="px-3 py-1 text-sm bg-orange-100 text-orange-800 rounded-full font-medium">
-                                    قيد الطبع
-                                </span>
-                            @else
-                                <span class="px-3 py-1 text-sm bg-green-100 text-green-800 rounded-full font-medium">
-                                    متاح
-                                </span>
-                            @endif
+                        <td class="px-4 py-3 text-right align-middle font-semibold
+                            {{ $book->is_pending ? 'text-orange-800' : 'text-green-800' }}">
+                            {{ $book->is_pending ? 'قيد الطبع' : 'متاح' }}
                         </td>
 
                         <!-- تاريخ الإنشاء -->
