@@ -16,7 +16,7 @@
                 <thead class="bg-gray-100 text-gray-700">
                 <tr>
                     <th class="w-36 px-6 py-3 text-right">العمليات</th>
-                    <th class="w-28 px-4 py-3 text-right">الحالة</th> {{-- ✅ إضافة العمود --}}
+                    <th class="w-28 px-4 py-3 text-right">الحالة</th>
                     <th class="w-32 px-4 py-3 text-right">تاريخ الإنشاء</th>
                     <th class="w-24 px-4 py-3 text-right">الصورة</th>
                     <th class="w-2/5 px-4 py-3 text-right">الوصف</th>
@@ -49,7 +49,7 @@
                         <!-- الحالة -->
                         <td class="px-4 py-3 text-right align-middle">
                             @if($book->is_pending)
-                                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-800 rounded-full font-medium">
+                                <span class="px-3 py-1 text-sm bg-orange-100 text-orange-800 rounded-full font-medium">
                                     قيد الطبع
                                 </span>
                             @else
@@ -67,7 +67,7 @@
                         <!-- الصورة -->
                         <td class="px-4 py-3 text-right align-middle">
                             @if($book->image)
-                                <img src="{{ asset('public/storage/' . $book->image) }}"
+                                <img src="{{ asset('storage/' . $book->image) }}"
                                      class="h-16 w-16 object-cover rounded-lg border border-gray-200" alt="غلاف">
                             @else
                                 <span class="text-gray-400 italic">لا يوجد</span>
