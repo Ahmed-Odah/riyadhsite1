@@ -41,9 +41,7 @@
                         class="w-full h-120 object-cover object-center transition-transform duration-500 hover:scale-105 hover:opacity-50"
                     />
 
-                    <div class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-lg shadow-md">
-                        قيد الطبع
-                    </div>
+
                 </div>
                 <div class="p-5 flex flex-col flex-grow">
                     <h2 class="text-lg font-semibold text-gray-800 mb-2 truncate text-right" title="{{ $book->title }}">
