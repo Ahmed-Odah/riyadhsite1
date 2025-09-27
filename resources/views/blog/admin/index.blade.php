@@ -4,7 +4,7 @@
     <div class="p-6">
         <div class="bg-green-200 w-56 flex justify-center items-center mb-4 rounded-xl hover:scale-100 duration-200 ease-in-out">
             <a href="{{ route('admin.blog.create.view') }}">
-                <h1 class="text-lg font-bold p-3">اضافة مدونة جديدة </h1>
+                <h1 class="text-lg font-bold p-3">اضافة مدونة جديدة</h1>
             </a>
         </div>
 
@@ -17,7 +17,7 @@
                     <th class="px-4 py-2 text-right border-b">الصورة</th>
                     <th class="px-4 py-2 text-right border-b">الوصف</th>
                     <th class="px-4 py-2 text-right border-b">العنوان</th>
-                    <th class="px-4 py-2 text-right border-b">الرابط</th> <!-- عمود جديد -->
+                    <th class="px-4 py-2 text-right border-b">الرابط</th>
                 </tr>
                 </thead>
                 <tbody>
