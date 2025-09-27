@@ -11,9 +11,10 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->text('content');
-            $table->string('cover_url');
-            $table->boolean('is_pending')->default(false); // ✨ عمود قيد الطبع
+            $table->text('content')->nullable(); // محتوى الكتاب اختياري
+            $table->string('image')->nullable(); // رابط الصورة اختياري
+            $table->string('cover_url')->nullable(); // رابط PDF اختياري
+            $table->boolean('is_pending')->default(false); // ✨ قيد الطبع أو منشور
 
             $table->timestamps();
         });
