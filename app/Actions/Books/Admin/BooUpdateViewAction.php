@@ -18,7 +18,7 @@ class BooUpdateViewAction
             'description' => 'required|string',
             'is_pending'  => 'nullable|in:0,1',
             'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            'cover_url'   => 'nullable|mimes:pdf|max:10000',
+            'cover_url' => 'nullable|mimes:pdf,jpg,jpeg,png|max:10000',
         ]);
 
         $data = [
