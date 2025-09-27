@@ -17,7 +17,7 @@
                     <h2 class="text-lg font-semibold text-gray-800 mb-2 truncate text-center" title="{{ $book->title }}">
                         {{ $book->title }}
                     </h2>
-                    <p class="text-gray-600 text-sm mb-6 line-clamp-5 text-center">
+                    <p class="text-gray-600 text-sm mb-6 line-clamp-5 text-right">
                         {{ $book->description }}
                     </p>
                     <a href="{{ route('book.read', $book->id) }}"
