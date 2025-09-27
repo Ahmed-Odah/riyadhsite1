@@ -11,7 +11,7 @@ class BooksClientIndexAction
 
     public function handle()
     {
-        $books = Book::query()->take(10)->get();
+        $books = Book::query()->take(17)->get();
 
         return view('books.client.index', compact('books'));
     }

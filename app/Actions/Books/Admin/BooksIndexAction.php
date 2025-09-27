@@ -12,7 +12,6 @@ class BooksIndexAction
     public function handle()
     {
         $books = Book::all();
-
         return view('books.admin.index', compact('books'));
     }
 }
