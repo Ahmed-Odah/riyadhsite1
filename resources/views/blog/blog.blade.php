@@ -9,7 +9,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     @foreach($blogs as $blog)
-                        <div class="group cursor-pointer" onclick="copyBlogLink('{{ route('blog.show', $blog->id) }}')">
+                        <div class="group">
                             <div class="flex items-center mb-9">
                                 <img src="{{ asset('public/storage/' . $blog->image) }}" alt="blogs tailwind section" class="rounded-2xl w-full object-cover h-118">
                             </div>
@@ -17,14 +17,16 @@
                             <p class="text-gray-500 leading-6 transition-all duration-500 mb-8">
                                 {{ $blog->description }}
                             </p>
-                            <div class="flex items-center gap-2 text-lg text-indigo-900 font-semibold">
+                            {{-- استخدم الرابط الخارجي مباشرة --}}
+                            <a href="{{ $blog->url }}" target="_blank" class="cursor-pointer flex items-center gap-2 text-lg text-indigo-900 font-semibold">
                                 <svg width="15" height="12" viewBox="0 0 15 12" fill="none" class="rotate-180" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1.25 6L13.25 6M9.5 10.5L13.4697 6.53033C13.7197 6.28033 13.8447 6.15533 13.8447 6C13.8447 5.84467 13.7197 5.71967 13.4697 5.46967L9.5 1.5" stroke="#312E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <span>نسخ رابط المدونة</span>
-                            </div>
+                                <h1>اقرأ أكثر</h1>
+                            </a>
                         </div>
                     @endforeach
+
 
                 </div>
             </div>
