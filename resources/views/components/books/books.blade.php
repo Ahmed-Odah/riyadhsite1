@@ -38,8 +38,9 @@
                     <img
                         src="{{ $book->image ? asset('public/storage/' . $book->image) : asset('1.jpg') }}"
                         alt="غلاف الكتاب"
-                        class="w-full h-120 object-cover object-center transition-transform duration-500 hover:scale-105"
+                        class="w-full h-120 object-cover object-center transition-transform duration-500 hover:scale-105 opacity-50"
                     />
+
                     <div class="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-lg shadow-md">
                         قيد الطبع
                     </div>
