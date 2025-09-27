@@ -4,11 +4,11 @@
     {{-- 📚 الكتب المتاحة --}}
     <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">الكتب المتاحة</h2>
     <div class="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 lg:px-12 xl:px-20 mb-16">
-        @foreach($books->where('is_pending', 0) as $book)
+        @foreach($publishedBooks as $book)
             <div class="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
                 <div class="relative overflow-hidden rounded-t-xl">
                     <img
-                        src="{{ $book->image ? asset('public/storage/' . $book->image) : asset('1.jpg') }}"
+                        src="{{ $book->image ? asset('storage/' . $book->image) : asset('1.jpg') }}"
                         alt="غلاف الكتاب"
                         class="w-full h-120 object-cover object-center transition-transform duration-500 hover:scale-105"
                     />
@@ -32,11 +32,11 @@
     {{-- 🖨 الكتب قيد الطبع --}}
     <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">الكتب قيد الطبع</h2>
     <div class="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 lg:px-12 xl:px-20">
-        @foreach($books->where('is_pending', 1) as $book)
+        @foreach($pendingBooks as $book)
             <div class="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
                 <div class="relative overflow-hidden rounded-t-xl">
                     <img
-                        src="{{ $book->image ? asset('public/storage/' . $book->image) : asset('1.jpg') }}"
+                        src="{{ $book->image ? asset('storage/' . $book->image) : asset('1.jpg') }}"
                         alt="غلاف الكتاب"
                         class="w-full h-120 object-cover object-center transition-transform duration-500 hover:scale-105 hover:opacity-50"
                     />
@@ -54,9 +54,8 @@
                     </p>
                     <span class="mt-auto text-white text-sm font-medium py-2 rounded-md text-center transition-colors duration-300"
                           style="background-color: #b8860b;">
-    قيد الطبع
-</span>
-
+                        قيد الطبع
+                    </span>
                 </div>
             </div>
         @endforeach
