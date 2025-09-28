@@ -123,7 +123,7 @@
 
 
                 <!-- اسم الشخص -->
-                <p class="text-lg md:text-xl font-medium text-center animate-fade-in-up mb-10" style="color:#FFC107;">
+                <p class="text-lg md:text-xl font-medium text-center animate-fade-in-up mb-8" style="color:#FFC107;">
                     م.رياض المقيد
                 </p>
                 <!-- الموقع الرسمي -->
