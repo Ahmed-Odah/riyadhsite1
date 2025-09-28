@@ -122,7 +122,7 @@
             <section class="py-24 px-4">
 
                 <!-- اسم الشخص -->
-                <p class="text-2xl md:text-3xl font-medium text-center animate-fade-in-up mt-8" style="color:#FFC107;">
+                <p class="text-2xl md:text-3xl font-medium text-center animate-fade-in-up" style="color:#FFC107;">
                     م.رياض المقيد
                 </p>
 
