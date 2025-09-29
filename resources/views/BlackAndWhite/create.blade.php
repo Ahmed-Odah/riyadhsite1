@@ -78,10 +78,8 @@
             </div>
 
             <div class="mb-4">
-                <label for="description" class="block mb-1 font-medium">وصف الصورة</label>
-                <textarea dir="rtl" id="description" name="description" rows="4"
-                          class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                          required></textarea>
+                <label>اختر الصور:</label>
+                <input type="file" name="images[]" multiple class="border p-2 w-full mb-2">
             </div>
 
             <div class="mb-6">
@@ -89,6 +87,7 @@
                 <input dir="rtl" type="file" id="image" name="image" accept="image/*"
                        class="w-full border border-gray-300 rounded px-3 py-2" required>
             </div>
+
 
             <div class="text-right">
                 <button type="submit"
