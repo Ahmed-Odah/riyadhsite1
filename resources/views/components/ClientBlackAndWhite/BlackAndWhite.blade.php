@@ -1,6 +1,15 @@
 @extends('layout.master')
 @section('content')
-    <div x-data="{ open: false, image: '', visible: 12 }" class="relative">
+    <div
+        x-data="{
+            open: false,
+            image: '',
+            visible: 12,
+            currentIndex: 0,
+            images: @json($clients->pluck('image'))
+        }"
+        class="relative">
+
         <!-- العنوان -->
         <div class="bg-gray-50 min-h-screen py-16 px-4 sm:px-10 lg:px-20">
             <h1 class="text-3xl font-extrabold text-center text-gray-800 mt-20">تصويري</h1>
@@ -12,8 +21,9 @@
                          class="bg-white rounded-2xl border border-gray-200 shadow hover:shadow-md transition duration-300 overflow-hidden">
 
                         <!-- عند الضغط نخزن الصورة -->
-                        <button @click="open = true; image = '{{ asset('public/storage/' . $client->image) }}'"
-                                class="block w-full">
+                        <button
+                            @click="open = true; currentIndex = {{ $index }}; image = '{{ asset('public/storage/' . $client->image) }}'"
+                            class="block w-full">
                             <img src="{{ asset('public/storage/' . $client->image) }}"
                                  alt="{{ $client->title }}"
                                  class="w-full h-64 object-cover hover:scale-105 transition duration-300" />
@@ -53,6 +63,30 @@
                 <!-- زر الإغلاق -->
                 <button @click="open = false"
                         class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
+
+                <!-- زر السابق -->
+                <button
+                    @click.stop="
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            image = '{{ asset('public/storage') }}/' + images[currentIndex];
+                        }
+                    "
+                    class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 text-white text-3xl px-2 py-1 rounded-full hover:bg-opacity-40">
+                    &#10094;
+                </button>
+
+                <!-- زر التالي -->
+                <button
+                    @click.stop="
+                        if (currentIndex < images.length - 1) {
+                            currentIndex++;
+                            image = '{{ asset('public/storage') }}/' + images[currentIndex];
+                        }
+                    "
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 text-white text-3xl px-2 py-1 rounded-full hover:bg-opacity-40">
+                    &#10095;
+                </button>
             </div>
         </div>
     </div>
