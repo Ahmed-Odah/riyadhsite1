@@ -40,12 +40,12 @@
         <!-- نافذة التكبير -->
         <div x-show="open"
              x-transition.opacity
-             class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+             class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
              @click="open = false">
 
-            <div @click.stop class="relative">
+            <div @click.stop class="relative flex items-center justify-center">
                 <!-- الفريم الثابت -->
-                <div class="w-[90vw] h-[90vh] flex items-center justify-center bg-black rounded-lg shadow-lg overflow-hidden">
+                <div class="w-[800px] h-[600px] bg-gray-900 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
                     <img :src="image" class="w-full h-full object-contain" />
                 </div>
 
