@@ -43,13 +43,15 @@
              class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
              @click="open = false">
 
-            <div @click.stop class="relative flex items-center justify-center w-[50vw] h-[50vh] bg-gray-900 rounded-xl shadow-lg overflow-hidden">
-                <!-- الصورة مضغوطة داخل الفريم -->
-                <img :src="image" class="max-w-full max-h-full object-contain" />
+            <div @click.stop class="relative bg-gray-900 rounded-xl shadow-lg overflow-hidden"
+                 style="width: 500px; height: 400px;"> <!-- 👈 هنا حجم الفريم ثابت -->
+
+                <!-- الصورة داخل فريم صغير -->
+                <img :src="image" class="w-full h-full object-contain" />
 
                 <!-- زر الإغلاق -->
                 <button @click="open = false"
-                        class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
+                        class="absolute top-2 right-2 text-white text-3xl font-bold">&times;</button>
             </div>
         </div>
     </div>
