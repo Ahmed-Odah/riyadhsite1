@@ -43,11 +43,9 @@
              class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
              @click="open = false">
 
-            <div @click.stop class="relative flex items-center justify-center">
-                <!-- الفريم الثابت -->
-                <div class="w-[800px] h-[600px] bg-gray-900 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
-                    <img :src="image" class="w-full h-full object-contain" />
-                </div>
+            <div @click.stop class="relative flex items-center justify-center w-[90vw] h-[90vh] bg-gray-900 rounded-xl shadow-lg overflow-hidden">
+                <!-- الصورة داخل فريم ثابت -->
+                <img :src="image" class="max-w-full max-h-full object-contain" />
 
                 <!-- زر الإغلاق -->
                 <button @click="open = false"
