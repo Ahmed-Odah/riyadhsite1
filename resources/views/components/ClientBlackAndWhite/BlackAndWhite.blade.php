@@ -42,10 +42,16 @@
              x-transition.opacity
              class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
              @click="open = false">
+
             <div @click.stop class="relative">
-                <img :src="image" class="max-w-full max-h-screen rounded-lg shadow-lg">
+                <!-- الفريم الثابت -->
+                <div class="w-[90vw] h-[90vh] flex items-center justify-center bg-black rounded-lg shadow-lg overflow-hidden">
+                    <img :src="image" class="w-full h-full object-contain" />
+                </div>
+
+                <!-- زر الإغلاق -->
                 <button @click="open = false"
-                        class="absolute top-2 right-2 text-white text-2xl font-bold">&times;</button>
+                        class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
             </div>
         </div>
     </div>
