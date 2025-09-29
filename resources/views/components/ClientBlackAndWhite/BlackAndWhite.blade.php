@@ -43,10 +43,11 @@
              class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
              @click="open = false">
 
+            <!-- ✅ الفريم بمقاس ثابت -->
             <div @click.stop class="relative bg-gray-900 rounded-xl shadow-lg overflow-hidden"
-                 style="width: 500px; height: 400px;"> <!-- 👈 هنا حجم الفريم ثابت -->
+                 style="width: 600px; height: 400px;">
 
-                <!-- الصورة داخل فريم صغير -->
+                <!-- ✅ الصورة تُعرض بنفس المقاس داخل الفريم -->
                 <img :src="image" class="w-full h-full object-contain" />
 
                 <!-- زر الإغلاق -->
