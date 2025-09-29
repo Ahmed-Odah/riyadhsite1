@@ -14,27 +14,24 @@ class CreatePhotosAction
     public function handle(Request $request)
     {
         try {
-            $coverPath = null;
+            if ($request->hasFile('images')) {
+                foreach ($request->file('images') as $file) {
+                    $filePath = $file->store('images', 'public');
 
-            if ($request->hasFile('image')) {
-                $coverPath = $request->file('image')->store('images', 'public');
+                    BlackAndWhite::query()->create([
+                        'image' => $filePath,
+                        'title' => $request->get('title'),          // نفس العنوان لكل صورة
+                        'description' => $request->get('description'), // نفس الوصف لكل صورة
+                    ]);
+                }
             }
 
-            BlackAndWhite::query()->create([
-                'image' => $coverPath,
-                'title' => $request->get('title'),
-                'description' => $request->get('description'),
-            ]);
-
-            // إعادة التوجيه مع إشعار نجاح
-            return back()->with('success', 'تم حفظ الصورة بنجاح');
+            return back()->with('success', 'تم حفظ الصور بنجاح');
 
         } catch (\Exception $e) {
-            // تسجيل الخطأ (اختياري)
-            Log::error('خطأ في حفظ الصورة: '.$e->getMessage());
+            Log::error('خطأ في حفظ الصور: ' . $e->getMessage());
 
-            // إعادة التوجيه مع إشعار خطأ
-            return back()->with('error', 'حدث خطأ أثناء حفظ الصورة، يرجى المحاولة مرة أخرى.');
+            return back()->with('error', 'حدث خطأ أثناء حفظ الصور، يرجى المحاولة مرة أخرى.');
         }
     }
 }
