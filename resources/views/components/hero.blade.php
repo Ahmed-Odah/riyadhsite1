@@ -136,10 +136,10 @@
 
                 <!-- العنوان الرئيسي -->
                 <h1 class="text-3xl md:text-3xl font-bold text-white text-center leading-snug animate-fade-in-up mt-24">
-                    آهلاً بك في عالمي<br>
-                    خليط ...<br>
-                    من الحرف والضوء<br>
-                    من الفكرة واللحظة
+                    <span class="block mb-6">آهلاً بك في عالمي</span>
+                    <span class="block mb-2">خليط ...</span>
+                    <span class="block mb-2">من الحرف والضوء</span>
+                    <span class="block">من الفكرة واللحظة</span>
                 </h1>
 
 
