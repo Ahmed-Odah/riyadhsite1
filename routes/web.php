@@ -101,6 +101,9 @@ Route::get('/landscape', \App\Actions\Landscape\Client\LandscapeClientAction::cl
 
 
 Route::get('/blogs', \App\Actions\Blog\Client\BlogClientViewAction::class)->name('blogs');
+Route::get('/blogs/{id}', \App\Actions\Blog\Client\BlogShowAction::class)->name('blogs.show');
+
+
 Route::get('/certificate', \App\Actions\Certificates\Client\CertificateClientIndex::class)->name('certificate');
 
 Route::get('/decor', [\App\Actions\Decors\Client\DecorClientIndex::class, 'handle'])->name('decor');
