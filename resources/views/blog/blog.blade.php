@@ -2,7 +2,6 @@
 @section('content')
 
     <div class="bg-gray-50 min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-extrabold text-center text-gray-800 mt-20">المدونات</h1>
         ...
 
 
