@@ -10,6 +10,9 @@
     <meta property="og:title" content="{{ $blog->title }}" />
     <meta property="og:description" content="{{ $blog->description ?? $blog->content }}" />
     <meta property="og:image" content="{{ $blog->image ? asset('public/storage/' . $blog->image) : asset('default-image.jpg') }}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{ $blog->title }}" />
 
     <!-- Twitter (اختياري) -->
     <meta name="twitter:card" content="summary_large_image">
