@@ -45,23 +45,23 @@
                 <div id="shareMenu" class="hidden absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-white border rounded-xl shadow-2xl p-2 flex gap-2 z-50">
                     <a href="https://api.whatsapp.com/send?text={{ urlencode(route('blogs.show', $blog->id)) }}"
                        target="_blank"
-                       class="flex items-center gap-1 px-3 py-2 hover:bg-green-100 rounded font-semibold text-green-600 transition">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
+                       class="flex items-center gap-2 px-3 py-2 hover:bg-green-100 rounded font-semibold text-green-600 transition">
+                        <i class="fab fa-whatsapp"></i> <span class="ml-1">WhatsApp</span>
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('blogs.show', $blog->id)) }}"
                        target="_blank"
-                       class="flex items-center gap-1 px-3 py-2 hover:bg-blue-100 rounded font-semibold text-blue-600 transition">
-                        <i class="fab fa-facebook"></i> Facebook
+                       class="flex items-center gap-2 px-3 py-2 hover:bg-blue-100 rounded font-semibold text-blue-600 transition">
+                        <i class="fab fa-facebook"></i> <span class="ml-1">Facebook</span>
                     </a>
                     <a href="https://www.instagram.com/"
                        target="_blank"
-                       class="flex items-center gap-1 px-3 py-2 hover:bg-pink-100 rounded font-semibold text-pink-500 transition">
-                        <i class="fab fa-instagram"></i> Instagram
+                       class="flex items-center gap-2 px-3 py-2 hover:bg-pink-100 rounded font-semibold text-pink-500 transition">
+                        <i class="fab fa-instagram"></i> <span class="ml-1">Instagram</span>
                     </a>
                     <a href="https://www.snapchat.com/add/"
                        target="_blank"
-                       class="flex items-center gap-1 px-3 py-2 hover:bg-yellow-100 rounded font-semibold text-yellow-400 transition">
-                        <i class="fab fa-snapchat"></i> Snapchat
+                       class="flex items-center gap-2 px-3 py-2 hover:bg-yellow-100 rounded font-semibold text-yellow-400 transition">
+                        <i class="fab fa-snapchat"></i> <span class="ml-1">Snapchat</span>
                     </a>
 
                 </div>
