@@ -1,7 +1,10 @@
 @extends('layout.master')
 @section('content')
-    <div class="bg-gray-50 min-h-screen pt-24 px-4 flex justify-center" >
-        <div class="a4-container bg-white rounded-2xl shadow-2xl p-8 relative w-full max-w-3xl border border-gray-100">
+    <div class="bg-gray-50 min-h-screen pt-16 px-4 flex justify-center">
+        <div class="a4-container bg-white rounded-2xl shadow-2xl p-8 relative w-full max-w-3xl border border-gray-100 mt-4">
+            {{-- المحتوى هنا --}}
+
+
 
             {{-- شريط علوي --}}
             <div class="w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-md mb-6">
