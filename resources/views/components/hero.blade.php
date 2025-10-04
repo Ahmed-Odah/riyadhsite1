@@ -123,7 +123,7 @@
 
                 <!-- اسم الشخص -->
                 <p class="text-6xl md:text-4xl font-medium text-center animate-fade-in-up" style="color:#FFC107;">
-                    م.رياض المقيد
+                    م. رياض المقيد
                 </p>
 
 
@@ -136,9 +136,12 @@
 
                 <!-- العنوان الرئيسي -->
                 <h1 class="text-3xl md:text-3xl font-bold text-white text-center leading-snug animate-fade-in-up mt-24">
-                    خليط من الحرف والضوء، من الفكرة واللحظة.<br>
-                    أهلاً بك في عالمي.
+                    آهلاً بك في عالمي<br>
+                    خليط ...<br>
+                    من الحرف والضوء<br>
+                    من الفكرة واللحظة
                 </h1>
+
 
             </section>
         </div>
