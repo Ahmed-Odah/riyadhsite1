@@ -135,7 +135,7 @@
                 </p>
 
                 <!-- العنوان الرئيسي -->
-                <h1 class="text-3xl md:text-3xl font-bold text-white text-center leading-snug animate-fade-in-up mt-12">
+                <h1 class="text-3xl md:text-3xl font-bold text-white text-center leading-snug animate-fade-in-up mt-18">
                     خليط من الحرف والضوء، من الفكرة واللحظة. أهلاً بك في عالمي.
                 </h1>
 
