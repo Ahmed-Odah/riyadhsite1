@@ -30,7 +30,7 @@
             @endif
 
             {{-- زر المشاركة --}}
-            <div class="flex justify-end mt-8 relative items-center gap-4">
+            <div class="flex justify-center mt-8 relative">
                 <button id="shareBtn"
                         class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-xl font-semibold shadow-md transition duration-300 flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -39,8 +39,8 @@
                     مشاركة
                 </button>
 
-                {{-- قائمة المشاركة أفقية --}}
-                <div id="shareMenu" class="hidden absolute top-full mt-2 right-0 bg-white border rounded-xl shadow-2xl p-2 flex gap-2 z-50">
+                {{-- قائمة المشاركة أفقية أسفل الزر --}}
+                <div id="shareMenu" class="hidden absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-white border rounded-xl shadow-2xl p-2 flex gap-2 z-50">
                     <a href="https://api.whatsapp.com/send?text={{ urlencode(route('blogs.show', $blog->id)) }}"
                        target="_blank"
                        class="flex items-center gap-1 px-3 py-2 hover:bg-green-100 rounded font-semibold text-green-600 transition">
