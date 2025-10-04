@@ -128,7 +128,7 @@
 
 
                 <!-- الموقع الرسمي -->
-                <p class="text-xl md:text-2xl font-semibold text-white text-center animate-fade-in-up">
+                <p class="text-xl md:text-2xl font-semibold text-white text-center animate-fade-in-up mt-8">
                     الموقع الرسمي
                 </p>
 
