@@ -38,6 +38,7 @@
                     </svg>
                     مشاركة
                 </button>
+                <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
 
                 {{-- قائمة المشاركة أفقية أسفل الزر --}}
                 <div id="shareMenu" class="hidden absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-white border rounded-xl shadow-2xl p-2 flex gap-2 z-50">
