@@ -119,7 +119,7 @@
     <!-- النصوص -->
     <div class="container mx-auto px-6 text-center relative z-10">
         <div class="max-w-2xl mx-auto">
-            <section class="py-24 px-4">
+            <section class="py-30 px-4">
 
                 <!-- اسم الشخص -->
                 <p class="text-6xl md:text-4xl font-medium text-center animate-fade-in-up" style="color:#FFC107;">
