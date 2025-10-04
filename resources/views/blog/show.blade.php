@@ -29,35 +29,28 @@
                 {!! nl2br(e($blog->content ?? $blog->description)) !!}
             </div>
 
-            {{-- شريط مشاركة --}}
-            <div class="flex justify-center gap-4 mt-8">
-                {{-- واتساب --}}
-                <a href="https://api.whatsapp.com/send?text={{ urlencode(route('blogs.show', $blog->id)) }}"
-                   target="_blank"
-                   class="bg-green-500 text-white px-4 py-2 rounded-xl font-semibold hover:opacity-90 transition">
-                    واتساب
-                </a>
+            {{-- زر المشاركة --}}
+            <div class="flex justify-center mt-8 relative">
+                <button id="shareBtn"
+                        class="bg-indigo-600 text-white px-6 py-2 rounded-xl hover:opacity-90 transition duration-300 font-semibold">
+                    مشاركة
+                </button>
 
-                {{-- فيسبوك --}}
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('blogs.show', $blog->id)) }}"
-                   target="_blank"
-                   class="bg-blue-600 text-white px-4 py-2 rounded-xl font-semibold hover:opacity-90 transition">
-                    فيسبوك
-                </a>
-
-                {{-- إنستجرام (لا يوجد مشاركة مباشرة عبر الرابط، نفتح الصفحة) --}}
-                <a href="https://www.instagram.com/"
-                   target="_blank"
-                   class="bg-pink-500 text-white px-4 py-2 rounded-xl font-semibold hover:opacity-90 transition">
-                    إنستجرام
-                </a>
-
-                {{-- سناب شات (نفتح الموقع) --}}
-                <a href="https://www.snapchat.com/add/"
-                   target="_blank"
-                   class="bg-yellow-400 text-white px-4 py-2 rounded-xl font-semibold hover:opacity-90 transition">
-                    سناب
-                </a>
+                {{-- قائمة المشاركة --}}
+                <div id="shareMenu" class="hidden absolute top-full mt-2 bg-white border rounded-xl shadow-lg p-4 flex flex-col gap-2 z-50">
+                    <a href="https://api.whatsapp.com/send?text={{ urlencode(route('blogs.show', $blog->id)) }}"
+                       target="_blank"
+                       class="px-4 py-2 hover:bg-green-100 rounded font-semibold text-green-600">واتساب</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('blogs.show', $blog->id)) }}"
+                       target="_blank"
+                       class="px-4 py-2 hover:bg-blue-100 rounded font-semibold text-blue-600">فيسبوك</a>
+                    <a href="https://www.instagram.com/"
+                       target="_blank"
+                       class="px-4 py-2 hover:bg-pink-100 rounded font-semibold text-pink-500">إنستجرام</a>
+                    <a href="https://www.snapchat.com/add/"
+                       target="_blank"
+                       class="px-4 py-2 hover:bg-yellow-100 rounded font-semibold text-yellow-400">سناب</a>
+                </div>
             </div>
 
             {{-- زر الرجوع --}}
@@ -72,6 +65,22 @@
             <div class="w-full h-4 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-b-xl mt-10"></div>
         </div>
     </div>
+
+    <script>
+        const shareBtn = document.getElementById('shareBtn');
+        const shareMenu = document.getElementById('shareMenu');
+
+        shareBtn.addEventListener('click', () => {
+            shareMenu.classList.toggle('hidden');
+        });
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', (e) => {
+            if (!shareBtn.contains(e.target) && !shareMenu.contains(e.target)) {
+                shareMenu.classList.add('hidden');
+            }
+        });
+    </script>
 
     <style>
         body {
