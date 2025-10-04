@@ -136,7 +136,8 @@
 
                 <!-- العنوان الرئيسي -->
                 <h1 class="text-3xl md:text-3xl font-bold text-white text-center leading-snug animate-fade-in-up mt-24">
-                    خليط من الحرف والضوء، من الفكرة واللحظة. أهلاً بك في عالمي.
+                    خليط من الحرف والضوء، من الفكرة واللحظة.<br>
+                    أهلاً بك في عالمي.
                 </h1>
 
             </section>
