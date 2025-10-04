@@ -30,7 +30,7 @@
             @endif
 
             {{-- زر المشاركة --}}
-            <div class="flex justify-center mt-8 relative">
+            <div class="flex justify-end mt-8 relative items-center gap-4">
                 <button id="shareBtn"
                         class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-xl font-semibold shadow-md transition duration-300 flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -39,38 +39,50 @@
                     مشاركة
                 </button>
 
-                {{-- قائمة المشاركة --}}
-                <div id="shareMenu" class="hidden absolute top-full mt-3 right-0 bg-white border rounded-xl shadow-2xl p-4 flex flex-col gap-2 z-50 w-48">
+                {{-- قائمة المشاركة أفقية --}}
+                <div id="shareMenu" class="hidden absolute top-full mt-2 right-0 bg-white border rounded-xl shadow-2xl p-2 flex gap-2 z-50">
                     <a href="https://api.whatsapp.com/send?text={{ urlencode(route('blogs.show', $blog->id)) }}"
                        target="_blank"
-                       class="flex items-center gap-2 px-4 py-2 hover:bg-green-100 rounded font-semibold text-green-600 transition">
-                        واتساب
+                       class="flex items-center gap-1 px-3 py-2 hover:bg-green-100 rounded font-semibold text-green-600 transition">
+                        <i class="fab fa-whatsapp"></i> واتساب
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('blogs.show', $blog->id)) }}"
                        target="_blank"
-                       class="flex items-center gap-2 px-4 py-2 hover:bg-blue-100 rounded font-semibold text-blue-600 transition">
-                        فيسبوك
+                       class="flex items-center gap-1 px-3 py-2 hover:bg-blue-100 rounded font-semibold text-blue-600 transition">
+                        <i class="fab fa-facebook"></i> فيسبوك
                     </a>
                     <a href="https://www.instagram.com/"
                        target="_blank"
-                       class="flex items-center gap-2 px-4 py-2 hover:bg-pink-100 rounded font-semibold text-pink-500 transition">
-                        إنستجرام
+                       class="flex items-center gap-1 px-3 py-2 hover:bg-pink-100 rounded font-semibold text-pink-500 transition">
+                        <i class="fab fa-instagram"></i> إنستجرام
                     </a>
                     <a href="https://www.snapchat.com/add/"
                        target="_blank"
-                       class="flex items-center gap-2 px-4 py-2 hover:bg-yellow-100 rounded font-semibold text-yellow-400 transition">
-                        سناب
+                       class="flex items-center gap-1 px-3 py-2 hover:bg-yellow-100 rounded font-semibold text-yellow-400 transition">
+                        <i class="fab fa-snapchat"></i> سناب
                     </a>
                 </div>
             </div>
 
-            {{-- زر الرجوع --}}
-            <div class="flex justify-center mt-10">
-                <a href="{{ route('blogs') }}"
-                   class="bg-gradient-to-r from-gray-700 to-gray-900 text-white px-6 py-2 rounded-xl hover:opacity-90 transition duration-300 font-semibold shadow-lg">
-                    ← العودة إلى المدونات
-                </a>
-            </div>
+            <script>
+                const shareBtn = document.getElementById('shareBtn');
+                const shareMenu = document.getElementById('shareMenu');
+
+                shareBtn.addEventListener('click', () => {
+                    shareMenu.classList.toggle('hidden');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!shareBtn.contains(e.target) && !shareMenu.contains(e.target)) {
+                        shareMenu.classList.add('hidden');
+                    }
+                });
+            </script>
+
+            {{-- لا تنسى إضافة FontAwesome لأيقونات المنصات --}}
+            {{-- <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> --}}
+
+
 
             {{-- شريط سفلي زخرفي --}}
             <div class="w-full h-4 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-b-xl mt-10"></div>
