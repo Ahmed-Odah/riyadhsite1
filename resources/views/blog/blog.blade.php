@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('content')
 
-    <div class="bg-gray-50 min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="bg-gray-50 min-h-screen mt-32 sm:mt-36 lg:mt-40 pb-16 px-4 sm:px-6 lg:px-8">
         <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-10">المدونات</h1>
 
         <div class="mx-auto max-w-7xl">
@@ -12,7 +12,7 @@
 
                         {{-- صورة المدونة --}}
                         <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2;">
-                            <img src="{{ asset('public/storage/' . $blog->image) }}"
+                            <img src="{{ asset('storage/' . $blog->image) }}"
                                  alt="{{ $blog->title }}"
                                  class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
                         </div>
