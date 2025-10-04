@@ -24,7 +24,7 @@
             {{-- الصورة --}}
             @if($blog->image)
                 <div class="flex justify-center mb-10">
-                    <img src="{{ asset('storage/' . $blog->image) }}"
+                    <img src="{{ asset('public/storage/' . $blog->image) }}"
                          alt="{{ $blog->title }}"
                          class="rounded-xl shadow-md transform hover:scale-105 transition duration-300 max-h-[350px] w-auto object-contain border border-gray-200">
                 </div>
