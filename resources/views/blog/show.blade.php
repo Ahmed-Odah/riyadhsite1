@@ -14,49 +14,60 @@
                     نُشرت بتاريخ {{ $blog->created_at->format('Y/m/d') }}
                 </p>
             @endif
-
+            {{-- المحتوى --}}
+            <div class="prose prose-lg text-gray-700 leading-relaxed max-w-none" style="line-height:1.8; font-size:16px;">
+                {!! nl2br(e($blog->content ?? $blog->description)) !!}
+            </div>
             {{-- الصورة --}}
             @if($blog->image)
                 <div class="flex justify-center mb-6">
                     <img src="{{ asset('public/storage/' . $blog->image) }}"
                          alt="{{ $blog->title }}"
-                         class="rounded-xl shadow-md transform hover:scale-105 transition duration-300 max-h-[160px] w-auto object-contain border border-gray-200">
+                         class="rounded-xl shadow-lg transform hover:scale-105 transition duration-500 max-h-[160px] w-auto object-contain border border-gray-200">
                 </div>
             @endif
 
-            {{-- المحتوى --}}
-            <div class="prose prose-lg text-gray-700 leading-relaxed max-w-none" style="line-height:1.8; font-size:16px;">
-                {!! nl2br(e($blog->content ?? $blog->description)) !!}
-            </div>
+
 
             {{-- زر المشاركة --}}
             <div class="flex justify-center mt-8 relative">
                 <button id="shareBtn"
-                        class="bg-indigo-600 text-white px-6 py-2 rounded-xl hover:opacity-90 transition duration-300 font-semibold">
+                        class="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-xl hover:scale-105 transition-transform duration-300 font-semibold shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 12v.01M12 4v.01M20 12v.01M12 20v.01M4.93 4.93l.01.01M19.07 19.07l.01.01M19.07 4.93l.01.01M4.93 19.07l.01.01"/>
+                    </svg>
                     مشاركة
                 </button>
 
                 {{-- قائمة المشاركة --}}
-                <div id="shareMenu" class="hidden absolute top-full mt-2 bg-white border rounded-xl shadow-lg p-4 flex flex-col gap-2 z-50">
+                <div id="shareMenu" class="hidden absolute top-full mt-3 right-0 bg-white border rounded-xl shadow-2xl p-4 flex flex-col gap-2 z-50 w-48">
                     <a href="https://api.whatsapp.com/send?text={{ urlencode(route('blogs.show', $blog->id)) }}"
                        target="_blank"
-                       class="px-4 py-2 hover:bg-green-100 rounded font-semibold text-green-600">واتساب</a>
+                       class="flex items-center gap-2 px-4 py-2 hover:bg-green-100 rounded font-semibold text-green-600 transition">
+                        <i class="fab fa-whatsapp"></i> واتساب
+                    </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('blogs.show', $blog->id)) }}"
                        target="_blank"
-                       class="px-4 py-2 hover:bg-blue-100 rounded font-semibold text-blue-600">فيسبوك</a>
+                       class="flex items-center gap-2 px-4 py-2 hover:bg-blue-100 rounded font-semibold text-blue-600 transition">
+                        <i class="fab fa-facebook"></i> فيسبوك
+                    </a>
                     <a href="https://www.instagram.com/"
                        target="_blank"
-                       class="px-4 py-2 hover:bg-pink-100 rounded font-semibold text-pink-500">إنستجرام</a>
+                       class="flex items-center gap-2 px-4 py-2 hover:bg-pink-100 rounded font-semibold text-pink-500 transition">
+                        <i class="fab fa-instagram"></i> إنستجرام
+                    </a>
                     <a href="https://www.snapchat.com/add/"
                        target="_blank"
-                       class="px-4 py-2 hover:bg-yellow-100 rounded font-semibold text-yellow-400">سناب</a>
+                       class="flex items-center gap-2 px-4 py-2 hover:bg-yellow-100 rounded font-semibold text-yellow-400 transition">
+                        <i class="fab fa-snapchat"></i> سناب
+                    </a>
                 </div>
             </div>
 
             {{-- زر الرجوع --}}
             <div class="flex justify-center mt-10">
                 <a href="{{ route('blogs') }}"
-                   class="bg-gradient-to-r from-gray-700 to-gray-900 text-white px-6 py-2 rounded-xl hover:opacity-90 transition duration-300 font-semibold">
+                   class="bg-gradient-to-r from-gray-700 to-gray-900 text-white px-6 py-2 rounded-xl hover:opacity-90 transition duration-300 font-semibold shadow-lg">
                     ← العودة إلى المدونات
                 </a>
             </div>
@@ -74,7 +85,6 @@
             shareMenu.classList.toggle('hidden');
         });
 
-        // إغلاق القائمة عند النقر خارجها
         document.addEventListener('click', (e) => {
             if (!shareBtn.contains(e.target) && !shareMenu.contains(e.target)) {
                 shareMenu.classList.add('hidden');
@@ -92,4 +102,7 @@
             .a4-container { box-shadow: none; margin: 0; width: auto; min-height: auto; padding: 0; }
         }
     </style>
+
+    {{-- ملاحظة: تحتاج إضافة مكتبة FontAwesome لأيقونات الشبكات --}}
+    {{-- <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> --}}
 @endsection
