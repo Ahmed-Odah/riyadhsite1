@@ -28,6 +28,8 @@
                          class="rounded-xl shadow-lg transform hover:scale-105 transition duration-500 max-h-[160px] w-auto object-contain border border-gray-200">
                 </div>
             @endif
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papT1I+fC...=="
+                  crossorigin="anonymous" referrerpolicy="no-referrer" />
 
             {{-- زر المشاركة --}}
             <div class="flex justify-center mt-8 relative">
@@ -38,7 +40,6 @@
                     </svg>
                     مشاركة
                 </button>
-                <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
 
                 {{-- قائمة المشاركة أفقية أسفل الزر --}}
                 <div id="shareMenu" class="hidden absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-white border rounded-xl shadow-2xl p-2 flex gap-2 z-50">
