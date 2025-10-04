@@ -4,6 +4,7 @@ namespace App\Actions\Blog;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class BlogCreateAction
@@ -12,25 +13,31 @@ class BlogCreateAction
 
     public function handle(Request $request)
     {
-        // ✅ التحقق من البيانات
+        // ✅ التحقق من البيانات مع منع التكرار
         $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'required|string|max:255|unique:blogs,title',
             'description' => 'required|string',
-            'url' => 'required|url|max:500', // إضافة التحقق من الرابط
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048', // تحقق من الصورة
+            'url' => 'required|url|max:500|unique:blogs,url',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
-        // رفع الصورة إذا وُجدت
+        // رفع الصورة إذا وُجدت باسم فريد
         $image = null;
         if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('images', 'public');
+            $file = $request->file('image');
+            $imageName = time() . '_' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $file->getClientOriginalExtension();
+            $image = $file->storeAs('images', $imageName, 'public');
         }
+
+        // إنشاء slug من العنوان
+        $slug = Str::slug($request->get('title'));
 
         // إنشاء المدونة
         Blog::query()->create([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
-            'url' => $request->get('url'), // حفظ الرابط
+            'url' => $request->get('url'),
+            'slug' => $slug,
             'image' => $image,
         ]);
 
