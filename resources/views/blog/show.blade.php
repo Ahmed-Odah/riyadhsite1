@@ -6,7 +6,7 @@
 
             {{-- شريط علوي --}}
             <div class="w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-md mb-8">
-                <span class="text-white text-lg font-semibold tracking-wide">تفاصيل المدونة</span>
+
             </div>
 
             {{-- العنوان --}}
@@ -26,9 +26,10 @@
                 <div class="flex justify-center mb-8">
                     <img src="{{ asset('public/storage/' . $blog->image) }}"
                          alt="{{ $blog->title }}"
-                         class="rounded-xl shadow-md transform hover:scale-105 transition duration-300 max-h-[250px] w-auto object-contain border border-gray-200">
+                         class="rounded-xl shadow-md transform hover:scale-105 transition duration-300 max-h-[200px] w-auto object-contain border border-gray-200">
                 </div>
             @endif
+
 
             {{-- المحتوى --}}
             <div class="prose prose-lg text-gray-700 leading-relaxed max-w-none" style="line-height:1.8; font-size:16px;">
