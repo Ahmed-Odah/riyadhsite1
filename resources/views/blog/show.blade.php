@@ -1,7 +1,6 @@
 @extends('layout.master')
-
 @section('content')
-    <div class="bg-gray-50 min-h-screen pt-24 px-4 flex justify-center mt-20" >
+    <div class="bg-gray-50 min-h-screen pt-24 px-4 flex justify-center" >
         <div class="a4-container bg-white rounded-2xl shadow-2xl p-8 relative w-full max-w-3xl border border-gray-100">
 
             {{-- شريط علوي --}}
