@@ -129,7 +129,7 @@
 
             <!-- زر انضم إلينا -->
             <a href="{{ route('client') }}"
-               class="inline-block text-center px-4 py-2 bg-cyan-600 text-white rounded-full font-semibold text-sm hover:bg-cyan-700 transition"
+               class="inline-block text-center px-4 py-2 text-white rounded-full font-semibold text-sm hover:bg-cyan-700 transition"
                style="min-width: 120px; color:#FFC107;">
                 انضم إلينا
             </a>
