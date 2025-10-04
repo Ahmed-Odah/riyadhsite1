@@ -17,7 +17,6 @@ class BlogCreateAction
         $request->validate([
             'title' => 'required|string|max:255|unique:blogs,title',
             'description' => 'required|string',
-            'url' => 'required|url|max:500|unique:blogs,url',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
@@ -32,12 +31,15 @@ class BlogCreateAction
         // إنشاء slug من العنوان
         $slug = Str::slug($request->get('title'));
 
+        // إنشاء رابط المدونة تلقائيًا بناءً على السلاگ
+        $url = url('/blogs/' . $slug); // يمكنك تعديل المسار حسب routes الخاصة بك
+
         // إنشاء المدونة
         Blog::query()->create([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
-            'url' => $request->get('url'),
             'slug' => $slug,
+            'url' => $url,
             'image' => $image,
         ]);
 
