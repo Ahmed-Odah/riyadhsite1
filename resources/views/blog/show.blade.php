@@ -14,10 +14,12 @@
                     نُشرت بتاريخ {{ $blog->created_at->format('Y/m/d') }}
                 </p>
             @endif
+
             {{-- المحتوى --}}
-            <div class="prose prose-lg text-gray-700 leading-relaxed max-w-none" style="line-height:1.8; font-size:16px;">
+            <div class="prose prose-lg text-gray-700 leading-relaxed max-w-none mb-6" style="line-height:1.8; font-size:16px;">
                 {!! nl2br(e($blog->content ?? $blog->description)) !!}
             </div>
+
             {{-- الصورة --}}
             @if($blog->image)
                 <div class="flex justify-center mb-6">
@@ -27,12 +29,10 @@
                 </div>
             @endif
 
-
-
             {{-- زر المشاركة --}}
             <div class="flex justify-center mt-8 relative">
                 <button id="shareBtn"
-                        class="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-xl hover:scale-105 transition-transform duration-300 font-semibold shadow-lg">
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-xl font-semibold shadow-md transition duration-300 flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 12v.01M12 4v.01M20 12v.01M12 20v.01M4.93 4.93l.01.01M19.07 19.07l.01.01M19.07 4.93l.01.01M4.93 19.07l.01.01"/>
                     </svg>
@@ -44,22 +44,22 @@
                     <a href="https://api.whatsapp.com/send?text={{ urlencode(route('blogs.show', $blog->id)) }}"
                        target="_blank"
                        class="flex items-center gap-2 px-4 py-2 hover:bg-green-100 rounded font-semibold text-green-600 transition">
-                        <i class="fab fa-whatsapp"></i> واتساب
+                        واتساب
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('blogs.show', $blog->id)) }}"
                        target="_blank"
                        class="flex items-center gap-2 px-4 py-2 hover:bg-blue-100 rounded font-semibold text-blue-600 transition">
-                        <i class="fab fa-facebook"></i> فيسبوك
+                        فيسبوك
                     </a>
                     <a href="https://www.instagram.com/"
                        target="_blank"
                        class="flex items-center gap-2 px-4 py-2 hover:bg-pink-100 rounded font-semibold text-pink-500 transition">
-                        <i class="fab fa-instagram"></i> إنستجرام
+                        إنستجرام
                     </a>
                     <a href="https://www.snapchat.com/add/"
                        target="_blank"
                        class="flex items-center gap-2 px-4 py-2 hover:bg-yellow-100 rounded font-semibold text-yellow-400 transition">
-                        <i class="fab fa-snapchat"></i> سناب
+                        سناب
                     </a>
                 </div>
             </div>
@@ -102,7 +102,4 @@
             .a4-container { box-shadow: none; margin: 0; width: auto; min-height: auto; padding: 0; }
         }
     </style>
-
-    {{-- ملاحظة: تحتاج إضافة مكتبة FontAwesome لأيقونات الشبكات --}}
-    {{-- <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> --}}
 @endsection
