@@ -30,7 +30,7 @@
 
             {{-- زر الرجوع --}}
             <div class="flex justify-center mt-12">
-                <a href="{{ route('blogs.index') }}"
+                <a href="{{ route('blog.blog') }}"
                    class="bg-gray-700 text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition duration-300">
                     ← العودة للمدونات
                 </a>
