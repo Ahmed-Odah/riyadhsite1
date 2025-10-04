@@ -6,7 +6,7 @@
 
     <!-- Open Graph meta tags للواتساب -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ route('blog.show', $blog->id) }}">
+    <meta property="og:url" content="{{ route('blogs.show', $blog->id) }}">
     <meta property="og:title" content="{{ $blog->title }}">
     <meta property="og:description" content="{{ $blog->description ?? $blog->content }}">
     <meta property="og:image" content="{{ $blog->image ? asset('public/storage/' . $blog->image) : asset('default-image.jpg') }}">
