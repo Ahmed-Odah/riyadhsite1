@@ -1,13 +1,9 @@
 @extends('layout.master')
 
 @section('content')
-    <div class="bg-gray-100 min-h-screen py-10 px-4 flex justify-center">
-        <div class="a4-container bg-white rounded-2xl shadow-2xl p-8 relative w-full max-w-3xl border border-gray-100 mt-16">
 
-            {{-- شريط علوي بار --}}
-            <div class="w-full h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-t-xl flex items-center justify-center shadow-md mb-6">
-                <span class="text-white text-xl font-bold">تفاصيل المدونة</span>
-            </div>
+
+
 
             {{-- عنوان المدونة --}}
             <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-4 leading-tight mt-2">
