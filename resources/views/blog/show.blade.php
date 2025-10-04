@@ -2,7 +2,7 @@
 @section('content')
     @if(isset($blog))
         <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ route('blogs.show', $blog->id) }}">
+        <meta property="og:url" content="{{ route('blog٣s.show', $blog->id) }}">
         <meta property="og:title" content="{{ $blog->title }}">
         <meta property="og:description" content="{{ $blog->description ?? Str::limit(strip_tags($blog->content), 150) }}">
         <meta property="og:image" content="{{ $blog->image ? asset('storage/' . $blog->image) : asset('default-image.jpg') }}">
