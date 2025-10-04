@@ -3,8 +3,6 @@
     <div class="bg-gray-100 min-h-screen py-10 px-4 flex justify-center">
         <div class="a4-container bg-white rounded-2xl shadow-2xl p-8 relative w-full max-w-3xl border border-gray-100 mt-20">
 
-
-
             {{-- عنوان المدونة --}}
             <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-4 leading-tight mt-2">
                 {{ $blog->title }}
@@ -24,12 +22,42 @@
                          alt="{{ $blog->title }}"
                          class="rounded-xl shadow-md transform hover:scale-105 transition duration-300 max-h-[160px] w-auto object-contain border border-gray-200">
                 </div>
-
             @endif
 
             {{-- المحتوى --}}
             <div class="prose prose-lg text-gray-700 leading-relaxed max-w-none" style="line-height:1.8; font-size:16px;">
                 {!! nl2br(e($blog->content ?? $blog->description)) !!}
+            </div>
+
+            {{-- شريط مشاركة --}}
+            <div class="flex justify-center gap-4 mt-8">
+                {{-- واتساب --}}
+                <a href="https://api.whatsapp.com/send?text={{ urlencode(route('blogs.show', $blog->id)) }}"
+                   target="_blank"
+                   class="bg-green-500 text-white px-4 py-2 rounded-xl font-semibold hover:opacity-90 transition">
+                    واتساب
+                </a>
+
+                {{-- فيسبوك --}}
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('blogs.show', $blog->id)) }}"
+                   target="_blank"
+                   class="bg-blue-600 text-white px-4 py-2 rounded-xl font-semibold hover:opacity-90 transition">
+                    فيسبوك
+                </a>
+
+                {{-- إنستجرام (لا يوجد مشاركة مباشرة عبر الرابط، نفتح الصفحة) --}}
+                <a href="https://www.instagram.com/"
+                   target="_blank"
+                   class="bg-pink-500 text-white px-4 py-2 rounded-xl font-semibold hover:opacity-90 transition">
+                    إنستجرام
+                </a>
+
+                {{-- سناب شات (نفتح الموقع) --}}
+                <a href="https://www.snapchat.com/add/"
+                   target="_blank"
+                   class="bg-yellow-400 text-white px-4 py-2 rounded-xl font-semibold hover:opacity-90 transition">
+                    سناب
+                </a>
             </div>
 
             {{-- زر الرجوع --}}
