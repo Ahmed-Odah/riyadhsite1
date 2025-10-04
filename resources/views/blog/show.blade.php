@@ -5,7 +5,7 @@
         <meta property="og:url" content="{{ route('blogs.show', $blog->id) }}">
         <meta property="og:title" content="{{ $blog->title }}">
         <meta property="og:description" content="{{ $blog->description ?? Str::limit(strip_tags($blog->content), 150) }}">
-        <meta property="og:image" content="{{ $blog->image ? asset('public/storage/' . $blog->image) : asset('default-image.jpg') }}">
+        <meta property="og:image" content="{{ $blog->image ? asset('storage/' . $blog->image) : asset('default-image.jpg') }}">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
         <meta property="og:image:alt" content="{{ $blog->title }}">
