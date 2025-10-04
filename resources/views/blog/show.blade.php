@@ -8,7 +8,7 @@
             </div>
 
             {{-- العنوان --}}
-            <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-6 leading-tight">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-6 leading-tight mt-20">
                 {{ $blog->title }}
             </h1>
 
