@@ -4,15 +4,9 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- PDF.js -->
 
-    <!-- Open Graph meta tags للواتساب -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ route('blogs.show', $blog->id) }}">
-    <meta property="og:title" content="{{ $blog->title }}">
-    <meta property="og:description" content="{{ $blog->description ?? $blog->content }}">
-    <meta property="og:image" content="{{ $blog->image ? asset('public/storage/' . $blog->image) : asset('default-image.jpg') }}">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="{{ $blog->title }}">
+
+
+
 
 
     <link rel="icon" href="{{ asset('resha.png') }}" type="image/png">
