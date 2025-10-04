@@ -164,8 +164,9 @@
 
         <a href="{{ route('client') }}"
         <a href="#"
-           class="inline-block text-center px-4 py-2 text-white rounded-full font-semibold text-sm hover:bg-yellow-700 transition"
-           style="min-width: 120px; background-color: #FFC107;">
+           style="min-width: 120px; background-color: #FFC107; color: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; text-align: center; display: inline-block; transition: background-color 0.3s;"
+           onmouseover="this.style.backgroundColor='#D97706';"
+           onmouseout="this.style.backgroundColor='#FFC107';">
             انضم إلينا
         </a>
 
