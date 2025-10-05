@@ -12,7 +12,7 @@
         <meta property="og:image:alt" content="{{ $blog->title }}">
     @endif
 
-    <div class="bg-gray-50 min-h-screen py-16 px-4 sm:px-10 lg:px-20">
+    <div class="bg-gray-50 min-h-screen py-16 px-4 sm:px-10 lg:px-20 flex justify-center">
         <div class="a4-container bg-white rounded-2xl shadow-2xl p-6 sm:p-8 relative w-full max-w-3xl border border-gray-100 mt-20">
 
             {{-- عنوان المدونة --}}
