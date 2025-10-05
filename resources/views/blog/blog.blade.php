@@ -1,8 +1,8 @@
 @extends('layout.master')
 @section('content')
 
-    <div class="">
-        <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-10 pt-40 ">المدونات</h1>
+    <div class="bg-gray-50 pb-16 px-4 sm:px-6 lg:px-8">
+        <h1 class="">المدونات</h1>
 
         <div class="mx-auto max-w-7xl">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
