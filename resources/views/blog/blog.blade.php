@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="bg-gray-50 min-h-screen py-16 px-4 sm:px-10 lg:px-20">
-        <h1 class="text-3xl font-extrabold text-center text-gray-800 mt-20">الحمامات</h1>
+        <h1 class="text-3xl font-extrabold text-center text-gray-800 mt-20">المدونات</h1>
 
         <div class="mx-auto max-w-7xl">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
