@@ -6,8 +6,8 @@
             <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10 relative">
                 <span id="logo-text" class="text-lg font-bold lg:text-3xl mt-1"></span>
                 <div class="relative w-32 h-32 flex items-center justify-center">
-                    <!-- الخط الدائري -->
-                    <div class="absolute inset-0 rounded-full border-4 border-yellow-500 animate-spin-slow"></div>
+                    <!-- الخط الدائري المتحرك -->
+                    <div class="absolute w-28 h-28 rounded-full border-4 border-yellow-500 animate-orbit"></div>
                     <!-- الشعار -->
                     <img src="{{ asset('/public/r2000.png') }}" alt="Logo" class="w-24 relative z-10">
                 </div>
@@ -15,14 +15,21 @@
         </a>
 
         <style>
-            /* سرعة الدوران البطيء */
-            @keyframes spin-slow {
-                from { transform: rotate(0deg); }
-                to { transform: rotate(360deg); }
+            /* حركة الخط الدائري حول الشعار */
+            @keyframes orbit {
+                0% {
+                    transform: rotate(0deg) translateX(4px) rotate(0deg);
+                }
+                50% {
+                    transform: rotate(180deg) translateX(4px) rotate(-180deg);
+                }
+                100% {
+                    transform: rotate(360deg) translateX(4px) rotate(-360deg);
+                }
             }
 
-            .animate-spin-slow {
-                animation: spin-slow 6s linear infinite;
+            .animate-orbit {
+                animation: orbit 4s linear infinite;
             }
         </style>
 
