@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +13,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // لو عندك مستخدم اسمه admin@gmail.com غيّر الباسوورد تبعه
+        User::where('email', 'admin@gmail.com')->update([
+            'password' => Hash::make('0583178900'),
         ]);
+
+        // ممكن تخلي هذا مثال إنشاء مستخدم جديد إذا ما كان موجود
+        // User::factory()->create([
+        //     'name' => 'Admin User',
+        //     'email' => 'admin@gmail.com',
+        //     'password' => Hash::make('12345678'),
+        // ]);
     }
 }
