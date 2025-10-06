@@ -2,12 +2,30 @@
 
     <div class="flex justify-between items-center container mx-auto relative">
         <!-- اللوجو -->
-        <a href="" class="flex flex-col items-start gap-0">
-            <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10">
+        <a href="" class="flex flex-col items-start gap-0 relative">
+            <div class="flex items-center gap-5 -ml-2 sm:-ml-4 md:-ml-6 lg:-ml-8 xl:-ml-10 relative">
                 <span id="logo-text" class="text-lg font-bold lg:text-3xl mt-1"></span>
-                <img src="{{ asset('/public/r2000.png') }}" alt="Logo" class="w-30">
+                <div class="relative w-32 h-32 flex items-center justify-center">
+                    <!-- الخط الدائري -->
+                    <div class="absolute inset-0 rounded-full border-4 border-yellow-500 animate-spin-slow"></div>
+                    <!-- الشعار -->
+                    <img src="{{ asset('/public/r2000.png') }}" alt="Logo" class="w-24 relative z-10">
+                </div>
             </div>
         </a>
+
+        <style>
+            /* سرعة الدوران البطيء */
+            @keyframes spin-slow {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+
+            .animate-spin-slow {
+                animation: spin-slow 6s linear infinite;
+            }
+        </style>
+
 
         <!-- زر المنيو للجوال -->
         <div class="lg:hidden absolute left-4 top-1/2 transform -translate-y-1/2">
