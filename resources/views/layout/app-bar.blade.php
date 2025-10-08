@@ -215,7 +215,7 @@
         background-color: white !important;
         color: black !important;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+    }ي
 
     .nav-link {
         @apply transition-all duration-300 ease-in-out font-extrabold;
@@ -237,3 +237,4 @@
 </style>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+ي
