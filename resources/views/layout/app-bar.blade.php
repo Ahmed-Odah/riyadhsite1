@@ -186,6 +186,8 @@
                     <a href="{{route('house')}}" class="hover:text-cyan-400 transition-colors">🏠 منازل ريفية</a>
                 </div>
             </div>
+        </div>
+
 
 
         <script>
