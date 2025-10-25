@@ -201,13 +201,14 @@
         padding: 1rem;
         transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
         background-color: transparent;
-        color: black;
+        color: white; /* اللون الأساسي أبيض */
     }
 
     /* زر المنيو */
     #menu-toggle,
     #menu-toggle .material-icons {
-        color: black !important;
+        color: white !important; /* دايم أبيض */
+        transition: color 0.3s ease;
     }
 
     /* عند النزول */
@@ -217,8 +218,13 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
+    nav.navbar-scrolled #menu-toggle .material-icons {
+        color: black !important; /* يتحول أسود بعد التمرير */
+    }
+
     .nav-link {
         @apply transition-all duration-300 ease-in-out font-extrabold;
+        color: white; /* أبيض قبل التمرير */
     }
 
     .nav-link:hover {
@@ -229,8 +235,7 @@
 
     nav.navbar-scrolled a,
     nav.navbar-scrolled span,
-    nav.navbar-scrolled button,
-    nav.navbar-scrolled #menu-toggle .material-icons {
+    nav.navbar-scrolled button {
         color: black !important;
         transition: color 0.3s ease;
     }
