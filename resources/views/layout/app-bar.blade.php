@@ -158,10 +158,15 @@
         <a href="{{route('books.index')}}" class="nav-link">مؤلفاتي</a>
         <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
         <a href="{{route('sumbook')}}" class="nav-link">تصويري</a>
-        <!-- صور الديكورات (في منيو الجوال) -->
-        <div class="bg-white text-black rounded-xl shadow-lg p-4 w-full">
-            <h3 class="font-bold text-lg mb-3">صور الديكورات</h3>
-            <div class="grid grid-cols-2 gap-2 text-sm">
+        <!-- صور الديكورات (بوكس قابل للفتح في منيو الجوال) -->
+        <div class="bg-white text-black rounded-xl shadow-lg w-full overflow-hidden transition-all duration-300">
+            <button id="toggle-decor" class="flex justify-between items-center w-full p-4 font-bold text-lg">
+                <span>صور الديكورات</span>
+                <span id="arrow-decor" class="material-icons transform transition-transform duration-300">expand_more</span>
+            </button>
+
+            <!-- المحتوى الداخلي المخفي -->
+            <div id="decor-content" class="grid grid-cols-2 gap-2 text-sm px-4 pb-4 hidden">
                 <a href="{{route('kitchen')}}" class="hover:text-blue-600">مطابخ</a>
                 <a href="{{route('pool')}}" class="hover:text-blue-600">مسابح</a>
                 <a href="{{route('office')}}" class="hover:text-blue-600">مكتب منزلي</a>
@@ -180,6 +185,18 @@
                 <a href="{{route('house')}}" class="hover:text-blue-600">منازل ريفية</a>
             </div>
         </div>
+
+        <script>
+            // زر فتح/إغلاق بوكس "صور الديكورات"
+            const toggleDecor = document.getElementById('toggle-decor');
+            const decorContent = document.getElementById('decor-content');
+            const arrowDecor = document.getElementById('arrow-decor');
+
+            toggleDecor.addEventListener('click', () => {
+                decorContent.classList.toggle('hidden'); // إظهار/إخفاء المحتوى
+                arrowDecor.classList.toggle('rotate-180'); // تدوير السهم
+            });
+        </script>
 
         <a href="{{route('paintings')}}" class="nav-link">معرض اللوحات</a>
         <a href="{{route('coin')}}" class="nav-link">عملات عالمية</a>
