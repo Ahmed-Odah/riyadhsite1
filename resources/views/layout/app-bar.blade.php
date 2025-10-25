@@ -158,15 +158,15 @@
         <a href="{{route('books.index')}}" class="nav-link">مؤلفاتي</a>
         <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
         <a href="{{route('sumbook')}}" class="nav-link">تصويري</a>
-        <!-- صور الديكورات (نفس التصميم الخارجي مع الأقسام) -->
-        <div class="flex flex-col gap-6 mt-16 w-full">
+        <!-- صور الديكورات (نفس حجم باقي القوائم وبدون أنيميشن) -->
+        <div class="w-full">
             <button id="toggle-decor"
-                    class="flex justify-between items-center w-full text-left nav-link text-lg font-semibold">
+                    class="flex justify-between items-center w-full text-left nav-link text-lg font-semibold py-2">
                 <span>صور الديكورات</span>
-                <span id="arrow-decor" class="material-icons transform transition-transform duration-300">expand_more</span>
+                <span class="material-icons text-base">expand_more</span>
             </button>
 
-            <div id="decor-content" class="hidden mt-2 pl-6 space-y-1 text-sm">
+            <div id="decor-content" class="hidden mt-1 pl-6 space-y-1 text-sm">
                 <a href="{{route('kitchen')}}" class="block hover:text-cyan-400">مطابخ</a>
                 <a href="{{route('pool')}}" class="block hover:text-cyan-400">مسابح</a>
                 <a href="{{route('office')}}" class="block hover:text-cyan-400">مكتب منزلي</a>
@@ -187,13 +187,12 @@
         </div>
 
         <script>
+            // فتح وغلق القائمة بدون أي أنيميشن
             const toggleDecor = document.getElementById('toggle-decor');
             const decorContent = document.getElementById('decor-content');
-            const arrowDecor = document.getElementById('arrow-decor');
 
             toggleDecor.addEventListener('click', () => {
                 decorContent.classList.toggle('hidden');
-                arrowDecor.classList.toggle('rotate-180');
             });
         </script>
 
