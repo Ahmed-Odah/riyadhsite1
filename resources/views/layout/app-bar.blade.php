@@ -152,73 +152,21 @@
             flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-auto">
 
     <div class="flex flex-col gap-6 mt-16 w-full">
+        <!-- نفس روابط سطح المكتب (مكررة للجوال) -->
+        <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
+        <a href="/whous" class="nav-link">من آنا</a>
+        <a href="{{route('books.index')}}" class="nav-link">{{ __('site.books') }}</a>
+        <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
+        <a href="{{route('paintings')}}" class="nav-link">معرض اللوحات</a>
+        <a href="{{route('coin')}}" class="nav-link">عملات عالمية</a>
+        <a href="{{route('blog')}}" class="nav-link">المدونة</a>
+        <a href="{{route('channel')}}" class="nav-link">قنواتي</a>
 
-        <!-- الرئيسية -->
-        <a href="{{route('homepage')}}" class="nav-link text-lg font-bold px-4">الرئيسية</a>
-
-        <!-- عني -->
-        <div class="bg-white text-black rounded-xl shadow-lg p-4 w-full">
-            <h3 class="font-bold text-lg mb-3">عني</h3>
-            <div class="flex flex-col gap-2">
-                <a href="/whous" class="hover:text-blue-600">من آنا</a>
-                <a href="{{route('certificate')}}" class="hover:text-blue-600">الشهادات والدورات</a>
-                <a href="{{route('official')}}" class="hover:text-blue-600">صور رسمية لي</a>
-            </div>
-        </div>
-
-        <!-- مؤلفاتي -->
-        <a href="{{route('books.index')}}" class="nav-link text-lg font-bold px-4">{{ __('site.books') }}</a>
-
-        <!-- ملخصات -->
-        <a href="{{route('sumbook')}}" class="nav-link text-lg font-bold px-4">ملخصات كتب</a>
-
-        <!-- تصويري -->
-        <div class="bg-white text-black rounded-xl shadow-lg p-4 w-full">
-            <h3 class="font-bold text-lg mb-3">تصويري</h3>
-            <div class="flex flex-col gap-2">
-                <a href="{{route('ClientBlackAndWhite')}}" class="hover:text-blue-600">صور أبيض وأسود</a>
-                <a href="{{route('colorphotos')}}" class="hover:text-blue-600">صور ملونة</a>
-            </div>
-        </div>
-
-        <!-- صور الديكورات -->
-        <div class="bg-white text-black rounded-xl shadow-lg p-4 w-full">
-            <h3 class="font-bold text-lg mb-3">صور الديكورات</h3>
-            <div class="grid grid-cols-2 gap-2 text-sm">
-                <a href="{{route('kitchen')}}" class="hover:text-blue-600">مطابخ</a>
-                <a href="{{route('pool')}}" class="hover:text-blue-600">مسابح</a>
-                <a href="{{route('office')}}" class="hover:text-blue-600">مكتب منزلي</a>
-                <a href="{{route('bathroom')}}" class="hover:text-blue-600">حمامات</a>
-                <a href="{{route('diningroom')}}" class="hover:text-blue-600">غرف طعام</a>
-                <a href="{{route('livingroom')}}" class="hover:text-blue-600">غرف جلوس</a>
-                <a href="{{route('landscape')}}" class="hover:text-blue-600">لاند سكيب</a>
-                <a href="{{route('gym')}}" class="hover:text-blue-600">جيم منزلي</a>
-                <a href="{{route('terrace')}}" class="hover:text-blue-600">برندة</a>
-                <a href="{{route('house')}}" class="hover:text-blue-600">منازل ريفية</a>
-            </div>
-        </div>
-
-        <!-- قنواتي -->
-        <div class="bg-white text-black rounded-xl shadow-lg p-4 w-full">
-            <h3 class="font-bold text-lg mb-3">قنواتي</h3>
-            <div class="flex flex-col gap-2">
-                <a href="{{route('channel')}}" class="hover:text-blue-600">قناة اليوتيوب</a>
-                <a href="{{route('channeltik')}}" class="hover:text-blue-600">قناة التيك توك</a>
-            </div>
-        </div>
-
-        <!-- روابط إضافية -->
-        <a href="{{route('paintings')}}" class="nav-link text-lg font-bold px-4">معرض اللوحات</a>
-        <a href="{{route('coin')}}" class="nav-link text-lg font-bold px-4">عملات عالمية</a>
-        <a href="{{route('blog')}}" class="nav-link text-lg font-bold px-4">المدونة</a>
-
-        <!-- زر الانضمام -->
         <a href="{{ route('client') }}"
-           class="inline-block text-center px-4 py-3 bg-cyan-600 text-white rounded-full font-semibold text-base hover:bg-cyan-700 transition w-full mt-4">
+           class="inline-block text-center px-4 py-2 bg-cyan-600 text-white rounded-full font-semibold text-sm hover:bg-cyan-700 transition"
+           style="min-width: 120px;">
             انضم إلينا
         </a>
-
-
 
         @if(\Illuminate\Support\Facades\Auth::check())
             <form action="{{route('logout')}}" method="POST">
