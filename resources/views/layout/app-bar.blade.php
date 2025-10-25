@@ -165,6 +165,7 @@
                 <span>صور الديكورات</span>
                 <span class="material-icons text-base">expand_more</span>
             </button>
+
             <!-- القائمة الفرعية لصور الديكورات (منسقة ومتناسبة مع الجوال) -->
             <div id="decor-content" class="hidden mt-2 px-5 py-3 bg-gray-900 rounded-lg shadow-inner border border-gray-800">
                 <div class="grid grid-cols-2 gap-y-2 gap-x-6 text-sm text-gray-200 leading-relaxed">
@@ -185,9 +186,9 @@
                     <a href="{{route('terrace')}}" class="hover:text-cyan-400 transition-colors">🌇 برندة</a>
                     <a href="{{route('house')}}" class="hover:text-cyan-400 transition-colors">🏠 منازل ريفية</a>
                 </div>
+            </div>
 
 
-        </div>
 
         <script>
             // فتح وغلق القائمة بدون أي أنيميشن
