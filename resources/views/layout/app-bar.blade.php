@@ -159,7 +159,6 @@
         <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
         <a href="{{route('sumbook')}}" class="nav-link">تصويري</a>
         <!-- صور الديكورات (نفس التصميم الخارجي مع الأقسام) -->
-        <div class="w-full">
             <button id="toggle-decor"
                     class="flex justify-between items-center w-full text-left nav-link text-lg font-semibold">
                 <span>صور الديكورات</span>
