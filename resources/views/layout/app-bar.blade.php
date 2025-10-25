@@ -148,8 +148,8 @@
 
 <!-- منيو الموبايل -->
 <div id="menu"
-     class="fixed top-0 left-0 w-full h-screen p-4 bg-black text-white shadow-lg  hidden
-            flex-col gap-6 pt-10 lg:hidden overflow-y-auto">
+     class="fixed top-0 left-0 w-full h-screen p-4 bg-black text-white shadow-lg z-50 hidden
+            flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-auto">
 
     <div class="flex flex-col gap-6 mt-16 w-full">
         <!-- نفس روابط سطح المكتب (مكررة للجوال) -->
@@ -161,7 +161,7 @@
         <!-- صور الديكورات (نفس حجم باقي القوائم وبدون أنيميشن) -->
         <div class="w-full">
             <button id="toggle-decor"
-                    class="flex justify-between items-center w-full text-left nav-link text-lg  py-2">
+                    class="flex justify-between items-center w-full text-left nav-link text-lg font-semibold py-2">
                 <span>صور الديكورات</span>
                 <span class="material-icons text-base">expand_more</span>
             </button>
@@ -242,6 +242,14 @@
         background-color: transparent;
         color: white; /* اللون الأساسي أبيض */
     }
+
+    /* هذا الكود يوقف تكبير النصوص (hover scale) على الشاشات الصغيرة فقط */
+    @media (max-width: 1024px) {
+        .nav-link:hover {
+            transform: none !important;
+        }
+    }
+
 
     /* زر المنيو */
     #menu-toggle,
