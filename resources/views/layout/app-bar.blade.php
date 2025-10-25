@@ -154,9 +154,12 @@
     <div class="flex flex-col gap-6 mt-16 w-full">
         <!-- نفس روابط سطح المكتب (مكررة للجوال) -->
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
-        <a href="/whous" class="nav-link">من آنا</a>
-        <a href="{{route('books.index')}}" class="nav-link">{{ __('site.books') }}</a>
+        <a href="/whous" class="nav-link">عني</a>
+        <a href="{{route('books.index')}}" class="nav-link">مؤلفاتي</a>
         <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
+        <a href="{{route('sumbook')}}" class="nav-link">تصويري</a>
+        <a href="{{route('paintings')}}" class="nav-link">صور الديكورات</a>
+
         <a href="{{route('paintings')}}" class="nav-link">معرض اللوحات</a>
         <a href="{{route('coin')}}" class="nav-link">عملات عالمية</a>
         <a href="{{route('blog')}}" class="nav-link">المدونة</a>
