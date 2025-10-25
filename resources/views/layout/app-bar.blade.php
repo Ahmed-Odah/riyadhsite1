@@ -165,26 +165,28 @@
                 <span>صور الديكورات</span>
                 <span class="material-icons text-base">expand_more</span>
             </button>
-
-            <div id="decor-content" class="hidden mt-1 pl-6 space-y-1 text-sm">
-                <a href="{{route('kitchen')}}" class="block hover:text-cyan-400">مطابخ</a>
-                <a href="{{route('pool')}}" class="block hover:text-cyan-400">مسابح</a>
-                <a href="{{route('office')}}" class="block hover:text-cyan-400">مكتب منزلي</a>
-                <a href="{{route('bathroom')}}" class="block hover:text-cyan-400">حمامات</a>
-                <a href="{{route('diningroom')}}" class="block hover:text-cyan-400">غرف طعام</a>
-                <a href="{{route('laundryroom')}}" class="block hover:text-cyan-400">غرف غسيل</a>
-                <a href="{{route('livingroom')}}" class="block hover:text-cyan-400">غرف جلوس</a>
-                <a href="{{route('warehouse')}}" class="block hover:text-cyan-400">خزائن</a>
-                <a href="{{route('externalsession')}}" class="block hover:text-cyan-400">جلسات خارجية</a>
-                <a href="{{route('landscape')}}" class="block hover:text-cyan-400">لاند سكيب</a>
-                <a href="{{route('bedroom')}}" class="block hover:text-cyan-400">غرف نوم أولاد وبنات</a>
-                <a href="{{route('drawer')}}" class="block hover:text-cyan-400">تصميم درج</a>
-                <a href="{{route('chamber')}}" class="block hover:text-cyan-400">غرف نوم</a>
-                <a href="{{route('gym')}}" class="block hover:text-cyan-400">جيم منزلي</a>
-                <a href="{{route('terrace')}}" class="block hover:text-cyan-400">برندة</a>
-                <a href="{{route('house')}}" class="block hover:text-cyan-400">منازل ريفية</a>
+            <!-- القائمة الفرعية لصور الديكورات (منسقة ومتناسبة مع الجوال) -->
+            <div id="decor-content" class="hidden mt-2 px-5 py-3 bg-gray-900 rounded-lg shadow-inner border border-gray-800">
+                <div class="grid grid-cols-2 gap-y-2 gap-x-6 text-sm text-gray-200 leading-relaxed">
+                    <a href="{{route('kitchen')}}" class="hover:text-cyan-400 transition-colors">🍽️ مطابخ</a>
+                    <a href="{{route('pool')}}" class="hover:text-cyan-400 transition-colors">🏊‍♂️ مسابح</a>
+                    <a href="{{route('office')}}" class="hover:text-cyan-400 transition-colors">💼 مكتب منزلي</a>
+                    <a href="{{route('bathroom')}}" class="hover:text-cyan-400 transition-colors">🚿 حمامات</a>
+                    <a href="{{route('diningroom')}}" class="hover:text-cyan-400 transition-colors">🍴 غرف طعام</a>
+                    <a href="{{route('laundryroom')}}" class="hover:text-cyan-400 transition-colors">🧺 غرف غسيل</a>
+                    <a href="{{route('livingroom')}}" class="hover:text-cyan-400 transition-colors">🛋️ غرف جلوس</a>
+                    <a href="{{route('warehouse')}}" class="hover:text-cyan-400 transition-colors">📦 خزائن</a>
+                    <a href="{{route('externalsession')}}" class="hover:text-cyan-400 transition-colors">🌿 جلسات خارجية</a>
+                    <a href="{{route('landscape')}}" class="hover:text-cyan-400 transition-colors">🌲 لاند سكيب</a>
+                    <a href="{{route('bedroom')}}" class="hover:text-cyan-400 transition-colors">🛏️ غرف نوم أولاد وبنات</a>
+                    <a href="{{route('drawer')}}" class="hover:text-cyan-400 transition-colors">🪜 تصميم درج</a>
+                    <a href="{{route('chamber')}}" class="hover:text-cyan-400 transition-colors">🛌 غرف نوم</a>
+                    <a href="{{route('gym')}}" class="hover:text-cyan-400 transition-colors">🏋️‍♀️ جيم منزلي</a>
+                    <a href="{{route('terrace')}}" class="hover:text-cyan-400 transition-colors">🌇 برندة</a>
+                    <a href="{{route('house')}}" class="hover:text-cyan-400 transition-colors">🏠 منازل ريفية</a>
+                </div>
             </div>
-        </div>
+
 
         <script>
             // فتح وغلق القائمة بدون أي أنيميشن
