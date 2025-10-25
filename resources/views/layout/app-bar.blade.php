@@ -149,7 +149,7 @@
 <!-- منيو الموبايل -->
 <div id="menu"
      class="fixed top-0 left-0 w-full h-screen p-4 bg-black text-white shadow-lg z-50 hidden
-            flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-auto">
+            flex-col gap-6 items-start justify-start pt-10 lg:hidden ">
 
     <div class="flex flex-col gap-6 mt-16 w-full">
         <!-- نفس روابط سطح المكتب (مكررة للجوال) -->
@@ -163,7 +163,7 @@
             <button id="toggle-decor"
                     class="flex justify-between items-center w-full text-left nav-link text-lg  py-2">
                 <span>صور الديكورات</span>
-                <span class="material-icons ">expand_more</span>
+                <span class="material-icons text-base">expand_more</span>
             </button>
 
             <div id="decor-content" class="hidden mt-1 pl-6 space-y-1 text-sm">
