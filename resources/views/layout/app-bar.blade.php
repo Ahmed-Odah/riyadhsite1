@@ -152,25 +152,25 @@
             flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-auto">
 
     <div class="flex flex-col gap-6 mt-16 w-full">
-        <!-- روابط عادية -->
-        <a href="{{route('homepage')}}" class="nav-link text-lg font-semibold">الرئيسية</a>
-        <a href="/whous" class="nav-link text-lg font-semibold">عني</a>
-        <a href="{{route('books.index')}}" class="nav-link text-lg font-semibold">مؤلفاتي</a>
-        <a href="{{route('sumbook')}}" class="nav-link text-lg font-semibold">ملخصات كتب</a>
-        <a href="{{route('colorphotos')}}" class="nav-link text-lg font-semibold">تصويري</a>
-
-        <!-- صور الديكورات -->
-        <div class="rounded-xl w-full overflow-hidden transition-all duration-300 border border-gray-700">
+        <!-- نفس روابط سطح المكتب (مكررة للجوال) -->
+        <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
+        <a href="/whous" class="nav-link">عني</a>
+        <a href="{{route('books.index')}}" class="nav-link">مؤلفاتي</a>
+        <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
+        <a href="{{route('sumbook')}}" class="nav-link">تصويري</a>
+        <!-- صور الديكورات (قابل للفتح في قائمة الجوال) -->
+        <div class="w-full">
+            <!-- الزر الرئيسي -->
             <button id="toggle-decor"
-                    class="flex justify-between items-center w-full text-white font-semibold text-lg py-3 px-4 hover:bg-gray-800 transition">
+                    class="flex justify-between items-center w-full text-white font-semibold text-lg py-3 px-4 hover:text-cyan-400 transition">
                 <span>صور الديكورات</span>
                 <span id="arrow-decor" class="material-icons transform transition-transform duration-300">expand_more</span>
             </button>
 
-            <!-- المحتوى الداخلي -->
+            <!-- المحتوى الداخلي المخفي -->
             <div id="decor-content"
-                 class="hidden bg-gray-900 text-gray-100 text-sm px-4 pb-3 pt-2 border-t border-gray-700">
-                <div class="grid grid-cols-2 gap-2">
+                 class="hidden bg-gray-900 text-gray-100 text-sm px-4 pb-4 border-t border-gray-800 rounded-b-xl">
+                <div class="grid grid-cols-2 gap-2 mt-3">
                     <a href="{{route('kitchen')}}" class="hover:text-cyan-400">مطابخ</a>
                     <a href="{{route('pool')}}" class="hover:text-cyan-400">مسابح</a>
                     <a href="{{route('office')}}" class="hover:text-cyan-400">مكتب منزلي</a>
@@ -189,29 +189,17 @@
                     <a href="{{route('house')}}" class="hover:text-cyan-400">منازل ريفية</a>
                 </div>
             </div>
-
-
-    <script>
-        const toggleDecor = document.getElementById('toggle-decor');
-        const decorContent = document.getElementById('decor-content');
-        const arrowDecor = document.getElementById('arrow-decor');
-
-        toggleDecor.addEventListener('click', () => {
-            decorContent.classList.toggle('hidden');
-            arrowDecor.classList.toggle('rotate-180');
-        });
-    </script>
-
+        </div>
 
         <script>
-            // زر فتح/إغلاق بوكس "صور الديكورات"
+            // التحكم في الفتح والإغلاق
             const toggleDecor = document.getElementById('toggle-decor');
             const decorContent = document.getElementById('decor-content');
             const arrowDecor = document.getElementById('arrow-decor');
 
             toggleDecor.addEventListener('click', () => {
-                decorContent.classList.toggle('hidden'); // إظهار/إخفاء المحتوى
-                arrowDecor.classList.toggle('rotate-180'); // تدوير السهم
+                decorContent.classList.toggle('hidden');
+                arrowDecor.classList.toggle('rotate-180');
             });
         </script>
 
