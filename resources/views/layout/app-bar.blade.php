@@ -152,39 +152,56 @@
             flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-auto">
 
     <div class="flex flex-col gap-6 mt-16 w-full">
-        <!-- نفس روابط سطح المكتب (مكررة للجوال) -->
-        <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
-        <a href="/whous" class="nav-link">عني</a>
-        <a href="{{route('books.index')}}" class="nav-link">مؤلفاتي</a>
-        <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
-        <a href="{{route('sumbook')}}" class="nav-link">تصويري</a>
-        <!-- صور الديكورات (بوكس قابل للفتح في منيو الجوال) -->
-        <div class="bg-white text-black rounded-xl shadow-lg w-full overflow-hidden transition-all duration-300">
-            <button id="toggle-decor" class="flex justify-between items-center w-full p-4 font-bold text-lg">
+        <!-- روابط عادية -->
+        <a href="{{route('homepage')}}" class="nav-link text-lg font-semibold">الرئيسية</a>
+        <a href="/whous" class="nav-link text-lg font-semibold">عني</a>
+        <a href="{{route('books.index')}}" class="nav-link text-lg font-semibold">مؤلفاتي</a>
+        <a href="{{route('sumbook')}}" class="nav-link text-lg font-semibold">ملخصات كتب</a>
+        <a href="{{route('colorphotos')}}" class="nav-link text-lg font-semibold">تصويري</a>
+
+        <!-- صور الديكورات -->
+        <div class="rounded-xl w-full overflow-hidden transition-all duration-300 border border-gray-700">
+            <button id="toggle-decor"
+                    class="flex justify-between items-center w-full text-white font-semibold text-lg py-3 px-4 hover:bg-gray-800 transition">
                 <span>صور الديكورات</span>
                 <span id="arrow-decor" class="material-icons transform transition-transform duration-300">expand_more</span>
             </button>
 
-            <!-- المحتوى الداخلي المخفي -->
-            <div id="decor-content" class="grid grid-cols-2 gap-2 text-sm px-4 pb-4 hidden">
-                <a href="{{route('kitchen')}}" class="hover:text-blue-600">مطابخ</a>
-                <a href="{{route('pool')}}" class="hover:text-blue-600">مسابح</a>
-                <a href="{{route('office')}}" class="hover:text-blue-600">مكتب منزلي</a>
-                <a href="{{route('bathroom')}}" class="hover:text-blue-600">حمامات</a>
-                <a href="{{route('diningroom')}}" class="hover:text-blue-600">غرف طعام</a>
-                <a href="{{route('laundryroom')}}" class="hover:text-blue-600">غرف غسيل</a>
-                <a href="{{route('livingroom')}}" class="hover:text-blue-600">غرف جلوس</a>
-                <a href="{{route('warehouse')}}" class="hover:text-blue-600">خزائن</a>
-                <a href="{{route('externalsession')}}" class="hover:text-blue-600">جلسات خارجية</a>
-                <a href="{{route('landscape')}}" class="hover:text-blue-600">لاند سكيب</a>
-                <a href="{{route('bedroom')}}" class="hover:text-blue-600">غرف نوم أولاد وبنات</a>
-                <a href="{{route('drawer')}}" class="hover:text-blue-600">تصميم درج</a>
-                <a href="{{route('chamber')}}" class="hover:text-blue-600">غرف نوم</a>
-                <a href="{{route('gym')}}" class="hover:text-blue-600">جيم منزلي</a>
-                <a href="{{route('terrace')}}" class="hover:text-blue-600">برندة</a>
-                <a href="{{route('house')}}" class="hover:text-blue-600">منازل ريفية</a>
+            <!-- المحتوى الداخلي -->
+            <div id="decor-content"
+                 class="hidden bg-gray-900 text-gray-100 text-sm px-4 pb-3 pt-2 border-t border-gray-700">
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="{{route('kitchen')}}" class="hover:text-cyan-400">مطابخ</a>
+                    <a href="{{route('pool')}}" class="hover:text-cyan-400">مسابح</a>
+                    <a href="{{route('office')}}" class="hover:text-cyan-400">مكتب منزلي</a>
+                    <a href="{{route('bathroom')}}" class="hover:text-cyan-400">حمامات</a>
+                    <a href="{{route('diningroom')}}" class="hover:text-cyan-400">غرف طعام</a>
+                    <a href="{{route('laundryroom')}}" class="hover:text-cyan-400">غرف غسيل</a>
+                    <a href="{{route('livingroom')}}" class="hover:text-cyan-400">غرف جلوس</a>
+                    <a href="{{route('warehouse')}}" class="hover:text-cyan-400">خزائن</a>
+                    <a href="{{route('externalsession')}}" class="hover:text-cyan-400">جلسات خارجية</a>
+                    <a href="{{route('landscape')}}" class="hover:text-cyan-400">لاند سكيب</a>
+                    <a href="{{route('bedroom')}}" class="hover:text-cyan-400">غرف نوم أولاد وبنات</a>
+                    <a href="{{route('drawer')}}" class="hover:text-cyan-400">تصميم درج</a>
+                    <a href="{{route('chamber')}}" class="hover:text-cyan-400">غرف نوم</a>
+                    <a href="{{route('gym')}}" class="hover:text-cyan-400">جيم منزلي</a>
+                    <a href="{{route('terrace')}}" class="hover:text-cyan-400">برندة</a>
+                    <a href="{{route('house')}}" class="hover:text-cyan-400">منازل ريفية</a>
+                </div>
             </div>
-        </div>
+
+
+    <script>
+        const toggleDecor = document.getElementById('toggle-decor');
+        const decorContent = document.getElementById('decor-content');
+        const arrowDecor = document.getElementById('arrow-decor');
+
+        toggleDecor.addEventListener('click', () => {
+            decorContent.classList.toggle('hidden');
+            arrowDecor.classList.toggle('rotate-180');
+        });
+    </script>
+
 
         <script>
             // زر فتح/إغلاق بوكس "صور الديكورات"
