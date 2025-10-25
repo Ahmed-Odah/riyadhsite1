@@ -158,19 +158,19 @@
         <a href="{{route('books.index')}}" class="nav-link">مؤلفاتي</a>
         <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
         <a href="{{route('sumbook')}}" class="nav-link">تصويري</a>
-        <!-- صور الديكورات (قابل للفتح في قائمة الجوال) -->
-        <div class="w-full">
+        <!-- صور الديكورات (قابل للفتح في قائمة الجوال ومتناسب مع التصميم العلوي) -->
+        <div class="w-full border-t border-gray-800">
             <!-- الزر الرئيسي -->
             <button id="toggle-decor"
-                    class="flex justify-between items-center w-full text-white font-semibold text-lg py-3 px-4 hover:text-cyan-400 transition">
+                    class="flex justify-between items-center w-full text-white font-semibold text-lg py-3 px-4 hover:text-cyan-400 transition duration-200">
                 <span>صور الديكورات</span>
-                <span id="arrow-decor" class="material-icons transform transition-transform duration-300">expand_more</span>
+                <span id="arrow-decor" class="material-icons text-white transform transition-transform duration-300">expand_more</span>
             </button>
 
-            <!-- المحتوى الداخلي المخفي -->
+            <!-- المحتوى الداخلي -->
             <div id="decor-content"
-                 class="hidden bg-gray-900 text-gray-100 text-sm px-4 pb-4 border-t border-gray-800 rounded-b-xl">
-                <div class="grid grid-cols-2 gap-2 mt-3">
+                 class="hidden bg-black text-gray-200 text-sm px-6 pb-4">
+                <div class="grid grid-cols-2 gap-2">
                     <a href="{{route('kitchen')}}" class="hover:text-cyan-400">مطابخ</a>
                     <a href="{{route('pool')}}" class="hover:text-cyan-400">مسابح</a>
                     <a href="{{route('office')}}" class="hover:text-cyan-400">مكتب منزلي</a>
@@ -192,7 +192,6 @@
         </div>
 
         <script>
-            // التحكم في الفتح والإغلاق
             const toggleDecor = document.getElementById('toggle-decor');
             const decorContent = document.getElementById('decor-content');
             const arrowDecor = document.getElementById('arrow-decor');
