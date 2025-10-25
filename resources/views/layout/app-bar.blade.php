@@ -158,7 +158,28 @@
         <a href="{{route('books.index')}}" class="nav-link">مؤلفاتي</a>
         <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
         <a href="{{route('sumbook')}}" class="nav-link">تصويري</a>
-        <a href="{{route('paintings')}}" class="nav-link">صور الديكورات</a>
+        <!-- صور الديكورات (في منيو الجوال) -->
+        <div class="bg-white text-black rounded-xl shadow-lg p-4 w-full">
+            <h3 class="font-bold text-lg mb-3">صور الديكورات</h3>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+                <a href="{{route('kitchen')}}" class="hover:text-blue-600">مطابخ</a>
+                <a href="{{route('pool')}}" class="hover:text-blue-600">مسابح</a>
+                <a href="{{route('office')}}" class="hover:text-blue-600">مكتب منزلي</a>
+                <a href="{{route('bathroom')}}" class="hover:text-blue-600">حمامات</a>
+                <a href="{{route('diningroom')}}" class="hover:text-blue-600">غرف طعام</a>
+                <a href="{{route('laundryroom')}}" class="hover:text-blue-600">غرف غسيل</a>
+                <a href="{{route('livingroom')}}" class="hover:text-blue-600">غرف جلوس</a>
+                <a href="{{route('warehouse')}}" class="hover:text-blue-600">خزائن</a>
+                <a href="{{route('externalsession')}}" class="hover:text-blue-600">جلسات خارجية</a>
+                <a href="{{route('landscape')}}" class="hover:text-blue-600">لاند سكيب</a>
+                <a href="{{route('bedroom')}}" class="hover:text-blue-600">غرف نوم أولاد وبنات</a>
+                <a href="{{route('drawer')}}" class="hover:text-blue-600">تصميم درج</a>
+                <a href="{{route('chamber')}}" class="hover:text-blue-600">غرف نوم</a>
+                <a href="{{route('gym')}}" class="hover:text-blue-600">جيم منزلي</a>
+                <a href="{{route('terrace')}}" class="hover:text-blue-600">برندة</a>
+                <a href="{{route('house')}}" class="hover:text-blue-600">منازل ريفية</a>
+            </div>
+        </div>
 
         <a href="{{route('paintings')}}" class="nav-link">معرض اللوحات</a>
         <a href="{{route('coin')}}" class="nav-link">عملات عالمية</a>
