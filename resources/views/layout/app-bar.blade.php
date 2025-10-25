@@ -161,7 +161,7 @@
         <!-- صور الديكورات (نفس حجم باقي القوائم وبدون أنيميشن) -->
         <div class="w-full">
             <button id="toggle-decor"
-                    class="flex  items-center w-full text-left nav-link text-lg  py-2">
+                    class="flex justify-between items-center w-full text-left nav-link text-lg  ">
                 <span>صور الديكورات</span>
                 <span class="material-icons text-base">expand_more</span>
             </button>
