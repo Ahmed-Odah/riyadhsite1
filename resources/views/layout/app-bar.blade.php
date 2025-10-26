@@ -191,8 +191,8 @@
             <!-- القائمة الفرعية لتصويري -->
             <div id="photos-content" class="hidden mt-2 px-5 py-3 bg-gray-900 rounded-lg shadow-inner border border-gray-800">
                 <div class="grid grid-cols-2 gap-y-2 gap-x-6 text-sm text-gray-200 leading-relaxed">
-                    <a href="{{ route('ClientBlackAndWhite') }}" class="hover:text-cyan-400 transition-colors">⚫ صور أبيض وأسود</a>
-                    <a href="{{ route('colorphotos') }}" class="hover:text-cyan-400 transition-colors">🌈 صور ملونة</a>
+                    <a href="{{ route('ClientBlackAndWhite') }}" class="hover:text-cyan-400 transition-colors"> صور أبيض وأسود</a>
+                    <a href="{{ route('colorphotos') }}" class="hover:text-cyan-400 transition-colors"> صور ملونة</a>
                 </div>
             </div>
         </div>
@@ -258,8 +258,8 @@
             <!-- القائمة الفرعية لقنواتي -->
             <div id="channels-content" class="hidden mt-2 px-5 py-3 bg-gray-900 rounded-lg shadow-inner border border-gray-800">
                 <div class="grid grid-cols-1 gap-y-2 text-sm text-gray-200 leading-relaxed">
-                    <a href="{{ route('channel') }}" class="hover:text-cyan-400 transition-colors">📺 قناة اليوتيوب</a>
-                    <a href="{{ route('channeltik') }}" class="hover:text-cyan-400 transition-colors">🎵 قناة التيك توك</a>
+                    <a href="{{ route('channel') }}" class="hover:text-cyan-400 transition-colors"> قناة اليوتيوب</a>
+                    <a href="{{ route('channeltik') }}" class="hover:text-cyan-400 transition-colors"> قناة التيك توك</a>
                 </div>
             </div>
         </div>
