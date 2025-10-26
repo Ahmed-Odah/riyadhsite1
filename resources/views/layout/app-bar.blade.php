@@ -181,7 +181,28 @@
 
         <a href="{{route('books.index')}}" class="nav-link">مؤلفاتي</a>
         <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
-        <a href="{{route('sumbook')}}" class="nav-link">تصويري</a>
+        <div class="w-full">
+            <button id="toggle-photos"
+                    class="flex justify-between items-center w-full text-left nav-link text-lg py-2">
+                <span>تصويري</span>
+                <span class="material-icons text-base">expand_more</span>
+            </button>
+
+            <!-- القائمة الفرعية لتصويري -->
+            <div id="photos-content" class="hidden mt-2 px-5 py-3 bg-gray-900 rounded-lg shadow-inner border border-gray-800">
+                <div class="grid grid-cols-2 gap-y-2 gap-x-6 text-sm text-gray-200 leading-relaxed">
+                    <a href="{{ route('ClientBlackAndWhite') }}" class="hover:text-cyan-400 transition-colors">⚫ صور أبيض وأسود</a>
+                    <a href="{{ route('colorphotos') }}" class="hover:text-cyan-400 transition-colors">🌈 صور ملونة</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('toggle-photos').addEventListener('click', () => {
+                const content = document.getElementById('photos-content');
+                content.classList.toggle('hidden');
+            });
+        </script>
         <!-- صور الديكورات (نفس حجم باقي القوائم وبدون أنيميشن) -->
         <div class="w-full">
             <button id="toggle-decor"
