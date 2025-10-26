@@ -164,9 +164,9 @@
             <!-- القائمة الفرعية -->
             <div id="about-content" class="hidden mt-2 px-5 py-3 bg-gray-900 rounded-lg shadow-inner border border-gray-800">
                 <div class="flex flex-col space-y-2 text-sm text-gray-200 leading-relaxed">
-                    <a href="{{ route('about.me') }}" class="hover:text-cyan-400 transition-colors">👤 من أنا</a>
-                    <a href="{{ route('about.certificates') }}" class="hover:text-cyan-400 transition-colors">🎓 الشهادات والدورات</a>
-                    <a href="{{ route('about.events') }}" class="hover:text-cyan-400 transition-colors">🎉 المناسبات</a>
+                    <a href="{{ route('/whous') }}" class="hover:text-cyan-400 transition-colors">👤 من أنا</a>
+                    <a href="{{ route('certificate') }}" class="hover:text-cyan-400 transition-colors">🎓 الشهادات والدورات</a>
+                    <a href="{{ route('official') }}" class="hover:text-cyan-400 transition-colors">🎉 المناسبات</a>
                 </div>
             </div>
         </div>
