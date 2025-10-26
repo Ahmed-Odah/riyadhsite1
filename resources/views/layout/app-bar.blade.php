@@ -11,9 +11,11 @@
 
         <!-- زر المنيو للجوال -->
         <div class="lg:hidden absolute left-4 top-1/2 transform -translate-y-1/2">
-            <button id="menu-toggle" class="text-white focus:outline-none">
+            <button id="menu-toggle"
+                    class="{{ request()->routeIs('homepage') ? 'text-white' : 'text-black' }} focus:outline-none">
                 <span class="material-icons">menu</span>
             </button>
+
         </div>
 
         <!-- روابط سطح المكتب -->
