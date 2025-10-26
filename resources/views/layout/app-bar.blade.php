@@ -248,7 +248,28 @@
         <a href="{{route('paintings')}}" class="nav-link">معرض اللوحات</a>
         <a href="{{route('coin')}}" class="nav-link">عملات عالمية</a>
         <a href="{{route('blog')}}" class="nav-link">المدونة</a>
-        <a href="{{route('channel')}}" class="nav-link">قنواتي</a>
+        <div class="w-full">
+            <button id="toggle-channels"
+                    class="flex justify-between items-center w-full text-left nav-link text-lg py-2">
+                <span>قنواتي</span>
+                <span class="material-icons text-base">expand_more</span>
+            </button>
+
+            <!-- القائمة الفرعية لقنواتي -->
+            <div id="channels-content" class="hidden mt-2 px-5 py-3 bg-gray-900 rounded-lg shadow-inner border border-gray-800">
+                <div class="grid grid-cols-1 gap-y-2 text-sm text-gray-200 leading-relaxed">
+                    <a href="{{ route('channel') }}" class="hover:text-cyan-400 transition-colors">📺 قناة اليوتيوب</a>
+                    <a href="{{ route('channeltik') }}" class="hover:text-cyan-400 transition-colors">🎵 قناة التيك توك</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('toggle-channels').addEventListener('click', () => {
+                const content = document.getElementById('channels-content');
+                content.classList.toggle('hidden');
+            });
+        </script>
 
         <a href="{{ route('client') }}"
            class="inline-block text-center px-4 py-2 bg-cyan-600 text-white rounded-full font-semibold text-sm hover:bg-cyan-700 transition"
