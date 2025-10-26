@@ -154,7 +154,31 @@
     <div class="flex flex-col gap-6 mt-16 w-full">
         <!-- نفس روابط سطح المكتب (مكررة للجوال) -->
         <a href="{{route('homepage')}}" class="nav-link">الرئيسية</a>
-        <a href="/whous" class="nav-link">عني</a>
+        <div class="w-full">
+            <button id="toggle-about"
+                    class="flex justify-between items-center w-full text-left nav-link text-lg py-2">
+                <span>عني</span>
+                <span class="material-icons text-base">expand_more</span>
+            </button>
+
+            <!-- القائمة الفرعية -->
+            <div id="about-content" class="hidden mt-2 px-5 py-3 bg-gray-900 rounded-lg shadow-inner border border-gray-800">
+                <div class="flex flex-col space-y-2 text-sm text-gray-200 leading-relaxed">
+                    <a href="{{ route('about.me') }}" class="hover:text-cyan-400 transition-colors">👤 من أنا</a>
+                    <a href="{{ route('about.certificates') }}" class="hover:text-cyan-400 transition-colors">🎓 الشهادات والدورات</a>
+                    <a href="{{ route('about.events') }}" class="hover:text-cyan-400 transition-colors">🎉 المناسبات</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // زر الفتح والإغلاق
+            document.getElementById('toggle-about').addEventListener('click', () => {
+                const content = document.getElementById('about-content');
+                content.classList.toggle('hidden');
+            });
+        </script>
+
         <a href="{{route('books.index')}}" class="nav-link">مؤلفاتي</a>
         <a href="{{route('sumbook')}}" class="nav-link">ملخصات كتب</a>
         <a href="{{route('sumbook')}}" class="nav-link">تصويري</a>
