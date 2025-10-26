@@ -150,8 +150,9 @@
 
 <!-- منيو الموبايل -->
 <div id="menu"
-     class="fixed top-0 left-0 w-full h-screen p-4 bg-black text-white shadow-lg z-50 hidden
-            flex-col gap-6 items-start justify-start pt-10 lg:hidden overflow-y-auto">
+     class="fixed top-0 right-0 w-full h-screen p-4 bg-black text-white shadow-lg z-[9999] hidden
+            flex-col gap-6 items-end justify-start pt-10 lg:hidden overflow-y-auto text-right">
+
 
     <div class="flex flex-col gap-6 mt-16 w-full">
         <!-- نفس روابط سطح المكتب (مكررة للجوال) -->
