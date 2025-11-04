@@ -1,5 +1,6 @@
 <?php
 
+use App\Actions\Blog\BlogCreateAction; // ✅ إضافة الأكشن هنا
 
 use App\Http\Controllers\SwitchLanguage;
 use App\Models\Book;
