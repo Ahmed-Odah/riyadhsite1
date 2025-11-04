@@ -108,6 +108,20 @@ Route::get('/certificate', \App\Actions\Certificates\Client\CertificateClientInd
 Route::get('/decor', [\App\Actions\Decors\Client\DecorClientIndex::class, 'handle'])->name('decor');
 
 
+
+
+Route::post('/api/blog-auto', function (Request $request) {
+    // 🔐 تحقق من مفتاح الأمان
+    $token = $request->header('X-Webhook-Token');
+    abort_unless($token === env('FB_WEBHOOK_TOKEN'), 401, 'Unauthorized');
+
+    // ✅ استدعاء الأكشن لمعالجة البيانات القادمة من فيسبوك
+    $action = app(BlogCreateAction::class);
+
+    // ✅ حفظ البوست القادم من فيسبوك في قاعدة البيانات
+    return $action->handleFromFacebook($request);
+});
+
 Route::prefix('auth')->group(function () {
 
     Route::get('/view-form/{note}', [\App\Actions\WhoUs\UpdateNotesAction::class, 'viewForm'])->name('view.form');
