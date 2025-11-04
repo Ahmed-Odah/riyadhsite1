@@ -1,6 +1,5 @@
 <?php
 
-use App\Actions\Blog\BlogCreateAction; // ✅ إضافة الأكشن هنا
 
 use App\Http\Controllers\SwitchLanguage;
 use App\Models\Book;
@@ -112,16 +111,15 @@ Route::get('/decor', [\App\Actions\Decors\Client\DecorClientIndex::class, 'handl
 
 
 
+// ✅ مسار خاص بالـ Webhook مع تعطيل CSRF نهائيًا لهذا المسار فقط
+Route::withoutMiddleware([VerifyCsrfToken::class])
+    ->post('/blog-auto', function (Request $request) {
+        $token = $request->header('X-Webhook-Token');
+        abort_unless($token === env('FB_WEBHOOK_TOKEN'), 401, 'Unauthorized');
 
-Route::post('/blog-auto', function (Request $request) {
-    // 🔐 تحقق من التوكن (مفتاح الأمان)
-    $token = $request->header('X-Webhook-Token');
-    abort_unless($token === env('FB_WEBHOOK_TOKEN'), 401, 'Unauthorized');
-
-    // ✅ استدعاء الأكشن لمعالجة البيانات القادمة من فيسبوك
-    $action = app(BlogCreateAction::class);
-    return $action->handleFromFacebook($request);
-});
+        $action = app(BlogCreateAction::class);
+        return $action->handleFromFacebook($request);
+    });
 
 
 Route::prefix('auth')->group(function () {
