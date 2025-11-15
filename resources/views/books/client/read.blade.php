@@ -3,12 +3,18 @@
         {{ $book->title }}
     </h1>
 
-    <div class="rounded-xl overflow-hidden shadow-lg border h-[80vh] md:h-[900px]">
+    <div class="rounded-xl overflow-hidden shadow-lg border
+                h-[75vh] sm:h-[80vh] md:h-[800px]">
+
         <iframe
-            src="{{ asset('public/pdfjs/web/viewer.html') }}?file={{ urlencode(asset('storage/pdfs/' . $book->file)) }}#toolbar=0"
+            src="{{ route('books.pdf', $book->id) }}"
             class="w-full h-full border-0"
-            allowfullscreen
-            style="display:block; width:100%; height:100%;"
-        ></iframe>
+            style="display: block; width: 100%; height: 100%;"
+            allow="fullscreen"
+            allowfullscreen>
+        </iframe>
+
     </div>
 </div>
+
+
