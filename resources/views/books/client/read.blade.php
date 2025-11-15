@@ -5,7 +5,7 @@
 
     <div class="rounded-xl overflow-hidden shadow-lg border h-[80vh] md:h-[900px]">
         <iframe
-            src="{{ asset('pdfjs/web/viewer.html') }}?file={{ urlencode(asset('storage/pdfs/' . $book->file)) }}"
+            src="{{ asset('public/pdfjs/web/viewer.html') }}?file={{ urlencode(asset('public/storage/pdfs/' . $book->file)) }}"
             class="w-full h-full border-0"
             style="display:block; width:100%; height:100%;"
             allowfullscreen>
